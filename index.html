@@ -44,16 +44,23 @@ padding:2px 9px;border-radius:999px}
 padding:10px;text-decoration:none;color:inherit;transition:.15s;position:relative}
 .card:hover{border-color:#3a72c4;background:#171b23}
 .card.nolink{opacity:.55}.card.nolink:hover{border-color:#22262e;background:#14171d}
-.card img{width:112px;height:63px;object-fit:cover;border-radius:7px;flex-shrink:0;background:#22262e}
-.thumb{position:relative;flex-shrink:0;line-height:0}
+.left{flex-shrink:0;width:112px}
+.left img{width:100%;height:63px;object-fit:cover;border-radius:7px;background:#22262e;display:block}
+.thumb{position:relative;display:block;line-height:0}
 .thumb .pl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
 opacity:0;transition:.15s}
-.thumb .pl span{width:30px;height:30px;border-radius:50%;background:rgba(200,16,46,.92);
+.thumb .pl i{width:30px;height:30px;border-radius:50%;background:rgba(200,16,46,.92);
 display:flex;align-items:center;justify-content:center}
-.thumb .pl span::after{content:'';border-left:9px solid #fff;border-top:6px solid transparent;
+.thumb .pl i::after{content:'';border-left:9px solid #fff;border-top:6px solid transparent;
 border-bottom:6px solid transparent;margin-left:3px}
 .card:hover .thumb .pl{opacity:1}
-.card .body{min-width:0;display:flex;flex-direction:column;justify-content:center}
+.svc{display:flex;gap:4px;margin-top:5px}
+.svc a{flex:1 1 0;min-width:0;height:21px;display:flex;align-items:center;justify-content:center;
+border-radius:5px;background:#191d25;border:1px solid #252a33;opacity:.72;transition:.15s}
+.svc a:hover{opacity:1;background:#232936;border-color:#3a4250}
+.svc svg{width:13px;height:13px;display:block}
+.card .body{min-width:0;display:flex;flex-direction:column;justify-content:center;
+text-decoration:none;color:inherit}
 .t{font-weight:600;font-size:14.5px;margin-bottom:2px}
 .m{font-size:12.5px;color:#98a0ab}
 .meta{font-size:11px;color:#6f7783;margin-top:3px}
@@ -86,7 +93,8 @@ border-radius:8px;font-size:19px;line-height:1;cursor:pointer;flex-shrink:0}
 .lbf{position:relative;padding-bottom:56.25%;height:0;border-radius:11px;overflow:hidden;
 background:#000}
 .lbf iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-@media(max-width:560px){.card img{width:88px;height:50px}.wrap{padding:22px 14px 50px}
+@media(max-width:560px){.left{width:92px}.left img{height:52px}.wrap{padding:22px 14px 50px}
+.svc a{height:19px}.svc svg{width:12px;height:12px}
 .playall{flex:1 1 100%;justify-content:center}}
 
 .card img{display:none}.card{padding:13px 15px}
