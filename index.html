@@ -197,7 +197,14 @@ color:#9aa1ac;font-size:14px}
     var q=raw.toLowerCase().replace(/[^\w\s+&']/g,' '),
         w=q.split(/\s+/).filter(Boolean),
         months=[],years=[],types=[],plats=[],terms=[];
-    PLAT.forEach(function(p){ if(q.indexOf(p)>-1) plats.push(p); });
+    // Whole-word only: a substring test would match "aha" inside "Bahadur".
+    PLAT.forEach(function(p){
+      if(new RegExp('\\b'+p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b').test(q))
+        plats.push(p);
+    });
+    plats=plats.filter(function(p,i){
+      return !plats.some(function(o,j){return j!==i&&o.length>p.length&&o.indexOf(p)>-1;});
+    });
     if(/\bsongs?\b|\blyrical|\bmusic\b/.test(q)) types.push('song');
     if(/\btrailers?\b|\bteasers?\b|\bglimpse/.test(q)) types.push('trailer');
     if(/\bott\b|\bstream|\bplatform|\bseries\b|\bwatch\b/.test(q)||plats.length) types.push('ott');
