@@ -162,11 +162,42 @@ padding:7px 14px;border-radius:999px;text-decoration:none;font-size:13px;font-we
 background:#221b10}
 .jump a.allweeks:hover{background:#2c2314;color:#fff}
 h2{font-size:19px;margin:36px 0 14px;display:flex;align-items:center;gap:10px}
+
+.cbanner{background:var(--surface);border:1px solid var(--line);
+border-left:3px solid var(--ember);border-radius:0 var(--radius) var(--radius) 0;
+padding:15px 18px;margin:0 0 22px;color:var(--ink2);font-size:14px}
+.cbanner strong{color:var(--ink)}
+.src{display:inline-block;font-size:9.5px;font-weight:700;text-transform:uppercase;
+letter-spacing:1.1px;padding:2px 7px;border-radius:4px;vertical-align:2px;margin-left:7px}
+.src.curated{color:#9fe1cb;background:#0f2a22;border:1px solid #1d4a3c}
+.src.verified{color:var(--amber2);background:#2b2110;border:1px solid #4a3a1c}
+.src.pending{color:#9db7e8;background:#141d2e;border:1px solid #27374f}
+.vote{display:flex;align-items:center;gap:7px;margin-top:8px;flex-wrap:wrap}
+.vote button{background:var(--surface2);border:1px solid var(--line2);color:var(--ink2);
+padding:5px 11px;border-radius:8px;font-size:12px;font-family:inherit;cursor:pointer}
+.vote button:hover:not(:disabled){border-color:var(--amber);color:var(--amber2)}
+.vote button.picked{background:#2b2110;border-color:var(--amber);color:var(--amber2)}
+.vote button:disabled{opacity:.5;cursor:default}
+.vote .score{font-size:11.5px;color:var(--ink3);margin-left:auto}
+.vote .score b{color:var(--ink2)}
+.sugform{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:20px;margin-bottom:26px}
+.sugform .row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.sugform label{flex:1 1 180px;min-width:0;font-size:12px;color:var(--ink3)}
+.sugform input,.sugform select,.sugform textarea{width:100%;margin-top:5px;
+background:var(--bg2);border:1px solid var(--line);color:var(--ink);padding:9px 12px;
+border-radius:9px;font-size:14px;font-family:inherit}
+.sugform input:focus,.sugform select:focus,.sugform textarea:focus{outline:none;
+border-color:var(--amber)}
+.sugform .err{color:#f09595;font-size:12.5px;margin-top:6px;display:none}
+.sugform .ok{color:#9fe1cb;font-size:13px;margin-top:10px;display:none}
+.cempty{color:var(--ink3);font-style:italic;font-size:14px;padding:12px 0}
+#cstatus{font-size:12.5px;color:var(--ink3);margin-bottom:14px}
 </style></head><body>
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
-<nav class="main"><a href="index.html">Home</a><a href="weekly.html" class="on">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
+<nav class="main"><a href="index.html">Home</a><a href="weekly.html" class="on">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
 <script type="application/json" id="wk">{"date": "2026-07-31", "label": "Week of 31 July 2026", "songs": [{"t": "En Kaadhale", "m": "Anakapalli", "u": "https://www.youtube.com/watch?v=YvpRsob_C_g", "v": "YvpRsob_C_g", "c": "Aditya Music", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Kurchi Madathapetti", "m": "Guntur Kaaram", "u": "https://www.youtube.com/watch?v=gh3FyLT7WVg", "v": "gh3FyLT7WVg", "c": "Aditya Music", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Zzzz Nonexistent Song", "m": "", "u": "https://open.spotify.com/search/Zzzz%20Nonexistent%20Song", "v": "", "c": "", "n": "", "si": "", "co": "", "cf": "high"}], "trailers": [{"t": "Anakapalli", "k": "Trailer", "u": "https://www.youtube.com/watch?v=a4EzLJL6BNU", "v": "a4EzLJL6BNU", "c": "Aditya Music", "n": "Anakapalli Official Trailer | Vikram Sahidev, Sandhya | Khagesh Tammineni | Davzand", "cf": "high"}, {"t": "Pushpa 2 The Rule", "k": "Trailer", "u": "https://www.youtube.com/watch?v=g3JUbgOHgdw", "v": "g3JUbgOHgdw", "c": "Mythri Movie Makers", "n": "Pushpa 2 The Rule Trailer (Telugu) | Allu Arjun | Sukumar | Rashmika Mandanna | Fahadh Faasil | DSP", "cf": "high"}], "ott": [{"t": "Rao Bahadur", "p": "Netflix", "d": "30 Jul", "l": "Telugu, Hindi, Tamil", "poster": "https://image.tmdb.org/t/p/w185/9hzKAJImKEHBz0vnF5EazPMA8D4.jpg", "n": "", "u": "https://www.netflix.com/search?q=Rao%20Bahadur"}, {"t": "Gatta Kusthi 2", "p": "Netflix", "d": "30 Jul", "l": "Tamil, Hindi", "poster": "https://image.tmdb.org/t/p/w185/5U8MWIk9XZ60NALyOTpyX7vXIR7.jpg", "n": "", "u": "https://www.netflix.com/search?q=Gatta%20Kusthi%202"}, {"t": "Love Oh Love", "p": "Prime Video", "d": "31 Jul", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/37svY2bwI83NSHuR6KSQeBhjgOt.jpg", "n": "", "u": "https://www.primevideo.com/search?phrase=Love%20Oh%20Love"}, {"t": "Star Trek: Strange New Worlds S4E2", "p": "JioHotstar", "d": "31 Jul", "l": "English, Hindi", "poster": "https://image.tmdb.org/t/p/w185/97TTJuqiSMfU0DuXx1B4NG5QNP7.jpg", "n": "Weekly episode", "u": "https://www.hotstar.com/in/search?q=Star%20Trek%3A%20Strange%20New%20Worlds"}, {"t": "Balan: The Boy", "p": "ZEE5", "d": "1 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/boKxdR9tgXfkazf6yWgiDdleBy0.jpg", "n": "", "u": "https://www.zee5.com/search?q=Balan%3A%20The%20Boy"}]}</script>
 <div class="wrap"><div class="phead">
 <div class="eyebrow">Weekly edition</div>
@@ -179,11 +210,19 @@ releases, each linked to its official upload.</p>
 <section data-section><h2 id="songs">New songs <span class="count">3</span></h2><div class="grid"><div class="card" data-search="en kaadhale anakapalli aditya music"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=YvpRsob_C_g" target="_blank" rel="noopener" data-vid="YvpRsob_C_g" data-title="En Kaadhale"><img src="https://i.ytimg.com/vi/YvpRsob_C_g/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/En%20Kaadhale%20Anakapalli" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=En%20Kaadhale%20Anakapalli" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/En%20Kaadhale%20Anakapalli" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=YvpRsob_C_g" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=YvpRsob_C_g" target="_blank" rel="noopener" data-vid="YvpRsob_C_g" data-title="En Kaadhale"><div class="t">En Kaadhale</div><div class="m">Anakapalli</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="kurchi madathapetti guntur kaaram aditya music"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=gh3FyLT7WVg" target="_blank" rel="noopener" data-vid="gh3FyLT7WVg" data-title="Kurchi Madathapetti"><img src="https://i.ytimg.com/vi/gh3FyLT7WVg/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Kurchi%20Madathapetti%20Guntur%20Kaaram" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Kurchi%20Madathapetti%20Guntur%20Kaaram" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Kurchi%20Madathapetti%20Guntur%20Kaaram" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=gh3FyLT7WVg" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=gh3FyLT7WVg" target="_blank" rel="noopener" data-vid="gh3FyLT7WVg" data-title="Kurchi Madathapetti"><div class="t">Kurchi Madathapetti</div><div class="m">Guntur Kaaram</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="zzzz nonexistent song"><div class="left"><a class="thumb" href="https://open.spotify.com/search/Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener"><img alt=""><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/search?q=Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://open.spotify.com/search/Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener"><div class="t">Zzzz Nonexistent Song</div><div class="m"></div><div class="meta"></div></a></div></div><div class="noresults">No matches in this section.</div></section>
 <section data-section><h2 id="trailers">Trailers &amp; teasers <span class="count">2</span></h2><div class="grid"><div class="card" data-search="anakapalli — trailer anakapalli official trailer | vikram sahidev, sandhya | khagesh tammineni | davzand aditya music anakapalli official trailer | vikram sahidev, sandhya | khagesh tammineni | davzand"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=a4EzLJL6BNU" target="_blank" rel="noopener" data-vid="a4EzLJL6BNU" data-title="Anakapalli — Trailer"><img src="https://i.ytimg.com/vi/a4EzLJL6BNU/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=a4EzLJL6BNU" target="_blank" rel="noopener" data-vid="a4EzLJL6BNU" data-title="Anakapalli — Trailer"><div class="t">Anakapalli — Trailer</div><div class="m">Anakapalli Official Trailer | Vikram Sahidev, Sandhya | Khagesh Tammineni | Davzand</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="pushpa 2 the rule — trailer pushpa 2 the rule trailer (telugu) | allu arjun | sukumar | rashmika mandanna | fahadh faasil | dsp mythri movie makers pushpa 2 the rule trailer (telugu) | allu arjun | sukumar | rashmika mandanna | fahadh faasil | dsp"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=g3JUbgOHgdw" target="_blank" rel="noopener" data-vid="g3JUbgOHgdw" data-title="Pushpa 2 The Rule — Trailer"><img src="https://i.ytimg.com/vi/g3JUbgOHgdw/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=g3JUbgOHgdw" target="_blank" rel="noopener" data-vid="g3JUbgOHgdw" data-title="Pushpa 2 The Rule — Trailer"><div class="t">Pushpa 2 The Rule — Trailer</div><div class="m">Pushpa 2 The Rule Trailer (Telugu) | Allu Arjun | Sukumar | Rashmika Mandanna | Fahadh Faasil | DSP</div><div class="meta">Mythri Movie Makers</div></a></div></div><div class="noresults">No matches in this section.</div></section>
 <section data-section><h2 id="ott">OTT releases <span class="count">5</span></h2><div class="chips"><button class="chip" data-plat="Netflix">Netflix</button><button class="chip" data-plat="Prime Video">Prime Video</button><button class="chip" data-plat="JioHotstar">JioHotstar</button><button class="chip" data-plat="ZEE5">ZEE5</button></div><table><thead><tr><th class="poster"></th><th>Movie</th><th>Platform</th><th>Streaming from</th><th>Language</th></tr></thead><tbody><tr data-search="rao bahadur netflix telugu, hindi, tamil" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Rao%20Bahadur" target="_blank" rel="noopener" title="Find Rao Bahadur on Netflix"><img src="https://image.tmdb.org/t/p/w185/9hzKAJImKEHBz0vnF5EazPMA8D4.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Rao%20Bahadur" target="_blank" rel="noopener" title="Find Rao Bahadur on Netflix"><strong>Rao Bahadur</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Rao%20Bahadur" target="_blank" rel="noopener" title="Find Rao Bahadur on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">30 Jul</td><td class="dim">Telugu, Hindi, Tamil</td></tr><tr data-search="gatta kusthi 2 netflix tamil, hindi" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Gatta%20Kusthi%202" target="_blank" rel="noopener" title="Find Gatta Kusthi 2 on Netflix"><img src="https://image.tmdb.org/t/p/w185/5U8MWIk9XZ60NALyOTpyX7vXIR7.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Gatta%20Kusthi%202" target="_blank" rel="noopener" title="Find Gatta Kusthi 2 on Netflix"><strong>Gatta Kusthi 2</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Gatta%20Kusthi%202" target="_blank" rel="noopener" title="Find Gatta Kusthi 2 on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">30 Jul</td><td class="dim">Tamil, Hindi</td></tr><tr data-search="love oh love prime video tamil" data-platform="Prime Video"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Love%20Oh%20Love" target="_blank" rel="noopener" title="Find Love Oh Love on Prime Video"><img src="https://image.tmdb.org/t/p/w185/37svY2bwI83NSHuR6KSQeBhjgOt.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Love%20Oh%20Love" target="_blank" rel="noopener" title="Find Love Oh Love on Prime Video"><strong>Love Oh Love</strong></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Love%20Oh%20Love" target="_blank" rel="noopener" title="Find Love Oh Love on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">31 Jul</td><td class="dim">Tamil</td></tr><tr data-search="star trek: strange new worlds s4e2 jiohotstar english, hindi weekly episode" data-platform="JioHotstar"><td class="poster"><a class="ottlink" href="https://www.hotstar.com/in/search?q=Star%20Trek%3A%20Strange%20New%20Worlds" target="_blank" rel="noopener" title="Find Star Trek: Strange New Worlds S4E2 on JioHotstar"><img src="https://image.tmdb.org/t/p/w185/97TTJuqiSMfU0DuXx1B4NG5QNP7.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=Star%20Trek%3A%20Strange%20New%20Worlds" target="_blank" rel="noopener" title="Find Star Trek: Strange New Worlds S4E2 on JioHotstar"><strong>Star Trek: Strange New Worlds S4E2</strong></a><br><span class="note">Weekly episode</span></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=Star%20Trek%3A%20Strange%20New%20Worlds" target="_blank" rel="noopener" title="Find Star Trek: Strange New Worlds S4E2 on JioHotstar"><span class="badge" style="background:#0f79af">JioHotstar</span></a></td><td class="dim">31 Jul</td><td class="dim">English, Hindi</td></tr><tr data-search="balan: the boy zee5 hindi" data-platform="ZEE5"><td class="poster"><a class="ottlink" href="https://www.zee5.com/search?q=Balan%3A%20The%20Boy" target="_blank" rel="noopener" title="Find Balan: The Boy on ZEE5"><img src="https://image.tmdb.org/t/p/w185/boKxdR9tgXfkazf6yWgiDdleBy0.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Balan%3A%20The%20Boy" target="_blank" rel="noopener" title="Find Balan: The Boy on ZEE5"><strong>Balan: The Boy</strong></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Balan%3A%20The%20Boy" target="_blank" rel="noopener" title="Find Balan: The Boy on ZEE5"><span class="badge" style="background:#8230c6">ZEE5</span></a></td><td class="dim">1 Aug</td><td class="dim">Hindi</td></tr></tbody></table><div class="noresults">No matches in this section.</div></section>
+<section class="sec" style="padding-top:34px;border-top:1px solid var(--line);margin-top:38px">
+<div class="eyebrow">From the community</div>
+<h2 style="margin-top:6px">Suggested for this week</h2>
+<p class="lede" style="margin-bottom:18px">Everything above is curated. These were sent in by
+readers and need checking — 3 net votes either way settles it.
+<a href="community.html" style="color:var(--amber)">Suggest something &#8594;</a></p>
+<div data-community data-week="2026-07-31"></div>
+</section>
 <p class="hint" style="color:var(--ink3);font-size:12.5px;margin-top:26px">
 Generated 23 Sep 2026. Links auto-matched from YouTube search — items marked
 <span class="flag">verify</span> had a weak match and are worth a click-check.</p>
 </div><footer class="site"><div class="wrap">
-<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a></div>
+<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="community.html">Community</a></div>
 <div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
 weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
 </div></footer>
@@ -211,7 +250,7 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
   });
   document.addEventListener('keydown',function(ev){if(ev.key==='Escape')close();});
 })();
-</script><script>
+</script><script>window.CFG={url:"",key:"",threshold:3};</script><script>
 (function(){
   var box=document.getElementById('q'), plat=null;
   var cards=[].slice.call(document.querySelectorAll('.card[data-search]'));
@@ -241,5 +280,168 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
       apply();
     });
   });
+})();
+
+(function(){
+  var CFG=window.CFG||{}, T=CFG.threshold||3;
+  var ready = !!(CFG.url && CFG.key);
+
+  function cid(){
+    var k='cv-client';
+    try{
+      var v=localStorage.getItem(k);
+      if(!v){ v=(crypto.randomUUID?crypto.randomUUID():String(Math.random()).slice(2)+Date.now());
+              localStorage.setItem(k,v); }
+      return v;
+    }catch(e){ return 'anon-'+Date.now(); }
+  }
+  function api(path,opts){
+    opts=opts||{};
+    opts.headers=Object.assign({'apikey':CFG.key,'Authorization':'Bearer '+CFG.key,
+      'Content-Type':'application/json'},opts.headers||{});
+    return fetch(CFG.url.replace(/\/$/,'')+'/rest/v1/'+path,opts)
+      .then(function(r){ if(!r.ok) throw new Error(r.status+' '+r.statusText);
+                         return r.status===204?null:r.json(); });
+  }
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function score(s){return (s.votes||[]).reduce(function(a,v){return a+v.vote;},0);}
+  function mine(s){var c=cid();return (s.votes||[]).some(function(v){return v.client_id===c;});}
+
+  function labels(kind){
+    return kind==='ott'
+      ? {up:'Correct platform',down:'Wrong platform',
+         ask:'Is this film really on this platform?'}
+      : {up:'Original source',down:'Not original',
+         ask:'Is this the official upload, not a re-post?'};
+  }
+
+  function card(s){
+    var sc=score(s), verified=sc>=T, voted=mine(s);
+    var v=(s.url||'').match(/[?&]v=([A-Za-z0-9_-]{11})/);
+    var th=v?'https://i.ytimg.com/vi/'+v[1]+'/mqdefault.jpg':'';
+    var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
+    var dv=v?' data-vid="'+esc(v[1])+'" data-title="'+esc(s.title)+'"':'';
+    var badge=verified?'<span class="src verified">Community verified</span>'
+                      :'<span class="src pending">Needs checking</span>';
+    var sub=s.kind==='ott'?(s.platform||''):(s.movie||'');
+    var L=labels(s.kind);
+    var controls='';
+    if(!verified){
+      controls='<div class="vote" data-id="'+esc(s.id)+'" title="'+esc(L.ask)+'">'+
+        '<button data-v="1"'+(voted?' disabled':'')+'>&#9650; '+esc(L.up)+'</button>'+
+        '<button data-v="-1"'+(voted?' disabled':'')+'>&#9660; '+esc(L.down)+'</button>'+
+        '<span class="score">'+(voted?'you voted · ':'')+'net <b>'+(sc>0?'+':'')+sc+
+        '</b> · '+T+' to verify</span></div>';
+    }
+    var head = s.url
+      ? '<div class="left"><a class="thumb" href="'+esc(s.url)+'" target="_blank" rel="noopener"'+dv+'>'+img+(v?'<span class="pl"><i></i></span>':'')+'</a></div>'
+      : '<div class="left"><div class="thumb">'+img+'</div></div>';
+    var body='<div class="body"><div class="t">'+esc(s.title)+badge+'</div>'+
+      '<div class="m">'+esc(sub)+'</div>'+
+      (s.note?'<div class="meta">'+esc(s.note)+'</div>':'')+'</div>';
+    return '<div class="card" data-sug="'+esc(s.id)+'">'+head+body+'</div>'+controls;
+  }
+
+  function render(list,el){
+    var keep=list.filter(function(s){return score(s)> -T;});
+    if(!keep.length){ el.innerHTML='<div class="cempty">No community suggestions yet.</div>';
+                      return; }
+    var groups={song:[],trailer:[],ott:[]};
+    keep.forEach(function(s){ (groups[s.kind]||groups.song).push(s); });
+    var names={song:'Songs',trailer:'Trailers &amp; teasers',ott:'OTT releases'};
+    var h='';
+    ['song','trailer','ott'].forEach(function(k){
+      if(!groups[k].length) return;
+      h+='<h2>'+names[k]+' <span class="count">'+groups[k].length+'</span></h2>'+
+         '<div class="grid">'+groups[k].map(card).join('')+'</div>';
+    });
+    el.innerHTML=h;
+  }
+
+  function load(el,week){
+    if(!ready){
+      el.innerHTML='<div class="cbanner"><strong>Community suggestions aren\'t switched on yet.</strong> '+
+        'This section needs a Supabase project — the schema and setup steps are in '+
+        '<code>_scripts/COMMUNITY-SETUP.md</code>.</div>';
+      return Promise.resolve();
+    }
+    var q='suggestions?select=*,votes(vote,client_id)&order=created_at.desc';
+    if(week) q+='&week=eq.'+encodeURIComponent(week);
+    return api(q).then(function(rows){ render(rows||[],el); })
+      .catch(function(e){
+        el.innerHTML='<div class="cbanner">Couldn\'t load community suggestions ('+
+          esc(e.message)+'). The curated list above is unaffected.</div>';
+      });
+  }
+
+  document.addEventListener('click',function(ev){
+    var b=ev.target.closest('.vote button'); if(!b||b.disabled) return;
+    var box=b.closest('.vote'), id=box.dataset.id, v=+b.dataset.v;
+    box.querySelectorAll('button').forEach(function(x){x.disabled=true;});
+    b.classList.add('picked');
+    api('votes',{method:'POST',headers:{'Prefer':'return=minimal'},
+        body:JSON.stringify({suggestion_id:id,vote:v,client_id:cid()})})
+      .then(function(){
+        var host=box.closest('[data-community]')||document.querySelector('[data-community]');
+        if(host) load(host,host.dataset.week||'');
+      })
+      .catch(function(e){
+        box.querySelector('.score').textContent =
+          /409|duplicate/i.test(e.message) ? 'you already voted on this'
+                                           : 'vote failed — try again';
+      });
+  });
+
+  document.querySelectorAll('[data-community]').forEach(function(el){
+    load(el, el.dataset.week||'');
+  });
+
+  var form=document.getElementById('sugform');
+  if(form){
+    var err=form.querySelector('.err'), okmsg=form.querySelector('.ok');
+    var kindSel=form.querySelector('[name=kind]');
+    function sync(){
+      var ott=kindSel.value==='ott';
+      form.querySelector('[data-only=ott]').style.display=ott?'':'none';
+      form.querySelector('[data-only=video]').style.display=ott?'none':'';
+    }
+    kindSel.addEventListener('change',sync); sync();
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      err.style.display='none'; okmsg.style.display='none';
+      var f=Object.fromEntries(new FormData(form).entries());
+      if(!f.title || f.title.trim().length<2){
+        err.textContent='Give the song, trailer or film a name.';
+        err.style.display='block'; return;
+      }
+      if(f.kind!=='ott'){
+        if(!/^https:\/\/(www\.)?(youtube\.com|youtu\.be)\//.test(f.url||'')){
+          err.textContent='Paste the YouTube link for the official upload.';
+          err.style.display='block'; return;
+        }
+      } else if(!f.platform){
+        err.textContent='Pick the streaming platform.';
+        err.style.display='block'; return;
+      }
+      if(!ready){
+        err.textContent='Submissions aren\'t switched on yet — Supabase isn\'t configured.';
+        err.style.display='block'; return;
+      }
+      f.client_id=cid();
+      Object.keys(f).forEach(function(k){ if(f[k]==='') delete f[k]; });
+      api('suggestions',{method:'POST',headers:{'Prefer':'return=minimal'},
+          body:JSON.stringify(f)})
+        .then(function(){
+          form.reset(); sync();
+          okmsg.textContent='Thanks — it\'s in the queue below for others to check.';
+          okmsg.style.display='block';
+          document.querySelectorAll('[data-community]').forEach(function(el){
+            load(el, el.dataset.week||''); });
+        })
+        .catch(function(e){ err.textContent='Couldn\'t save that ('+e.message+').';
+                            err.style.display='block'; });
+    });
+  }
 })();
 </script></body></html>
