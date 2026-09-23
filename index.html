@@ -1,51 +1,65 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Telugu Movie Updates — All Weeks</title>
-<meta property="og:title" content="Telugu Movie Updates">
-<meta property="og:description" content="Every week's Telugu songs, trailers and OTT releases in one place.">
-<meta property="og:type" content="website"><meta name="twitter:card" content="summary">
-<style>
+<title>Chitravaaram — A week in Indian cinema</title><meta property="og:title" content="Chitravaaram — A week in Indian cinema"><meta property="og:description" content="A tribute to Indian cinema and a weekly record of every new Telugu song, trailer and streaming release."><meta name="description" content="A tribute to Indian cinema and a weekly record of every new Telugu song, trailer and streaming release."><meta property="og:site_name" content="Chitravaaram"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://image.tmdb.org/t/p/w342/4BsEyziFGWyZY19o2z3lx1D57RN.jpg"><meta name="twitter:image" content="https://image.tmdb.org/t/p/w342/4BsEyziFGWyZY19o2z3lx1D57RN.jpg"><style>
 *{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;
-background:#0d0f13;color:#e8eaed;line-height:1.5}
-.wrap{max-width:1080px;margin:0 auto;padding:32px 20px 72px}
-header{border-bottom:1px solid #23262d;padding-bottom:20px;margin-bottom:8px}
-h1{margin:0 0 6px;font-size:30px;letter-spacing:-.5px}
-.sub{color:#9aa1ac;font-size:14px}
-.sub a{color:#7fb3ff;text-decoration:none}
-.nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:22px 0 20px}
-.nav a{background:#1a1d24;border:1px solid #262a33;color:#c9cfd8;padding:7px 14px;
-border-radius:999px;text-decoration:none;font-size:13px;font-weight:500}
-.nav a:hover{background:#242833;color:#fff}
-.nav a.allweeks{margin-left:auto;border-color:#3a72c4;color:#8fc0ff;background:#161d28}
-.nav a.allweeks:hover{background:#1d2836;color:#fff}
-a.back{display:inline-block;color:#7fb3ff;text-decoration:none;font-size:13px;
-font-weight:500;margin-bottom:16px}
-a.back:hover{text-decoration:underline}
-footer a.back{margin:0 0 8px}
-.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 26px}
-.tools input{flex:1 1 240px;min-width:0;background:#14171d;border:1px solid #262a33;
-color:#e8eaed;padding:9px 14px;border-radius:9px;font-size:14px;font-family:inherit}
-.tools input:focus{outline:none;border-color:#3a72c4}
-.playall{display:inline-flex;align-items:center;gap:8px;background:#c8102e;color:#fff;
-border:none;padding:9px 16px;border-radius:9px;text-decoration:none;font-size:14px;
-font-weight:600;white-space:nowrap}
-.playall:hover{background:#e01634}
-.chips{display:flex;gap:7px;flex-wrap:wrap;margin:-6px 0 14px}
-.chip{background:#14171d;border:1px solid #262a33;color:#aab1bb;padding:5px 12px;
-border-radius:999px;font-size:12.5px;cursor:pointer;font-family:inherit}
-.chip:hover{background:#1c2029;color:#fff}
-.chip.on{background:#1d3350;border-color:#3a72c4;color:#cfe2ff}
-h2{font-size:19px;margin:38px 0 14px;display:flex;align-items:center;gap:10px}
-h2 .count{font-size:12px;font-weight:500;color:#8b929d;background:#1a1d24;
-padding:2px 9px;border-radius:999px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
-.card{display:flex;gap:12px;background:#14171d;border:1px solid #22262e;border-radius:11px;
-padding:10px;text-decoration:none;color:inherit;transition:.15s;position:relative}
-.card:hover{border-color:#3a72c4;background:#171b23}
-.card.nolink{opacity:.55}.card.nolink:hover{border-color:#22262e;background:#14171d}
+:root{
+--bg:#08090b; --bg2:#0d0f13; --surface:#12151b; --surface2:#171b22;
+--line:#20242c; --line2:#2b313b;
+--ink:#eceef1; --ink2:#a0a7b2; --ink3:#6c7481;
+--amber:#e9b96e; --amber2:#f3cf97; --ember:#c8632e; --cool:#7fb3ff;
+--radius:12px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;
+line-height:1.55;-webkit-font-smoothing:antialiased}
+.grain{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.05;
+mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:300px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+
+/* ---- top bar ---- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(8,9,11,.82);
+backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:22px;height:58px}
+.brand{display:flex;align-items:baseline;gap:9px;text-decoration:none;flex-shrink:0}
+.brand b{font-size:18px;font-weight:600;letter-spacing:-.3px}
+.brand span{font-size:10.5px;color:var(--amber);text-transform:uppercase;
+letter-spacing:1.6px;font-weight:600}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{position:relative;padding:7px 11px;border-radius:8px;text-decoration:none;
+font-size:13.5px;color:var(--ink2);white-space:nowrap}
+nav.main a:hover{color:var(--ink);background:var(--surface)}
+nav.main a.on{color:var(--bg);background:var(--amber);font-weight:600}
+nav.main a.soon::after{content:'';position:absolute;top:6px;right:5px;width:4px;height:4px;
+border-radius:50%;background:var(--ember)}
+@media(max-width:860px){.topbar .wrap{height:auto;padding-top:10px;padding-bottom:10px;
+flex-wrap:wrap}nav.main{margin-left:0;width:100%}}
+
+/* ---- headings ---- */
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.4px}
+h1{font-size:clamp(28px,4.2vw,44px)}
+h2{font-size:21px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;
+color:var(--amber);font-weight:700;margin-bottom:10px}
+.lede{color:var(--ink2);font-size:15.5px;max-width:62ch}
+.serif{font-family:Georgia,'Iowan Old Style','Times New Roman',serif}
+
+/* ---- section header ---- */
+.phead{padding:44px 0 26px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.phead h1{margin-bottom:10px}
+
+/* ---- generic cards / grid ---- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);
+border-radius:var(--radius);padding:10px;text-decoration:none;color:inherit;transition:.15s;
+position:relative}
+.card:hover{border-color:var(--amber);background:var(--surface2)}
+.card.nolink{opacity:.5}.card.nolink:hover{border-color:var(--line);background:var(--surface)}
 .left{flex-shrink:0;width:112px}
-.left img{width:100%;height:63px;object-fit:cover;border-radius:7px;background:#22262e;display:block}
+.left img{width:100%;height:63px;object-fit:cover;border-radius:7px;background:var(--line);
+display:block}
 .thumb{position:relative;display:block;line-height:0}
 .thumb .pl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
 opacity:0;transition:.15s}
@@ -54,113 +68,192 @@ display:flex;align-items:center;justify-content:center}
 .thumb .pl i::after{content:'';border-left:9px solid #fff;border-top:6px solid transparent;
 border-bottom:6px solid transparent;margin-left:3px}
 .card:hover .thumb .pl{opacity:1}
-.svc{display:flex;gap:3px;margin-top:5px}
-.svc a{flex:1 1 0;min-width:0;height:21px;display:flex;align-items:center;justify-content:center;
-border-radius:5px;background:#191d25;border:1px solid #252a33;opacity:.72;transition:.15s}
-.svc a:hover{opacity:1;background:#232936;border-color:#3a4250}
-.svc svg{width:12px;height:12px;display:block}
 .card .body{min-width:0;display:flex;flex-direction:column;justify-content:center;
 text-decoration:none;color:inherit}
 .t{font-weight:600;font-size:14.5px;margin-bottom:2px}
-.m{font-size:12.5px;color:#98a0ab}
-.meta{font-size:11px;color:#6f7783;margin-top:3px}
-.flag{display:inline-block;font-size:10px;color:#ffb454;border:1px solid #4a3a1c;
-background:#2a2113;border-radius:4px;padding:0 5px;margin-left:6px;vertical-align:1px}
+.m{font-size:12.5px;color:var(--ink2)}
+.meta{font-size:11px;color:var(--ink3);margin-top:3px}
+.flag{display:inline-block;font-size:10px;color:var(--amber);border:1px solid #4a3a1c;
+background:#241c0f;border-radius:4px;padding:0 5px;margin-left:6px;vertical-align:1px}
+
+/* streaming service chips under a song thumbnail */
+.svc{display:flex;gap:3px;margin-top:5px}
+.svc a{flex:1 1 0;min-width:0;height:21px;display:flex;align-items:center;
+justify-content:center;border-radius:5px;background:#161a21;border:1px solid var(--line2);
+opacity:.7;transition:.15s}
+.svc a:hover{opacity:1;background:#1e242e;border-color:#3d4654}
+.svc svg{width:12px;height:12px;display:block}
+
+/* ---- tables ---- */
 table{width:100%;border-collapse:collapse;font-size:14px}
-th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.6px;
-color:#79808b;font-weight:600;padding:0 10px 8px;border-bottom:1px solid #23262d}
-td{padding:11px 10px;border-bottom:1px solid #1b1e25;vertical-align:middle}
-tr:hover td{background:#14171d}
-.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;
-font-weight:600;color:#fff}
-td.dim{color:#98a0ab}.note{font-size:12px;color:#98a0ab}
+th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:1px;
+color:var(--ink3);font-weight:700;padding:0 10px 9px;border-bottom:1px solid var(--line)}
+td{padding:11px 10px;border-bottom:1px solid #15181e;vertical-align:middle}
+tr:hover td{background:var(--surface)}
+td.dim{color:var(--ink2)}.note{font-size:12px;color:var(--ink2)}
 th.poster,td.poster{width:46px;padding-right:0}
 td.poster img,td.poster .noposter{width:46px;height:69px;border-radius:5px;display:block;
-object-fit:cover;background:#22262e}
-td.poster .noposter{border:1px dashed #2c313b;background:#171b22}
+object-fit:cover;background:var(--line)}
+td.poster .noposter{border:1px dashed var(--line2);background:var(--bg2)}
+.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;
+font-weight:600;color:#fff}
 a.ottlink{color:inherit;text-decoration:none}
-a.ottlink:hover strong{color:#8fc0ff;text-decoration:underline}
+a.ottlink:hover strong{color:var(--amber);text-decoration:underline}
 a.ottlink:hover .badge{filter:brightness(1.15)}
-a.ottlink:hover img{outline:1px solid #3a72c4;outline-offset:1px}
-.empty{color:#6f7783;font-size:14px;font-style:italic;padding:8px 0}
-.noresults{color:#6f7783;font-size:14px;font-style:italic;padding:10px 0;display:none}
-footer{margin-top:56px;padding-top:18px;border-top:1px solid #23262d;
-color:#6f7783;font-size:12px}
-footer a{color:#7fb3ff}
-.lb{position:fixed;inset:0;background:rgba(6,8,11,.92);z-index:99;
+a.ottlink:hover img{outline:1px solid var(--amber);outline-offset:1px}
+
+/* ---- controls ---- */
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 22px}
+.tools input{flex:1 1 260px;min-width:0;background:var(--surface);border:1px solid var(--line);
+color:var(--ink);padding:10px 14px;border-radius:10px;font-size:14px;font-family:inherit}
+.tools input:focus{outline:none;border-color:var(--amber)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:-4px 0 16px}
+.chip{background:var(--surface);border:1px solid var(--line);color:var(--ink2);
+padding:5px 12px;border-radius:999px;font-size:12.5px;cursor:pointer;font-family:inherit}
+.chip:hover{background:var(--surface2);color:var(--ink)}
+.chip.on{background:#3a2c14;border-color:var(--amber);color:var(--amber2)}
+.playall{display:inline-flex;align-items:center;gap:8px;background:#c8102e;color:#fff;
+border:none;padding:10px 17px;border-radius:10px;text-decoration:none;font-size:14px;
+font-weight:600;white-space:nowrap}
+.playall:hover{background:#e01634}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);
+border:1px solid var(--line2);color:var(--ink);padding:9px 16px;border-radius:10px;
+text-decoration:none;font-size:14px;font-weight:500}
+.btn:hover{border-color:var(--amber);color:var(--amber2)}
+.btn.primary{background:var(--amber);color:#1a1406;border-color:var(--amber);font-weight:600}
+.btn.primary:hover{background:var(--amber2);color:#1a1406}
+
+.count{font-size:11.5px;font-weight:500;color:var(--ink3);background:var(--surface);
+padding:2px 9px;border-radius:999px}
+.empty{color:var(--ink3);font-size:14px;font-style:italic;padding:8px 0}
+.noresults{color:var(--ink3);font-size:14px;font-style:italic;padding:10px 0;display:none}
+
+/* ---- lightbox ---- */
+.lb{position:fixed;inset:0;background:rgba(5,6,8,.94);z-index:1000;
 display:flex;align-items:center;justify-content:center;padding:20px}
 .lb[hidden]{display:none}
-.lbin{width:100%;max-width:900px}
+.lbin{width:100%;max-width:920px}
 .lbbar{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.lbt{color:#e8eaed;font-size:14px;font-weight:600;flex:1;min-width:0;
+.lbt{color:var(--ink);font-size:14px;font-weight:600;flex:1;min-width:0;
 overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.lbbar a{color:#7fb3ff;font-size:13px;text-decoration:none;white-space:nowrap}
-.lbx{background:#1a1d24;border:1px solid #2c313b;color:#c9cfd8;width:32px;height:32px;
-border-radius:8px;font-size:19px;line-height:1;cursor:pointer;flex-shrink:0}
-.lbx:hover{background:#242833;color:#fff}
-.lbf{position:relative;padding-bottom:56.25%;height:0;border-radius:11px;overflow:hidden;
+.lbbar a{color:var(--amber);font-size:13px;text-decoration:none;white-space:nowrap}
+.lbx{background:var(--surface);border:1px solid var(--line2);color:var(--ink2);width:32px;
+height:32px;border-radius:8px;font-size:19px;line-height:1;cursor:pointer;flex-shrink:0}
+.lbx:hover{background:var(--surface2);color:var(--ink)}
+.lbf{position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;
 background:#000}
 .lbf iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-@media(max-width:560px){.left{width:92px}.left img{height:52px}.wrap{padding:22px 14px 50px}
+
+/* ---- footer ---- */
+footer.site{margin-top:64px;border-top:1px solid var(--line);padding:26px 0 54px;
+color:var(--ink3);font-size:12.5px}
+footer.site a{color:var(--ink2);text-decoration:none}
+footer.site a:hover{color:var(--amber)}
+.fnav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+@media(max-width:560px){.left{width:92px}.left img{height:52px}
 .svc{gap:2px}.svc a{height:19px}.svc svg{width:11px;height:11px}
 .playall{flex:1 1 100%;justify-content:center}}
 
-.card img{display:none}.card{padding:13px 15px}
-details{margin:0 0 10px}
-details>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;
-padding:11px 14px;background:#14171d;border:1px solid #22262e;border-radius:10px;
-font-weight:600;font-size:15px;user-select:none}
-details>summary::-webkit-details-marker{display:none}
-details>summary:hover{background:#181c24;border-color:#2e3541}
-details>summary::before{content:'';width:0;height:0;border-left:5px solid #79808b;
-border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .15s}
-details[open]>summary::before{transform:rotate(90deg)}
-details>summary .n{margin-left:auto;font-size:11.5px;font-weight:500;color:#79808b;
-background:#1e222a;padding:2px 9px;border-radius:999px}
-.year{margin-bottom:14px}
-.year>summary{font-size:17px;background:#171b22;letter-spacing:-.2px}
-.months{padding:10px 0 4px 16px;border-left:1px solid #22262e;margin-left:14px}
-.weeks{padding:10px 0 6px 4px}
-.card.latest{border-color:#3a72c4;background:#161d28;margin-bottom:26px;padding:15px 17px}
-.card.latest .t{font-size:16px}
-.hits{font-size:12px;color:#8fc0ff;margin-top:5px;display:none}
-.searching .hits.has{display:block}
-.searching .card.latest{display:none}
-#nores{display:none;color:#6f7783;font-style:italic;font-size:14px;padding:10px 0}
-.querying #browse{display:none}
-.res-card img{display:block}
-.res-card{padding:10px}
-.res-card .left{width:112px}
-.res-card.ottrow .left{width:56px}
-.res-card.ottrow .left img{height:84px;border-radius:6px}
-.res-card.ottrow .left img:not([src]){border:1px dashed #2c313b;background:#171b22}
-.rsum{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:2px 0 20px;
-color:#9aa1ac;font-size:14px}
-.rsum>span{flex:1 1 auto;min-width:0}
-#res h2{font-size:17px;margin:26px 0 12px}
-.chip.ex{cursor:pointer;display:inline}
-.hint{color:#6f7783;font-size:12.5px;margin:-10px 0 22px}
-.hint button{background:none;border:0;color:#7fb3ff;font:inherit;cursor:pointer;padding:0}
-.hint button:hover{text-decoration:underline}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{position:relative;z-index:2;padding:66px 20px 54px;text-align:center}
+.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.04;letter-spacing:-1.4px;
+margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .lede{margin:0 auto;font-size:16.5px;color:var(--ink2)}
+.hero .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.letterbox{position:absolute;left:0;right:0;height:26px;z-index:3;pointer-events:none}
+.letterbox.t{top:0;background:linear-gradient(180deg,var(--bg),transparent)}
+.letterbox.b{bottom:0;background:linear-gradient(0deg,var(--bg),transparent)}
+.beam{position:absolute;inset:0;z-index:1;
+background:radial-gradient(1100px 380px at 50% -8%,rgba(233,185,110,.16),transparent 70%)}
+
+.wallwrap{position:relative;padding:8px 0 0}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px}
+.tile{position:relative;aspect-ratio:2/3;border-radius:8px;overflow:hidden;
+background:var(--surface);border:1px solid var(--line);cursor:default;
+transition:transform .18s,border-color .18s}
+.tile img{width:100%;height:100%;object-fit:cover;display:block;
+filter:grayscale(.55) contrast(1.05);transition:.25s}
+.tile:hover{transform:translateY(-4px);border-color:var(--amber);z-index:4}
+.tile:hover img{filter:none}
+.tile figcaption{position:absolute;inset:auto 0 0 0;padding:16px 8px 7px;
+background:linear-gradient(0deg,rgba(6,7,9,.96),transparent);opacity:0;transition:.2s}
+.tile:hover figcaption{opacity:1}
+.tile .ft{font-size:11.5px;font-weight:600;line-height:1.25;display:block}
+.tile .fy{font-size:10px;color:var(--amber);letter-spacing:.6px}
+.tile.dim{opacity:.18;filter:saturate(.3)}
+.eras{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0 20px;justify-content:center}
+
+.sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));
+gap:12px;margin-top:14px}
+.scard{display:block;background:var(--surface);border:1px solid var(--line);
+border-radius:var(--radius);padding:18px;text-decoration:none;transition:.15s}
+.scard:hover{border-color:var(--amber);background:var(--surface2);transform:translateY(-2px)}
+.scard .k{font-size:10.5px;text-transform:uppercase;letter-spacing:1.5px;
+color:var(--amber);font-weight:700}
+.scard h3{margin:8px 0 6px;font-size:17px}
+.scard p{margin:0;font-size:13.5px;color:var(--ink2);line-height:1.5}
+.scard.off{opacity:.55}.scard.off:hover{transform:none;border-color:var(--line2)}
+.scard .soon{font-size:10.5px;color:var(--ember);font-weight:700;text-transform:uppercase;
+letter-spacing:1.2px}
+.sec{padding:46px 0 0}
+.sec .hd{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.sec .hd a{margin-left:auto;font-size:13px;color:var(--amber);text-decoration:none}
+.sec .hd a:hover{text-decoration:underline}
+.quote{text-align:center;padding:52px 20px 10px;color:var(--ink2);font-size:18px;
+line-height:1.65;max-width:70ch;margin:0 auto}
+.quote b{color:var(--amber2);font-weight:600}
 </style></head><body>
-<script type="application/json" id="wx">{"2026-09-20-movie-updates.html": {"date": "2026-09-20", "label": "Week of 20 September 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Jai Jai Ram", "m": "Ramayana", "u": "https://www.youtube.com/watch?v=yWNPxS0sXnE", "v": "yWNPxS0sXnE", "c": "T-Series"}, {"t": "Kaka Dhoom Dhamaka", "m": "Crazy Kalyanam", "u": "https://www.youtube.com/watch?v=Ap_1sFv6qvA", "v": "Ap_1sFv6qvA", "c": "Think Music Telugu"}, {"t": "Vevela Oohale Chupina", "m": "Baa Baa Black Sheep", "u": "https://www.youtube.com/watch?v=HC9fxIcH_tI", "v": "HC9fxIcH_tI", "c": "Saregama Telugu"}], "trailers": [{"t": "Aadarsha Kutumbam", "k": "Teaser", "u": "https://www.youtube.com/watch?v=-0NfIzrQSpQ", "v": "-0NfIzrQSpQ", "c": "Haarika & Hassine Creations"}, {"t": "Sigma", "k": "Trailer", "u": "https://www.youtube.com/watch?v=X0ASrHeMuVE", "v": "X0ASrHeMuVE", "c": "Saregama Telugu"}, {"t": "SCENE", "k": "Teaser", "u": "https://www.youtube.com/watch?v=h4AO5MF16yU", "v": "h4AO5MF16yU", "c": "Sony Music South"}, {"t": "Maya Lady", "k": "Teaser", "u": "https://www.youtube.com/watch?v=1b5o-_yZjAc", "v": "1b5o-_yZjAc", "c": "Sony Music South"}, {"t": "HATAH", "k": "Teaser", "u": "https://www.youtube.com/watch?v=pwF3SSxOxCg", "v": "pwF3SSxOxCg", "c": "YouWe Media"}, {"t": "Anumana Pakshi", "k": "Trailer", "u": "https://www.youtube.com/watch?v=HEIwCgRLGiI", "v": "HEIwCgRLGiI", "c": "T-Series Telugu"}, {"t": "AASMAAN", "k": "Teaser", "u": "https://www.youtube.com/watch?v=Frg7l6mt4aU", "v": "Frg7l6mt4aU", "c": "YouWe Media"}, {"t": "Least Eligible Bachelor", "k": "Teaser", "u": "https://www.youtube.com/watch?v=oxvsaLPuQFc", "v": "oxvsaLPuQFc", "c": "ETV Win Originals"}, {"t": "Vishnu Sahasra Namam", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=GKVfzUrc0BM", "v": "GKVfzUrc0BM", "c": "NV Pictures"}], "ott": [{"t": "Irumudi", "p": "Netflix", "d": "Week of 20 Sept", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/sPePQmJRKkB14sGjB7zBkLJkaTW.jpg", "u": "https://www.netflix.com/search?q=Irumudi"}, {"t": "Hushaaru Pittalu", "p": "Prime Video", "d": "Week of 20 Sept", "l": "Telugu", "poster": "", "u": "https://www.primevideo.com/search?phrase=Hushaaru%20Pittalu"}, {"t": "Modha Rathiri", "p": "Netflix", "d": "Week of 20 Sept", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/hRWSgz2YbukvpBMUDr9fQ7KxaZh.jpg", "u": "https://www.netflix.com/search?q=Modha%20Rathiri"}, {"t": "Thudakkam", "p": "JioHotstar", "d": "Week of 20 Sept", "l": "Malayalam", "poster": "https://image.tmdb.org/t/p/w185/A8Y0QLNqaFvsergQe80tC6Nfa2k.jpg", "u": "https://www.hotstar.com/in/search?q=Thudakkam"}, {"t": "Lust Stories 3", "p": "Netflix", "d": "Week of 20 Sept", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/cLA83DD1qMEBwbRIYXf29RKjMja.jpg", "u": "https://www.netflix.com/search?q=Lust%20Stories%203"}, {"t": "Stranger Things: Tales from '85", "p": "Netflix", "d": "Week of 20 Sept", "l": "English", "poster": "https://image.tmdb.org/t/p/w185/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg", "u": "https://www.netflix.com/search?q=Stranger%20Things%3A%20Tales%20from%20%2785"}, {"t": "Lee Cronin's The Mummy", "p": "JioHotstar", "d": "Week of 20 Sept", "l": "English", "poster": "https://image.tmdb.org/t/p/w185/1q308iixueCU4pFtSYugNOevtNx.jpg", "u": "https://www.hotstar.com/in/search?q=Lee%20Cronin%27s%20The%20Mummy"}, {"t": "The India Story", "p": "JioHotstar", "d": "Week of 20 Sept", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/ocasYrRgkfKBdabKNPl8ttZuu7x.jpg", "u": "https://www.hotstar.com/in/search?q=The%20India%20Story"}, {"t": "Family Full House with Rohit Sharma", "p": "SonyLIV", "d": "Week of 20 Sept", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/r2QZyiHYfhylzT5OWatXCu3kigI.jpg", "u": "https://www.sonyliv.com/search?searchTerm=Family%20Full%20House%20with%20Rohit%20Sharma"}], "file": "2026-09-20-movie-updates.html"}, "2026-09-13-movie-updates.html": {"date": "2026-09-13", "label": "Week of 13 September 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Srilatha", "m": "Idupu Kayitham", "u": "https://www.youtube.com/watch?v=rnyTjyyCWks", "v": "rnyTjyyCWks", "c": "Saregama Telugu"}, {"t": "Soggadila", "m": "Mana Doctor Babe", "u": "https://www.youtube.com/watch?v=vKNmpKQ3-iQ", "v": "vKNmpKQ3-iQ", "c": "Mango Telugu Cinema"}, {"t": "Dam Dam", "m": "Chakkora", "u": "https://www.youtube.com/watch?v=BUR9c28uD-Y", "v": "BUR9c28uD-Y", "c": "T-Series Telugu"}], "trailers": [{"t": "Dada", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=EWgZdMANAkc", "v": "EWgZdMANAkc", "c": "Vriddhi Cinemas"}, {"t": "Ranabaali", "k": "Teaser", "u": "https://www.youtube.com/watch?v=L7qEKA-e2qI", "v": "L7qEKA-e2qI", "c": "Mythri Movie Makers"}, {"t": "SCENE", "k": "Teaser", "u": "https://www.youtube.com/watch?v=h4AO5MF16yU", "v": "h4AO5MF16yU", "c": "Sony Music South"}, {"t": "Comrade Kalyan", "k": "Teaser", "u": "https://www.youtube.com/watch?v=Tr-4d0FYNB8", "v": "Tr-4d0FYNB8", "c": "Saregama Telugu"}, {"t": "418", "k": "Trailer", "u": "https://www.youtube.com/watch?v=teyF15t-8lQ", "v": "teyF15t-8lQ", "c": "Mythri Movie Makers"}, {"t": "Antha Ramuloru Chusukuntaru", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=0aHZpLetZgg", "v": "0aHZpLetZgg", "c": "Dheeraj Mogilineni Entertainment"}, {"t": "Kaagitham Padavalu", "k": "Trailer", "u": "https://www.youtube.com/watch?v=NhDZESsVAzA", "v": "NhDZESsVAzA", "c": "T-Series Telugu"}, {"t": "Aadarsha Kutumbam", "k": "Teaser", "u": "https://www.youtube.com/watch?v=-0NfIzrQSpQ", "v": "-0NfIzrQSpQ", "c": "Haarika & Hassine Creations"}], "ott": [{"t": "Ali Baba aur 40 Bhoot", "p": "JioHotstar", "d": "11 Sept", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/cYjdacskAhvWdjhxsSdhop1SxON.jpg", "u": "https://www.hotstar.com/in/search?q=Ali%20Baba%20aur%2040%20Bhoot"}, {"t": "Jungle Tales with Mowgli", "p": "JioHotstar", "d": "12 Sept", "l": "Hindi, English", "poster": "https://image.tmdb.org/t/p/w185/qByhybakXzIhgUjK8PKbmP6fEWf.jpg", "u": "https://www.hotstar.com/in/search?q=Jungle%20Tales%20with%20Mowgli"}, {"t": "Vishwanath & Sons", "p": "Netflix", "d": "Week of 13 Sept", "l": "Telugu, Tamil", "poster": "https://image.tmdb.org/t/p/w185/adDZVEQZnMJ380zPOmVj6vBWHgk.jpg", "u": "https://www.netflix.com/search?q=Vishwanath%20%26%20Sons"}, {"t": "Makutam", "p": "Prime Video", "d": "Week of 13 Sept", "l": "Telugu, Tamil", "poster": "https://image.tmdb.org/t/p/w185/oM0daQezJfdK8ADtwi1SMCy1BJA.jpg", "u": "https://www.primevideo.com/search?phrase=Makutam"}, {"t": "Varavu", "p": "ZEE5", "d": "Week of 13 Sept", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/AqTDuq8bYKDV42MiOVuf83BSKmJ.jpg", "u": "https://www.zee5.com/search?q=Varavu"}, {"t": "Panchanama", "p": "ZEE5", "d": "Week of 13 Sept", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/oUpPFUmje1ViMNLjacXuqcIJ9mD.jpg", "u": "https://www.zee5.com/search?q=Panchanama"}, {"t": "The Revolutionaries", "p": "Prime Video", "d": "Week of 13 Sept", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/5fLyYAxXWP4BxZCBN79NV1eiT4d.jpg", "u": "https://www.primevideo.com/search?phrase=The%20Revolutionaries"}], "file": "2026-09-13-movie-updates.html"}, "2026-09-06-movie-updates.html": {"date": "2026-09-06", "label": "Week of 6 September 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Chusaaley", "m": "Kaagitham Padavalu", "u": "https://www.youtube.com/watch?v=7C3vtRH_vzc", "v": "7C3vtRH_vzc", "c": "T-Series Telugu"}, {"t": "Sarigamale Gunde Anchullo", "m": "Maya Lady", "u": "https://www.youtube.com/watch?v=AOiMxQu12Es", "v": "AOiMxQu12Es", "c": "Sony Music South"}, {"t": "The Rage Of Varahi", "m": "Mahendragiri Varahi", "u": "https://www.youtube.com/watch?v=GMCOUzzmJPE", "v": "GMCOUzzmJPE", "c": "Junglee Music Telugu"}, {"t": "Nee Parichayam", "m": "Tortoise", "u": "https://www.youtube.com/watch?v=XceJdWL9a9E", "v": "XceJdWL9a9E", "c": "Lahari Music"}, {"t": "Allakallolamga", "m": "Gaja", "u": "https://www.youtube.com/watch?v=F_xHwofiUH8", "v": "F_xHwofiUH8", "c": "Saregama Telugu"}], "trailers": [{"t": "Mahendragiri Varahi", "k": "Trailer", "u": "https://www.youtube.com/watch?v=tcKLMeA2Hwc", "v": "tcKLMeA2Hwc", "c": "Junglee Music Telugu"}, {"t": "EPIC", "k": "Trailer", "u": "https://www.youtube.com/watch?v=uuPuy3HbJ08", "v": "uuPuy3HbJ08", "c": "Aditya Music"}, {"t": "Sardar 2", "k": "Trailer", "u": "https://www.youtube.com/watch?v=lnLsKCQzf3Q", "v": "lnLsKCQzf3Q", "c": "Sony Music South"}, {"t": "Maremma", "k": "Trailer", "u": "https://www.youtube.com/watch?v=cq6FkXNvsmk", "v": "cq6FkXNvsmk", "c": "T-Series Telugu"}, {"t": "Delulu", "k": "Teaser", "u": "https://www.youtube.com/watch?v=lZZ6t5GN76Q", "v": "lZZ6t5GN76Q", "c": "YouWe Media"}, {"t": "Thellakaagitham", "k": "Teaser", "u": "https://www.youtube.com/watch?v=ZgSE001steA", "v": "ZgSE001steA", "c": "Saregama Telugu"}, {"t": "Chakkora", "k": "Teaser", "u": "https://www.youtube.com/watch?v=KwrSiBA8nhE", "v": "KwrSiBA8nhE", "c": "T-Series Telugu"}, {"t": "KurmaAvatar", "k": "Teaser", "u": "https://www.youtube.com/watch?v=B81LUN2lC5w", "v": "B81LUN2lC5w", "c": "Panchavaktra Pictures"}], "ott": [{"t": "The Court", "p": "JioHotstar", "d": "4 Sept", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/q3A6C5pwmX0VGrmI7D5HgXVH3VE.jpg", "u": "https://www.hotstar.com/in/search?q=The%20Court"}, {"t": "Korean Kanakaraju", "p": "Netflix", "d": "Week of 6 Sept", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/vUEb8v8W5ANRXhydogbmjXfRfni.jpg", "u": "https://www.netflix.com/search?q=Korean%20Kanakaraju"}, {"t": "Pallaburusu", "p": "Prime Video", "d": "Week of 6 Sept", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/sZsHYS3ckPoSUBnEB5J3CiE3oBV.jpg", "u": "https://www.primevideo.com/search?phrase=Pallaburusu"}, {"t": "DC", "p": "Sun NXT", "d": "Week of 6 Sept", "l": "Telugu, Tamil", "poster": "https://image.tmdb.org/t/p/w185/8k71CD24GIAmEFgHYRhqFvwbXH8.jpg", "u": "https://www.sunnxt.com/search?query=DC"}, {"t": "G.D.N", "p": "Netflix", "d": "Week of 6 Sept", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/aAbvbKbNU6YyYDZ5ntSQcOygliw.jpg", "u": "https://www.netflix.com/search?q=G.D.N"}, {"t": "Dhamaal 4", "p": "Netflix", "d": "Week of 6 Sept", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/pkY8xl3GijJ38KA3vTiPhZPRDvE.jpg", "u": "https://www.netflix.com/search?q=Dhamaal%204"}, {"t": "Unmadham", "p": "SonyLIV", "d": "Week of 6 Sept", "l": "Malayalam", "poster": "https://image.tmdb.org/t/p/w185/6AIMHBUY6PCHVYASWZ0GcTA9Kph.jpg", "u": "https://www.sonyliv.com/search?searchTerm=Unmadham"}], "file": "2026-09-06-movie-updates.html"}, "2026-08-30-movie-updates.html": {"date": "2026-08-30", "label": "Week of 30 August 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Loser", "m": "I'm Game", "u": "https://www.youtube.com/watch?v=fPm9P7IWDWU", "v": "fPm9P7IWDWU", "c": "Zee Music South"}, {"t": "School Song", "m": "Summer Holidays", "u": "https://www.youtube.com/watch?v=lvyH0ATKsrY", "v": "lvyH0ATKsrY", "c": "Think Music Telugu"}, {"t": "What A Logic Sir Ji", "m": "Mahendragiri Varahi", "u": "https://www.youtube.com/watch?v=2C5Fs8r4H3k", "v": "2C5Fs8r4H3k", "c": "Junglee Music Telugu"}], "trailers": [{"t": "Romanchakam", "k": "Trailer", "u": "https://www.youtube.com/watch?v=SuHxIe7g-i4", "v": "SuHxIe7g-i4", "c": "T-Series Telugu"}, {"t": "Secret Soldier", "k": "Trailer", "u": "https://www.youtube.com/watch?v=pGe7_kn8NE0", "v": "pGe7_kn8NE0", "c": "Tips Telugu"}, {"t": "Bethlehem Kudumba Unit", "k": "Trailer", "u": "https://www.youtube.com/watch?v=bnJG5OxkB34", "v": "bnJG5OxkB34", "c": "BHAVANA STUDIOS"}, {"t": "Zombie Reddy 2 NXT LVL", "k": "First Look", "u": "https://www.youtube.com/watch?v=O6bk4eueLJc", "v": "O6bk4eueLJc", "c": "People Media Factory"}, {"t": "Mahakali", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=VRffLvdssCg", "v": "VRffLvdssCg", "c": "RKD Studios"}, {"t": "Sahaa", "k": "Trailer", "u": "https://www.youtube.com/watch?v=D5mlZjoivC0", "v": "D5mlZjoivC0", "c": "Sumaira Studios"}, {"t": "Ramba Oorvasi Menaka", "k": "Trailer", "u": "https://www.youtube.com/watch?v=xp3mBhXY8Y8", "v": "xp3mBhXY8Y8", "c": "Annapurna Studios"}], "ott": [{"t": "I, Nobody", "p": "JioHotstar", "d": "25 Aug", "l": "Malayalam", "poster": "https://image.tmdb.org/t/p/w185/qFJl3w9KpVXpfZ3rpmv7p0UYZkP.jpg", "u": "https://www.hotstar.com/in/search?q=I%2C%20Nobody"}, {"t": "Alpha", "p": "Netflix", "d": "28 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/bPtRt3ajQ0EkyeQ1O6iJwAIi9Py.jpg", "u": "https://www.netflix.com/search?q=Alpha"}, {"t": "Bandar", "p": "ZEE5", "d": "28 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/3RRA8UBAdPC08spbDgnU0ykQ2MR.jpg", "u": "https://www.zee5.com/search?q=Bandar"}, {"t": "Babita Singh Reporting", "p": "Prime Video", "d": "28 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/owuFDxJOG1nv3J2wMf5f5jQjqHn.jpg", "u": "https://www.primevideo.com/search?phrase=Babita%20Singh%20Reporting"}, {"t": "Anbe Diana", "p": "SonyLIV", "d": "28 Aug", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/201CEvG6ayNj71iSLxxEk7pUv0N.jpg", "u": "https://www.sonyliv.com/search?searchTerm=Anbe%20Diana"}, {"t": "Michael", "p": "Prime Video", "d": "29 Aug", "l": "English", "poster": "https://image.tmdb.org/t/p/w185/2AvgnCwCakNiJqWZqaQhdGjWNey.jpg", "u": "https://www.primevideo.com/search?phrase=Michael"}], "file": "2026-08-30-movie-updates.html"}, "2026-08-23-movie-updates.html": {"date": "2026-08-23", "label": "Week of 23 August 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Chinni Chinni", "m": "Itllu Arjuna", "u": "https://www.youtube.com/watch?v=bdFi7Bpq6Xw", "v": "bdFi7Bpq6Xw", "c": "T-Series Telugu"}, {"t": "Ala Bolelo", "m": "Jailer 2", "u": "https://www.youtube.com/watch?v=hIHUeuw2yj8", "v": "hIHUeuw2yj8", "c": "Sun TV"}, {"t": "Manasa Vacha", "m": "EPIC First Semester", "u": "https://www.youtube.com/watch?v=uZt5Z7P3NoY", "v": "uZt5Z7P3NoY", "c": "Aditya Music"}], "trailers": [{"t": "KAAKA", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=qJQU9mZugZM", "v": "qJQU9mZugZM", "c": "KVN Productions"}, {"t": "Missing Meghana", "k": "Teaser", "u": "https://www.youtube.com/watch?v=NeP_buUwGkA", "v": "NeP_buUwGkA", "c": "Aditya Music"}, {"t": "Kiku Chiranjeevi", "k": "Trailer", "u": "https://www.youtube.com/watch?v=StC3xtJIGaU", "v": "StC3xtJIGaU", "c": "Kiku Chiranjeevi Movie"}, {"t": "Premane Oorilo", "k": "Teaser", "u": "https://www.youtube.com/watch?v=zRufbl5Yir4", "v": "zRufbl5Yir4", "c": "Aditya Music"}], "ott": [{"t": "Jana Nayagan", "p": "ZEE5", "d": "Week of 23 Aug", "l": "Tamil, Telugu", "poster": "https://image.tmdb.org/t/p/w185/jt8pfSIdi47YpFMMWVRr8w5u2S0.jpg", "u": "https://www.zee5.com/search?q=Jana%20Nayagan"}, {"t": "Chennai Love Story", "p": "SonyLIV", "d": "Week of 23 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/hACM25xigqIYeRgylB0epf34hmk.jpg", "u": "https://www.sonyliv.com/search?searchTerm=Chennai%20Love%20Story"}, {"t": "Srinivasa Mangapuram", "p": "Prime Video", "d": "Week of 23 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/cN6igPJlKFuk5rTrAipQU4qUkWW.jpg", "u": "https://www.primevideo.com/search?phrase=Srinivasa%20Mangapuram"}, {"t": "Pyaar Prema Kalyanam", "p": "Netflix", "d": "Week of 23 Aug", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/AjaNAeMXOrK9n0YqGqX0Lz5qxYu.jpg", "u": "https://www.netflix.com/search?q=Pyaar%20Prema%20Kalyanam"}, {"t": "Dark", "p": "Prime Video", "d": "Week of 23 Aug", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg", "u": "https://www.primevideo.com/search?phrase=Dark"}, {"t": "Welcome to the Jungle", "p": "JioHotstar", "d": "Week of 23 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/1JlfUuvvX5xLP2LIDah4JhWUtTx.jpg", "u": "https://www.hotstar.com/in/search?q=Welcome%20to%20the%20Jungle"}, {"t": "The Great Grand Superhero", "p": "ZEE5", "d": "Week of 23 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/6CYmHknTN2UGGhqQUZh4tqQ6fEr.jpg", "u": "https://www.zee5.com/search?q=The%20Great%20Grand%20Superhero"}], "file": "2026-08-23-movie-updates.html"}, "2026-08-16-movie-updates.html": {"date": "2026-08-16", "label": "Week of 16 August 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Cakeu Walku", "m": "Don't Trouble the Trouble", "u": "https://www.youtube.com/watch?v=nPkUgRGvtgw", "v": "nPkUgRGvtgw", "c": "Lahari Music"}, {"t": "Olammo Vagalaadi", "m": "Sigma", "u": "https://www.youtube.com/watch?v=UbTmpwb3xOc", "v": "UbTmpwb3xOc", "c": "Saregama Telugu and Lyca Productions"}, {"t": "Evare Nuvve", "m": "I'm Game", "u": "https://www.youtube.com/watch?v=3KZVttNhp-o", "v": "3KZVttNhp-o", "c": "Zee Music South"}, {"t": "Title Track", "m": "Romanchakam", "u": "https://www.youtube.com/watch?v=OnkGfsmGIPc", "v": "OnkGfsmGIPc", "c": "T-Series Telugu"}, {"t": "Pilla Pilla", "m": "Missing Meghana", "u": "https://www.youtube.com/watch?v=PscE1RmMGgE", "v": "PscE1RmMGgE", "c": "Aditya Music"}, {"t": "Masthugundira Yavvaram", "m": "Nenu Ready", "u": "https://www.youtube.com/watch?v=NYGikEQHKV0", "v": "NYGikEQHKV0", "c": "Saregama Telugu"}, {"t": "Fanaa", "m": "HIGH", "u": "https://www.youtube.com/watch?v=ty8_VJwMZJk", "v": "ty8_VJwMZJk", "c": "Aditya Music"}, {"t": "Aaja Meri Jaani", "m": "Baa Baa Black Sheep", "u": "https://www.youtube.com/watch?v=UTN6Wr629do", "v": "UTN6Wr629do", "c": "Saregama Telugu"}, {"t": "Title Song", "m": "Maya Lady", "u": "https://www.youtube.com/watch?v=oazIYjvKvrk", "v": "oazIYjvKvrk", "c": "Sony Music South"}, {"t": "Bajare Banjo", "m": "Ameerlog", "u": "https://www.youtube.com/watch?v=ie9WbsdCJkM", "v": "ie9WbsdCJkM", "c": "Awwal Audio"}], "trailers": [{"t": "Irumudi", "k": "Trailer", "u": "https://www.youtube.com/watch?v=CSXhb2zhfLc", "v": "CSXhb2zhfLc", "c": "Mythri Movie Makers"}, {"t": "VISA - Vintara Saradaga", "k": "Teaser", "u": "https://www.youtube.com/watch?v=L-bPaTaBZQA", "v": "L-bPaTaBZQA", "c": "Sithara Entertainments"}, {"t": "Ramba Oorvasi Menaka", "k": "Teaser", "u": "https://www.youtube.com/watch?v=O6c0O5M46Cw", "v": "O6c0O5M46Cw", "c": "Annapurna Studios and Hasya Movies"}, {"t": "Ameerlog", "k": "Trailer", "u": "https://www.youtube.com/watch?v=okI4cMmgFs8", "v": "okI4cMmgFs8", "c": "Awwal Audio"}, {"t": "Gaja", "k": "Teaser", "u": "https://www.youtube.com/watch?v=sSG7hWLJNvA", "v": "sSG7hWLJNvA", "c": "Saregama Telugu"}], "ott": [{"t": "Vadala", "p": "Prime Video", "d": "Week of 16 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/fK8TdIPdyJaaFMHlUV3JEZKFONJ.jpg", "u": "https://www.primevideo.com/search?phrase=Vadala"}, {"t": "Forest Guard", "p": "aha", "d": "Week of 16 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/3zvR631lTyhX7wCp5Jr74HerT1I.jpg", "u": "https://www.aha.video/search?q=Forest%20Guard"}, {"t": "Cocktail 2", "p": "Netflix", "d": "Week of 16 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/oIQmtByV1LtEQSwM4EpdLTyoSlM.jpg", "u": "https://www.netflix.com/search?q=Cocktail%202"}, {"t": "Bharat Bhhagya Viddhaata", "p": "ZEE5", "d": "Week of 16 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/tf5lLrrikOswHKHpzW0UiHycJEx.jpg", "u": "https://www.zee5.com/search?q=Bharat%20Bhhagya%20Viddhaata"}, {"t": "Mr. Work From Home", "p": "Sun NXT", "d": "Week of 16 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/2fGML9MV1iODxPctkAKfggUO722.jpg", "u": "https://www.sunnxt.com/search?query=Mr.%20Work%20From%20Home"}], "file": "2026-08-16-movie-updates.html"}, "2026-08-09-movie-updates.html": {"date": "2026-08-09", "label": "Week of 9 August 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Yaalalo Yaalalo", "m": "Irumudi", "u": "https://www.youtube.com/watch?v=WT-wrwlN144", "v": "WT-wrwlN144", "c": "T-Series Telugu"}, {"t": "Okka Chinni Navve", "m": "Sahaa", "u": "https://www.youtube.com/watch?v=E5ZeUJjEFUc", "v": "E5ZeUJjEFUc", "c": "Sumaira Studios"}, {"t": "Seethakokala", "m": "Happy Journey", "u": "https://www.youtube.com/watch?v=JwrtlzO9RHE", "v": "JwrtlzO9RHE", "c": "Zee Music South"}], "trailers": [{"t": "The Paradise", "k": "Teaser", "u": "https://www.youtube.com/watch?v=Y3xewv1ZnHc", "v": "Y3xewv1ZnHc", "c": "SLV Cinemas"}, {"t": "Vishwanath and Sons", "k": "Trailer", "u": "https://www.youtube.com/watch?v=6qdwBOT6MlE", "v": "6qdwBOT6MlE", "c": "Sithara Entertainments"}, {"t": "Pallaburusu", "k": "Trailer", "u": "https://www.youtube.com/watch?v=kXTdgb6QrsY", "v": "kXTdgb6QrsY", "c": "Annapurna Studios and EPIC STUDIOS"}, {"t": "Agadha", "k": "Trailer", "u": "https://www.youtube.com/watch?v=LHxKhCcMFl8", "v": "LHxKhCcMFl8", "c": "Sri Adi Varaha Productions"}, {"t": "Makutam", "k": "Trailer", "u": "https://www.youtube.com/watch?v=D4T5kObMX-A", "v": "D4T5kObMX-A", "c": "G.V. Prakash Kumar"}, {"t": "Maya Lady", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=0mEFNjGiuRk", "v": "0mEFNjGiuRk", "c": "Sony Music South"}, {"t": "Toxic", "k": "Trailer", "u": "https://www.youtube.com/watch?v=0safa-gtIgQ", "v": "0safa-gtIgQ", "c": "KVN Productions and Zee Music South"}], "ott": [{"t": "Lenin", "p": "ZEE5", "d": "Week of 9 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/rAHQviBq8Fxi20hNtHPGLnr4L0f.jpg", "u": "https://www.zee5.com/search?q=Lenin"}, {"t": "Oh Sukumari", "p": "Prime Video", "d": "Week of 9 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/x6b5cHpR8KuCg5OHEXmvkgVXKtN.jpg", "u": "https://www.primevideo.com/search?phrase=Oh%20Sukumari"}, {"t": "M.R.P (Neekentha Naakentha)", "p": "Prime Video", "d": "Week of 9 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/qi3AnfzSqEM844w8FSG3JJmxMS4.jpg", "u": "https://www.primevideo.com/search?phrase=M.R.P"}, {"t": "Idhayam Murali", "p": "Netflix", "d": "Week of 9 Aug", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/8gfs5OsGINENFAl0h1XZPNup9lI.jpg", "u": "https://www.netflix.com/search?q=Idhayam%20Murali"}, {"t": "Main Vaapas Aaunga", "p": "Netflix", "d": "Week of 9 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/wHTNsZxvlfRAndc52hGlbdCUXKS.jpg", "u": "https://www.netflix.com/search?q=Main%20Vaapas%20Aaunga"}, {"t": "Uyir", "p": "JioHotstar", "d": "Week of 9 Aug", "l": "Malayalam", "poster": "https://image.tmdb.org/t/p/w185/r512xdTd9aXjpIxjY2JlhvJYvIb.jpg", "u": "https://www.hotstar.com/in/search?q=Uyir"}, {"t": "Operation Safed Sagar", "p": "Netflix", "d": "Week of 9 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/f56PHAGbUFPmHMRippWWNpRgSao.jpg", "u": "https://www.netflix.com/search?q=Operation%20Safed%20Sagar"}, {"t": "Special Ops: Lioness S3", "p": "Prime Video", "d": "Week of 9 Aug", "l": "English", "poster": "https://image.tmdb.org/t/p/w185/rzpHPSEgPTpRs8EHbygwsOw7jC0.jpg", "u": "https://www.primevideo.com/search?phrase=Special%20Ops%3A%20Lioness"}], "file": "2026-08-09-movie-updates.html"}, "2026-08-02-movie-updates.html": {"date": "2026-08-02", "label": "Week of 2 August 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Chitti Chitti Cheema", "m": "Aakasamlo Oka Tara", "u": "https://www.youtube.com/watch?v=mdYZiR3w1xM", "v": "mdYZiR3w1xM", "c": "T-Series Telugu"}, {"t": "Sitharala Navvu", "m": "Bhagavanthudu", "u": "https://www.youtube.com/watch?v=OEmxdp689Eo", "v": "OEmxdp689Eo", "c": "Madhura Audio"}, {"t": "Bomma Bomma", "m": "Sri", "u": "https://www.youtube.com/watch?v=XzupjqG2zRg", "v": "XzupjqG2zRg", "c": "Saregama Telugu"}, {"t": "Merupule Merupule", "m": "Nenu Ready", "u": "https://www.youtube.com/watch?v=cgpR8-plwyQ", "v": "cgpR8-plwyQ", "c": "Saregama Telugu"}, {"t": "Disco Light", "m": "The Red Bag", "u": "https://www.youtube.com/watch?v=WOnzzBsy1bc", "v": "WOnzzBsy1bc", "c": "Lahari Music"}], "trailers": [{"t": "Korean Kanakaraju", "k": "Trailer", "u": "https://www.youtube.com/watch?v=JIqKjjTfOxM", "v": "JIqKjjTfOxM", "c": "UV Creations and First Frame Entertainments"}, {"t": "Ramayana", "k": "Trailer", "u": "https://www.youtube.com/watch?v=bL5CBbMQghQ", "v": "bL5CBbMQghQ", "c": "World Of Ramayana and T-Series Telugu"}, {"t": "Adarsha Kutumbam", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=ZNaElu5YQ5g", "v": "ZNaElu5YQ5g", "c": "Haarika & Hassine Creations"}, {"t": "DC", "k": "Trailer", "u": "https://www.youtube.com/watch?v=U-ct5Svx7E0", "v": "U-ct5Svx7E0", "c": "Sun Gemini"}, {"t": "Sardar 2", "k": "Teaser", "u": "https://www.youtube.com/watch?v=f25yE3B9dqw", "v": "f25yE3B9dqw", "c": "Sony Music South"}, {"t": "I'm Game", "k": "Trailer", "u": "https://www.youtube.com/watch?v=G2aaDEXNq20", "v": "G2aaDEXNq20", "c": "Zee Music Company"}, {"t": "Pallaburusu", "k": "Teaser", "u": "https://www.youtube.com/watch?v=BnoxTrChKAY", "v": "BnoxTrChKAY", "c": "Annapurna Studios and EPIC STUDIOS"}, {"t": "OM (Chapter 1: Udhiram)", "k": "Teaser", "u": "https://www.youtube.com/watch?v=ZaldWrptZGg", "v": "ZaldWrptZGg", "c": "Divo Music and 2 more"}, {"t": "KJQ", "k": "Trailer", "u": "https://www.youtube.com/watch?v=2fKeLvwm_dw", "v": "2fKeLvwm_dw", "c": "SLV Cinemas"}, {"t": "Crazy Kalyanam", "k": "Teaser", "u": "https://www.youtube.com/watch?v=71x-nOos2rs", "v": "71x-nOos2rs", "c": "Think Music Telugu"}, {"t": "Anakapalli", "k": "Trailer", "u": "https://www.youtube.com/watch?v=a4EzLJL6BNU", "v": "a4EzLJL6BNU", "c": "Aditya Music"}, {"t": "Niram", "k": "Trailer", "u": "https://www.youtube.com/watch?v=40Lw14xqSLY", "v": "40Lw14xqSLY", "c": "Zee Music South"}, {"t": "Panchali Panchabhartruka", "k": "Trailer", "u": "https://www.youtube.com/watch?v=xMocs5naCj0", "v": "xMocs5naCj0", "c": "Aditya Music"}], "ott": [{"t": "Rao Bahadur", "p": "Netflix", "d": "30 Jul", "l": "Telugu, Hindi, Tamil, Kannada, Malayalam", "poster": "https://image.tmdb.org/t/p/w185/9hzKAJImKEHBz0vnF5EazPMA8D4.jpg", "u": "https://www.netflix.com/search?q=Rao%20Bahadur"}, {"t": "Gatta Kusthi 2", "p": "Netflix", "d": "30 Jul", "l": "Tamil, Telugu", "poster": "https://image.tmdb.org/t/p/w185/5U8MWIk9XZ60NALyOTpyX7vXIR7.jpg", "u": "https://www.netflix.com/search?q=Gatta%20Kusthi%202"}, {"t": "Batman: Caped Crusader S2", "p": "Prime Video", "d": "31 Jul", "l": "English, Hindi", "poster": "https://image.tmdb.org/t/p/w185/zCHmmoqtLsIsou866osiWtIWmoA.jpg", "u": "https://www.primevideo.com/search?phrase=Batman%3A%20Caped%20Crusader"}, {"t": "Hai Jawani Toh Ishq Hona Hai", "p": "ZEE5", "d": "1 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/vmlJvz6qVzYgei2V74GvnmcuQfW.jpg", "u": "https://www.zee5.com/search?q=Hai%20Jawani%20Toh%20Ishq%20Hona%20Hai"}, {"t": "Nooru Samy / 100 Devullu", "p": "ZEE5", "d": "1 Aug", "l": "Tamil, Telugu", "poster": "", "u": "https://www.zee5.com/search?q=Nooru%20Samy%20/%20100%20Devullu"}, {"t": "Balan: The Boy", "p": "ZEE5", "d": "1 Aug", "l": "Malayalam, Telugu", "poster": "https://image.tmdb.org/t/p/w185/boKxdR9tgXfkazf6yWgiDdleBy0.jpg", "u": "https://www.zee5.com/search?q=Balan%3A%20The%20Boy"}, {"t": "The Legend of Karna", "p": "SonyLIV", "d": "1 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/jzVP9rqT2YH2nTx3l3csmmU9B1q.jpg", "u": "https://www.sonyliv.com/search?searchTerm=The%20Legend%20of%20Karna"}], "file": "2026-08-02-movie-updates.html"}, "2026-07-31-movie-updates.html": {"date": "2026-07-31", "label": "Week of 31 July 2026", "songs": [{"t": "En Kaadhale", "m": "Anakapalli", "u": "https://www.youtube.com/watch?v=YvpRsob_C_g", "v": "YvpRsob_C_g", "c": "Aditya Music"}, {"t": "Kurchi Madathapetti", "m": "Guntur Kaaram", "u": "https://www.youtube.com/watch?v=gh3FyLT7WVg", "v": "gh3FyLT7WVg", "c": "Aditya Music"}, {"t": "Zzzz Nonexistent Song", "m": "", "u": "https://open.spotify.com/search/Zzzz%20Nonexistent%20Song", "v": "", "c": ""}], "trailers": [{"t": "Anakapalli", "k": "Trailer", "u": "https://www.youtube.com/watch?v=a4EzLJL6BNU", "v": "a4EzLJL6BNU", "c": "Aditya Music"}, {"t": "Pushpa 2 The Rule", "k": "Trailer", "u": "https://www.youtube.com/watch?v=g3JUbgOHgdw", "v": "g3JUbgOHgdw", "c": "Mythri Movie Makers"}], "ott": [{"t": "Rao Bahadur", "p": "Netflix", "d": "30 Jul", "l": "Telugu, Hindi, Tamil", "poster": "https://image.tmdb.org/t/p/w185/9hzKAJImKEHBz0vnF5EazPMA8D4.jpg", "u": "https://www.netflix.com/search?q=Rao%20Bahadur"}, {"t": "Gatta Kusthi 2", "p": "Netflix", "d": "30 Jul", "l": "Tamil, Hindi", "poster": "https://image.tmdb.org/t/p/w185/5U8MWIk9XZ60NALyOTpyX7vXIR7.jpg", "u": "https://www.netflix.com/search?q=Gatta%20Kusthi%202"}, {"t": "Love Oh Love", "p": "Prime Video", "d": "31 Jul", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/37svY2bwI83NSHuR6KSQeBhjgOt.jpg", "u": "https://www.primevideo.com/search?phrase=Love%20Oh%20Love"}, {"t": "Star Trek: Strange New Worlds S4E2", "p": "JioHotstar", "d": "31 Jul", "l": "English, Hindi", "poster": "https://image.tmdb.org/t/p/w185/97TTJuqiSMfU0DuXx1B4NG5QNP7.jpg", "u": "https://www.hotstar.com/in/search?q=Star%20Trek%3A%20Strange%20New%20Worlds"}, {"t": "Balan: The Boy", "p": "ZEE5", "d": "1 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/boKxdR9tgXfkazf6yWgiDdleBy0.jpg", "u": "https://www.zee5.com/search?q=Balan%3A%20The%20Boy"}], "file": "2026-07-31-movie-updates.html"}, "2026-07-26-movie-updates.html": {"date": "2026-07-26", "label": "Week of 26 July 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "He Is My Dosthi", "m": "CULT", "u": "https://www.youtube.com/watch?v=e0pOPns9vDI", "v": "e0pOPns9vDI", "c": "Aditya Music"}, {"t": "Naa Kanti Meedha Kunuke", "m": "Ramba Oorvasi Menaka", "u": "https://www.youtube.com/watch?v=PjBCLeYaf4Q", "v": "PjBCLeYaf4Q", "c": "Aditya Music"}, {"t": "Mandaadi Mandaadi", "m": "Mandaadi", "u": "https://www.youtube.com/watch?v=vnxCNGuBchw", "v": "vnxCNGuBchw", "c": "RS Infotainment and 3 more"}, {"t": "Radha Ramana", "m": "Romanchakam", "u": "https://www.youtube.com/watch?v=FJAwxOFnyMw", "v": "FJAwxOFnyMw", "c": "T-Series Telugu"}, {"t": "Manasaagadhe", "m": "Toxic", "u": "https://www.youtube.com/watch?v=w_AaXtKU4jo", "v": "w_AaXtKU4jo", "c": "Zee Music South"}, {"t": "Raave Cheliya", "m": "Srinivasa Mangapuram", "u": "https://www.youtube.com/watch?v=Dwzsmshb4GI", "v": "Dwzsmshb4GI", "c": "T-Series Telugu"}, {"t": "Rasaagummadi", "m": "Korean Kanakaraju", "u": "https://www.youtube.com/watch?v=3XcdYCMCsuk", "v": "3XcdYCMCsuk", "c": "T-Series Telugu"}, {"t": "Intha Istamaa", "m": "Comrade Kalyan", "u": "https://www.youtube.com/watch?v=Xo6ojNDS1qM", "v": "Xo6ojNDS1qM", "c": "Saregama Telugu"}, {"t": "Konchem Konchem", "m": "Nenu Ready", "u": "https://www.youtube.com/watch?v=RU3CM0xk0Y0", "v": "RU3CM0xk0Y0", "c": "Saregama Telugu"}, {"t": "Kotha Soku", "m": "Pallaburusu", "u": "https://www.youtube.com/watch?v=uJH06jzlcCA", "v": "uJH06jzlcCA", "c": "Zee Music South"}, {"t": "Beautiful Girl", "m": "Premaku Namaskaram", "u": "https://www.youtube.com/watch?v=tDjYEdCD8mo", "v": "tDjYEdCD8mo", "c": "Saregama Telugu"}, {"t": "The Wedding Song", "m": "Vishwanath and Sons", "u": "https://www.youtube.com/watch?v=03l6ZqS9MLE", "v": "03l6ZqS9MLE", "c": "Aditya Music"}], "trailers": [{"t": "Objection My Lord", "k": "Trailer", "u": "https://www.youtube.com/watch?v=Fhr9JdlLRwY", "v": "Fhr9JdlLRwY", "c": "Zee 5"}, {"t": "Azadi 501", "k": "Trailer", "u": "https://www.youtube.com/watch?v=pNEG8nCVEhE", "v": "pNEG8nCVEhE", "c": "aha videoIN"}, {"t": "DC", "k": "Trailer", "u": "https://www.youtube.com/watch?v=J016rybm1o0", "v": "J016rybm1o0", "c": "Sun Gemini and SureshProductions"}], "ott": [{"t": "Azadi 501", "p": "aha", "d": "29 Jul", "l": "Telugu", "poster": "", "u": "https://www.aha.video/search?q=Azadi%20501"}, {"t": "Objection My Lord", "p": "ZEE5", "d": "31 Jul", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/4y31wXrHWbcFTI3BGbctZUc71tb.jpg", "u": "https://www.zee5.com/search?q=Objection%20My%20Lord"}, {"t": "Nagabandham", "p": "Prime Video", "d": "Week of 26 Jul", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/fsiQ0twZbmbLo0F2CDUt44riRxL.jpg", "u": "https://www.primevideo.com/search?phrase=Nagabandham"}, {"t": "Ego Raman", "p": "Prime Video", "d": "Week of 26 Jul", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/rFKCzvt5uw7wjG9ZXaUXL8MMq1Y.jpg", "u": "https://www.primevideo.com/search?phrase=Ego%20Raman"}, {"t": "Pallichattambi", "p": "SonyLIV", "d": "Week of 26 Jul", "l": "Malayalam", "poster": "https://image.tmdb.org/t/p/w185/pEzXdyJhdWc2msM0oBC9N8pKtMY.jpg", "u": "https://www.sonyliv.com/search?searchTerm=Pallichattambi"}, {"t": "Adarsh Baal Vidyalaya S1", "p": "Prime Video", "d": "Week of 26 Jul", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/1XbcSqURUvhgu2nnoQRZ7cXmTsJ.jpg", "u": "https://www.primevideo.com/search?phrase=Adarsh%20Baal%20Vidyalaya"}, {"t": "Con City", "p": "Netflix", "d": "Week of 26 Jul", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/pJ4UwvLpek1jK8d540Ho8xI08iL.jpg", "u": "https://www.netflix.com/search?q=Con%20City"}, {"t": "Musafir Cafe S1", "p": "Netflix", "d": "Week of 26 Jul", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/1SbKjtoRKIpVQG5iYnumnfQIqhd.jpg", "u": "https://www.netflix.com/search?q=Musafir%20Cafe"}, {"t": "Bleach: Thousand-Year Blood War", "p": "JioHotstar", "d": "Week of 26 Jul", "l": "Anime", "poster": "https://image.tmdb.org/t/p/w185/1fc81MS1nfrEcw4ZfAAuIHZSLV5.jpg", "u": "https://www.hotstar.com/in/search?q=Bleach%3A%20Thousand-Year%20Blood%20War"}], "file": "2026-07-26-movie-updates.html"}}</script><div class="wrap">
-<header><h1>Telugu Movie Updates</h1>
-<div class="sub">10 weekly editions · 186 songs, trailers &amp; releases</div></header>
-<div class="tools"><input id="q" type="search" placeholder="Ask for anything — “all songs from July and August”" autocomplete="off"></div>
-<div class="hint">Try <button class="chip ex">songs in July and August</button>,
-<button class="chip ex">trailers in August</button> or
-<button class="chip ex">movies on Netflix</button> — then hit play on the whole lot.</div>
-<div id="res"></div>
-<div id="browse"><a class="card latest" href="2026-09-20-movie-updates.html" data-file="2026-09-20-movie-updates.html"><div class="body"><div class="t">Latest — Week of 20 September 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (3) · Trailers (9) · OTT Releases (9)</div><div class="hits"></div></div></a><details class="year" data-def="1" open><summary>2026<span class="n">10 weeks</span></summary><div class="months"><details data-def="1" open><summary>September<span class="n">3</span></summary><div class="weeks"><div class="grid"><a class="card" href="2026-09-20-movie-updates.html" data-file="2026-09-20-movie-updates.html"><div class="body"><div class="t">Week of 20 September 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (3) · Trailers (9) · OTT Releases (9)</div><div class="hits"></div></div></a><a class="card" href="2026-09-13-movie-updates.html" data-file="2026-09-13-movie-updates.html"><div class="body"><div class="t">Week of 13 September 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (3) · Trailers (8) · OTT Releases (7)</div><div class="hits"></div></div></a><a class="card" href="2026-09-06-movie-updates.html" data-file="2026-09-06-movie-updates.html"><div class="body"><div class="t">Week of 6 September 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (5) · Trailers (8) · OTT Releases (7)</div><div class="hits"></div></div></a></div></div></details><details data-def="0"><summary>August<span class="n">5</span></summary><div class="weeks"><div class="grid"><a class="card" href="2026-08-30-movie-updates.html" data-file="2026-08-30-movie-updates.html"><div class="body"><div class="t">Week of 30 August 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (3) · Trailers (7) · OTT Releases (6)</div><div class="hits"></div></div></a><a class="card" href="2026-08-23-movie-updates.html" data-file="2026-08-23-movie-updates.html"><div class="body"><div class="t">Week of 23 August 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (3) · Trailers (4) · OTT Releases (7)</div><div class="hits"></div></div></a><a class="card" href="2026-08-16-movie-updates.html" data-file="2026-08-16-movie-updates.html"><div class="body"><div class="t">Week of 16 August 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (10) · Trailers (5) · OTT Releases (5)</div><div class="hits"></div></div></a><a class="card" href="2026-08-09-movie-updates.html" data-file="2026-08-09-movie-updates.html"><div class="body"><div class="t">Week of 9 August 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (3) · Trailers (7) · OTT Releases (8)</div><div class="hits"></div></div></a><a class="card" href="2026-08-02-movie-updates.html" data-file="2026-08-02-movie-updates.html"><div class="body"><div class="t">Week of 2 August 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (5) · Trailers (13) · OTT Releases (7)</div><div class="hits"></div></div></a></div></div></details><details data-def="0"><summary>July<span class="n">2</span></summary><div class="weeks"><div class="grid"><a class="card" href="2026-07-31-movie-updates.html" data-file="2026-07-31-movie-updates.html"><div class="body"><div class="t">Week of 31 July 2026</div><div class="m">Songs (3) · Trailers (2) · OTT Releases (5)</div><div class="hits"></div></div></a><a class="card" href="2026-07-26-movie-updates.html" data-file="2026-07-26-movie-updates.html"><div class="body"><div class="t">Week of 26 July 2026 — Sunday Cinema Kaburlu</div><div class="m">Songs (12) · Trailers (3) · OTT Releases (9)</div><div class="hits"></div></div></a></div></div></details></div></details></div>
-</div>
+<div class="grain" aria-hidden="true"></div>
+<header class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
+<nav class="main"><a href="index.html" class="on">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
+<section class="hero"><div class="beam"></div>
+<div class="letterbox t"></div><div class="letterbox b"></div>
+<div class="wrap">
+<div class="eyebrow">Ninety years of Telugu cinema</div>
+<h1>From <em>Mala Pilla</em> to <em>Kalki</em>,<br>and everything dropping this week.</h1>
+<p class="lede">A standing tribute to the films that built an industry — and a
+running record of every new song, trailer and streaming release, updated weekly.</p>
+<div class="cta"><a class="btn primary" href="weekly.html">This week &#8594;</a>
+<a class="btn" href="archive.html">Search the archive</a></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<div class="hd"><span class="eyebrow" style="margin:0">The wall</span>
+<h2>51 films that made Telugu cinema</h2></div>
+<div class="eras"><button class="chip" data-era="Foundations">Foundations</button><button class="chip" data-era="Golden age">Golden age</button><button class="chip" data-era="Mass era">Mass era</button><button class="chip" data-era="New millennium">New millennium</button><button class="chip" data-era="Pan-India">Pan-India</button></div>
+<div class="wallwrap"><div class="wall"><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/4BsEyziFGWyZY19o2z3lx1D57RN.jpg" alt="Mala Pilla poster" loading="lazy"><figcaption><span class="ft">Mala Pilla</span><span class="fy">1938</span></figcaption></figure><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/4bfUVY3eYtbl3B81ZFrRWlWK6Rh.jpg" alt="Raithu Bidda poster" loading="lazy"><figcaption><span class="ft">Raithu Bidda</span><span class="fy">1939</span></figcaption></figure><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/uqF8y8K8xxJzvDzLweA6rbPo9xW.jpg" alt="Shavukaru poster" loading="lazy"><figcaption><span class="ft">Shavukaru</span><span class="fy">1950</span></figcaption></figure><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/44PGGIZ4A3B7abBkMUnaygGBWtG.jpg" alt="Pathala Bhairavi poster" loading="lazy"><figcaption><span class="ft">Pathala Bhairavi</span><span class="fy">1951</span></figcaption></figure><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/63Av9DNlSRu0qq0WAIpheqcApJl.jpg" alt="Malliswari poster" loading="lazy"><figcaption><span class="ft">Malliswari</span><span class="fy">1951</span></figcaption></figure><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/z9tpXKqiT3Zf0SzoaUMmNXV8p1r.jpg" alt="Devadasu poster" loading="lazy"><figcaption><span class="ft">Devadasu</span><span class="fy">1953</span></figcaption></figure><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/fIeYfW1WGB8mOyxjwbt0FBXbFSg.jpg" alt="Missamma poster" loading="lazy"><figcaption><span class="ft">Missamma</span><span class="fy">1955</span></figcaption></figure><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/pJfpDHlmVgMgg0VNCufj9gIhnbU.jpg" alt="Mayabazar poster" loading="lazy"><figcaption><span class="ft">Mayabazar</span><span class="fy">1957</span></figcaption></figure><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/ckRg9ia2hxsTXpsNbMxYvj1J4Yg.jpg" alt="Nartanasala poster" loading="lazy"><figcaption><span class="ft">Nartanasala</span><span class="fy">1963</span></figcaption></figure><figure class="tile" data-era="Foundations"><img src="https://image.tmdb.org/t/p/w342/4VPobiXQIhXZML6eSh86iJnU0SF.jpg" alt="Lava Kusa poster" loading="lazy"><figcaption><span class="ft">Lava Kusa</span><span class="fy">1963</span></figcaption></figure><figure class="tile" data-era="Golden age"><img src="https://image.tmdb.org/t/p/w342/A69u2G1jfbpL27Zrl6KDtBdlcjm.jpg" alt="Alluri Seetharama Raju poster" loading="lazy"><figcaption><span class="ft">Alluri Seetharama Raju</span><span class="fy">1974</span></figcaption></figure><figure class="tile" data-era="Golden age"><img src="https://image.tmdb.org/t/p/w342/s3L4KmGRgiVtBPyC6DMCUAiyMce.jpg" alt="Maro Charitra poster" loading="lazy"><figcaption><span class="ft">Maro Charitra</span><span class="fy">1978</span></figcaption></figure><figure class="tile" data-era="Golden age"><img src="https://image.tmdb.org/t/p/w342/9LDbi3KsrpBQL48uXIPWTYsdjyF.jpg" alt="Shankarabharanam poster" loading="lazy"><figcaption><span class="ft">Shankarabharanam</span><span class="fy">1980</span></figcaption></figure><figure class="tile" data-era="Golden age"><img src="https://image.tmdb.org/t/p/w342/hdg47CcaBfLf0DttUoav45boYtL.jpg" alt="Sagara Sangamam poster" loading="lazy"><figcaption><span class="ft">Sagara Sangamam</span><span class="fy">1983</span></figcaption></figure><figure class="tile" data-era="Golden age"><img src="https://image.tmdb.org/t/p/w342/pMvT7VjCMlVE0dShi8A9HYV7xZV.jpg" alt="Swathi Muthyam poster" loading="lazy"><figcaption><span class="ft">Swathi Muthyam</span><span class="fy">1986</span></figcaption></figure><figure class="tile" data-era="Golden age"><img src="https://image.tmdb.org/t/p/w342/1ZQy6NduQxy9QP4BwC0lEO7NRhn.jpg" alt="Sirivennela poster" loading="lazy"><figcaption><span class="ft">Sirivennela</span><span class="fy">1986</span></figcaption></figure><figure class="tile" data-era="Golden age"><img src="https://image.tmdb.org/t/p/w342/c2hMK5jAZYsEiiGIkeVtx7AeOK4.jpg" alt="Aditya 369 poster" loading="lazy"><figcaption><span class="ft">Aditya 369</span><span class="fy">1991</span></figcaption></figure><figure class="tile" data-era="Mass era"><img src="https://image.tmdb.org/t/p/w342/beK6IozHPQ1A4c3mgf1jFNWFutc.jpg" alt="Gharana Mogudu poster" loading="lazy"><figcaption><span class="ft">Gharana Mogudu</span><span class="fy">1992</span></figcaption></figure><figure class="tile" data-era="Mass era"><img src="https://image.tmdb.org/t/p/w342/q6loMZxRfWdgmpK9OzHNtwSVHxs.jpg" alt="Siva poster" loading="lazy"><figcaption><span class="ft">Siva</span><span class="fy">1989</span></figcaption></figure><figure class="tile" data-era="Mass era"><img src="https://image.tmdb.org/t/p/w342/liRlXPeZbTQR4oQb1nqaE7COx5i.jpg" alt="Ninne Pelladata poster" loading="lazy"><figcaption><span class="ft">Ninne Pelladata</span><span class="fy">1996</span></figcaption></figure><figure class="tile" data-era="Mass era"><img src="https://image.tmdb.org/t/p/w342/jmgzq8MWSMthVYE08H9bAKVTpu8.jpg" alt="Annamayya poster" loading="lazy"><figcaption><span class="ft">Annamayya</span><span class="fy">1997</span></figcaption></figure><figure class="tile" data-era="Mass era"><img src="https://image.tmdb.org/t/p/w342/yDDu07KAOaKKud0GaRQpZoIT5T4.jpg" alt="Samarasimha Reddy poster" loading="lazy"><figcaption><span class="ft">Samarasimha Reddy</span><span class="fy">1999</span></figcaption></figure><figure class="tile" data-era="Mass era"><img src="https://image.tmdb.org/t/p/w342/qItfqxoMVoDpyj8Es7QLSUb21DY.jpg" alt="Narasimha Naidu poster" loading="lazy"><figcaption><span class="ft">Narasimha Naidu</span><span class="fy">2001</span></figcaption></figure><figure class="tile" data-era="Mass era"><img src="https://image.tmdb.org/t/p/w342/pP5yRV7vs1NHFAWULv6ZldnA6Pq.jpg" alt="Indra poster" loading="lazy"><figcaption><span class="ft">Indra</span><span class="fy">2002</span></figcaption></figure><figure class="tile" data-era="Mass era"><img src="https://image.tmdb.org/t/p/w342/nVBa5QWSPrVzFyHK2XWrsruQzyl.jpg" alt="Okkadu poster" loading="lazy"><figcaption><span class="ft">Okkadu</span><span class="fy">2003</span></figcaption></figure><figure class="tile" data-era="Mass era"><img src="https://image.tmdb.org/t/p/w342/ojZAu2KOemaDEfLnJXZeuU9QQko.jpg" alt="Athadu poster" loading="lazy"><figcaption><span class="ft">Athadu</span><span class="fy">2005</span></figcaption></figure><figure class="tile" data-era="New millennium"><img src="https://image.tmdb.org/t/p/w342/rQ8NH5f3CxRrmqZWMZNYPwLmjDS.jpg" alt="Pokiri poster" loading="lazy"><figcaption><span class="ft">Pokiri</span><span class="fy">2006</span></figcaption></figure><figure class="tile" data-era="New millennium"><img src="https://image.tmdb.org/t/p/w342/oYN5XJzV9dYGwzq4fmp41xcIaDS.jpg" alt="Bommarillu poster" loading="lazy"><figcaption><span class="ft">Bommarillu</span><span class="fy">2006</span></figcaption></figure><figure class="tile" data-era="New millennium"><img src="https://image.tmdb.org/t/p/w342/9PTzngN3VOmxQg6vFOkAGFMSxWi.jpg" alt="Happy Days poster" loading="lazy"><figcaption><span class="ft">Happy Days</span><span class="fy">2007</span></figcaption></figure><figure class="tile" data-era="New millennium"><img src="https://image.tmdb.org/t/p/w342/xQ0mGlnlAt6wLWZc3rm6LGFPzwl.jpg" alt="Arundhati poster" loading="lazy"><figcaption><span class="ft">Arundhati</span><span class="fy">2009</span></figcaption></figure><figure class="tile" data-era="New millennium"><img src="https://image.tmdb.org/t/p/w342/xK7MEV56GF291VG0U5XnVJuvNv3.jpg" alt="Magadheera poster" loading="lazy"><figcaption><span class="ft">Magadheera</span><span class="fy">2009</span></figcaption></figure><figure class="tile" data-era="New millennium"><img src="https://image.tmdb.org/t/p/w342/fwozjObCQSZsGdUw0dJXJSdEocj.jpg" alt="Vedam poster" loading="lazy"><figcaption><span class="ft">Vedam</span><span class="fy">2010</span></figcaption></figure><figure class="tile" data-era="New millennium"><img src="https://image.tmdb.org/t/p/w342/pX7fn4EZrg2YFlV4GNMIfHDOQZ6.jpg" alt="Eega poster" loading="lazy"><figcaption><span class="ft">Eega</span><span class="fy">2012</span></figcaption></figure><figure class="tile" data-era="New millennium"><img src="https://image.tmdb.org/t/p/w342/htv7AcIhJc94dPmbkhVdZ5tFET7.jpg" alt="Attarintiki Daredi poster" loading="lazy"><figcaption><span class="ft">Attarintiki Daredi</span><span class="fy">2013</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/9BAjt8nSSms62uOVYn1t3C3dVto.jpg" alt="Baahubali: The Beginning poster" loading="lazy"><figcaption><span class="ft">Baahubali: The Beginning</span><span class="fy">2015</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/21sC2assImQIYCEDA84Qh9d1RsK.jpg" alt="Baahubali 2: The Conclusion poster" loading="lazy"><figcaption><span class="ft">Baahubali 2: The Conclusion</span><span class="fy">2017</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/kHubDgL59I5hCn7ccBYvU7bKY1r.jpg" alt="Arjun Reddy poster" loading="lazy"><figcaption><span class="ft">Arjun Reddy</span><span class="fy">2017</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/yiEzDgBBFC25Zd6z0r7sMngn5vr.jpg" alt="Rangasthalam poster" loading="lazy"><figcaption><span class="ft">Rangasthalam</span><span class="fy">2018</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/5hwtlwoLdSpkoeusT0sf8qW5VFB.jpg" alt="Mahanati poster" loading="lazy"><figcaption><span class="ft">Mahanati</span><span class="fy">2018</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/8bgyfPih4bORxtnFCwinqVElkYg.jpg" alt="C/o Kancharapalem poster" loading="lazy"><figcaption><span class="ft">C/o Kancharapalem</span><span class="fy">2018</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/bU9q9yVtxeBiC0Do27CekHXNE6D.jpg" alt="Jersey poster" loading="lazy"><figcaption><span class="ft">Jersey</span><span class="fy">2019</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/2rzORJaegE2bbKNVkQXbZCeV0BP.jpg" alt="Ala Vaikunthapurramuloo poster" loading="lazy"><figcaption><span class="ft">Ala Vaikunthapurramuloo</span><span class="fy">2020</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/7MzvmgHRmhbJH1UZJhRCkAtxvEy.jpg" alt="Jathi Ratnalu poster" loading="lazy"><figcaption><span class="ft">Jathi Ratnalu</span><span class="fy">2021</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/cLCPRzTFBM9azgD46m2MxYSx5wX.jpg" alt="Pushpa: The Rise poster" loading="lazy"><figcaption><span class="ft">Pushpa: The Rise</span><span class="fy">2021</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/u0XUBNQWlOvrh0Gd97ARGpIkL0.jpg" alt="RRR poster" loading="lazy"><figcaption><span class="ft">RRR</span><span class="fy">2022</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/t1O94ZBzsQXJihtVkrsStRLyUDR.jpg" alt="Sita Ramam poster" loading="lazy"><figcaption><span class="ft">Sita Ramam</span><span class="fy">2022</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/m5Wtp4BcMm6Z03rjik11AS5UYhd.jpg" alt="Balagam poster" loading="lazy"><figcaption><span class="ft">Balagam</span><span class="fy">2023</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/96MiE78ur3CQyDVNHTHT4RqBboI.jpg" alt="Baby poster" loading="lazy"><figcaption><span class="ft">Baby</span><span class="fy">2023</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/nlu9WbcetNFRGXXPWITr30ob7W6.jpg" alt="Salaar: Part 1 – Ceasefire poster" loading="lazy"><figcaption><span class="ft">Salaar: Part 1 – Ceasefire</span><span class="fy">2023</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/m1zq48rWSXxplzoJR8YtbXWnnHM.jpg" alt="HanuMan poster" loading="lazy"><figcaption><span class="ft">HanuMan</span><span class="fy">2024</span></figcaption></figure><figure class="tile" data-era="Pan-India"><img src="https://image.tmdb.org/t/p/w342/rstcAnBeCkxNQjNp3YXrF6IP1tW.jpg" alt="Kalki 2898 AD poster" loading="lazy"><figcaption><span class="ft">Kalki 2898 AD</span><span class="fy">2024</span></figcaption></figure></div></div>
+</div></section>
+
+<div class="quote serif">Filter the wall by era, or dive into the week.
+<b>Every song and trailer here links to its official upload</b> — never a re-post.</div>
+
+<section class="sec"><div class="wrap">
+<div class="hd"><span class="eyebrow" style="margin:0">Latest edition</span>
+<h2>Week of 20 September 2026 — Sunday Cinema Kaburlu</h2>
+<a href="2026-09-20-movie-updates.html">Open this week &#8594;</a></div>
+<div class="grid"><div class="card"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=yWNPxS0sXnE" target="_blank" rel="noopener" data-vid="yWNPxS0sXnE" data-title="Jai Jai Ram"><img src="https://i.ytimg.com/vi/yWNPxS0sXnE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=yWNPxS0sXnE" target="_blank" rel="noopener" data-vid="yWNPxS0sXnE" data-title="Jai Jai Ram"><div class="t">Jai Jai Ram</div><div class="m">Ramayana</div></a></div><div class="card"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=Ap_1sFv6qvA" target="_blank" rel="noopener" data-vid="Ap_1sFv6qvA" data-title="Kaka Dhoom Dhamaka"><img src="https://i.ytimg.com/vi/Ap_1sFv6qvA/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=Ap_1sFv6qvA" target="_blank" rel="noopener" data-vid="Ap_1sFv6qvA" data-title="Kaka Dhoom Dhamaka"><div class="t">Kaka Dhoom Dhamaka</div><div class="m">Crazy Kalyanam</div></a></div><div class="card"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=HC9fxIcH_tI" target="_blank" rel="noopener" data-vid="HC9fxIcH_tI" data-title="Vevela Oohale Chupina"><img src="https://i.ytimg.com/vi/HC9fxIcH_tI/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=HC9fxIcH_tI" target="_blank" rel="noopener" data-vid="HC9fxIcH_tI" data-title="Vevela Oohale Chupina"><div class="t">Vevela Oohale Chupina</div><div class="m">Baa Baa Black Sheep</div></a></div><div class="card"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=-0NfIzrQSpQ" target="_blank" rel="noopener" data-vid="-0NfIzrQSpQ" data-title="Aadarsha Kutumbam"><img src="https://i.ytimg.com/vi/-0NfIzrQSpQ/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=-0NfIzrQSpQ" target="_blank" rel="noopener" data-vid="-0NfIzrQSpQ" data-title="Aadarsha Kutumbam"><div class="t">Aadarsha Kutumbam</div><div class="m">Teaser</div></a></div><div class="card"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=X0ASrHeMuVE" target="_blank" rel="noopener" data-vid="X0ASrHeMuVE" data-title="Sigma"><img src="https://i.ytimg.com/vi/X0ASrHeMuVE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=X0ASrHeMuVE" target="_blank" rel="noopener" data-vid="X0ASrHeMuVE" data-title="Sigma"><div class="t">Sigma</div><div class="m">Trailer</div></a></div><div class="card"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=h4AO5MF16yU" target="_blank" rel="noopener" data-vid="h4AO5MF16yU" data-title="SCENE"><img src="https://i.ytimg.com/vi/h4AO5MF16yU/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=h4AO5MF16yU" target="_blank" rel="noopener" data-vid="h4AO5MF16yU" data-title="SCENE"><div class="t">SCENE</div><div class="m">Teaser</div></a></div></div></div></section>
+
+<section class="sec"><div class="wrap">
+<div class="hd"><span class="eyebrow" style="margin:0">Sections</span>
+<h2>Everything in the app</h2></div>
+<div class="sections"><a class="scard" href="weekly.html"><div class="k">Weekly</div><h3>This Week</h3><p>Every edition since July — 10 weeks of songs, trailers and streaming drops.</p></a><a class="scard" href="archive.html"><div class="k">Browse</div><h3>Archive</h3><p>All 186 items in one place. Ask for what you want in plain English.</p></a><a class="scard" href="playlists.html"><div class="k">Listen</div><h3>Playlists</h3><p>50 songs, grouped by month and year, each one click from playing.</p></a><a class="scard" href="calendar.html"><div class="k">Dates</div><h3>Calendar</h3><p>70 streaming releases laid out week by week, by platform.</p></a><a class="scard off" href="reviews.html"><div class="k"><span class=soon>Coming</span></div><h3>Reviews</h3><p>Verdicts on the week&#x27;s releases. Not captured yet.</p></a><a class="scard off" href="news.html"><div class="k"><span class=soon>Coming</span></div><h3>News</h3><p>Shoots, casting, release dates and box office. Not captured yet.</p></a><a class="scard off" href="languages.html"><div class="k"><span class=soon>Coming</span></div><h3>Languages</h3><p>Tamil, Malayalam, Hindi and Kannada as first-class sections.</p></a></div>
+</div></section>
+<footer class="site"><div class="wrap">
+<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a></div>
+<div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
+weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
+</div></footer>
 <div class="lb" id="lb" hidden><div class="lbin"><div class="lbbar">
 <div class="lbt" id="lbt"></div><a id="lbo" href="#" target="_blank" rel="noopener">Open on YouTube &#8599;</a>
 <button class="lbx" aria-label="Close">&times;</button></div>
 <div class="lbf" id="lbf"></div></div></div>
 <script>
 (function(){
-  var lb=document.getElementById('lb'),f=document.getElementById('lbf'),
-      t=document.getElementById('lbt'),o=document.getElementById('lbo');
+  var lb=document.getElementById('lb'); if(!lb) return;
+  var f=document.getElementById('lbf'),t=document.getElementById('lbt'),
+      o=document.getElementById('lbo');
   function close(){lb.hidden=true;f.innerHTML='';}
   function open(id,title){
     t.textContent=title||'';o.href='https://www.youtube.com/watch?v='+id;
@@ -176,143 +269,20 @@ color:#9aa1ac;font-size:14px}
   });
   document.addEventListener('keydown',function(ev){if(ev.key==='Escape')close();});
 })();
-
+</script><script>
 (function(){
-  var ALL=JSON.parse(document.getElementById('wx').textContent);
-  var box=document.getElementById('q'), res=document.getElementById('res'),
-      browse=document.getElementById('browse'), body=document.body;
-  var MON={january:1,jan:1,february:2,feb:2,march:3,mar:3,april:4,apr:4,may:5,june:6,jun:6,
-           july:7,jul:7,august:8,aug:8,september:9,sept:9,sep:9,october:10,oct:10,
-           november:11,nov:11,december:12,dec:12};
-  var MONN=['','January','February','March','April','May','June','July','August',
-            'September','October','November','December'];
-  var PLAT=['netflix','prime video','prime','jiohotstar','hotstar','aha','zee5','sonyliv',
-            'sun nxt','etv win'];
-  var STOP=['show','me','all','the','a','an','of','in','on','from','and','or','please','list',
-            'give','find','get','what','whats','which','were','was','released','release',
-            'releases','releasing','new','this','that','during','between','for','to','any',
-            'i','want','see','song','songs','trailer','trailers','teaser','teasers','ott',
-            'streaming','stream','platform','movie','movies','series','month','months','week',
-            'weeks','year','years','by','via','with','under','sung','composed','feat',
-            'featuring','label','out','came','dropped','is','are','there'];
-
-  function parse(raw){
-    var q=raw.toLowerCase().replace(/[^\w\s+&']/g,' '),
-        w=q.split(/\s+/).filter(Boolean),
-        months=[],years=[],types=[],plats=[],terms=[];
-    // Whole-word only: a substring test would match "aha" inside "Bahadur".
-    PLAT.forEach(function(p){
-      if(new RegExp('\\b'+p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b').test(q))
-        plats.push(p);
+  var tiles=[].slice.call(document.querySelectorAll('.tile'));
+  var chips=[].slice.call(document.querySelectorAll('.chip[data-era]'));
+  var cur=null;
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      var v=c.dataset.era;
+      if(cur===v){cur=null;} else {cur=v;}
+      chips.forEach(function(x){x.classList.toggle('on',x.dataset.era===cur);});
+      tiles.forEach(function(t){
+        t.classList.toggle('dim', !!cur && t.dataset.era!==cur);
+      });
     });
-    plats=plats.filter(function(p,i){
-      return !plats.some(function(o,j){return j!==i&&o.length>p.length&&o.indexOf(p)>-1;});
-    });
-    if(/\bsongs?\b|\blyrical|\bmusic\b/.test(q)) types.push('song');
-    if(/\btrailers?\b|\bteasers?\b|\bglimpse/.test(q)) types.push('trailer');
-    if(/\bott\b|\bstream|\bplatform|\bseries\b|\bwatch\b/.test(q)||plats.length) types.push('ott');
-    w.forEach(function(t){
-      if(MON[t]!==undefined){ if(months.indexOf(MON[t])<0) months.push(MON[t]); return; }
-      if(/^(19|20)\d\d$/.test(t)){ years.push(+t); return; }
-      if(STOP.indexOf(t)>-1) return;
-      if(plats.some(function(p){return p.split(' ').indexOf(t)>-1;})) return;
-      terms.push(t);
-    });
-    if(!types.length) types=['song','trailer','ott'];
-    return {months:months,years:years,types:types,plats:plats,terms:terms,raw:raw.trim()};
-  }
-
-  function weekOK(wk,p){
-    var parts=(wk.date||'').split('-'), y=+parts[0], m=+parts[1];
-    if(p.months.length&&p.months.indexOf(m)<0) return false;
-    if(p.years.length&&p.years.indexOf(y)<0) return false;
-    return true;
-  }
-  function hit(hay,p){
-    if(!p.terms.length) return true;
-    hay=hay.toLowerCase();
-    return p.terms.every(function(t){return hay.indexOf(t)>-1;});
-  }
-
-  function collect(p){
-    var out={song:[],trailer:[],ott:[]};
-    Object.keys(ALL).forEach(function(f){
-      var wk=ALL[f]; if(!weekOK(wk,p)) return;
-      if(p.types.indexOf('song')>-1) (wk.songs||[]).forEach(function(s){
-        if(hit([s.t,s.m,s.c].join(' '),p)) out.song.push({t:s.t,sub:s.m,u:s.u,v:s.v,wk:wk,c:s.c});});
-      if(p.types.indexOf('trailer')>-1) (wk.trailers||[]).forEach(function(s){
-        if(hit([s.t,s.k,s.c].join(' '),p)) out.trailer.push({t:s.t,sub:s.k,u:s.u,v:s.v,wk:wk,c:s.c});});
-      if(p.types.indexOf('ott')>-1) (wk.ott||[]).forEach(function(s){
-        var okp=!p.plats.length||p.plats.some(function(x){return (s.p||'').toLowerCase().indexOf(x)>-1;});
-        if(okp&&hit([s.t,s.p,s.l].join(' '),p))
-          out.ott.push({t:s.t,sub:s.p,u:s.u,wk:wk,poster:s.poster,l:s.l,d:s.d});});
-    });
-    return out;
-  }
-
-  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
-    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-
-  function row(it,kind){
-    var th=it.v?'https://i.ytimg.com/vi/'+it.v+'/mqdefault.jpg':(it.poster||'');
-    var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
-    var meta=esc(it.wk.label||'')+(it.c?' · '+esc(it.c):'')+(it.d?' · '+esc(it.d):'');
-    var inner='<div class="t">'+esc(it.t)+'</div><div class="m">'+esc(it.sub||'')+
-              '</div><div class="meta">'+meta+'</div>';
-    var cls='card res-card'+(kind==='ott'?' ottrow':'');
-    if(!it.u)
-      return '<div class="'+cls+' nolink"><div class="left"><div class="thumb">'+img+
-             '</div></div><div class="body">'+inner+'</div></div>';
-    var dv=it.v?' data-vid="'+esc(it.v)+'" data-title="'+esc(it.t)+'"':'';
-    var href=esc(it.u);
-    return '<div class="'+cls+'"><div class="left">'+
-           '<a class="thumb" href="'+href+'" target="_blank" rel="noopener"'+dv+'>'+img+
-           (it.v?'<span class="pl"><i></i></span>':'')+'</a></div>'+
-           '<a class="body" href="'+href+'" target="_blank" rel="noopener"'+dv+'>'+inner+'</a></div>';
-  }
-
-  function scopeLabel(p){
-    var bits=[];
-    if(p.months.length) bits.push(p.months.slice().sort(function(a,b){return a-b;})
-                                   .map(function(m){return MONN[m];}).join(' and '));
-    if(p.years.length) bits.push(p.years.join(', '));
-    if(p.plats.length) bits.push('on '+p.plats.join(', '));
-    if(p.terms.length) bits.push('matching "'+p.terms.join(' ')+'"');
-    return bits.length?' from '+bits.join(' '):'';
-  }
-
-  function render(p){
-    var g=collect(p), n=g.song.length+g.trailer.length+g.ott.length;
-    if(!n){ res.innerHTML='<div class="rsum">Nothing matches that. Try '+
-      '<button class="chip ex">songs in July</button> or <button class="chip ex">movies on Netflix</button>.</div>';
-      return; }
-    var ids=g.song.filter(function(s){return s.v;}).map(function(s){return s.v;}).slice(0,50);
-    var counts=[];
-    if(g.song.length) counts.push(g.song.length+' song'+(g.song.length>1?'s':''));
-    if(g.trailer.length) counts.push(g.trailer.length+' trailer'+(g.trailer.length>1?'s':''));
-    if(g.ott.length) counts.push(g.ott.length+' OTT release'+(g.ott.length>1?'s':''));
-    var h='<div class="rsum"><span>'+counts.join(' · ')+esc(scopeLabel(p))+'</span>'+
-      (ids.length>1?'<a class="playall" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids='+
-        ids.join(',')+'">&#9654; Play all '+ids.length+' songs</a>':'')+'</div>';
-    [['song','Songs'],['trailer','Trailers & teasers'],['ott','OTT releases']].forEach(function(kv){
-      var list=g[kv[0]]; if(!list.length) return;
-      h+='<h2>'+kv[1]+' <span class="count">'+list.length+'</span></h2><div class="grid">'+
-         list.map(function(i){return row(i,kv[0]);}).join('')+'</div>';
-    });
-    res.innerHTML=h;
-  }
-
-  function apply(){
-    var raw=box.value.trim();
-    if(!raw){ body.classList.remove('querying'); res.innerHTML=''; return; }
-    body.classList.add('querying');
-    render(parse(raw));
-  }
-  box.addEventListener('input',apply);
-  document.addEventListener('click',function(ev){
-    var c=ev.target.closest('.chip.ex');
-    if(c){ box.value=c.textContent; apply(); box.focus(); }
   });
-  window.__applyQuery=apply;
 })();
 </script></body></html>
