@@ -1,0 +1,208 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Playlists — Chitravaaram</title><meta property="og:title" content="Playlists — Chitravaaram"><meta property="og:description" content="49 Telugu film songs as ready-to-play YouTube playlists."><meta name="description" content="49 Telugu film songs as ready-to-play YouTube playlists."><meta property="og:site_name" content="Chitravaaram"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><style>
+*{box-sizing:border-box}
+:root{
+--bg:#08090b; --bg2:#0d0f13; --surface:#12151b; --surface2:#171b22;
+--line:#20242c; --line2:#2b313b;
+--ink:#eceef1; --ink2:#a0a7b2; --ink3:#6c7481;
+--amber:#e9b96e; --amber2:#f3cf97; --ember:#c8632e; --cool:#7fb3ff;
+--radius:12px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;
+line-height:1.55;-webkit-font-smoothing:antialiased}
+.grain{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.05;
+mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:300px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+
+/* ---- top bar ---- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(8,9,11,.82);
+backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:22px;height:58px}
+.brand{display:flex;align-items:baseline;gap:9px;text-decoration:none;flex-shrink:0}
+.brand b{font-size:18px;font-weight:600;letter-spacing:-.3px}
+.brand span{font-size:10.5px;color:var(--amber);text-transform:uppercase;
+letter-spacing:1.6px;font-weight:600}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{position:relative;padding:7px 11px;border-radius:8px;text-decoration:none;
+font-size:13.5px;color:var(--ink2);white-space:nowrap}
+nav.main a:hover{color:var(--ink);background:var(--surface)}
+nav.main a.on{color:var(--bg);background:var(--amber);font-weight:600}
+nav.main a.soon::after{content:'';position:absolute;top:6px;right:5px;width:4px;height:4px;
+border-radius:50%;background:var(--ember)}
+@media(max-width:860px){.topbar .wrap{height:auto;padding-top:10px;padding-bottom:10px;
+flex-wrap:wrap}nav.main{margin-left:0;width:100%}}
+
+/* ---- headings ---- */
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.4px}
+h1{font-size:clamp(28px,4.2vw,44px)}
+h2{font-size:21px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;
+color:var(--amber);font-weight:700;margin-bottom:10px}
+.lede{color:var(--ink2);font-size:15.5px;max-width:62ch}
+.serif{font-family:Georgia,'Iowan Old Style','Times New Roman',serif}
+
+/* ---- section header ---- */
+.phead{padding:44px 0 26px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.phead h1{margin-bottom:10px}
+
+/* ---- generic cards / grid ---- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);
+border-radius:var(--radius);padding:10px;text-decoration:none;color:inherit;transition:.15s;
+position:relative}
+.card:hover{border-color:var(--amber);background:var(--surface2)}
+.card.nolink{opacity:.5}.card.nolink:hover{border-color:var(--line);background:var(--surface)}
+.left{flex-shrink:0;width:112px}
+.left img{width:100%;height:63px;object-fit:cover;border-radius:7px;background:var(--line);
+display:block}
+.thumb{position:relative;display:block;line-height:0}
+.thumb .pl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+opacity:0;transition:.15s}
+.thumb .pl i{width:30px;height:30px;border-radius:50%;background:rgba(200,16,46,.92);
+display:flex;align-items:center;justify-content:center}
+.thumb .pl i::after{content:'';border-left:9px solid #fff;border-top:6px solid transparent;
+border-bottom:6px solid transparent;margin-left:3px}
+.card:hover .thumb .pl{opacity:1}
+.card .body{min-width:0;display:flex;flex-direction:column;justify-content:center;
+text-decoration:none;color:inherit}
+.t{font-weight:600;font-size:14.5px;margin-bottom:2px}
+.m{font-size:12.5px;color:var(--ink2)}
+.meta{font-size:11px;color:var(--ink3);margin-top:3px}
+.flag{display:inline-block;font-size:10px;color:var(--amber);border:1px solid #4a3a1c;
+background:#241c0f;border-radius:4px;padding:0 5px;margin-left:6px;vertical-align:1px}
+
+/* streaming service chips under a song thumbnail */
+.svc{display:flex;gap:3px;margin-top:5px}
+.svc a{flex:1 1 0;min-width:0;height:21px;display:flex;align-items:center;
+justify-content:center;border-radius:5px;background:#161a21;border:1px solid var(--line2);
+opacity:.7;transition:.15s}
+.svc a:hover{opacity:1;background:#1e242e;border-color:#3d4654}
+.svc svg{width:12px;height:12px;display:block}
+
+/* ---- tables ---- */
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:1px;
+color:var(--ink3);font-weight:700;padding:0 10px 9px;border-bottom:1px solid var(--line)}
+td{padding:11px 10px;border-bottom:1px solid #15181e;vertical-align:middle}
+tr:hover td{background:var(--surface)}
+td.dim{color:var(--ink2)}.note{font-size:12px;color:var(--ink2)}
+th.poster,td.poster{width:46px;padding-right:0}
+td.poster img,td.poster .noposter{width:46px;height:69px;border-radius:5px;display:block;
+object-fit:cover;background:var(--line)}
+td.poster .noposter{border:1px dashed var(--line2);background:var(--bg2)}
+.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;
+font-weight:600;color:#fff}
+a.ottlink{color:inherit;text-decoration:none}
+a.ottlink:hover strong{color:var(--amber);text-decoration:underline}
+a.ottlink:hover .badge{filter:brightness(1.15)}
+a.ottlink:hover img{outline:1px solid var(--amber);outline-offset:1px}
+
+/* ---- controls ---- */
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 22px}
+.tools input{flex:1 1 260px;min-width:0;background:var(--surface);border:1px solid var(--line);
+color:var(--ink);padding:10px 14px;border-radius:10px;font-size:14px;font-family:inherit}
+.tools input:focus{outline:none;border-color:var(--amber)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:-4px 0 16px}
+.chip{background:var(--surface);border:1px solid var(--line);color:var(--ink2);
+padding:5px 12px;border-radius:999px;font-size:12.5px;cursor:pointer;font-family:inherit}
+.chip:hover{background:var(--surface2);color:var(--ink)}
+.chip.on{background:#3a2c14;border-color:var(--amber);color:var(--amber2)}
+.playall{display:inline-flex;align-items:center;gap:8px;background:#c8102e;color:#fff;
+border:none;padding:10px 17px;border-radius:10px;text-decoration:none;font-size:14px;
+font-weight:600;white-space:nowrap}
+.playall:hover{background:#e01634}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);
+border:1px solid var(--line2);color:var(--ink);padding:9px 16px;border-radius:10px;
+text-decoration:none;font-size:14px;font-weight:500}
+.btn:hover{border-color:var(--amber);color:var(--amber2)}
+.btn.primary{background:var(--amber);color:#1a1406;border-color:var(--amber);font-weight:600}
+.btn.primary:hover{background:var(--amber2);color:#1a1406}
+
+.count{font-size:11.5px;font-weight:500;color:var(--ink3);background:var(--surface);
+padding:2px 9px;border-radius:999px}
+.empty{color:var(--ink3);font-size:14px;font-style:italic;padding:8px 0}
+.noresults{color:var(--ink3);font-size:14px;font-style:italic;padding:10px 0;display:none}
+
+/* ---- lightbox ---- */
+.lb{position:fixed;inset:0;background:rgba(5,6,8,.94);z-index:1000;
+display:flex;align-items:center;justify-content:center;padding:20px}
+.lb[hidden]{display:none}
+.lbin{width:100%;max-width:920px}
+.lbbar{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.lbt{color:var(--ink);font-size:14px;font-weight:600;flex:1;min-width:0;
+overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lbbar a{color:var(--amber);font-size:13px;text-decoration:none;white-space:nowrap}
+.lbx{background:var(--surface);border:1px solid var(--line2);color:var(--ink2);width:32px;
+height:32px;border-radius:8px;font-size:19px;line-height:1;cursor:pointer;flex-shrink:0}
+.lbx:hover{background:var(--surface2);color:var(--ink)}
+.lbf{position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;
+background:#000}
+.lbf iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---- footer ---- */
+footer.site{margin-top:64px;border-top:1px solid var(--line);padding:26px 0 54px;
+color:var(--ink3);font-size:12.5px}
+footer.site a{color:var(--ink2);text-decoration:none}
+footer.site a:hover{color:var(--amber)}
+.fnav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+@media(max-width:560px){.left{width:92px}.left img{height:52px}
+.svc{gap:2px}.svc a{height:19px}.svc svg{width:11px;height:11px}
+.playall{flex:1 1 100%;justify-content:center}}
+
+.plrow{display:flex;align-items:center;gap:14px;background:var(--surface);
+border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:10px}
+.plrow:hover{border-color:var(--amber)}
+.plrow .pt{font-weight:600;font-size:15px}
+.plrow .pm{font-size:12.5px;color:var(--ink2)}
+.plrow .sp{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.big{background:#181410;border-color:var(--amber);padding:20px}
+.big .pt{font-size:19px}
+</style></head><body>
+<div class="grain" aria-hidden="true"></div>
+<header class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
+<nav class="main"><a href="index.html">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html" class="on">Playlists</a><a href="calendar.html">Calendar</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
+<div class="wrap"><div class="phead">
+<div class="eyebrow">Listen</div>
+<h1>Playlists</h1>
+<p class="lede">Every song collected here, grouped by month and year. Each button opens
+the set as a YouTube playlist — no account, no saving, just play.</p>
+</div>
+<div class="plrow big"><div><div class="pt">Everything</div><div class="pm">49 songs across 10 weeks</div></div><div class="sp"><a class="playall" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=yWNPxS0sXnE,Ap_1sFv6qvA,HC9fxIcH_tI,rnyTjyyCWks,vKNmpKQ3-iQ,BUR9c28uD-Y,7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8,fPm9P7IWDWU,lvyH0ATKsrY,2C5Fs8r4H3k,bdFi7Bpq6Xw,hIHUeuw2yj8,uZt5Z7P3NoY,nPkUgRGvtgw,UbTmpwb3xOc,3KZVttNhp-o,OnkGfsmGIPc,PscE1RmMGgE,NYGikEQHKV0,ty8_VJwMZJk,UTN6Wr629do,oazIYjvKvrk,ie9WbsdCJkM,WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE,mdYZiR3w1xM,OEmxdp689Eo,XzupjqG2zRg,cgpR8-plwyQ,WOnzzBsy1bc,YvpRsob_C_g,gh3FyLT7WVg,e0pOPns9vDI,PjBCLeYaf4Q,vnxCNGuBchw,FJAwxOFnyMw,w_AaXtKU4jo,Dwzsmshb4GI,3XcdYCMCsuk,Xo6ojNDS1qM,RU3CM0xk0Y0,uJH06jzlcCA,tDjYEdCD8mo,03l6ZqS9MLE">&#9654; Play all</a></div></div><div class="plrow"><div><div class="pt">2026</div><div class="pm">49 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=yWNPxS0sXnE,Ap_1sFv6qvA,HC9fxIcH_tI,rnyTjyyCWks,vKNmpKQ3-iQ,BUR9c28uD-Y,7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8,fPm9P7IWDWU,lvyH0ATKsrY,2C5Fs8r4H3k,bdFi7Bpq6Xw,hIHUeuw2yj8,uZt5Z7P3NoY,nPkUgRGvtgw,UbTmpwb3xOc,3KZVttNhp-o,OnkGfsmGIPc,PscE1RmMGgE,NYGikEQHKV0,ty8_VJwMZJk,UTN6Wr629do,oazIYjvKvrk,ie9WbsdCJkM,WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE,mdYZiR3w1xM,OEmxdp689Eo,XzupjqG2zRg,cgpR8-plwyQ,WOnzzBsy1bc,YvpRsob_C_g,gh3FyLT7WVg,e0pOPns9vDI,PjBCLeYaf4Q,vnxCNGuBchw,FJAwxOFnyMw,w_AaXtKU4jo,Dwzsmshb4GI,3XcdYCMCsuk,Xo6ojNDS1qM,RU3CM0xk0Y0,uJH06jzlcCA,tDjYEdCD8mo,03l6ZqS9MLE">&#9654; Play 49</a></div></div><div class="plrow"><div><div class="pt">September 2026</div><div class="pm">11 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=yWNPxS0sXnE,Ap_1sFv6qvA,HC9fxIcH_tI,rnyTjyyCWks,vKNmpKQ3-iQ,BUR9c28uD-Y,7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8">&#9654; Play 11</a></div></div><div class="plrow"><div><div class="pt">August 2026</div><div class="pm">24 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=fPm9P7IWDWU,lvyH0ATKsrY,2C5Fs8r4H3k,bdFi7Bpq6Xw,hIHUeuw2yj8,uZt5Z7P3NoY,nPkUgRGvtgw,UbTmpwb3xOc,3KZVttNhp-o,OnkGfsmGIPc,PscE1RmMGgE,NYGikEQHKV0,ty8_VJwMZJk,UTN6Wr629do,oazIYjvKvrk,ie9WbsdCJkM,WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE,mdYZiR3w1xM,OEmxdp689Eo,XzupjqG2zRg,cgpR8-plwyQ,WOnzzBsy1bc">&#9654; Play 24</a></div></div><div class="plrow"><div><div class="pt">July 2026</div><div class="pm">14 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=YvpRsob_C_g,gh3FyLT7WVg,e0pOPns9vDI,PjBCLeYaf4Q,vnxCNGuBchw,FJAwxOFnyMw,w_AaXtKU4jo,Dwzsmshb4GI,3XcdYCMCsuk,Xo6ojNDS1qM,RU3CM0xk0Y0,uJH06jzlcCA,tDjYEdCD8mo,03l6ZqS9MLE">&#9654; Play 14</a></div></div>
+<p class="hint" style="margin-top:20px">YouTube caps an ad-hoc playlist at 50 videos,
+so longer sets play the first 50.</p>
+</div><footer class="site"><div class="wrap">
+<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a></div>
+<div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
+weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
+</div></footer>
+<div class="lb" id="lb" hidden><div class="lbin"><div class="lbbar">
+<div class="lbt" id="lbt"></div><a id="lbo" href="#" target="_blank" rel="noopener">Open on YouTube &#8599;</a>
+<button class="lbx" aria-label="Close">&times;</button></div>
+<div class="lbf" id="lbf"></div></div></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'); if(!lb) return;
+  var f=document.getElementById('lbf'),t=document.getElementById('lbt'),
+      o=document.getElementById('lbo');
+  function close(){lb.hidden=true;f.innerHTML='';}
+  function open(id,title){
+    t.textContent=title||'';o.href='https://www.youtube.com/watch?v='+id;
+    f.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+
+      '?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
+    lb.hidden=false;
+  }
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest('a[data-vid]');
+    if(a){ if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.button!==0) return;
+           ev.preventDefault(); open(a.dataset.vid,a.dataset.title); return; }
+    if(ev.target.closest('.lbx')||ev.target===lb) close();
+  });
+  document.addEventListener('keydown',function(ev){if(ev.key==='Escape')close();});
+})();
+</script></body></html>
