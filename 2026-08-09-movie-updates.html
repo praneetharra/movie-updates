@@ -193,6 +193,14 @@ border-color:var(--amber)}
 .sugform .ok{color:#9fe1cb;font-size:13px;margin-top:10px;display:none}
 .cempty{color:var(--ink3);font-style:italic;font-size:14px;padding:12px 0}
 #cstatus{font-size:12.5px;color:var(--ink3);margin-bottom:14px}
+.card.ottsug .left{width:56px}
+.card.ottsug .left img{height:84px;border-radius:6px}
+.card.ottsug .left img:not([src]){border:1px dashed var(--line2);background:var(--bg2)}
+.pprev{display:flex;align-items:center;gap:12px;margin:4px 0 10px;min-height:0}
+.pprev img{width:52px;height:78px;object-fit:cover;border-radius:6px;background:var(--line);
+display:block}
+.pprev .pmeta{font-size:12.5px;color:var(--ink2)}
+.pprev .pmeta b{color:var(--ink);display:block;font-size:13.5px}
 </style></head><body>
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar"><div class="wrap">
@@ -319,7 +327,7 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
   function card(s){
     var sc=score(s), verified=sc>=T, voted=mine(s);
     var v=(s.url||'').match(/[?&]v=([A-Za-z0-9_-]{11})/);
-    var th=v?'https://i.ytimg.com/vi/'+v[1]+'/mqdefault.jpg':'';
+    var th=v?'https://i.ytimg.com/vi/'+v[1]+'/mqdefault.jpg':(s.poster||'');
     var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
     var dv=v?' data-vid="'+esc(v[1])+'" data-title="'+esc(s.title)+'"':'';
     var badge=verified?'<span class="src verified">Community verified</span>'
@@ -340,7 +348,8 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
     var body='<div class="body"><div class="t">'+esc(s.title)+badge+'</div>'+
       '<div class="m">'+esc(sub)+'</div>'+
       (s.note?'<div class="meta">'+esc(s.note)+'</div>':'')+'</div>';
-    return '<div class="card" data-sug="'+esc(s.id)+'">'+head+body+'</div>'+controls;
+    var cls='card'+(s.kind==='ott'?' ottsug':'');
+    return '<div class="'+cls+'" data-sug="'+esc(s.id)+'">'+head+body+'</div>'+controls;
   }
 
   function render(list,el){
@@ -414,7 +423,40 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
         if(ott) el.querySelectorAll('input,select').forEach(function(i){i.value='';});
       });
     }
-    kindSel.addEventListener('change',sync); sync();
+    kindSel.addEventListener('change',function(){sync();lookup();});
+    sync();
+
+    // Poster lookup for OTT entries, proxied by the edge function so the TMDB
+    // key stays server-side. A miss is silent — no poster is better than a wrong one.
+    var titleEl=form.querySelector('[name=title]'), posterEl=document.getElementById('posterfield'),
+        prev=document.getElementById('pprev'), prevImg=document.getElementById('pprevimg'),
+        prevTxt=document.getElementById('pprevtxt'), timer=null, lastQ='';
+    function clearPrev(){ prev.hidden=true; prevImg.removeAttribute('src');
+                          prevTxt.textContent=''; posterEl.value=''; }
+    function lookup(){
+      if(kindSel.value!=='ott'||!ready){ clearPrev(); return; }
+      var q=(titleEl.value||'').trim();
+      if(q.length<2){ clearPrev(); return; }
+      if(q===lastQ) return;
+      lastQ=q;
+      prev.hidden=false; prevTxt.textContent='Looking for a poster…';
+      fetch(CFG.url.replace(/\/$/,'')+'/functions/v1/tmdb-poster?title='+encodeURIComponent(q),
+            {headers:{'apikey':CFG.key,'Authorization':'Bearer '+CFG.key}})
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if((titleEl.value||'').trim()!==q) return;      // user kept typing
+          if(d && d.poster){
+            posterEl.value=d.poster; prevImg.src=d.poster;
+            prevTxt.innerHTML='<b>'+esc(d.name||q)+'</b>'+(d.year?d.year+' · ':'')+
+              'poster found automatically';
+          } else {
+            clearPrev(); prev.hidden=false;
+            prevTxt.textContent='No poster found for that title — it can still be submitted.';
+          }
+        })
+        .catch(function(){ clearPrev(); });
+    }
+    titleEl.addEventListener('input',function(){ clearTimeout(timer); timer=setTimeout(lookup,450); });
     form.addEventListener('submit',function(ev){
       ev.preventDefault();
       err.style.display='none'; okmsg.style.display='none';
