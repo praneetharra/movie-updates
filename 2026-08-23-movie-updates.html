@@ -162,11 +162,42 @@ padding:7px 14px;border-radius:999px;text-decoration:none;font-size:13px;font-we
 background:#221b10}
 .jump a.allweeks:hover{background:#2c2314;color:#fff}
 h2{font-size:19px;margin:36px 0 14px;display:flex;align-items:center;gap:10px}
+
+.cbanner{background:var(--surface);border:1px solid var(--line);
+border-left:3px solid var(--ember);border-radius:0 var(--radius) var(--radius) 0;
+padding:15px 18px;margin:0 0 22px;color:var(--ink2);font-size:14px}
+.cbanner strong{color:var(--ink)}
+.src{display:inline-block;font-size:9.5px;font-weight:700;text-transform:uppercase;
+letter-spacing:1.1px;padding:2px 7px;border-radius:4px;vertical-align:2px;margin-left:7px}
+.src.curated{color:#9fe1cb;background:#0f2a22;border:1px solid #1d4a3c}
+.src.verified{color:var(--amber2);background:#2b2110;border:1px solid #4a3a1c}
+.src.pending{color:#9db7e8;background:#141d2e;border:1px solid #27374f}
+.vote{display:flex;align-items:center;gap:7px;margin-top:8px;flex-wrap:wrap}
+.vote button{background:var(--surface2);border:1px solid var(--line2);color:var(--ink2);
+padding:5px 11px;border-radius:8px;font-size:12px;font-family:inherit;cursor:pointer}
+.vote button:hover:not(:disabled){border-color:var(--amber);color:var(--amber2)}
+.vote button.picked{background:#2b2110;border-color:var(--amber);color:var(--amber2)}
+.vote button:disabled{opacity:.5;cursor:default}
+.vote .score{font-size:11.5px;color:var(--ink3);margin-left:auto}
+.vote .score b{color:var(--ink2)}
+.sugform{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:20px;margin-bottom:26px}
+.sugform .row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.sugform label{flex:1 1 180px;min-width:0;font-size:12px;color:var(--ink3)}
+.sugform input,.sugform select,.sugform textarea{width:100%;margin-top:5px;
+background:var(--bg2);border:1px solid var(--line);color:var(--ink);padding:9px 12px;
+border-radius:9px;font-size:14px;font-family:inherit}
+.sugform input:focus,.sugform select:focus,.sugform textarea:focus{outline:none;
+border-color:var(--amber)}
+.sugform .err{color:#f09595;font-size:12.5px;margin-top:6px;display:none}
+.sugform .ok{color:#9fe1cb;font-size:13px;margin-top:10px;display:none}
+.cempty{color:var(--ink3);font-style:italic;font-size:14px;padding:12px 0}
+#cstatus{font-size:12.5px;color:var(--ink3);margin-bottom:14px}
 </style></head><body>
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
-<nav class="main"><a href="index.html">Home</a><a href="weekly.html" class="on">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
+<nav class="main"><a href="index.html">Home</a><a href="weekly.html" class="on">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
 <script type="application/json" id="wk">{"date": "2026-08-23", "label": "Week of 23 August 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Chinni Chinni", "m": "Itllu Arjuna", "u": "https://www.youtube.com/watch?v=bdFi7Bpq6Xw", "v": "bdFi7Bpq6Xw", "c": "T-Series Telugu", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Ala Bolelo", "m": "Jailer 2", "u": "https://www.youtube.com/watch?v=hIHUeuw2yj8", "v": "hIHUeuw2yj8", "c": "Sun TV", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Manasa Vacha", "m": "EPIC First Semester", "u": "https://www.youtube.com/watch?v=uZt5Z7P3NoY", "v": "uZt5Z7P3NoY", "c": "Aditya Music", "n": "", "si": "", "co": "", "cf": "high"}], "trailers": [{"t": "KAAKA", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=qJQU9mZugZM", "v": "qJQU9mZugZM", "c": "KVN Productions", "n": "Mega 158 — Chiranjeevi as an ordinary man, Sankranti release", "cf": "high"}, {"t": "Missing Meghana", "k": "Teaser", "u": "https://www.youtube.com/watch?v=NeP_buUwGkA", "v": "NeP_buUwGkA", "c": "Aditya Music", "n": "Investigative thriller", "cf": "high"}, {"t": "Kiku Chiranjeevi", "k": "Trailer", "u": "https://www.youtube.com/watch?v=StC3xtJIGaU", "v": "StC3xtJIGaU", "c": "Kiku Chiranjeevi Movie", "n": "Survival drama thriller — in theatres 28 Aug", "cf": "high"}, {"t": "Premane Oorilo", "k": "Teaser", "u": "https://www.youtube.com/watch?v=zRufbl5Yir4", "v": "zRufbl5Yir4", "c": "Aditya Music", "n": "Premane Oorilo Teaser | Shreeraam, Rangayana Raghu, Thapaswini", "cf": "high"}], "ott": [{"t": "Jana Nayagan", "p": "ZEE5", "d": "Week of 23 Aug", "l": "Tamil, Telugu", "poster": "https://image.tmdb.org/t/p/w185/jt8pfSIdi47YpFMMWVRr8w5u2S0.jpg", "n": "", "u": "https://www.zee5.com/search?q=Jana%20Nayagan"}, {"t": "Chennai Love Story", "p": "SonyLIV", "d": "Week of 23 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/hACM25xigqIYeRgylB0epf34hmk.jpg", "n": "", "u": "https://www.sonyliv.com/search?searchTerm=Chennai%20Love%20Story"}, {"t": "Srinivasa Mangapuram", "p": "Prime Video", "d": "Week of 23 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/cN6igPJlKFuk5rTrAipQU4qUkWW.jpg", "n": "", "u": "https://www.primevideo.com/search?phrase=Srinivasa%20Mangapuram"}, {"t": "Pyaar Prema Kalyanam", "p": "Netflix", "d": "Week of 23 Aug", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/AjaNAeMXOrK9n0YqGqX0Lz5qxYu.jpg", "n": "", "u": "https://www.netflix.com/search?q=Pyaar%20Prema%20Kalyanam"}, {"t": "Dark", "p": "Prime Video", "d": "Week of 23 Aug", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg", "n": "Psychological horror thriller", "u": "https://www.primevideo.com/search?phrase=Dark"}, {"t": "Welcome to the Jungle", "p": "JioHotstar", "d": "Week of 23 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/1JlfUuvvX5xLP2LIDah4JhWUtTx.jpg", "n": "", "u": "https://www.hotstar.com/in/search?q=Welcome%20to%20the%20Jungle"}, {"t": "The Great Grand Superhero", "p": "ZEE5", "d": "Week of 23 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/6CYmHknTN2UGGhqQUZh4tqQ6fEr.jpg", "n": "", "u": "https://www.zee5.com/search?q=The%20Great%20Grand%20Superhero"}]}</script>
 <div class="wrap"><div class="phead">
 <div class="eyebrow">Weekly edition</div>
@@ -179,11 +210,19 @@ releases, each linked to its official upload.</p>
 <section data-section><h2 id="songs">New songs <span class="count">3</span></h2><div class="grid"><div class="card" data-search="chinni chinni itllu arjuna t-series telugu"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=bdFi7Bpq6Xw" target="_blank" rel="noopener" data-vid="bdFi7Bpq6Xw" data-title="Chinni Chinni"><img src="https://i.ytimg.com/vi/bdFi7Bpq6Xw/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Chinni%20Chinni%20Itllu%20Arjuna" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Chinni%20Chinni%20Itllu%20Arjuna" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Chinni%20Chinni%20Itllu%20Arjuna" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=bdFi7Bpq6Xw" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=bdFi7Bpq6Xw" target="_blank" rel="noopener" data-vid="bdFi7Bpq6Xw" data-title="Chinni Chinni"><div class="t">Chinni Chinni</div><div class="m">Itllu Arjuna</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="ala bolelo jailer 2 sun tv"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=hIHUeuw2yj8" target="_blank" rel="noopener" data-vid="hIHUeuw2yj8" data-title="Ala Bolelo"><img src="https://i.ytimg.com/vi/hIHUeuw2yj8/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Ala%20Bolelo%20Jailer%202" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Ala%20Bolelo%20Jailer%202" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Ala%20Bolelo%20Jailer%202" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=hIHUeuw2yj8" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=hIHUeuw2yj8" target="_blank" rel="noopener" data-vid="hIHUeuw2yj8" data-title="Ala Bolelo"><div class="t">Ala Bolelo</div><div class="m">Jailer 2</div><div class="meta">Sun TV</div></a></div><div class="card" data-search="manasa vacha epic first semester aditya music"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=uZt5Z7P3NoY" target="_blank" rel="noopener" data-vid="uZt5Z7P3NoY" data-title="Manasa Vacha"><img src="https://i.ytimg.com/vi/uZt5Z7P3NoY/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Manasa%20Vacha%20EPIC%20First%20Semester" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Manasa%20Vacha%20EPIC%20First%20Semester" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Manasa%20Vacha%20EPIC%20First%20Semester" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=uZt5Z7P3NoY" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=uZt5Z7P3NoY" target="_blank" rel="noopener" data-vid="uZt5Z7P3NoY" data-title="Manasa Vacha"><div class="t">Manasa Vacha</div><div class="m">EPIC First Semester</div><div class="meta">Aditya Music</div></a></div></div><div class="noresults">No matches in this section.</div></section>
 <section data-section><h2 id="trailers">Trailers &amp; teasers <span class="count">4</span></h2><div class="grid"><div class="card" data-search="kaaka — glimpse mega 158 — chiranjeevi as an ordinary man, sankranti release kvn productions mega 158 — chiranjeevi as an ordinary man, sankranti release"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=qJQU9mZugZM" target="_blank" rel="noopener" data-vid="qJQU9mZugZM" data-title="KAAKA — Glimpse"><img src="https://i.ytimg.com/vi/qJQU9mZugZM/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=qJQU9mZugZM" target="_blank" rel="noopener" data-vid="qJQU9mZugZM" data-title="KAAKA — Glimpse"><div class="t">KAAKA — Glimpse</div><div class="m">Mega 158 — Chiranjeevi as an ordinary man, Sankranti release</div><div class="meta">KVN Productions</div></a></div><div class="card" data-search="missing meghana — teaser investigative thriller aditya music investigative thriller"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=NeP_buUwGkA" target="_blank" rel="noopener" data-vid="NeP_buUwGkA" data-title="Missing Meghana — Teaser"><img src="https://i.ytimg.com/vi/NeP_buUwGkA/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=NeP_buUwGkA" target="_blank" rel="noopener" data-vid="NeP_buUwGkA" data-title="Missing Meghana — Teaser"><div class="t">Missing Meghana — Teaser</div><div class="m">Investigative thriller</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="kiku chiranjeevi — trailer survival drama thriller — in theatres 28 aug kiku chiranjeevi movie survival drama thriller — in theatres 28 aug"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=StC3xtJIGaU" target="_blank" rel="noopener" data-vid="StC3xtJIGaU" data-title="Kiku Chiranjeevi — Trailer"><img src="https://i.ytimg.com/vi/StC3xtJIGaU/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=StC3xtJIGaU" target="_blank" rel="noopener" data-vid="StC3xtJIGaU" data-title="Kiku Chiranjeevi — Trailer"><div class="t">Kiku Chiranjeevi — Trailer</div><div class="m">Survival drama thriller — in theatres 28 Aug</div><div class="meta">Kiku Chiranjeevi Movie</div></a></div><div class="card" data-search="premane oorilo — teaser premane oorilo teaser | shreeraam, rangayana raghu, thapaswini aditya music premane oorilo teaser | shreeraam, rangayana raghu, thapaswini"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=zRufbl5Yir4" target="_blank" rel="noopener" data-vid="zRufbl5Yir4" data-title="Premane Oorilo — Teaser"><img src="https://i.ytimg.com/vi/zRufbl5Yir4/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=zRufbl5Yir4" target="_blank" rel="noopener" data-vid="zRufbl5Yir4" data-title="Premane Oorilo — Teaser"><div class="t">Premane Oorilo — Teaser</div><div class="m">Premane Oorilo Teaser | Shreeraam, Rangayana Raghu, Thapaswini</div><div class="meta">Aditya Music</div></a></div></div><div class="noresults">No matches in this section.</div></section>
 <section data-section><h2 id="ott">OTT releases <span class="count">7</span></h2><div class="chips"><button class="chip" data-plat="ZEE5">ZEE5</button><button class="chip" data-plat="SonyLIV">SonyLIV</button><button class="chip" data-plat="Prime Video">Prime Video</button><button class="chip" data-plat="Netflix">Netflix</button><button class="chip" data-plat="JioHotstar">JioHotstar</button></div><table><thead><tr><th class="poster"></th><th>Movie</th><th>Platform</th><th>Streaming from</th><th>Language</th></tr></thead><tbody><tr data-search="jana nayagan zee5 tamil, telugu" data-platform="ZEE5"><td class="poster"><a class="ottlink" href="https://www.zee5.com/search?q=Jana%20Nayagan" target="_blank" rel="noopener" title="Find Jana Nayagan on ZEE5"><img src="https://image.tmdb.org/t/p/w185/jt8pfSIdi47YpFMMWVRr8w5u2S0.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Jana%20Nayagan" target="_blank" rel="noopener" title="Find Jana Nayagan on ZEE5"><strong>Jana Nayagan</strong></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Jana%20Nayagan" target="_blank" rel="noopener" title="Find Jana Nayagan on ZEE5"><span class="badge" style="background:#8230c6">ZEE5</span></a></td><td class="dim">Week of 23 Aug</td><td class="dim">Tamil, Telugu</td></tr><tr data-search="chennai love story sonyliv telugu" data-platform="SonyLIV"><td class="poster"><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=Chennai%20Love%20Story" target="_blank" rel="noopener" title="Find Chennai Love Story on SonyLIV"><img src="https://image.tmdb.org/t/p/w185/hACM25xigqIYeRgylB0epf34hmk.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=Chennai%20Love%20Story" target="_blank" rel="noopener" title="Find Chennai Love Story on SonyLIV"><strong>Chennai Love Story</strong></a></td><td><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=Chennai%20Love%20Story" target="_blank" rel="noopener" title="Find Chennai Love Story on SonyLIV"><span class="badge" style="background:#0c1f3f">SonyLIV</span></a></td><td class="dim">Week of 23 Aug</td><td class="dim">Telugu</td></tr><tr data-search="srinivasa mangapuram prime video telugu" data-platform="Prime Video"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Srinivasa%20Mangapuram" target="_blank" rel="noopener" title="Find Srinivasa Mangapuram on Prime Video"><img src="https://image.tmdb.org/t/p/w185/cN6igPJlKFuk5rTrAipQU4qUkWW.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Srinivasa%20Mangapuram" target="_blank" rel="noopener" title="Find Srinivasa Mangapuram on Prime Video"><strong>Srinivasa Mangapuram</strong></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Srinivasa%20Mangapuram" target="_blank" rel="noopener" title="Find Srinivasa Mangapuram on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 23 Aug</td><td class="dim">Telugu</td></tr><tr data-search="pyaar prema kalyanam netflix tamil" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Pyaar%20Prema%20Kalyanam" target="_blank" rel="noopener" title="Find Pyaar Prema Kalyanam on Netflix"><img src="https://image.tmdb.org/t/p/w185/AjaNAeMXOrK9n0YqGqX0Lz5qxYu.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Pyaar%20Prema%20Kalyanam" target="_blank" rel="noopener" title="Find Pyaar Prema Kalyanam on Netflix"><strong>Pyaar Prema Kalyanam</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Pyaar%20Prema%20Kalyanam" target="_blank" rel="noopener" title="Find Pyaar Prema Kalyanam on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 23 Aug</td><td class="dim">Tamil</td></tr><tr data-search="dark prime video tamil psychological horror thriller" data-platform="Prime Video"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Dark" target="_blank" rel="noopener" title="Find Dark on Prime Video"><img src="https://image.tmdb.org/t/p/w185/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Dark" target="_blank" rel="noopener" title="Find Dark on Prime Video"><strong>Dark</strong></a><br><span class="note">Psychological horror thriller</span></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Dark" target="_blank" rel="noopener" title="Find Dark on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 23 Aug</td><td class="dim">Tamil</td></tr><tr data-search="welcome to the jungle jiohotstar hindi" data-platform="JioHotstar"><td class="poster"><a class="ottlink" href="https://www.hotstar.com/in/search?q=Welcome%20to%20the%20Jungle" target="_blank" rel="noopener" title="Find Welcome to the Jungle on JioHotstar"><img src="https://image.tmdb.org/t/p/w185/1JlfUuvvX5xLP2LIDah4JhWUtTx.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=Welcome%20to%20the%20Jungle" target="_blank" rel="noopener" title="Find Welcome to the Jungle on JioHotstar"><strong>Welcome to the Jungle</strong></a></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=Welcome%20to%20the%20Jungle" target="_blank" rel="noopener" title="Find Welcome to the Jungle on JioHotstar"><span class="badge" style="background:#0f79af">JioHotstar</span></a></td><td class="dim">Week of 23 Aug</td><td class="dim">Hindi</td></tr><tr data-search="the great grand superhero zee5 hindi" data-platform="ZEE5"><td class="poster"><a class="ottlink" href="https://www.zee5.com/search?q=The%20Great%20Grand%20Superhero" target="_blank" rel="noopener" title="Find The Great Grand Superhero on ZEE5"><img src="https://image.tmdb.org/t/p/w185/6CYmHknTN2UGGhqQUZh4tqQ6fEr.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=The%20Great%20Grand%20Superhero" target="_blank" rel="noopener" title="Find The Great Grand Superhero on ZEE5"><strong>The Great Grand Superhero</strong></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=The%20Great%20Grand%20Superhero" target="_blank" rel="noopener" title="Find The Great Grand Superhero on ZEE5"><span class="badge" style="background:#8230c6">ZEE5</span></a></td><td class="dim">Week of 23 Aug</td><td class="dim">Hindi</td></tr></tbody></table><div class="noresults">No matches in this section.</div></section>
+<section class="sec" style="padding-top:34px;border-top:1px solid var(--line);margin-top:38px">
+<div class="eyebrow">From the community</div>
+<h2 style="margin-top:6px">Suggested for this week</h2>
+<p class="lede" style="margin-bottom:18px">Everything above is curated. These were sent in by
+readers and need checking — 3 net votes either way settles it.
+<a href="community.html" style="color:var(--amber)">Suggest something &#8594;</a></p>
+<div data-community data-week="2026-08-23"></div>
+</section>
 <p class="hint" style="color:var(--ink3);font-size:12.5px;margin-top:26px">
 Generated 23 Sep 2026. Links auto-matched from YouTube search — items marked
 <span class="flag">verify</span> had a weak match and are worth a click-check.</p>
 </div><footer class="site"><div class="wrap">
-<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a></div>
+<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="community.html">Community</a></div>
 <div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
 weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
 </div></footer>
@@ -211,7 +250,7 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
   });
   document.addEventListener('keydown',function(ev){if(ev.key==='Escape')close();});
 })();
-</script><script>
+</script><script>window.CFG={url:"",key:"",threshold:3};</script><script>
 (function(){
   var box=document.getElementById('q'), plat=null;
   var cards=[].slice.call(document.querySelectorAll('.card[data-search]'));
@@ -241,5 +280,168 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
       apply();
     });
   });
+})();
+
+(function(){
+  var CFG=window.CFG||{}, T=CFG.threshold||3;
+  var ready = !!(CFG.url && CFG.key);
+
+  function cid(){
+    var k='cv-client';
+    try{
+      var v=localStorage.getItem(k);
+      if(!v){ v=(crypto.randomUUID?crypto.randomUUID():String(Math.random()).slice(2)+Date.now());
+              localStorage.setItem(k,v); }
+      return v;
+    }catch(e){ return 'anon-'+Date.now(); }
+  }
+  function api(path,opts){
+    opts=opts||{};
+    opts.headers=Object.assign({'apikey':CFG.key,'Authorization':'Bearer '+CFG.key,
+      'Content-Type':'application/json'},opts.headers||{});
+    return fetch(CFG.url.replace(/\/$/,'')+'/rest/v1/'+path,opts)
+      .then(function(r){ if(!r.ok) throw new Error(r.status+' '+r.statusText);
+                         return r.status===204?null:r.json(); });
+  }
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function score(s){return (s.votes||[]).reduce(function(a,v){return a+v.vote;},0);}
+  function mine(s){var c=cid();return (s.votes||[]).some(function(v){return v.client_id===c;});}
+
+  function labels(kind){
+    return kind==='ott'
+      ? {up:'Correct platform',down:'Wrong platform',
+         ask:'Is this film really on this platform?'}
+      : {up:'Original source',down:'Not original',
+         ask:'Is this the official upload, not a re-post?'};
+  }
+
+  function card(s){
+    var sc=score(s), verified=sc>=T, voted=mine(s);
+    var v=(s.url||'').match(/[?&]v=([A-Za-z0-9_-]{11})/);
+    var th=v?'https://i.ytimg.com/vi/'+v[1]+'/mqdefault.jpg':'';
+    var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
+    var dv=v?' data-vid="'+esc(v[1])+'" data-title="'+esc(s.title)+'"':'';
+    var badge=verified?'<span class="src verified">Community verified</span>'
+                      :'<span class="src pending">Needs checking</span>';
+    var sub=s.kind==='ott'?(s.platform||''):(s.movie||'');
+    var L=labels(s.kind);
+    var controls='';
+    if(!verified){
+      controls='<div class="vote" data-id="'+esc(s.id)+'" title="'+esc(L.ask)+'">'+
+        '<button data-v="1"'+(voted?' disabled':'')+'>&#9650; '+esc(L.up)+'</button>'+
+        '<button data-v="-1"'+(voted?' disabled':'')+'>&#9660; '+esc(L.down)+'</button>'+
+        '<span class="score">'+(voted?'you voted · ':'')+'net <b>'+(sc>0?'+':'')+sc+
+        '</b> · '+T+' to verify</span></div>';
+    }
+    var head = s.url
+      ? '<div class="left"><a class="thumb" href="'+esc(s.url)+'" target="_blank" rel="noopener"'+dv+'>'+img+(v?'<span class="pl"><i></i></span>':'')+'</a></div>'
+      : '<div class="left"><div class="thumb">'+img+'</div></div>';
+    var body='<div class="body"><div class="t">'+esc(s.title)+badge+'</div>'+
+      '<div class="m">'+esc(sub)+'</div>'+
+      (s.note?'<div class="meta">'+esc(s.note)+'</div>':'')+'</div>';
+    return '<div class="card" data-sug="'+esc(s.id)+'">'+head+body+'</div>'+controls;
+  }
+
+  function render(list,el){
+    var keep=list.filter(function(s){return score(s)> -T;});
+    if(!keep.length){ el.innerHTML='<div class="cempty">No community suggestions yet.</div>';
+                      return; }
+    var groups={song:[],trailer:[],ott:[]};
+    keep.forEach(function(s){ (groups[s.kind]||groups.song).push(s); });
+    var names={song:'Songs',trailer:'Trailers &amp; teasers',ott:'OTT releases'};
+    var h='';
+    ['song','trailer','ott'].forEach(function(k){
+      if(!groups[k].length) return;
+      h+='<h2>'+names[k]+' <span class="count">'+groups[k].length+'</span></h2>'+
+         '<div class="grid">'+groups[k].map(card).join('')+'</div>';
+    });
+    el.innerHTML=h;
+  }
+
+  function load(el,week){
+    if(!ready){
+      el.innerHTML='<div class="cbanner"><strong>Community suggestions aren\'t switched on yet.</strong> '+
+        'This section needs a Supabase project — the schema and setup steps are in '+
+        '<code>_scripts/COMMUNITY-SETUP.md</code>.</div>';
+      return Promise.resolve();
+    }
+    var q='suggestions?select=*,votes(vote,client_id)&order=created_at.desc';
+    if(week) q+='&week=eq.'+encodeURIComponent(week);
+    return api(q).then(function(rows){ render(rows||[],el); })
+      .catch(function(e){
+        el.innerHTML='<div class="cbanner">Couldn\'t load community suggestions ('+
+          esc(e.message)+'). The curated list above is unaffected.</div>';
+      });
+  }
+
+  document.addEventListener('click',function(ev){
+    var b=ev.target.closest('.vote button'); if(!b||b.disabled) return;
+    var box=b.closest('.vote'), id=box.dataset.id, v=+b.dataset.v;
+    box.querySelectorAll('button').forEach(function(x){x.disabled=true;});
+    b.classList.add('picked');
+    api('votes',{method:'POST',headers:{'Prefer':'return=minimal'},
+        body:JSON.stringify({suggestion_id:id,vote:v,client_id:cid()})})
+      .then(function(){
+        var host=box.closest('[data-community]')||document.querySelector('[data-community]');
+        if(host) load(host,host.dataset.week||'');
+      })
+      .catch(function(e){
+        box.querySelector('.score').textContent =
+          /409|duplicate/i.test(e.message) ? 'you already voted on this'
+                                           : 'vote failed — try again';
+      });
+  });
+
+  document.querySelectorAll('[data-community]').forEach(function(el){
+    load(el, el.dataset.week||'');
+  });
+
+  var form=document.getElementById('sugform');
+  if(form){
+    var err=form.querySelector('.err'), okmsg=form.querySelector('.ok');
+    var kindSel=form.querySelector('[name=kind]');
+    function sync(){
+      var ott=kindSel.value==='ott';
+      form.querySelector('[data-only=ott]').style.display=ott?'':'none';
+      form.querySelector('[data-only=video]').style.display=ott?'none':'';
+    }
+    kindSel.addEventListener('change',sync); sync();
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      err.style.display='none'; okmsg.style.display='none';
+      var f=Object.fromEntries(new FormData(form).entries());
+      if(!f.title || f.title.trim().length<2){
+        err.textContent='Give the song, trailer or film a name.';
+        err.style.display='block'; return;
+      }
+      if(f.kind!=='ott'){
+        if(!/^https:\/\/(www\.)?(youtube\.com|youtu\.be)\//.test(f.url||'')){
+          err.textContent='Paste the YouTube link for the official upload.';
+          err.style.display='block'; return;
+        }
+      } else if(!f.platform){
+        err.textContent='Pick the streaming platform.';
+        err.style.display='block'; return;
+      }
+      if(!ready){
+        err.textContent='Submissions aren\'t switched on yet — Supabase isn\'t configured.';
+        err.style.display='block'; return;
+      }
+      f.client_id=cid();
+      Object.keys(f).forEach(function(k){ if(f[k]==='') delete f[k]; });
+      api('suggestions',{method:'POST',headers:{'Prefer':'return=minimal'},
+          body:JSON.stringify(f)})
+        .then(function(){
+          form.reset(); sync();
+          okmsg.textContent='Thanks — it\'s in the queue below for others to check.';
+          okmsg.style.display='block';
+          document.querySelectorAll('[data-community]').forEach(function(el){
+            load(el, el.dataset.week||''); });
+        })
+        .catch(function(e){ err.textContent='Couldn\'t save that ('+e.message+').';
+                            err.style.display='block'; });
+    });
+  }
 })();
 </script></body></html>
