@@ -303,10 +303,18 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
       return v;
     }catch(e){ return 'anon-'+Date.now(); }
   }
+  // Supabase accepts two key formats. Legacy `anon` keys are JWTs and may be sent
+  // as a bearer token; the newer `sb_publishable_...` keys are NOT JWTs and must
+  // go on the apikey header only — sending one as a bearer fails JWT verification.
+  function authHeaders(){
+    var h={'apikey':CFG.key};
+    if(/^eyJ/.test(CFG.key||'')) h['Authorization']='Bearer '+CFG.key;
+    return h;
+  }
   function api(path,opts){
     opts=opts||{};
-    opts.headers=Object.assign({'apikey':CFG.key,'Authorization':'Bearer '+CFG.key,
-      'Content-Type':'application/json'},opts.headers||{});
+    opts.headers=Object.assign({'Content-Type':'application/json'},authHeaders(),
+                               opts.headers||{});
     return fetch(CFG.url.replace(/\/$/,'')+'/rest/v1/'+path,opts)
       .then(function(r){ if(!r.ok) throw new Error(r.status+' '+r.statusText);
                          return r.status===204?null:r.json(); });
@@ -441,7 +449,7 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
       lastQ=q;
       prev.hidden=false; prevTxt.textContent='Looking for a poster…';
       fetch(CFG.url.replace(/\/$/,'')+'/functions/v1/tmdb-poster?title='+encodeURIComponent(q),
-            {headers:{'apikey':CFG.key,'Authorization':'Bearer '+CFG.key}})
+            {headers:authHeaders()})
         .then(function(r){return r.json();})
         .then(function(d){
           if((titleEl.value||'').trim()!==q) return;      // user kept typing
