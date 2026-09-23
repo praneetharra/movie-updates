@@ -402,9 +402,17 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
     var err=form.querySelector('.err'), okmsg=form.querySelector('.ok');
     var kindSel=form.querySelector('[name=kind]');
     function sync(){
+      // querySelectorAll, not querySelector: there are two of each, and only
+      // toggling the first left the YouTube field visible for OTT entries.
       var ott=kindSel.value==='ott';
-      form.querySelector('[data-only=ott]').style.display=ott?'':'none';
-      form.querySelector('[data-only=video]').style.display=ott?'none':'';
+      form.querySelectorAll('[data-only=ott]').forEach(function(el){
+        el.style.display=ott?'':'none';
+        if(!ott) el.querySelectorAll('input,select').forEach(function(i){i.value='';});
+      });
+      form.querySelectorAll('[data-only=video]').forEach(function(el){
+        el.style.display=ott?'none':'';
+        if(ott) el.querySelectorAll('input,select').forEach(function(i){i.value='';});
+      });
     }
     kindSel.addEventListener('change',sync); sync();
     form.addEventListener('submit',function(ev){
