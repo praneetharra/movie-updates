@@ -162,11 +162,42 @@ padding:7px 14px;border-radius:999px;text-decoration:none;font-size:13px;font-we
 background:#221b10}
 .jump a.allweeks:hover{background:#2c2314;color:#fff}
 h2{font-size:19px;margin:36px 0 14px;display:flex;align-items:center;gap:10px}
+
+.cbanner{background:var(--surface);border:1px solid var(--line);
+border-left:3px solid var(--ember);border-radius:0 var(--radius) var(--radius) 0;
+padding:15px 18px;margin:0 0 22px;color:var(--ink2);font-size:14px}
+.cbanner strong{color:var(--ink)}
+.src{display:inline-block;font-size:9.5px;font-weight:700;text-transform:uppercase;
+letter-spacing:1.1px;padding:2px 7px;border-radius:4px;vertical-align:2px;margin-left:7px}
+.src.curated{color:#9fe1cb;background:#0f2a22;border:1px solid #1d4a3c}
+.src.verified{color:var(--amber2);background:#2b2110;border:1px solid #4a3a1c}
+.src.pending{color:#9db7e8;background:#141d2e;border:1px solid #27374f}
+.vote{display:flex;align-items:center;gap:7px;margin-top:8px;flex-wrap:wrap}
+.vote button{background:var(--surface2);border:1px solid var(--line2);color:var(--ink2);
+padding:5px 11px;border-radius:8px;font-size:12px;font-family:inherit;cursor:pointer}
+.vote button:hover:not(:disabled){border-color:var(--amber);color:var(--amber2)}
+.vote button.picked{background:#2b2110;border-color:var(--amber);color:var(--amber2)}
+.vote button:disabled{opacity:.5;cursor:default}
+.vote .score{font-size:11.5px;color:var(--ink3);margin-left:auto}
+.vote .score b{color:var(--ink2)}
+.sugform{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:20px;margin-bottom:26px}
+.sugform .row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.sugform label{flex:1 1 180px;min-width:0;font-size:12px;color:var(--ink3)}
+.sugform input,.sugform select,.sugform textarea{width:100%;margin-top:5px;
+background:var(--bg2);border:1px solid var(--line);color:var(--ink);padding:9px 12px;
+border-radius:9px;font-size:14px;font-family:inherit}
+.sugform input:focus,.sugform select:focus,.sugform textarea:focus{outline:none;
+border-color:var(--amber)}
+.sugform .err{color:#f09595;font-size:12.5px;margin-top:6px;display:none}
+.sugform .ok{color:#9fe1cb;font-size:13px;margin-top:10px;display:none}
+.cempty{color:var(--ink3);font-style:italic;font-size:14px;padding:12px 0}
+#cstatus{font-size:12.5px;color:var(--ink3);margin-bottom:14px}
 </style></head><body>
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
-<nav class="main"><a href="index.html">Home</a><a href="weekly.html" class="on">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
+<nav class="main"><a href="index.html">Home</a><a href="weekly.html" class="on">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
 <script type="application/json" id="wk">{"date": "2026-08-02", "label": "Week of 2 August 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Chitti Chitti Cheema", "m": "Aakasamlo Oka Tara", "u": "https://www.youtube.com/watch?v=mdYZiR3w1xM", "v": "mdYZiR3w1xM", "c": "T-Series Telugu", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Sitharala Navvu", "m": "Bhagavanthudu", "u": "https://www.youtube.com/watch?v=OEmxdp689Eo", "v": "OEmxdp689Eo", "c": "Madhura Audio", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Bomma Bomma", "m": "Sri", "u": "https://www.youtube.com/watch?v=XzupjqG2zRg", "v": "XzupjqG2zRg", "c": "Saregama Telugu", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Merupule Merupule", "m": "Nenu Ready", "u": "https://www.youtube.com/watch?v=cgpR8-plwyQ", "v": "cgpR8-plwyQ", "c": "Saregama Telugu", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Disco Light", "m": "The Red Bag", "u": "https://www.youtube.com/watch?v=WOnzzBsy1bc", "v": "WOnzzBsy1bc", "c": "Lahari Music", "n": "", "si": "", "co": "", "cf": "high"}], "trailers": [{"t": "Korean Kanakaraju", "k": "Trailer", "u": "https://www.youtube.com/watch?v=JIqKjjTfOxM", "v": "JIqKjjTfOxM", "c": "UV Creations and First Frame Entertainments", "n": "Horror entertainer, in theatres Aug 7", "cf": "high"}, {"t": "Ramayana", "k": "Trailer", "u": "https://www.youtube.com/watch?v=bL5CBbMQghQ", "v": "bL5CBbMQghQ", "c": "World Of Ramayana and T-Series Telugu", "n": "Yash as Ravana steals the limelight", "cf": "high"}, {"t": "Adarsha Kutumbam", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=ZNaElu5YQ5g", "v": "ZNaElu5YQ5g", "c": "Haarika & Hassine Creations", "n": "Venkatesh, family story with an action edge", "cf": "high"}, {"t": "DC", "k": "Trailer", "u": "https://www.youtube.com/watch?v=U-ct5Svx7E0", "v": "U-ct5Svx7E0", "c": "Sun Gemini", "n": "Lokesh Kanagaraj, in theatres Aug 7", "cf": "high"}, {"t": "Sardar 2", "k": "Teaser", "u": "https://www.youtube.com/watch?v=f25yE3B9dqw", "v": "f25yE3B9dqw", "c": "Sony Music South", "n": "Father-and-son action entertainer", "cf": "high"}, {"t": "I'm Game", "k": "Trailer", "u": "https://www.youtube.com/watch?v=G2aaDEXNq20", "v": "G2aaDEXNq20", "c": "Zee Music Company", "n": "Dulquer Salmaan", "cf": "high"}, {"t": "Pallaburusu", "k": "Teaser", "u": "https://www.youtube.com/watch?v=BnoxTrChKAY", "v": "BnoxTrChKAY", "c": "Annapurna Studios and EPIC STUDIOS", "n": "Rural comedy", "cf": "high"}, {"t": "OM (Chapter 1: Udhiram)", "k": "Teaser", "u": "https://www.youtube.com/watch?v=ZaldWrptZGg", "v": "ZaldWrptZGg", "c": "Divo Music and 2 more", "n": "Standout BGM", "cf": "high"}, {"t": "KJQ", "k": "Trailer", "u": "https://www.youtube.com/watch?v=2fKeLvwm_dw", "v": "2fKeLvwm_dw", "c": "SLV Cinemas", "n": "Crime drama, in theatres Aug 7", "cf": "high"}, {"t": "Crazy Kalyanam", "k": "Teaser", "u": "https://www.youtube.com/watch?v=71x-nOos2rs", "v": "71x-nOos2rs", "c": "Think Music Telugu", "n": "Family entertainer", "cf": "high"}, {"t": "Anakapalli", "k": "Trailer", "u": "https://www.youtube.com/watch?v=a4EzLJL6BNU", "v": "a4EzLJL6BNU", "c": "Aditya Music", "n": "Intense love-action film, in theatres Aug 7", "cf": "high"}, {"t": "Niram", "k": "Trailer", "u": "https://www.youtube.com/watch?v=40Lw14xqSLY", "v": "40Lw14xqSLY", "c": "Zee Music South", "n": "Niram - Telugu | Movie Trailer | Mugen Rao & Preethi Asrani | Balaram Krishna | Zee Music South", "cf": "high"}, {"t": "Panchali Panchabhartruka", "k": "Trailer", "u": "https://www.youtube.com/watch?v=xMocs5naCj0", "v": "xMocs5naCj0", "c": "Aditya Music", "n": "Comedy entertainer", "cf": "high"}], "ott": [{"t": "Rao Bahadur", "p": "Netflix", "d": "30 Jul", "l": "Telugu, Hindi, Tamil, Kannada, Malayalam", "poster": "https://image.tmdb.org/t/p/w185/9hzKAJImKEHBz0vnF5EazPMA8D4.jpg", "n": "", "u": "https://www.netflix.com/search?q=Rao%20Bahadur"}, {"t": "Gatta Kusthi 2", "p": "Netflix", "d": "30 Jul", "l": "Tamil, Telugu", "poster": "https://image.tmdb.org/t/p/w185/5U8MWIk9XZ60NALyOTpyX7vXIR7.jpg", "n": "", "u": "https://www.netflix.com/search?q=Gatta%20Kusthi%202"}, {"t": "Batman: Caped Crusader S2", "p": "Prime Video", "d": "31 Jul", "l": "English, Hindi", "poster": "https://image.tmdb.org/t/p/w185/zCHmmoqtLsIsou866osiWtIWmoA.jpg", "n": "Season 2", "u": "https://www.primevideo.com/search?phrase=Batman%3A%20Caped%20Crusader"}, {"t": "Hai Jawani Toh Ishq Hona Hai", "p": "ZEE5", "d": "1 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/vmlJvz6qVzYgei2V74GvnmcuQfW.jpg", "n": "", "u": "https://www.zee5.com/search?q=Hai%20Jawani%20Toh%20Ishq%20Hona%20Hai"}, {"t": "Nooru Samy / 100 Devullu", "p": "ZEE5", "d": "1 Aug", "l": "Tamil, Telugu", "poster": "", "n": "", "u": "https://www.zee5.com/search?q=Nooru%20Samy%20/%20100%20Devullu"}, {"t": "Balan: The Boy", "p": "ZEE5", "d": "1 Aug", "l": "Malayalam, Telugu", "poster": "https://image.tmdb.org/t/p/w185/boKxdR9tgXfkazf6yWgiDdleBy0.jpg", "n": "Slightly laggy, but the climax twist lands", "u": "https://www.zee5.com/search?q=Balan%3A%20The%20Boy"}, {"t": "The Legend of Karna", "p": "SonyLIV", "d": "1 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/jzVP9rqT2YH2nTx3l3csmmU9B1q.jpg", "n": "", "u": "https://www.sonyliv.com/search?searchTerm=The%20Legend%20of%20Karna"}]}</script>
 <div class="wrap"><div class="phead">
 <div class="eyebrow">Weekly edition</div>
@@ -179,11 +210,19 @@ releases, each linked to its official upload.</p>
 <section data-section><h2 id="songs">New songs <span class="count">5</span></h2><div class="grid"><div class="card" data-search="chitti chitti cheema aakasamlo oka tara t-series telugu"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=mdYZiR3w1xM" target="_blank" rel="noopener" data-vid="mdYZiR3w1xM" data-title="Chitti Chitti Cheema"><img src="https://i.ytimg.com/vi/mdYZiR3w1xM/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Chitti%20Chitti%20Cheema%20Aakasamlo%20Oka%20Tara" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Chitti%20Chitti%20Cheema%20Aakasamlo%20Oka%20Tara" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Chitti%20Chitti%20Cheema%20Aakasamlo%20Oka%20Tara" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=mdYZiR3w1xM" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=mdYZiR3w1xM" target="_blank" rel="noopener" data-vid="mdYZiR3w1xM" data-title="Chitti Chitti Cheema"><div class="t">Chitti Chitti Cheema</div><div class="m">Aakasamlo Oka Tara</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="sitharala navvu bhagavanthudu madhura audio"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=OEmxdp689Eo" target="_blank" rel="noopener" data-vid="OEmxdp689Eo" data-title="Sitharala Navvu"><img src="https://i.ytimg.com/vi/OEmxdp689Eo/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Sitharala%20Navvu%20Bhagavanthudu" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Sitharala%20Navvu%20Bhagavanthudu" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Sitharala%20Navvu%20Bhagavanthudu" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=OEmxdp689Eo" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=OEmxdp689Eo" target="_blank" rel="noopener" data-vid="OEmxdp689Eo" data-title="Sitharala Navvu"><div class="t">Sitharala Navvu</div><div class="m">Bhagavanthudu</div><div class="meta">Madhura Audio</div></a></div><div class="card" data-search="bomma bomma sri saregama telugu"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=XzupjqG2zRg" target="_blank" rel="noopener" data-vid="XzupjqG2zRg" data-title="Bomma Bomma"><img src="https://i.ytimg.com/vi/XzupjqG2zRg/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Bomma%20Bomma%20Sri" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Bomma%20Bomma%20Sri" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Bomma%20Bomma%20Sri" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=XzupjqG2zRg" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=XzupjqG2zRg" target="_blank" rel="noopener" data-vid="XzupjqG2zRg" data-title="Bomma Bomma"><div class="t">Bomma Bomma</div><div class="m">Sri</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="merupule merupule nenu ready saregama telugu"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=cgpR8-plwyQ" target="_blank" rel="noopener" data-vid="cgpR8-plwyQ" data-title="Merupule Merupule"><img src="https://i.ytimg.com/vi/cgpR8-plwyQ/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Merupule%20Merupule%20Nenu%20Ready" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Merupule%20Merupule%20Nenu%20Ready" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Merupule%20Merupule%20Nenu%20Ready" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=cgpR8-plwyQ" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=cgpR8-plwyQ" target="_blank" rel="noopener" data-vid="cgpR8-plwyQ" data-title="Merupule Merupule"><div class="t">Merupule Merupule</div><div class="m">Nenu Ready</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="disco light the red bag lahari music"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=WOnzzBsy1bc" target="_blank" rel="noopener" data-vid="WOnzzBsy1bc" data-title="Disco Light"><img src="https://i.ytimg.com/vi/WOnzzBsy1bc/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Disco%20Light%20The%20Red%20Bag" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Disco%20Light%20The%20Red%20Bag" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Disco%20Light%20The%20Red%20Bag" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=WOnzzBsy1bc" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=WOnzzBsy1bc" target="_blank" rel="noopener" data-vid="WOnzzBsy1bc" data-title="Disco Light"><div class="t">Disco Light</div><div class="m">The Red Bag</div><div class="meta">Lahari Music</div></a></div></div><div class="noresults">No matches in this section.</div></section>
 <section data-section><h2 id="trailers">Trailers &amp; teasers <span class="count">13</span></h2><div class="grid"><div class="card" data-search="korean kanakaraju — trailer horror entertainer, in theatres aug 7 uv creations and first frame entertainments horror entertainer, in theatres aug 7"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=JIqKjjTfOxM" target="_blank" rel="noopener" data-vid="JIqKjjTfOxM" data-title="Korean Kanakaraju — Trailer"><img src="https://i.ytimg.com/vi/JIqKjjTfOxM/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=JIqKjjTfOxM" target="_blank" rel="noopener" data-vid="JIqKjjTfOxM" data-title="Korean Kanakaraju — Trailer"><div class="t">Korean Kanakaraju — Trailer</div><div class="m">Horror entertainer, in theatres Aug 7</div><div class="meta">UV Creations and First Frame Entertainments</div></a></div><div class="card" data-search="ramayana — trailer yash as ravana steals the limelight world of ramayana and t-series telugu yash as ravana steals the limelight"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=bL5CBbMQghQ" target="_blank" rel="noopener" data-vid="bL5CBbMQghQ" data-title="Ramayana — Trailer"><img src="https://i.ytimg.com/vi/bL5CBbMQghQ/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=bL5CBbMQghQ" target="_blank" rel="noopener" data-vid="bL5CBbMQghQ" data-title="Ramayana — Trailer"><div class="t">Ramayana — Trailer</div><div class="m">Yash as Ravana steals the limelight</div><div class="meta">World Of Ramayana and T-Series Telugu</div></a></div><div class="card" data-search="adarsha kutumbam — glimpse venkatesh, family story with an action edge haarika &amp; hassine creations venkatesh, family story with an action edge"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=ZNaElu5YQ5g" target="_blank" rel="noopener" data-vid="ZNaElu5YQ5g" data-title="Adarsha Kutumbam — Glimpse"><img src="https://i.ytimg.com/vi/ZNaElu5YQ5g/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=ZNaElu5YQ5g" target="_blank" rel="noopener" data-vid="ZNaElu5YQ5g" data-title="Adarsha Kutumbam — Glimpse"><div class="t">Adarsha Kutumbam — Glimpse</div><div class="m">Venkatesh, family story with an action edge</div><div class="meta">Haarika &amp; Hassine Creations</div></a></div><div class="card" data-search="dc — trailer lokesh kanagaraj, in theatres aug 7 sun gemini lokesh kanagaraj, in theatres aug 7"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=U-ct5Svx7E0" target="_blank" rel="noopener" data-vid="U-ct5Svx7E0" data-title="DC — Trailer"><img src="https://i.ytimg.com/vi/U-ct5Svx7E0/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=U-ct5Svx7E0" target="_blank" rel="noopener" data-vid="U-ct5Svx7E0" data-title="DC — Trailer"><div class="t">DC — Trailer</div><div class="m">Lokesh Kanagaraj, in theatres Aug 7</div><div class="meta">Sun Gemini</div></a></div><div class="card" data-search="sardar 2 — teaser father-and-son action entertainer sony music south father-and-son action entertainer"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=f25yE3B9dqw" target="_blank" rel="noopener" data-vid="f25yE3B9dqw" data-title="Sardar 2 — Teaser"><img src="https://i.ytimg.com/vi/f25yE3B9dqw/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=f25yE3B9dqw" target="_blank" rel="noopener" data-vid="f25yE3B9dqw" data-title="Sardar 2 — Teaser"><div class="t">Sardar 2 — Teaser</div><div class="m">Father-and-son action entertainer</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="i&#x27;m game — trailer dulquer salmaan zee music company dulquer salmaan"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=G2aaDEXNq20" target="_blank" rel="noopener" data-vid="G2aaDEXNq20" data-title="I&#x27;m Game — Trailer"><img src="https://i.ytimg.com/vi/G2aaDEXNq20/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=G2aaDEXNq20" target="_blank" rel="noopener" data-vid="G2aaDEXNq20" data-title="I&#x27;m Game — Trailer"><div class="t">I&#x27;m Game — Trailer</div><div class="m">Dulquer Salmaan</div><div class="meta">Zee Music Company</div></a></div><div class="card" data-search="pallaburusu — teaser rural comedy annapurna studios and epic studios rural comedy"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=BnoxTrChKAY" target="_blank" rel="noopener" data-vid="BnoxTrChKAY" data-title="Pallaburusu — Teaser"><img src="https://i.ytimg.com/vi/BnoxTrChKAY/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=BnoxTrChKAY" target="_blank" rel="noopener" data-vid="BnoxTrChKAY" data-title="Pallaburusu — Teaser"><div class="t">Pallaburusu — Teaser</div><div class="m">Rural comedy</div><div class="meta">Annapurna Studios and EPIC STUDIOS</div></a></div><div class="card" data-search="om (chapter 1: udhiram) — teaser standout bgm divo music and 2 more standout bgm"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=ZaldWrptZGg" target="_blank" rel="noopener" data-vid="ZaldWrptZGg" data-title="OM (Chapter 1: Udhiram) — Teaser"><img src="https://i.ytimg.com/vi/ZaldWrptZGg/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=ZaldWrptZGg" target="_blank" rel="noopener" data-vid="ZaldWrptZGg" data-title="OM (Chapter 1: Udhiram) — Teaser"><div class="t">OM (Chapter 1: Udhiram) — Teaser</div><div class="m">Standout BGM</div><div class="meta">Divo Music and 2 more</div></a></div><div class="card" data-search="kjq — trailer crime drama, in theatres aug 7 slv cinemas crime drama, in theatres aug 7"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=2fKeLvwm_dw" target="_blank" rel="noopener" data-vid="2fKeLvwm_dw" data-title="KJQ — Trailer"><img src="https://i.ytimg.com/vi/2fKeLvwm_dw/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=2fKeLvwm_dw" target="_blank" rel="noopener" data-vid="2fKeLvwm_dw" data-title="KJQ — Trailer"><div class="t">KJQ — Trailer</div><div class="m">Crime drama, in theatres Aug 7</div><div class="meta">SLV Cinemas</div></a></div><div class="card" data-search="crazy kalyanam — teaser family entertainer think music telugu family entertainer"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=71x-nOos2rs" target="_blank" rel="noopener" data-vid="71x-nOos2rs" data-title="Crazy Kalyanam — Teaser"><img src="https://i.ytimg.com/vi/71x-nOos2rs/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=71x-nOos2rs" target="_blank" rel="noopener" data-vid="71x-nOos2rs" data-title="Crazy Kalyanam — Teaser"><div class="t">Crazy Kalyanam — Teaser</div><div class="m">Family entertainer</div><div class="meta">Think Music Telugu</div></a></div><div class="card" data-search="anakapalli — trailer intense love-action film, in theatres aug 7 aditya music intense love-action film, in theatres aug 7"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=a4EzLJL6BNU" target="_blank" rel="noopener" data-vid="a4EzLJL6BNU" data-title="Anakapalli — Trailer"><img src="https://i.ytimg.com/vi/a4EzLJL6BNU/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=a4EzLJL6BNU" target="_blank" rel="noopener" data-vid="a4EzLJL6BNU" data-title="Anakapalli — Trailer"><div class="t">Anakapalli — Trailer</div><div class="m">Intense love-action film, in theatres Aug 7</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="niram — trailer niram - telugu | movie trailer | mugen rao &amp; preethi asrani | balaram krishna | zee music south zee music south niram - telugu | movie trailer | mugen rao &amp; preethi asrani | balaram krishna | zee music south"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=40Lw14xqSLY" target="_blank" rel="noopener" data-vid="40Lw14xqSLY" data-title="Niram — Trailer"><img src="https://i.ytimg.com/vi/40Lw14xqSLY/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=40Lw14xqSLY" target="_blank" rel="noopener" data-vid="40Lw14xqSLY" data-title="Niram — Trailer"><div class="t">Niram — Trailer</div><div class="m">Niram - Telugu | Movie Trailer | Mugen Rao &amp; Preethi Asrani | Balaram Krishna | Zee Music South</div><div class="meta">Zee Music South</div></a></div><div class="card" data-search="panchali panchabhartruka — trailer comedy entertainer aditya music comedy entertainer"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=xMocs5naCj0" target="_blank" rel="noopener" data-vid="xMocs5naCj0" data-title="Panchali Panchabhartruka — Trailer"><img src="https://i.ytimg.com/vi/xMocs5naCj0/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=xMocs5naCj0" target="_blank" rel="noopener" data-vid="xMocs5naCj0" data-title="Panchali Panchabhartruka — Trailer"><div class="t">Panchali Panchabhartruka — Trailer</div><div class="m">Comedy entertainer</div><div class="meta">Aditya Music</div></a></div></div><div class="noresults">No matches in this section.</div></section>
 <section data-section><h2 id="ott">OTT releases <span class="count">7</span></h2><div class="chips"><button class="chip" data-plat="Netflix">Netflix</button><button class="chip" data-plat="Prime Video">Prime Video</button><button class="chip" data-plat="ZEE5">ZEE5</button><button class="chip" data-plat="SonyLIV">SonyLIV</button></div><table><thead><tr><th class="poster"></th><th>Movie</th><th>Platform</th><th>Streaming from</th><th>Language</th></tr></thead><tbody><tr data-search="rao bahadur netflix telugu, hindi, tamil, kannada, malayalam" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Rao%20Bahadur" target="_blank" rel="noopener" title="Find Rao Bahadur on Netflix"><img src="https://image.tmdb.org/t/p/w185/9hzKAJImKEHBz0vnF5EazPMA8D4.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Rao%20Bahadur" target="_blank" rel="noopener" title="Find Rao Bahadur on Netflix"><strong>Rao Bahadur</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Rao%20Bahadur" target="_blank" rel="noopener" title="Find Rao Bahadur on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">30 Jul</td><td class="dim">Telugu, Hindi, Tamil, Kannada, Malayalam</td></tr><tr data-search="gatta kusthi 2 netflix tamil, telugu" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Gatta%20Kusthi%202" target="_blank" rel="noopener" title="Find Gatta Kusthi 2 on Netflix"><img src="https://image.tmdb.org/t/p/w185/5U8MWIk9XZ60NALyOTpyX7vXIR7.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Gatta%20Kusthi%202" target="_blank" rel="noopener" title="Find Gatta Kusthi 2 on Netflix"><strong>Gatta Kusthi 2</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Gatta%20Kusthi%202" target="_blank" rel="noopener" title="Find Gatta Kusthi 2 on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">30 Jul</td><td class="dim">Tamil, Telugu</td></tr><tr data-search="batman: caped crusader s2 prime video english, hindi season 2" data-platform="Prime Video"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Batman%3A%20Caped%20Crusader" target="_blank" rel="noopener" title="Find Batman: Caped Crusader S2 on Prime Video"><img src="https://image.tmdb.org/t/p/w185/zCHmmoqtLsIsou866osiWtIWmoA.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Batman%3A%20Caped%20Crusader" target="_blank" rel="noopener" title="Find Batman: Caped Crusader S2 on Prime Video"><strong>Batman: Caped Crusader S2</strong></a><br><span class="note">Season 2</span></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Batman%3A%20Caped%20Crusader" target="_blank" rel="noopener" title="Find Batman: Caped Crusader S2 on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">31 Jul</td><td class="dim">English, Hindi</td></tr><tr data-search="hai jawani toh ishq hona hai zee5 hindi" data-platform="ZEE5"><td class="poster"><a class="ottlink" href="https://www.zee5.com/search?q=Hai%20Jawani%20Toh%20Ishq%20Hona%20Hai" target="_blank" rel="noopener" title="Find Hai Jawani Toh Ishq Hona Hai on ZEE5"><img src="https://image.tmdb.org/t/p/w185/vmlJvz6qVzYgei2V74GvnmcuQfW.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Hai%20Jawani%20Toh%20Ishq%20Hona%20Hai" target="_blank" rel="noopener" title="Find Hai Jawani Toh Ishq Hona Hai on ZEE5"><strong>Hai Jawani Toh Ishq Hona Hai</strong></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Hai%20Jawani%20Toh%20Ishq%20Hona%20Hai" target="_blank" rel="noopener" title="Find Hai Jawani Toh Ishq Hona Hai on ZEE5"><span class="badge" style="background:#8230c6">ZEE5</span></a></td><td class="dim">1 Aug</td><td class="dim">Hindi</td></tr><tr data-search="nooru samy / 100 devullu zee5 tamil, telugu" data-platform="ZEE5"><td class="poster"><span class="noposter"></span></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Nooru%20Samy%20/%20100%20Devullu" target="_blank" rel="noopener" title="Find Nooru Samy / 100 Devullu on ZEE5"><strong>Nooru Samy / 100 Devullu</strong></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Nooru%20Samy%20/%20100%20Devullu" target="_blank" rel="noopener" title="Find Nooru Samy / 100 Devullu on ZEE5"><span class="badge" style="background:#8230c6">ZEE5</span></a></td><td class="dim">1 Aug</td><td class="dim">Tamil, Telugu</td></tr><tr data-search="balan: the boy zee5 malayalam, telugu slightly laggy, but the climax twist lands" data-platform="ZEE5"><td class="poster"><a class="ottlink" href="https://www.zee5.com/search?q=Balan%3A%20The%20Boy" target="_blank" rel="noopener" title="Find Balan: The Boy on ZEE5"><img src="https://image.tmdb.org/t/p/w185/boKxdR9tgXfkazf6yWgiDdleBy0.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Balan%3A%20The%20Boy" target="_blank" rel="noopener" title="Find Balan: The Boy on ZEE5"><strong>Balan: The Boy</strong></a><br><span class="note">Slightly laggy, but the climax twist lands</span></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Balan%3A%20The%20Boy" target="_blank" rel="noopener" title="Find Balan: The Boy on ZEE5"><span class="badge" style="background:#8230c6">ZEE5</span></a></td><td class="dim">1 Aug</td><td class="dim">Malayalam, Telugu</td></tr><tr data-search="the legend of karna sonyliv telugu" data-platform="SonyLIV"><td class="poster"><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=The%20Legend%20of%20Karna" target="_blank" rel="noopener" title="Find The Legend of Karna on SonyLIV"><img src="https://image.tmdb.org/t/p/w185/jzVP9rqT2YH2nTx3l3csmmU9B1q.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=The%20Legend%20of%20Karna" target="_blank" rel="noopener" title="Find The Legend of Karna on SonyLIV"><strong>The Legend of Karna</strong></a></td><td><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=The%20Legend%20of%20Karna" target="_blank" rel="noopener" title="Find The Legend of Karna on SonyLIV"><span class="badge" style="background:#0c1f3f">SonyLIV</span></a></td><td class="dim">1 Aug</td><td class="dim">Telugu</td></tr></tbody></table><div class="noresults">No matches in this section.</div></section>
+<section class="sec" style="padding-top:34px;border-top:1px solid var(--line);margin-top:38px">
+<div class="eyebrow">From the community</div>
+<h2 style="margin-top:6px">Suggested for this week</h2>
+<p class="lede" style="margin-bottom:18px">Everything above is curated. These were sent in by
+readers and need checking — 3 net votes either way settles it.
+<a href="community.html" style="color:var(--amber)">Suggest something &#8594;</a></p>
+<div data-community data-week="2026-08-02"></div>
+</section>
 <p class="hint" style="color:var(--ink3);font-size:12.5px;margin-top:26px">
 Generated 23 Sep 2026. Links auto-matched from YouTube search — items marked
 <span class="flag">verify</span> had a weak match and are worth a click-check.</p>
 </div><footer class="site"><div class="wrap">
-<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a></div>
+<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">This Week</a><a href="archive.html">Archive</a><a href="playlists.html">Playlists</a><a href="calendar.html">Calendar</a><a href="community.html">Community</a></div>
 <div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
 weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
 </div></footer>
@@ -211,7 +250,7 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
   });
   document.addEventListener('keydown',function(ev){if(ev.key==='Escape')close();});
 })();
-</script><script>
+</script><script>window.CFG={url:"",key:"",threshold:3};</script><script>
 (function(){
   var box=document.getElementById('q'), plat=null;
   var cards=[].slice.call(document.querySelectorAll('.card[data-search]'));
@@ -241,5 +280,168 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
       apply();
     });
   });
+})();
+
+(function(){
+  var CFG=window.CFG||{}, T=CFG.threshold||3;
+  var ready = !!(CFG.url && CFG.key);
+
+  function cid(){
+    var k='cv-client';
+    try{
+      var v=localStorage.getItem(k);
+      if(!v){ v=(crypto.randomUUID?crypto.randomUUID():String(Math.random()).slice(2)+Date.now());
+              localStorage.setItem(k,v); }
+      return v;
+    }catch(e){ return 'anon-'+Date.now(); }
+  }
+  function api(path,opts){
+    opts=opts||{};
+    opts.headers=Object.assign({'apikey':CFG.key,'Authorization':'Bearer '+CFG.key,
+      'Content-Type':'application/json'},opts.headers||{});
+    return fetch(CFG.url.replace(/\/$/,'')+'/rest/v1/'+path,opts)
+      .then(function(r){ if(!r.ok) throw new Error(r.status+' '+r.statusText);
+                         return r.status===204?null:r.json(); });
+  }
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function score(s){return (s.votes||[]).reduce(function(a,v){return a+v.vote;},0);}
+  function mine(s){var c=cid();return (s.votes||[]).some(function(v){return v.client_id===c;});}
+
+  function labels(kind){
+    return kind==='ott'
+      ? {up:'Correct platform',down:'Wrong platform',
+         ask:'Is this film really on this platform?'}
+      : {up:'Original source',down:'Not original',
+         ask:'Is this the official upload, not a re-post?'};
+  }
+
+  function card(s){
+    var sc=score(s), verified=sc>=T, voted=mine(s);
+    var v=(s.url||'').match(/[?&]v=([A-Za-z0-9_-]{11})/);
+    var th=v?'https://i.ytimg.com/vi/'+v[1]+'/mqdefault.jpg':'';
+    var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
+    var dv=v?' data-vid="'+esc(v[1])+'" data-title="'+esc(s.title)+'"':'';
+    var badge=verified?'<span class="src verified">Community verified</span>'
+                      :'<span class="src pending">Needs checking</span>';
+    var sub=s.kind==='ott'?(s.platform||''):(s.movie||'');
+    var L=labels(s.kind);
+    var controls='';
+    if(!verified){
+      controls='<div class="vote" data-id="'+esc(s.id)+'" title="'+esc(L.ask)+'">'+
+        '<button data-v="1"'+(voted?' disabled':'')+'>&#9650; '+esc(L.up)+'</button>'+
+        '<button data-v="-1"'+(voted?' disabled':'')+'>&#9660; '+esc(L.down)+'</button>'+
+        '<span class="score">'+(voted?'you voted · ':'')+'net <b>'+(sc>0?'+':'')+sc+
+        '</b> · '+T+' to verify</span></div>';
+    }
+    var head = s.url
+      ? '<div class="left"><a class="thumb" href="'+esc(s.url)+'" target="_blank" rel="noopener"'+dv+'>'+img+(v?'<span class="pl"><i></i></span>':'')+'</a></div>'
+      : '<div class="left"><div class="thumb">'+img+'</div></div>';
+    var body='<div class="body"><div class="t">'+esc(s.title)+badge+'</div>'+
+      '<div class="m">'+esc(sub)+'</div>'+
+      (s.note?'<div class="meta">'+esc(s.note)+'</div>':'')+'</div>';
+    return '<div class="card" data-sug="'+esc(s.id)+'">'+head+body+'</div>'+controls;
+  }
+
+  function render(list,el){
+    var keep=list.filter(function(s){return score(s)> -T;});
+    if(!keep.length){ el.innerHTML='<div class="cempty">No community suggestions yet.</div>';
+                      return; }
+    var groups={song:[],trailer:[],ott:[]};
+    keep.forEach(function(s){ (groups[s.kind]||groups.song).push(s); });
+    var names={song:'Songs',trailer:'Trailers &amp; teasers',ott:'OTT releases'};
+    var h='';
+    ['song','trailer','ott'].forEach(function(k){
+      if(!groups[k].length) return;
+      h+='<h2>'+names[k]+' <span class="count">'+groups[k].length+'</span></h2>'+
+         '<div class="grid">'+groups[k].map(card).join('')+'</div>';
+    });
+    el.innerHTML=h;
+  }
+
+  function load(el,week){
+    if(!ready){
+      el.innerHTML='<div class="cbanner"><strong>Community suggestions aren\'t switched on yet.</strong> '+
+        'This section needs a Supabase project — the schema and setup steps are in '+
+        '<code>_scripts/COMMUNITY-SETUP.md</code>.</div>';
+      return Promise.resolve();
+    }
+    var q='suggestions?select=*,votes(vote,client_id)&order=created_at.desc';
+    if(week) q+='&week=eq.'+encodeURIComponent(week);
+    return api(q).then(function(rows){ render(rows||[],el); })
+      .catch(function(e){
+        el.innerHTML='<div class="cbanner">Couldn\'t load community suggestions ('+
+          esc(e.message)+'). The curated list above is unaffected.</div>';
+      });
+  }
+
+  document.addEventListener('click',function(ev){
+    var b=ev.target.closest('.vote button'); if(!b||b.disabled) return;
+    var box=b.closest('.vote'), id=box.dataset.id, v=+b.dataset.v;
+    box.querySelectorAll('button').forEach(function(x){x.disabled=true;});
+    b.classList.add('picked');
+    api('votes',{method:'POST',headers:{'Prefer':'return=minimal'},
+        body:JSON.stringify({suggestion_id:id,vote:v,client_id:cid()})})
+      .then(function(){
+        var host=box.closest('[data-community]')||document.querySelector('[data-community]');
+        if(host) load(host,host.dataset.week||'');
+      })
+      .catch(function(e){
+        box.querySelector('.score').textContent =
+          /409|duplicate/i.test(e.message) ? 'you already voted on this'
+                                           : 'vote failed — try again';
+      });
+  });
+
+  document.querySelectorAll('[data-community]').forEach(function(el){
+    load(el, el.dataset.week||'');
+  });
+
+  var form=document.getElementById('sugform');
+  if(form){
+    var err=form.querySelector('.err'), okmsg=form.querySelector('.ok');
+    var kindSel=form.querySelector('[name=kind]');
+    function sync(){
+      var ott=kindSel.value==='ott';
+      form.querySelector('[data-only=ott]').style.display=ott?'':'none';
+      form.querySelector('[data-only=video]').style.display=ott?'none':'';
+    }
+    kindSel.addEventListener('change',sync); sync();
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      err.style.display='none'; okmsg.style.display='none';
+      var f=Object.fromEntries(new FormData(form).entries());
+      if(!f.title || f.title.trim().length<2){
+        err.textContent='Give the song, trailer or film a name.';
+        err.style.display='block'; return;
+      }
+      if(f.kind!=='ott'){
+        if(!/^https:\/\/(www\.)?(youtube\.com|youtu\.be)\//.test(f.url||'')){
+          err.textContent='Paste the YouTube link for the official upload.';
+          err.style.display='block'; return;
+        }
+      } else if(!f.platform){
+        err.textContent='Pick the streaming platform.';
+        err.style.display='block'; return;
+      }
+      if(!ready){
+        err.textContent='Submissions aren\'t switched on yet — Supabase isn\'t configured.';
+        err.style.display='block'; return;
+      }
+      f.client_id=cid();
+      Object.keys(f).forEach(function(k){ if(f[k]==='') delete f[k]; });
+      api('suggestions',{method:'POST',headers:{'Prefer':'return=minimal'},
+          body:JSON.stringify(f)})
+        .then(function(){
+          form.reset(); sync();
+          okmsg.textContent='Thanks — it\'s in the queue below for others to check.';
+          okmsg.style.display='block';
+          document.querySelectorAll('[data-community]').forEach(function(el){
+            load(el, el.dataset.week||''); });
+        })
+        .catch(function(e){ err.textContent='Couldn\'t save that ('+e.message+').';
+                            err.style.display='block'; });
+    });
+  }
 })();
 </script></body></html>
