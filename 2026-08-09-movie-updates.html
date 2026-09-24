@@ -154,6 +154,101 @@ footer.site a:hover{color:var(--amber)}
 .svc{gap:2px}.svc a{height:19px}.svc svg{width:11px;height:11px}
 .playall{flex:1 1 100%;justify-content:center}}
 
+.authbox{display:flex;align-items:center;gap:8px;margin-left:12px;flex-shrink:0}
+.authbtn{background:var(--surface);border:1px solid var(--line2);color:var(--ink);
+padding:6px 13px;border-radius:999px;font-size:13px;font-family:inherit;cursor:pointer;
+display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.authbtn:hover{border-color:var(--amber);color:var(--amber2)}
+.authbtn svg{width:14px;height:14px}
+/* Initials, drawn locally. An <img> of the Google profile picture would make
+   every page load hit googleusercontent.com — an outbound request to a third
+   party that a reader has no reason to expect from a film site. */
+.avatar{width:26px;height:26px;border-radius:50%;background:#2b2110;
+border:1px solid #4a3a1c;color:var(--amber2);font-size:11px;font-weight:700;
+display:flex;align-items:center;justify-content:center;letter-spacing:.3px;
+flex-shrink:0;text-transform:uppercase}
+.who{font-size:12.5px;color:var(--ink2);max-width:150px;overflow:hidden;
+text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:860px){.who{display:none}.authbox{margin-left:auto}}
+
+.authmodal{position:fixed;inset:0;background:rgba(5,6,8,.9);z-index:1200;
+display:flex;align-items:center;justify-content:center;padding:20px}
+.authmodal[hidden]{display:none}
+.authcard{background:var(--surface);border:1px solid var(--line2);border-radius:16px;
+padding:28px;width:100%;max-width:400px}
+.authcard h2{font-size:20px;margin-bottom:8px}
+.authcard p{color:var(--ink2);font-size:14px;margin:0 0 20px}
+.gbtn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
+background:#fff;color:#1f1f1f;border:0;border-radius:10px;padding:12px;font-size:15px;
+font-weight:600;font-family:inherit;cursor:pointer}
+.gbtn:hover{background:#f1f1f1}
+.gbtn svg{width:18px;height:18px}
+.orline{display:flex;align-items:center;gap:12px;color:var(--ink3);font-size:12px;
+margin:18px 0}
+.orline::before,.orline::after{content:'';flex:1;height:1px;background:var(--line)}
+.authcard input{width:100%;background:var(--bg2);border:1px solid var(--line);
+color:var(--ink);padding:11px 13px;border-radius:10px;font-size:14px;font-family:inherit}
+.authcard input:focus{outline:none;border-color:var(--amber)}
+.authcard .mlbtn{width:100%;margin-top:9px}
+.authcard .msg{font-size:13px;margin-top:12px;display:none}
+.authcard .msg.ok{color:#9fe1cb;display:block}
+.authcard .msg.bad{color:#f09595;display:block}
+.authfine{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:16px 0 0}
+.authfine a{color:var(--ink2);text-decoration:underline;text-underline-offset:2px}
+.authfine a:hover{color:var(--amber2)}
+.authcard .close{background:none;border:0;color:var(--ink3);font-size:13px;
+cursor:pointer;margin-top:16px;width:100%;font-family:inherit}
+.authcard .close:hover{color:var(--ink2)}
+
+.locked{border:1px dashed var(--line2);background:var(--bg2);border-radius:var(--radius);
+padding:28px 24px;text-align:center;margin:18px 0}
+.locked h3{font-size:17px;margin-bottom:8px}
+.locked p{color:var(--ink2);font-size:14px;margin:0 auto 16px;max-width:52ch}
+.locked .lk{font-size:26px;line-height:1;margin-bottom:12px;opacity:.5}
+.loading{color:var(--ink3);font-size:13.5px;font-style:italic;padding:10px 0}
+
+.adminchip{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.1px;
+padding:2px 7px;border-radius:4px;color:#f3cf97;background:#2b2110;border:1px solid #4a3a1c}
+body:not(.is-admin) .adminonly{display:none!important}
+.mod{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:7px}
+.mod button{background:#171b22;border:1px solid var(--line2);color:var(--ink2);
+padding:4px 10px;border-radius:7px;font-size:11.5px;font-family:inherit;cursor:pointer}
+.mod button:hover:not(:disabled){border-color:var(--amber);color:var(--amber2)}
+.mod button.danger:hover:not(:disabled){border-color:#b3453a;color:#f09595}
+.mod button:disabled{opacity:.45;cursor:default}
+.mod .who{font-size:11px;color:var(--ink3);margin-left:auto}
+.src.admin{color:#9fe1cb;background:#0f2a22;border:1px solid #1d4a3c}
+.src.killed{color:#f09595;background:#2a1414;border:1px solid #4a1d1d}
+
+.fixbtn{position:absolute;top:6px;right:6px;z-index:3;width:24px;height:24px;
+border-radius:6px;background:rgba(18,21,27,.92);border:1px solid var(--line2);
+color:var(--ink3);font-size:11px;line-height:1;cursor:pointer;padding:0;
+opacity:0;transition:.12s}
+.card:hover .fixbtn,.fixbtn:focus{opacity:1}
+.fixbtn:hover{border-color:var(--amber);color:var(--amber2)}
+tr .fixbtn{position:static;opacity:.6;width:22px;height:22px}
+.card.patched{border-left:2px solid var(--amber)}
+
+.fixwrap{position:fixed;inset:0;background:rgba(5,6,8,.9);z-index:1300;
+display:flex;align-items:center;justify-content:center;padding:20px}
+.fixwrap[hidden]{display:none}
+.fixcard{background:var(--surface);border:1px solid var(--line2);border-radius:16px;
+padding:24px;width:100%;max-width:470px;max-height:86vh;overflow:auto}
+.fixcard h2{font-size:18px;margin-bottom:4px}
+.fixcard .iid{font-size:11px;color:var(--ink3);font-family:ui-monospace,SFMono-Regular,
+Menlo,monospace;margin-bottom:16px;word-break:break-all}
+.fixcard label{display:block;font-size:12px;color:var(--ink3);margin-bottom:11px}
+.fixcard input{width:100%;margin-top:5px;background:var(--bg2);border:1px solid var(--line);
+color:var(--ink);padding:9px 12px;border-radius:9px;font-size:14px;font-family:inherit}
+.fixcard input:focus{outline:none;border-color:var(--amber)}
+.fixrow{display:flex;gap:9px;margin-top:6px;flex-wrap:wrap}
+.fixrow .btn{flex:1 1 auto;justify-content:center}
+.fixnote{font-size:12.5px;color:var(--ink2);background:var(--bg2);border-radius:9px;
+padding:11px 13px;margin:4px 0 15px;line-height:1.5}
+.fixmsg{font-size:13px;margin-top:11px;display:none}
+.fixmsg.ok{color:#9fe1cb;display:block}
+.fixmsg.bad{color:#f09595;display:block}
+
 .jump{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 20px}
 .jump a{background:var(--surface);border:1px solid var(--line);color:var(--ink2);
 padding:7px 14px;border-radius:999px;text-decoration:none;font-size:13px;font-weight:500}
@@ -205,7 +300,7 @@ display:block}
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
-<nav class="main"><a href="index.html">Home</a><a href="this-week.html" class="soon" title="Not populated yet">This Week</a><a href="weekly.html" class="on">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
+<nav class="main"><a href="index.html">Home</a><a href="this-week.html" class="soon" title="Not populated yet">This Week</a><a href="weekly.html" class="on">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav><div class="authbox" id="authbox"></div></div></header>
 <script type="application/json" id="wk">{"date": "2026-08-09", "label": "Week of 9 August 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Yaalalo Yaalalo", "m": "Irumudi", "u": "https://www.youtube.com/watch?v=WT-wrwlN144", "v": "WT-wrwlN144", "c": "T-Series Telugu", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Okka Chinni Navve", "m": "Sahaa", "u": "https://www.youtube.com/watch?v=E5ZeUJjEFUc", "v": "E5ZeUJjEFUc", "c": "Sumaira Studios", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Seethakokala", "m": "Happy Journey", "u": "https://www.youtube.com/watch?v=JwrtlzO9RHE", "v": "JwrtlzO9RHE", "c": "Zee Music South", "n": "", "si": "", "co": "", "cf": "high"}], "trailers": [{"t": "The Paradise", "k": "Teaser", "u": "https://www.youtube.com/watch?v=Y3xewv1ZnHc", "v": "Y3xewv1ZnHc", "c": "SLV Cinemas", "n": "Nani — release date revealed: 24 September", "cf": "high"}, {"t": "Vishwanath and Sons", "k": "Trailer", "u": "https://www.youtube.com/watch?v=6qdwBOT6MlE", "v": "6qdwBOT6MlE", "c": "Sithara Entertainments", "n": "Suriya — simple emotional family drama, in theatres 14 Aug", "cf": "high"}, {"t": "Pallaburusu", "k": "Trailer", "u": "https://www.youtube.com/watch?v=kXTdgb6QrsY", "v": "kXTdgb6QrsY", "c": "Annapurna Studios and EPIC STUDIOS", "n": "Rural father-and-son emotion, Balagam vibes — 14 Aug", "cf": "high"}, {"t": "Agadha", "k": "Trailer", "u": "https://www.youtube.com/watch?v=LHxKhCcMFl8", "v": "LHxKhCcMFl8", "c": "Sri Adi Varaha Productions", "n": "Mystic horror — M.S. Raju, in theatres 14 Aug", "cf": "high"}, {"t": "Makutam", "k": "Trailer", "u": "https://www.youtube.com/watch?v=D4T5kObMX-A", "v": "D4T5kObMX-A", "c": "G.V. Prakash Kumar", "n": "Vishal action entertainer — 14 Aug", "cf": "high"}, {"t": "Maya Lady", "k": "Glimpse", "u": "https://www.youtube.com/watch?v=0mEFNjGiuRk", "v": "0mEFNjGiuRk", "c": "Sony Music South", "n": "Maya Lady - Official Glimpse | Rakesh Varre, Madhumita Sarcar", "cf": "high"}, {"t": "Toxic", "k": "Trailer", "u": "https://www.youtube.com/watch?v=0safa-gtIgQ", "v": "0safa-gtIgQ", "c": "KVN Productions and Zee Music South", "n": "Emotion added alongside the action — releases 26 Aug", "cf": "high"}], "ott": [{"t": "Lenin", "p": "ZEE5", "d": "Week of 9 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/rAHQviBq8Fxi20hNtHPGLnr4L0f.jpg", "n": "", "g": ["Action", "Drama", "Romance"], "o": "In a village trapped by generations of bloodshed, a determined young man dares to challenge the traditions fueling an endless cycle of violence.", "u": "https://www.zee5.com/search?q=Lenin"}, {"t": "Oh Sukumari", "p": "Prime Video", "d": "Week of 9 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/x6b5cHpR8KuCg5OHEXmvkgVXKtN.jpg", "n": "", "g": ["Comedy", "Romance", "Drama"], "o": "Follows an aspiring politician who falls in love with Sukumari, a beautiful and soft-natured woman, while her father conceals a secret that threatens…", "u": "https://www.primevideo.com/search?phrase=Oh%20Sukumari"}, {"t": "M.R.P (Neekentha Naakentha)", "p": "Prime Video", "d": "Week of 9 Aug", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/qi3AnfzSqEM844w8FSG3JJmxMS4.jpg", "n": "", "g": ["Comedy", "Thriller"], "o": "Three roommates borrow money from a dangerous lender to start a business.", "u": "https://www.primevideo.com/search?phrase=M.R.P"}, {"t": "Idhayam Murali", "p": "Netflix", "d": "Week of 9 Aug", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/8gfs5OsGINENFAl0h1XZPNup9lI.jpg", "n": "", "g": ["Romance", "Comedy", "Drama"], "o": "A young man navigates the complexities of unrequited love, finding that even as years pass and life takes unexpected turns, certain emotions remain…", "u": "https://www.netflix.com/search?q=Idhayam%20Murali"}, {"t": "Main Vaapas Aaunga", "p": "Netflix", "d": "Week of 9 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/wHTNsZxvlfRAndc52hGlbdCUXKS.jpg", "n": "", "g": ["Romance", "Drama", "Mystery"], "o": "Haunted by a childhood romance and recollections of love lost during the 1947 Partition of India, 95-year-old Ishar Singh Grewal shares his story…", "u": "https://www.netflix.com/search?q=Main%20Vaapas%20Aaunga"}, {"t": "Uyir", "p": "JioHotstar", "d": "Week of 9 Aug", "l": "Malayalam", "poster": "https://image.tmdb.org/t/p/w185/r512xdTd9aXjpIxjY2JlhvJYvIb.jpg", "n": "", "g": ["Crime", "Thriller"], "o": "SI Ajeeb, a probationary officer posted in a Kerala town, investigates the mysterious death of an unidentified woman whose decomposed body is found…", "u": "https://www.hotstar.com/in/search?q=Uyir"}, {"t": "Operation Safed Sagar", "p": "Netflix", "d": "Week of 9 Aug", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/f56PHAGbUFPmHMRippWWNpRgSao.jpg", "n": "", "g": ["Drama"], "o": "As the Kargil War erupts between India and Pakistan, the Golden Arrows squadron of the Air Force takes flight on a dangerous mission behind enemy…", "u": "https://www.netflix.com/search?q=Operation%20Safed%20Sagar"}, {"t": "Special Ops: Lioness S3", "p": "Prime Video", "d": "Week of 9 Aug", "l": "English", "poster": "https://image.tmdb.org/t/p/w185/rzpHPSEgPTpRs8EHbygwsOw7jC0.jpg", "n": "Series", "g": ["Drama", "War & Politics"], "o": "Cruz Manuelos, a rough-around-the-edges but passionate young Marine, is recruited to join the CIA's Lioness Engagement Team to help bring down a…", "u": "https://www.primevideo.com/search?phrase=Special%20Ops%3A%20Lioness"}]}</script>
 <div class="wrap"><div class="phead">
 <div class="eyebrow">Weekly edition</div>
@@ -215,9 +310,9 @@ releases, each linked to its official upload.</p>
 </div>
 <nav class="jump"><a href="#songs">Songs (3)</a><a href="#trailers">Trailers (7)</a><a href="#ott">OTT (8)</a><a class="allweeks" href="weekly.html">All weeks &#8594;</a></nav>
 <div class="tools"><input id="q" type="search" placeholder="Filter this week — song, movie, platform…" autocomplete="off"><a class="playall" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE">&#9654; Play all 3 songs</a></div>
-<section data-section><h2 id="songs">New songs <span class="count">3</span></h2><div class="grid"><div class="card" data-search="yaalalo yaalalo irumudi t-series telugu"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener" data-vid="WT-wrwlN144" data-title="Yaalalo Yaalalo"><img src="https://i.ytimg.com/vi/WT-wrwlN144/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Yaalalo%20Yaalalo%20Irumudi" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Yaalalo%20Yaalalo%20Irumudi" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Yaalalo%20Yaalalo%20Irumudi" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener" data-vid="WT-wrwlN144" data-title="Yaalalo Yaalalo"><div class="t">Yaalalo Yaalalo</div><div class="m">Irumudi</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="okka chinni navve sahaa sumaira studios"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener" data-vid="E5ZeUJjEFUc" data-title="Okka Chinni Navve"><img src="https://i.ytimg.com/vi/E5ZeUJjEFUc/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Okka%20Chinni%20Navve%20Sahaa" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Okka%20Chinni%20Navve%20Sahaa" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Okka%20Chinni%20Navve%20Sahaa" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener" data-vid="E5ZeUJjEFUc" data-title="Okka Chinni Navve"><div class="t">Okka Chinni Navve</div><div class="m">Sahaa</div><div class="meta">Sumaira Studios</div></a></div><div class="card" data-search="seethakokala happy journey zee music south"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener" data-vid="JwrtlzO9RHE" data-title="Seethakokala"><img src="https://i.ytimg.com/vi/JwrtlzO9RHE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Seethakokala%20Happy%20Journey" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Seethakokala%20Happy%20Journey" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Seethakokala%20Happy%20Journey" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener" data-vid="JwrtlzO9RHE" data-title="Seethakokala"><div class="t">Seethakokala</div><div class="m">Happy Journey</div><div class="meta">Zee Music South</div></a></div></div><div class="noresults">No matches in this section.</div></section>
-<section data-section><h2 id="trailers">Trailers &amp; teasers <span class="count">7</span></h2><div class="grid"><div class="card" data-search="the paradise — teaser nani — release date revealed: 24 september slv cinemas nani — release date revealed: 24 september"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=Y3xewv1ZnHc" target="_blank" rel="noopener" data-vid="Y3xewv1ZnHc" data-title="The Paradise — Teaser"><img src="https://i.ytimg.com/vi/Y3xewv1ZnHc/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=Y3xewv1ZnHc" target="_blank" rel="noopener" data-vid="Y3xewv1ZnHc" data-title="The Paradise — Teaser"><div class="t">The Paradise — Teaser</div><div class="m">Nani — release date revealed: 24 September</div><div class="meta">SLV Cinemas</div></a></div><div class="card" data-search="vishwanath and sons — trailer suriya — simple emotional family drama, in theatres 14 aug sithara entertainments suriya — simple emotional family drama, in theatres 14 aug"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=6qdwBOT6MlE" target="_blank" rel="noopener" data-vid="6qdwBOT6MlE" data-title="Vishwanath and Sons — Trailer"><img src="https://i.ytimg.com/vi/6qdwBOT6MlE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=6qdwBOT6MlE" target="_blank" rel="noopener" data-vid="6qdwBOT6MlE" data-title="Vishwanath and Sons — Trailer"><div class="t">Vishwanath and Sons — Trailer</div><div class="m">Suriya — simple emotional family drama, in theatres 14 Aug</div><div class="meta">Sithara Entertainments</div></a></div><div class="card" data-search="pallaburusu — trailer rural father-and-son emotion, balagam vibes — 14 aug annapurna studios and epic studios rural father-and-son emotion, balagam vibes — 14 aug"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=kXTdgb6QrsY" target="_blank" rel="noopener" data-vid="kXTdgb6QrsY" data-title="Pallaburusu — Trailer"><img src="https://i.ytimg.com/vi/kXTdgb6QrsY/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=kXTdgb6QrsY" target="_blank" rel="noopener" data-vid="kXTdgb6QrsY" data-title="Pallaburusu — Trailer"><div class="t">Pallaburusu — Trailer</div><div class="m">Rural father-and-son emotion, Balagam vibes — 14 Aug</div><div class="meta">Annapurna Studios and EPIC STUDIOS</div></a></div><div class="card" data-search="agadha — trailer mystic horror — m.s. raju, in theatres 14 aug sri adi varaha productions mystic horror — m.s. raju, in theatres 14 aug"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=LHxKhCcMFl8" target="_blank" rel="noopener" data-vid="LHxKhCcMFl8" data-title="Agadha — Trailer"><img src="https://i.ytimg.com/vi/LHxKhCcMFl8/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=LHxKhCcMFl8" target="_blank" rel="noopener" data-vid="LHxKhCcMFl8" data-title="Agadha — Trailer"><div class="t">Agadha — Trailer</div><div class="m">Mystic horror — M.S. Raju, in theatres 14 Aug</div><div class="meta">Sri Adi Varaha Productions</div></a></div><div class="card" data-search="makutam — trailer vishal action entertainer — 14 aug g.v. prakash kumar vishal action entertainer — 14 aug"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=D4T5kObMX-A" target="_blank" rel="noopener" data-vid="D4T5kObMX-A" data-title="Makutam — Trailer"><img src="https://i.ytimg.com/vi/D4T5kObMX-A/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=D4T5kObMX-A" target="_blank" rel="noopener" data-vid="D4T5kObMX-A" data-title="Makutam — Trailer"><div class="t">Makutam — Trailer</div><div class="m">Vishal action entertainer — 14 Aug</div><div class="meta">G.V. Prakash Kumar</div></a></div><div class="card" data-search="maya lady — glimpse maya lady - official glimpse | rakesh varre, madhumita sarcar sony music south maya lady - official glimpse | rakesh varre, madhumita sarcar"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=0mEFNjGiuRk" target="_blank" rel="noopener" data-vid="0mEFNjGiuRk" data-title="Maya Lady — Glimpse"><img src="https://i.ytimg.com/vi/0mEFNjGiuRk/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=0mEFNjGiuRk" target="_blank" rel="noopener" data-vid="0mEFNjGiuRk" data-title="Maya Lady — Glimpse"><div class="t">Maya Lady — Glimpse</div><div class="m">Maya Lady - Official Glimpse | Rakesh Varre, Madhumita Sarcar</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="toxic — trailer emotion added alongside the action — releases 26 aug kvn productions and zee music south emotion added alongside the action — releases 26 aug"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=0safa-gtIgQ" target="_blank" rel="noopener" data-vid="0safa-gtIgQ" data-title="Toxic — Trailer"><img src="https://i.ytimg.com/vi/0safa-gtIgQ/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=0safa-gtIgQ" target="_blank" rel="noopener" data-vid="0safa-gtIgQ" data-title="Toxic — Trailer"><div class="t">Toxic — Trailer</div><div class="m">Emotion added alongside the action — releases 26 Aug</div><div class="meta">KVN Productions and Zee Music South</div></a></div></div><div class="noresults">No matches in this section.</div></section>
-<section data-section><h2 id="ott">OTT releases <span class="count">8</span></h2><div class="chips"><button class="chip" data-plat="ZEE5">ZEE5</button><button class="chip" data-plat="Prime Video">Prime Video</button><button class="chip" data-plat="Netflix">Netflix</button><button class="chip" data-plat="JioHotstar">JioHotstar</button></div><table><thead><tr><th class="poster"></th><th>Movie</th><th>Platform</th><th>Streaming from</th><th>Language</th></tr></thead><tbody><tr data-search="lenin zee5 telugu" data-platform="ZEE5"><td class="poster"><a class="ottlink" href="https://www.zee5.com/search?q=Lenin" target="_blank" rel="noopener" title="Find Lenin on ZEE5"><img src="https://image.tmdb.org/t/p/w185/rAHQviBq8Fxi20hNtHPGLnr4L0f.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Lenin" target="_blank" rel="noopener" title="Find Lenin on ZEE5"><strong>Lenin</strong></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Lenin" target="_blank" rel="noopener" title="Find Lenin on ZEE5"><span class="badge" style="background:#8230c6">ZEE5</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Telugu</td></tr><tr data-search="oh sukumari prime video telugu" data-platform="Prime Video"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Oh%20Sukumari" target="_blank" rel="noopener" title="Find Oh Sukumari on Prime Video"><img src="https://image.tmdb.org/t/p/w185/x6b5cHpR8KuCg5OHEXmvkgVXKtN.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Oh%20Sukumari" target="_blank" rel="noopener" title="Find Oh Sukumari on Prime Video"><strong>Oh Sukumari</strong></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Oh%20Sukumari" target="_blank" rel="noopener" title="Find Oh Sukumari on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Telugu</td></tr><tr data-search="m.r.p (neekentha naakentha) prime video telugu" data-platform="Prime Video"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=M.R.P" target="_blank" rel="noopener" title="Find M.R.P (Neekentha Naakentha) on Prime Video"><img src="https://image.tmdb.org/t/p/w185/qi3AnfzSqEM844w8FSG3JJmxMS4.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=M.R.P" target="_blank" rel="noopener" title="Find M.R.P (Neekentha Naakentha) on Prime Video"><strong>M.R.P (Neekentha Naakentha)</strong></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=M.R.P" target="_blank" rel="noopener" title="Find M.R.P (Neekentha Naakentha) on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Telugu</td></tr><tr data-search="idhayam murali netflix tamil" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Idhayam%20Murali" target="_blank" rel="noopener" title="Find Idhayam Murali on Netflix"><img src="https://image.tmdb.org/t/p/w185/8gfs5OsGINENFAl0h1XZPNup9lI.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Idhayam%20Murali" target="_blank" rel="noopener" title="Find Idhayam Murali on Netflix"><strong>Idhayam Murali</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Idhayam%20Murali" target="_blank" rel="noopener" title="Find Idhayam Murali on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Tamil</td></tr><tr data-search="main vaapas aaunga netflix hindi" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Main%20Vaapas%20Aaunga" target="_blank" rel="noopener" title="Find Main Vaapas Aaunga on Netflix"><img src="https://image.tmdb.org/t/p/w185/wHTNsZxvlfRAndc52hGlbdCUXKS.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Main%20Vaapas%20Aaunga" target="_blank" rel="noopener" title="Find Main Vaapas Aaunga on Netflix"><strong>Main Vaapas Aaunga</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Main%20Vaapas%20Aaunga" target="_blank" rel="noopener" title="Find Main Vaapas Aaunga on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Hindi</td></tr><tr data-search="uyir jiohotstar malayalam" data-platform="JioHotstar"><td class="poster"><a class="ottlink" href="https://www.hotstar.com/in/search?q=Uyir" target="_blank" rel="noopener" title="Find Uyir on JioHotstar"><img src="https://image.tmdb.org/t/p/w185/r512xdTd9aXjpIxjY2JlhvJYvIb.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=Uyir" target="_blank" rel="noopener" title="Find Uyir on JioHotstar"><strong>Uyir</strong></a></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=Uyir" target="_blank" rel="noopener" title="Find Uyir on JioHotstar"><span class="badge" style="background:#0f79af">JioHotstar</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Malayalam</td></tr><tr data-search="operation safed sagar netflix hindi" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Operation%20Safed%20Sagar" target="_blank" rel="noopener" title="Find Operation Safed Sagar on Netflix"><img src="https://image.tmdb.org/t/p/w185/f56PHAGbUFPmHMRippWWNpRgSao.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Operation%20Safed%20Sagar" target="_blank" rel="noopener" title="Find Operation Safed Sagar on Netflix"><strong>Operation Safed Sagar</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Operation%20Safed%20Sagar" target="_blank" rel="noopener" title="Find Operation Safed Sagar on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Hindi</td></tr><tr data-search="special ops: lioness s3 prime video english series" data-platform="Prime Video"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Special%20Ops%3A%20Lioness" target="_blank" rel="noopener" title="Find Special Ops: Lioness S3 on Prime Video"><img src="https://image.tmdb.org/t/p/w185/rzpHPSEgPTpRs8EHbygwsOw7jC0.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Special%20Ops%3A%20Lioness" target="_blank" rel="noopener" title="Find Special Ops: Lioness S3 on Prime Video"><strong>Special Ops: Lioness S3</strong></a><br><span class="note">Series</span></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Special%20Ops%3A%20Lioness" target="_blank" rel="noopener" title="Find Special Ops: Lioness S3 on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">English</td></tr></tbody></table><div class="noresults">No matches in this section.</div></section>
+<section data-section><h2 id="songs">New songs <span class="count">3</span></h2><div class="grid"><div class="card" data-search="yaalalo yaalalo irumudi t-series telugu" data-item="2026-08-09:song:yaalalo-yaalalo"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener" data-vid="WT-wrwlN144" data-title="Yaalalo Yaalalo"><img src="https://i.ytimg.com/vi/WT-wrwlN144/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Yaalalo%20Yaalalo%20Irumudi" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Yaalalo%20Yaalalo%20Irumudi" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Yaalalo%20Yaalalo%20Irumudi" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener" data-vid="WT-wrwlN144" data-title="Yaalalo Yaalalo"><div class="t">Yaalalo Yaalalo</div><div class="m">Irumudi</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="okka chinni navve sahaa sumaira studios" data-item="2026-08-09:song:okka-chinni-navve"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener" data-vid="E5ZeUJjEFUc" data-title="Okka Chinni Navve"><img src="https://i.ytimg.com/vi/E5ZeUJjEFUc/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Okka%20Chinni%20Navve%20Sahaa" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Okka%20Chinni%20Navve%20Sahaa" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Okka%20Chinni%20Navve%20Sahaa" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener" data-vid="E5ZeUJjEFUc" data-title="Okka Chinni Navve"><div class="t">Okka Chinni Navve</div><div class="m">Sahaa</div><div class="meta">Sumaira Studios</div></a></div><div class="card" data-search="seethakokala happy journey zee music south" data-item="2026-08-09:song:seethakokala"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener" data-vid="JwrtlzO9RHE" data-title="Seethakokala"><img src="https://i.ytimg.com/vi/JwrtlzO9RHE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Seethakokala%20Happy%20Journey" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Seethakokala%20Happy%20Journey" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Seethakokala%20Happy%20Journey" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener" data-vid="JwrtlzO9RHE" data-title="Seethakokala"><div class="t">Seethakokala</div><div class="m">Happy Journey</div><div class="meta">Zee Music South</div></a></div></div><div class="noresults">No matches in this section.</div></section>
+<section data-section><h2 id="trailers">Trailers &amp; teasers <span class="count">7</span></h2><div class="grid"><div class="card" data-search="the paradise — teaser nani — release date revealed: 24 september slv cinemas nani — release date revealed: 24 september" data-item="2026-08-09:trailer:the-paradise"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=Y3xewv1ZnHc" target="_blank" rel="noopener" data-vid="Y3xewv1ZnHc" data-title="The Paradise — Teaser"><img src="https://i.ytimg.com/vi/Y3xewv1ZnHc/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=Y3xewv1ZnHc" target="_blank" rel="noopener" data-vid="Y3xewv1ZnHc" data-title="The Paradise — Teaser"><div class="t">The Paradise — Teaser</div><div class="m">Nani — release date revealed: 24 September</div><div class="meta">SLV Cinemas</div></a></div><div class="card" data-search="vishwanath and sons — trailer suriya — simple emotional family drama, in theatres 14 aug sithara entertainments suriya — simple emotional family drama, in theatres 14 aug" data-item="2026-08-09:trailer:vishwanath-and-sons"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=6qdwBOT6MlE" target="_blank" rel="noopener" data-vid="6qdwBOT6MlE" data-title="Vishwanath and Sons — Trailer"><img src="https://i.ytimg.com/vi/6qdwBOT6MlE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=6qdwBOT6MlE" target="_blank" rel="noopener" data-vid="6qdwBOT6MlE" data-title="Vishwanath and Sons — Trailer"><div class="t">Vishwanath and Sons — Trailer</div><div class="m">Suriya — simple emotional family drama, in theatres 14 Aug</div><div class="meta">Sithara Entertainments</div></a></div><div class="card" data-search="pallaburusu — trailer rural father-and-son emotion, balagam vibes — 14 aug annapurna studios and epic studios rural father-and-son emotion, balagam vibes — 14 aug" data-item="2026-08-09:trailer:pallaburusu"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=kXTdgb6QrsY" target="_blank" rel="noopener" data-vid="kXTdgb6QrsY" data-title="Pallaburusu — Trailer"><img src="https://i.ytimg.com/vi/kXTdgb6QrsY/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=kXTdgb6QrsY" target="_blank" rel="noopener" data-vid="kXTdgb6QrsY" data-title="Pallaburusu — Trailer"><div class="t">Pallaburusu — Trailer</div><div class="m">Rural father-and-son emotion, Balagam vibes — 14 Aug</div><div class="meta">Annapurna Studios and EPIC STUDIOS</div></a></div><div class="card" data-search="agadha — trailer mystic horror — m.s. raju, in theatres 14 aug sri adi varaha productions mystic horror — m.s. raju, in theatres 14 aug" data-item="2026-08-09:trailer:agadha"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=LHxKhCcMFl8" target="_blank" rel="noopener" data-vid="LHxKhCcMFl8" data-title="Agadha — Trailer"><img src="https://i.ytimg.com/vi/LHxKhCcMFl8/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=LHxKhCcMFl8" target="_blank" rel="noopener" data-vid="LHxKhCcMFl8" data-title="Agadha — Trailer"><div class="t">Agadha — Trailer</div><div class="m">Mystic horror — M.S. Raju, in theatres 14 Aug</div><div class="meta">Sri Adi Varaha Productions</div></a></div><div class="card" data-search="makutam — trailer vishal action entertainer — 14 aug g.v. prakash kumar vishal action entertainer — 14 aug" data-item="2026-08-09:trailer:makutam"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=D4T5kObMX-A" target="_blank" rel="noopener" data-vid="D4T5kObMX-A" data-title="Makutam — Trailer"><img src="https://i.ytimg.com/vi/D4T5kObMX-A/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=D4T5kObMX-A" target="_blank" rel="noopener" data-vid="D4T5kObMX-A" data-title="Makutam — Trailer"><div class="t">Makutam — Trailer</div><div class="m">Vishal action entertainer — 14 Aug</div><div class="meta">G.V. Prakash Kumar</div></a></div><div class="card" data-search="maya lady — glimpse maya lady - official glimpse | rakesh varre, madhumita sarcar sony music south maya lady - official glimpse | rakesh varre, madhumita sarcar" data-item="2026-08-09:trailer:maya-lady"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=0mEFNjGiuRk" target="_blank" rel="noopener" data-vid="0mEFNjGiuRk" data-title="Maya Lady — Glimpse"><img src="https://i.ytimg.com/vi/0mEFNjGiuRk/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=0mEFNjGiuRk" target="_blank" rel="noopener" data-vid="0mEFNjGiuRk" data-title="Maya Lady — Glimpse"><div class="t">Maya Lady — Glimpse</div><div class="m">Maya Lady - Official Glimpse | Rakesh Varre, Madhumita Sarcar</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="toxic — trailer emotion added alongside the action — releases 26 aug kvn productions and zee music south emotion added alongside the action — releases 26 aug" data-item="2026-08-09:trailer:toxic"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=0safa-gtIgQ" target="_blank" rel="noopener" data-vid="0safa-gtIgQ" data-title="Toxic — Trailer"><img src="https://i.ytimg.com/vi/0safa-gtIgQ/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=0safa-gtIgQ" target="_blank" rel="noopener" data-vid="0safa-gtIgQ" data-title="Toxic — Trailer"><div class="t">Toxic — Trailer</div><div class="m">Emotion added alongside the action — releases 26 Aug</div><div class="meta">KVN Productions and Zee Music South</div></a></div></div><div class="noresults">No matches in this section.</div></section>
+<section data-section><h2 id="ott">OTT releases <span class="count">8</span></h2><div class="chips"><button class="chip" data-plat="ZEE5">ZEE5</button><button class="chip" data-plat="Prime Video">Prime Video</button><button class="chip" data-plat="Netflix">Netflix</button><button class="chip" data-plat="JioHotstar">JioHotstar</button></div><table><thead><tr><th class="poster"></th><th>Movie</th><th>Platform</th><th>Streaming from</th><th>Language</th></tr></thead><tbody><tr data-search="lenin zee5 telugu" data-platform="ZEE5" data-item="2026-08-09:ott:lenin" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.zee5.com/search?q=Lenin" target="_blank" rel="noopener" title="Find Lenin on ZEE5"><img src="https://image.tmdb.org/t/p/w185/rAHQviBq8Fxi20hNtHPGLnr4L0f.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Lenin" target="_blank" rel="noopener" title="Find Lenin on ZEE5"><strong>Lenin</strong></a></td><td><a class="ottlink" href="https://www.zee5.com/search?q=Lenin" target="_blank" rel="noopener" title="Find Lenin on ZEE5"><span class="badge" style="background:#8230c6">ZEE5</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Telugu<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="oh sukumari prime video telugu" data-platform="Prime Video" data-item="2026-08-09:ott:oh-sukumari" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Oh%20Sukumari" target="_blank" rel="noopener" title="Find Oh Sukumari on Prime Video"><img src="https://image.tmdb.org/t/p/w185/x6b5cHpR8KuCg5OHEXmvkgVXKtN.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Oh%20Sukumari" target="_blank" rel="noopener" title="Find Oh Sukumari on Prime Video"><strong>Oh Sukumari</strong></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Oh%20Sukumari" target="_blank" rel="noopener" title="Find Oh Sukumari on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Telugu<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="m.r.p (neekentha naakentha) prime video telugu" data-platform="Prime Video" data-item="2026-08-09:ott:m-r-p-neekentha-naakentha" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=M.R.P" target="_blank" rel="noopener" title="Find M.R.P (Neekentha Naakentha) on Prime Video"><img src="https://image.tmdb.org/t/p/w185/qi3AnfzSqEM844w8FSG3JJmxMS4.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=M.R.P" target="_blank" rel="noopener" title="Find M.R.P (Neekentha Naakentha) on Prime Video"><strong>M.R.P (Neekentha Naakentha)</strong></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=M.R.P" target="_blank" rel="noopener" title="Find M.R.P (Neekentha Naakentha) on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Telugu<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="idhayam murali netflix tamil" data-platform="Netflix" data-item="2026-08-09:ott:idhayam-murali" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Idhayam%20Murali" target="_blank" rel="noopener" title="Find Idhayam Murali on Netflix"><img src="https://image.tmdb.org/t/p/w185/8gfs5OsGINENFAl0h1XZPNup9lI.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Idhayam%20Murali" target="_blank" rel="noopener" title="Find Idhayam Murali on Netflix"><strong>Idhayam Murali</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Idhayam%20Murali" target="_blank" rel="noopener" title="Find Idhayam Murali on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Tamil<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="main vaapas aaunga netflix hindi" data-platform="Netflix" data-item="2026-08-09:ott:main-vaapas-aaunga" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Main%20Vaapas%20Aaunga" target="_blank" rel="noopener" title="Find Main Vaapas Aaunga on Netflix"><img src="https://image.tmdb.org/t/p/w185/wHTNsZxvlfRAndc52hGlbdCUXKS.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Main%20Vaapas%20Aaunga" target="_blank" rel="noopener" title="Find Main Vaapas Aaunga on Netflix"><strong>Main Vaapas Aaunga</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Main%20Vaapas%20Aaunga" target="_blank" rel="noopener" title="Find Main Vaapas Aaunga on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Hindi<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="uyir jiohotstar malayalam" data-platform="JioHotstar" data-item="2026-08-09:ott:uyir" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.hotstar.com/in/search?q=Uyir" target="_blank" rel="noopener" title="Find Uyir on JioHotstar"><img src="https://image.tmdb.org/t/p/w185/r512xdTd9aXjpIxjY2JlhvJYvIb.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=Uyir" target="_blank" rel="noopener" title="Find Uyir on JioHotstar"><strong>Uyir</strong></a></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=Uyir" target="_blank" rel="noopener" title="Find Uyir on JioHotstar"><span class="badge" style="background:#0f79af">JioHotstar</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Malayalam<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="operation safed sagar netflix hindi" data-platform="Netflix" data-item="2026-08-09:ott:operation-safed-sagar" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Operation%20Safed%20Sagar" target="_blank" rel="noopener" title="Find Operation Safed Sagar on Netflix"><img src="https://image.tmdb.org/t/p/w185/f56PHAGbUFPmHMRippWWNpRgSao.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Operation%20Safed%20Sagar" target="_blank" rel="noopener" title="Find Operation Safed Sagar on Netflix"><strong>Operation Safed Sagar</strong></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Operation%20Safed%20Sagar" target="_blank" rel="noopener" title="Find Operation Safed Sagar on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">Hindi<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="special ops: lioness s3 prime video english series" data-platform="Prime Video" data-item="2026-08-09:ott:special-ops-lioness-s3" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Special%20Ops%3A%20Lioness" target="_blank" rel="noopener" title="Find Special Ops: Lioness S3 on Prime Video"><img src="https://image.tmdb.org/t/p/w185/rzpHPSEgPTpRs8EHbygwsOw7jC0.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Special%20Ops%3A%20Lioness" target="_blank" rel="noopener" title="Find Special Ops: Lioness S3 on Prime Video"><strong>Special Ops: Lioness S3</strong></a><br><span class="note">Series</span></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Special%20Ops%3A%20Lioness" target="_blank" rel="noopener" title="Find Special Ops: Lioness S3 on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 9 Aug</td><td class="dim">English<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr></tbody></table><div class="noresults">No matches in this section.</div></section>
 <section class="sec" style="padding-top:34px;border-top:1px solid var(--line);margin-top:38px">
 <div class="eyebrow">From the community</div>
 <h2 style="margin-top:6px">Suggested for this week</h2>
@@ -230,7 +325,7 @@ readers and need checking — 3 net votes either way settles it.
 Generated 23 Sep 2026. Links auto-matched from YouTube search — items marked
 <span class="flag">verify</span> had a weak match and are worth a click-check.</p>
 </div><footer class="site"><div class="wrap">
-<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a></div>
+<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="privacy.html">Privacy</a></div>
 <div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
 weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
 </div></footer>
@@ -238,6 +333,409 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
 <div class="lbt" id="lbt"></div><a id="lbo" href="#" target="_blank" rel="noopener">Open on YouTube &#8599;</a>
 <button class="lbx" aria-label="Close">&times;</button></div>
 <div class="lbf" id="lbf"></div></div></div>
+<div class="authmodal" id="authmodal" hidden><div class="authcard">
+<h2>Sign in</h2>
+<p>The last two weeks are for members. Everything older stays free for everyone.</p>
+<button class="gbtn" id="gsignin"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.2 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.6 5.9c4.4-4.1 6.7-10.1 6.7-17.3z"/><path fill="#FBBC05" d="M10.4 28.7c-.5-1.4-.8-2.9-.8-4.7s.3-3.3.8-4.7l-7.8-6.1C.9 16.3 0 20 0 24s.9 7.7 2.6 10.8l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.5-2 15.4-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.8 2.3-6.3 0-11.7-3.7-13.6-9.1l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/></svg> Continue with Google</button>
+<div class="orline">or</div>
+<input id="mlemail" type="email" placeholder="you@example.com" autocomplete="email">
+<button class="authbtn mlbtn" id="mlsend">Email me a sign-in link</button>
+<div class="msg" id="authmsg"></div>
+<p class="authfine">Signing in stores your email address, and nothing else. No
+analytics, no newsletter, and you can delete it in one click.
+<a href="privacy.html">What's stored &#8594;</a></p>
+<button class="close" id="authclose">Not now</button>
+</div></div>
+<div class="fixwrap" id="fixwrap" hidden><div class="fixcard">
+<h2>Correct this entry</h2>
+<div class="iid" id="fixid"></div>
+<div class="fixnote" id="fixscope"></div>
+<label>Title<input id="fix_t" autocomplete="off"></label>
+<label id="fixlab_m">Film / subtitle<input id="fix_m" autocomplete="off"></label>
+<label>Link<input id="fix_u" autocomplete="off" placeholder="https://…"></label>
+<label>Note<input id="fix_n" autocomplete="off" placeholder="optional"></label>
+<div class="fixrow">
+<button class="btn primary" id="fixsave">Save correction</button>
+<button class="btn" id="fixclear">Remove correction</button>
+</div>
+<div class="fixmsg" id="fixmsg"></div>
+<button class="btn" id="fixcancel" style="width:100%;justify-content:center;margin-top:9px">Cancel</button>
+</div></div><script>window.CFG={"url":"https://rfxrkcrijzfmfuwexbgj.supabase.co","key":"sb_publishable_a2Uomg2zakwmqc5-oUR4pA__3DQei2V","threshold":3};</script><script>
+(function(){
+  var CFG=window.CFG||{};
+  if(!CFG.url||!CFG.key) return;
+  var BASE=CFG.url.replace(/\/$/,'');
+  var TOKEN_KEY='cv-session';
+
+  function headers(extra){
+    var h=Object.assign({'apikey':CFG.key,'Content-Type':'application/json'},extra||{});
+    var s=session();
+    // A signed-in user's own JWT goes on Authorization; that is what RLS reads.
+    if(s&&s.access_token) h['Authorization']='Bearer '+s.access_token;
+    else if(/^eyJ/.test(CFG.key)) h['Authorization']='Bearer '+CFG.key;
+    return h;
+  }
+  function session(){
+    try{ var raw=localStorage.getItem(TOKEN_KEY); if(!raw) return null;
+         var s=JSON.parse(raw);
+         if(s.expires_at && s.expires_at*1000 < Date.now()+30000){ return refresh(s); }
+         return s; }catch(e){ return null; }
+  }
+  function store(s){ try{ s?localStorage.setItem(TOKEN_KEY,JSON.stringify(s))
+                           :localStorage.removeItem(TOKEN_KEY);}catch(e){} }
+  function refresh(s){
+    // Fire and forget; the current call proceeds anonymously if it has expired.
+    fetch(BASE+'/auth/v1/token?grant_type=refresh_token',
+      {method:'POST',headers:{'apikey':CFG.key,'Content-Type':'application/json'},
+       body:JSON.stringify({refresh_token:s.refresh_token})})
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(n){ if(n&&n.access_token){ store(n); render(); } else { store(null); render(); } })
+      .catch(function(){});
+    return null;
+  }
+  window.CVAUTH={
+    session:session, headers:headers, base:BASE,
+    signedIn:function(){ return !!session(); },
+    // Set once the admins lookup comes back. Treat this as "what to show", never
+    // as "what is allowed" — every admin action is also checked by RLS in
+    // Postgres, so flipping this in devtools reveals buttons that then fail.
+    isAdmin:false,
+    user:function(){ return user(); }
+  };
+
+  // ---- capture the token Supabase returns in the URL fragment after OAuth ----
+  if(location.hash && location.hash.indexOf('access_token=')>-1){
+    var p={}; location.hash.slice(1).split('&').forEach(function(kv){
+      var i=kv.indexOf('='); p[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1));
+    });
+    if(p.access_token){
+      p.expires_at = Math.floor(Date.now()/1000) + (parseInt(p.expires_in||'3600',10));
+      store(p);
+      history.replaceState(null,'',location.pathname+location.search);
+    }
+  }
+
+  function user(){
+    var s=session(); if(!s||!s.access_token) return null;
+    try{
+      var b=JSON.parse(atob(s.access_token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));
+      // Google also puts an avatar_url in the token. It is deliberately not read:
+      // rendering it would make every page load fetch an image from Google.
+      return {id:b.sub||'', email:b.email||'',
+              name:(b.user_metadata||{}).full_name||b.email||''};
+    }catch(e){ return {id:'',email:'',name:'Signed in'}; }
+  }
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function initials(u){
+    var n=(u.name||u.email||'').trim();
+    if(n.indexOf('@')>-1 && n===(u.email||'')) return n.slice(0,2);
+    var p=n.split(/\s+/).filter(Boolean);
+    return p.length>1 ? (p[0][0]+p[p.length-1][0]) : n.slice(0,2);
+  }
+
+  function render(){
+    var box=document.getElementById('authbox'); if(!box) return;
+    var u=user();
+    if(u){
+      box.innerHTML='<span class="avatar" aria-hidden="true">'+esc(initials(u))+'</span>'+
+        '<span class="who">'+esc(u.name)+'</span>'+
+        '<button class="authbtn" id="signout">Sign out</button>';
+      document.getElementById('signout').onclick=function(){ store(null); location.reload(); };
+    } else {
+      box.innerHTML='<button class="authbtn" id="signin">Sign in</button>';
+      document.getElementById('signin').onclick=openModal;
+    }
+    document.body.classList.toggle('is-member', !!u);
+  }
+
+  function openModal(){ var m=document.getElementById('authmodal'); if(m) m.hidden=false; }
+  function closeModal(){ var m=document.getElementById('authmodal'); if(m) m.hidden=true; }
+
+  document.addEventListener('click',function(ev){
+    if(ev.target.closest('#authclose')||ev.target.id==='authmodal') return closeModal();
+    if(ev.target.closest('.needlogin')) return openModal();
+  });
+
+  function wireModal(){
+    var g=document.getElementById('gsignin'), ml=document.getElementById('mlsend'),
+        msg=document.getElementById('authmsg');
+    if(g) g.onclick=function(){
+      location.href = BASE+'/auth/v1/authorize?provider=google&redirect_to='+
+                      encodeURIComponent(location.href.split('#')[0]);
+    };
+    if(ml) ml.onclick=function(){
+      var em=(document.getElementById('mlemail').value||'').trim();
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){
+        msg.className='msg bad'; msg.textContent='That email doesn\'t look right.'; return; }
+      msg.className='msg'; msg.textContent='Sending…'; msg.style.display='block';
+      fetch(BASE+'/auth/v1/otp',{method:'POST',
+        headers:{'apikey':CFG.key,'Content-Type':'application/json'},
+        body:JSON.stringify({email:em,create_user:true,
+          options:{email_redirect_to:location.href.split('#')[0]}})})
+        .then(function(r){
+          if(r.ok){ msg.className='msg ok'; msg.textContent='Check your inbox for the link.'; }
+          else { msg.className='msg bad'; msg.textContent='Couldn\'t send that ('+r.status+').'; }
+        })
+        .catch(function(){ msg.className='msg bad'; msg.textContent='Network problem — try again.'; });
+    };
+  }
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render();wireModal();});
+  else { render(); wireModal(); }
+})();
+</script><script>
+(function(){
+  var A=window.CVAUTH; if(!A) return;
+  var hosts=[].slice.call(document.querySelectorAll('[data-gated]'));
+  if(!hosts.length) return;
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function card(it){
+    var p=Object.assign({}, it.payload||{}, (window.CVOVERRIDES||{})[it.id]||{});
+    var v=p.v||'', th=v?'https://i.ytimg.com/vi/'+v+'/mqdefault.jpg':(p.poster||'');
+    var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
+    var dv=v?' data-vid="'+esc(v)+'" data-title="'+esc(p.t)+'"':'';
+    var sub=it.kind==='ott'?(p.p||''):(p.m||p.k||'');
+    var meta=[p.c,p.n,p.d].filter(Boolean).join(' · ');
+    var inner='<div class="t">'+esc(p.t)+'</div><div class="m">'+esc(sub)+
+              '</div><div class="meta">'+esc(meta)+'</div>';
+    var cls='card'+(it.kind==='ott'?' ottsug':'');
+    var at=' data-item="'+esc(it.id)+'" data-kind="'+esc(it.kind)+'"';
+    var fix='<button class="fixbtn adminonly" type="button" '+
+            'title="Correct this entry" aria-label="Correct this entry">&#9998;</button>';
+    if(!p.u) return '<div class="'+cls+' nolink"'+at+'>'+fix+
+                    '<div class="left"><div class="thumb">'+
+                    img+'</div></div><div class="body">'+inner+'</div></div>';
+    return '<div class="'+cls+'"'+at+'>'+fix+'<div class="left">'+
+      '<a class="thumb" href="'+esc(p.u)+'" target="_blank" rel="noopener"'+dv+'>'+img+
+      (v?'<span class="pl"><i></i></span>':'')+'</a></div>'+
+      '<a class="body" href="'+esc(p.u)+'" target="_blank" rel="noopener"'+dv+'>'+
+      inner+'</a></div>';
+  }
+
+  function lockedHtml(){
+    return '<div class="locked"><div class="lk">&#9788;</div>'+
+      '<h3>The last two weeks are for members</h3>'+
+      '<p>Sign in free with Google or an email link to see this week and last week. '+
+      'Everything older than a fortnight stays open to everyone, always.</p>'+
+      '<button class="authbtn needlogin">Sign in to unlock</button></div>';
+  }
+
+  function fill(host, rows){
+    var want=host.dataset.gated;                 // '', 'song', 'trailer' or 'ott'
+    var week=host.dataset.week||'';
+    var list=rows.filter(function(r){
+      return (!want||r.kind===want) && (!week||r.week===week);
+    });
+    if(!list.length){ host.innerHTML=''; return; }
+    var byWeek={};
+    list.forEach(function(r){ (byWeek[r.week]=byWeek[r.week]||[]).push(r); });
+    var html='';
+    Object.keys(byWeek).sort().reverse().forEach(function(w){
+      html+='<div class="wkblock"><h2>Week of '+esc(w)+
+            '<span class="count">'+byWeek[w].length+'</span>'+
+            '<span class="src verified">Members</span></h2>'+
+            '<div class="grid">'+byWeek[w].map(card).join('')+'</div></div>';
+    });
+    host.innerHTML=html;
+  }
+
+  function load(){
+    if(!A.signedIn()){ hosts.forEach(function(h){ h.innerHTML=lockedHtml(); }); return; }
+    hosts.forEach(function(h){ h.innerHTML='<div class="loading">Loading the latest…</div>'; });
+    // Corrections are readable by everyone, so a member sees a fixed entry too,
+    // not just the admin who fixed it.
+    Promise.all([
+      fetch(A.base+'/rest/v1/items?select=id,week,kind,payload&order=week.desc',
+            {headers:A.headers()})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch(A.base+'/rest/v1/overrides?select=item_id,patch',{headers:A.headers()})
+        .then(function(r){ return r.ok?r.json():[]; }).catch(function(){ return []; }),
+    ])
+      .then(function(res){
+        window.CVOVERRIDES=window.CVOVERRIDES||{};
+        (res[1]||[]).forEach(function(o){ window.CVOVERRIDES[o.item_id]=o.patch||{}; });
+        var rows=res[0];
+        hosts.forEach(function(h){ fill(h,rows||[]); });
+      })
+      .catch(function(e){
+        hosts.forEach(function(h){
+          h.innerHTML='<div class="locked"><p>Couldn\'t load the latest content ('+
+            esc(e.message)+'). Everything older is unaffected.</p></div>'; });
+      });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',load);
+  else load();
+})();
+</script><script>
+(function(){
+  var A=window.CVAUTH; if(!A) return;
+  // Shared with the gated-content renderer, which applies the same patches.
+  var OV=window.CVOVERRIDES=window.CVOVERRIDES||{};
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  // ---- who am I -------------------------------------------------------------
+  // Asks the database, which only ever returns this user's own admin row. The
+  // answer decides what is drawn; it does not decide what is permitted.
+  function detect(){
+    var u=A.user();
+    if(!u||!u.id){ done(false); return; }
+    fetch(A.base+'/rest/v1/admins?select=id&id=eq.'+encodeURIComponent(u.id),
+          {headers:A.headers()})
+      .then(function(r){ return r.ok?r.json():[]; })
+      .then(function(rows){ done(!!(rows&&rows.length)); })
+      .catch(function(){ done(false); });
+  }
+  function done(is){
+    A.isAdmin=is;
+    document.body.classList.toggle('is-admin', is);
+    if(is){
+      var box=document.getElementById('authbox');
+      if(box && !box.querySelector('.adminchip')){
+        var c=document.createElement('span');
+        c.className='adminchip'; c.textContent='Admin';
+        box.insertBefore(c, box.firstChild);
+      }
+      loadOverrides();
+    }
+    document.dispatchEvent(new CustomEvent('cv-admin',{detail:{isAdmin:is}}));
+  }
+
+  function loadOverrides(){
+    fetch(A.base+'/rest/v1/overrides?select=item_id,patch',{headers:A.headers()})
+      .then(function(r){ return r.ok?r.json():[]; })
+      .then(function(rows){
+        (rows||[]).forEach(function(r){ OV[r.item_id]=r.patch||{}; });
+        markPatched();
+      }).catch(function(){});
+  }
+  function markPatched(){
+    document.querySelectorAll('[data-item]').forEach(function(el){
+      if(OV[el.dataset.item]) el.classList.add('patched');
+    });
+  }
+
+  // ---- the correction editor -------------------------------------------------
+  var cur=null;
+  function openFix(el){
+    cur=el.dataset.item;
+    var patch=OV[cur]||{};
+    var t=el.querySelector('.t,strong'), m=el.querySelector('.m,.dim');
+    document.getElementById('fixid').textContent=cur;
+    document.getElementById('fix_t').value=patch.t!=null?patch.t:(t?t.textContent.trim():'');
+    document.getElementById('fix_m').value=patch.m!=null?patch.m:
+      (patch.p!=null?patch.p:(m?m.textContent.trim():''));
+    var a=el.querySelector('a[href^="http"]');
+    document.getElementById('fix_u').value=patch.u!=null?patch.u:(a?a.href:'');
+    document.getElementById('fix_n').value=patch.n!=null?patch.n:'';
+    var held=!!el.closest('[data-gated]');
+    document.getElementById('fixscope').innerHTML = held
+      ? 'This week is inside the members-only window, so it renders from the '+
+        'database. The fix shows up on reload.'
+      : 'This week is already published as a static page. The fix is stored now '+
+        'and applied the next time the site is built and published.';
+    document.getElementById('fixmsg').style.display='none';
+    document.getElementById('fixwrap').hidden=false;
+  }
+  function closeFix(){ document.getElementById('fixwrap').hidden=true; cur=null; }
+
+  function saveFix(){
+    if(!cur) return;
+    var msg=document.getElementById('fixmsg');
+    var patch={};
+    [['t','fix_t'],['m','fix_m'],['u','fix_u'],['n','fix_n']].forEach(function(p){
+      var v=(document.getElementById(p[1]).value||'').trim();
+      if(v) patch[p[0]]=v;
+    });
+    // An OTT row's subtitle is its platform, not a film name.
+    var el=document.querySelector('[data-item="'+cur.replace(/"/g,'')+'"]');
+    if(el && el.dataset.kind==='ott' && patch.m){ patch.p=patch.m; delete patch.m; }
+    if(!Object.keys(patch).length){ msg.className='fixmsg bad';
+      msg.textContent='Nothing to save — fill at least one field.'; return; }
+    msg.className='fixmsg'; msg.textContent='Saving…'; msg.style.display='block';
+    fetch(A.base+'/rest/v1/overrides?on_conflict=item_id',{method:'POST',
+      headers:Object.assign({'Prefer':'resolution=merge-duplicates,return=minimal'},
+                            A.headers()),
+      body:JSON.stringify({item_id:cur,patch:patch,updated_at:new Date().toISOString(),
+                           updated_by:(A.user()||{}).id||null})})
+      .then(function(r){
+        if(!r.ok) throw new Error(r.status===401||r.status===403
+          ? 'the database refused this — that account is not an admin' : 'HTTP '+r.status);
+        OV[cur]=patch; markPatched();
+        msg.className='fixmsg ok'; msg.textContent='Saved.';
+      })
+      .catch(function(e){ msg.className='fixmsg bad'; msg.textContent='Failed: '+e.message; });
+  }
+
+  function clearFix(){
+    if(!cur) return;
+    var msg=document.getElementById('fixmsg');
+    fetch(A.base+'/rest/v1/overrides?item_id=eq.'+encodeURIComponent(cur),
+      {method:'DELETE',headers:Object.assign({'Prefer':'return=minimal'},A.headers())})
+      .then(function(r){
+        if(!r.ok) throw new Error('HTTP '+r.status);
+        delete OV[cur];
+        var el=document.querySelector('[data-item="'+cur.replace(/"/g,'')+'"]');
+        if(el) el.classList.remove('patched');
+        msg.className='fixmsg ok'; msg.textContent='Correction removed.';
+      })
+      .catch(function(e){ msg.className='fixmsg bad'; msg.textContent='Failed: '+e.message; });
+  }
+
+  // ---- suggestion moderation --------------------------------------------------
+  function moderate(id, status){
+    return fetch(A.base+'/rest/v1/suggestions?id=eq.'+encodeURIComponent(id),
+      {method:'PATCH',
+       headers:Object.assign({'Prefer':'return=minimal'},A.headers()),
+       body:JSON.stringify({status:status})});
+  }
+  function destroy(id){
+    return fetch(A.base+'/rest/v1/suggestions?id=eq.'+encodeURIComponent(id),
+      {method:'DELETE',headers:Object.assign({'Prefer':'return=minimal'},A.headers())});
+  }
+
+  document.addEventListener('click',function(ev){
+    var f=ev.target.closest('.fixbtn');
+    if(f){ ev.preventDefault(); openFix(f.closest('[data-item]')); return; }
+    if(ev.target.closest('#fixcancel')||ev.target.id==='fixwrap'){ closeFix(); return; }
+    if(ev.target.closest('#fixsave')){ saveFix(); return; }
+    if(ev.target.closest('#fixclear')){ clearFix(); return; }
+
+    var m=ev.target.closest('.mod button');
+    if(!m||m.disabled) return;
+    var box=m.closest('.mod'), id=box.dataset.id, act=m.dataset.act;
+    if(act==='delete' && !confirm('Delete this suggestion permanently?')) return;
+    box.querySelectorAll('button').forEach(function(b){ b.disabled=true; });
+    var p = act==='delete' ? destroy(id)
+          : moderate(id, act==='clear' ? null : act);
+    p.then(function(r){
+      if(!r.ok) throw new Error(r.status===401||r.status===403
+        ? 'not permitted' : 'HTTP '+r.status);
+      document.querySelectorAll('[data-community]').forEach(function(el){
+        if(window.CVCOMMUNITY) window.CVCOMMUNITY.reload(el);
+      });
+    }).catch(function(e){
+      var w=box.querySelector('.who'); if(w) w.textContent='failed: '+e.message;
+      box.querySelectorAll('button').forEach(function(b){ b.disabled=false; });
+    });
+  });
+
+  document.addEventListener('keydown',function(ev){
+    if(ev.key==='Escape') closeFix();
+  });
+
+  function start(){ if(A.signedIn()) detect(); else done(false); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start);
+  else start();
+})();
+</script>
 <script>
 (function(){
   var lb=document.getElementById('lb'); if(!lb) return;
@@ -258,7 +756,7 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
   });
   document.addEventListener('keydown',function(ev){if(ev.key==='Escape')close();});
 })();
-</script><script>window.CFG={url:"https://rfxrkcrijzfmfuwexbgj.supabase.co",key:"sb_publishable_a2Uomg2zakwmqc5-oUR4pA__3DQei2V",threshold:3};</script><script>
+</script><script>
 (function(){
   var box=document.getElementById('q'), plat=null;
   var cards=[].slice.call(document.querySelectorAll('.card[data-search]'));
@@ -332,18 +830,42 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
          ask:'Is this the official upload, not a re-post?'};
   }
 
+  // An admin decision outranks the vote count in both directions.
+  function settled(s){
+    if(s.status==='verified') return 'admin';
+    if(s.status==='removed')  return 'killed';
+    if(score(s)>=T)  return 'community';
+    if(score(s)<=-T) return 'killed';
+    return '';
+  }
+
+  function modbox(s){
+    // Drawn for admins only (CSS hides .adminonly otherwise). The database
+    // rejects these calls from anyone else regardless of what is drawn.
+    var st=s.status||'';
+    return '<div class="mod adminonly" data-id="'+esc(s.id)+'">'+
+      '<button data-act="verified"'+(st==='verified'?' disabled':'')+'>Verify</button>'+
+      '<button data-act="removed"'+(st==='removed'?' disabled':'')+'>Reject</button>'+
+      (st?'<button data-act="clear">Undo</button>':'')+
+      '<button class="danger" data-act="delete">Delete</button>'+
+      '<span class="who">'+(st?'admin: '+esc(st):'by votes')+'</span></div>';
+  }
+
   function card(s){
-    var sc=score(s), verified=sc>=T, voted=mine(s);
+    var state=settled(s);
+    var sc=score(s), verified=state==='community'||state==='admin', voted=mine(s);
     var v=(s.url||'').match(/[?&]v=([A-Za-z0-9_-]{11})/);
     var th=v?'https://i.ytimg.com/vi/'+v[1]+'/mqdefault.jpg':(s.poster||'');
     var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
     var dv=v?' data-vid="'+esc(v[1])+'" data-title="'+esc(s.title)+'"':'';
-    var badge=verified?'<span class="src verified">Community verified</span>'
-                      :'<span class="src pending">Needs checking</span>';
+    var badge = state==='admin'   ? '<span class="src admin">Confirmed by editor</span>'
+              : state==='killed'  ? '<span class="src killed">Rejected</span>'
+              : state==='community'? '<span class="src verified">Community verified</span>'
+              :                      '<span class="src pending">Needs checking</span>';
     var sub=s.kind==='ott'?(s.platform||''):(s.movie||'');
     var L=labels(s.kind);
     var controls='';
-    if(!verified){
+    if(!state){          // unsettled: neither the votes nor an admin has decided
       controls='<div class="vote" data-id="'+esc(s.id)+'" title="'+esc(L.ask)+'">'+
         '<button data-v="1"'+(voted?' disabled':'')+'>&#9650; '+esc(L.up)+'</button>'+
         '<button data-v="-1"'+(voted?' disabled':'')+'>&#9660; '+esc(L.down)+'</button>'+
@@ -357,11 +879,16 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
       '<div class="m">'+esc(sub)+'</div>'+
       (s.note?'<div class="meta">'+esc(s.note)+'</div>':'')+'</div>';
     var cls='card'+(s.kind==='ott'?' ottsug':'');
-    return '<div class="'+cls+'" data-sug="'+esc(s.id)+'">'+head+body+'</div>'+controls;
+    return '<div class="'+cls+'" data-sug="'+esc(s.id)+'">'+head+body+'</div>'+
+           controls+modbox(s);
   }
 
   function render(list,el){
-    var keep=list.filter(function(s){return score(s)> -T;});
+    // A rejected item still renders for admins, so the decision can be undone.
+    var admin=document.body.classList.contains('is-admin');
+    var keep=list.filter(function(s){
+      return admin || settled(s)!=='killed';
+    });
     if(!keep.length){ el.innerHTML='<div class="cempty">No community suggestions yet.</div>';
                       return; }
     var groups={song:[],trailer:[],ott:[]};
@@ -410,8 +937,19 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
       });
   });
 
+  // admin.js reloads through this after a moderation action.
+  window.CVCOMMUNITY={reload:function(el){ return load(el, el.dataset.week||''); }};
+
   document.querySelectorAll('[data-community]').forEach(function(el){
     load(el, el.dataset.week||'');
+  });
+
+  // Admin status arrives after a round trip, so redraw once it does — that is
+  // what reveals the moderation controls and the rejected items.
+  document.addEventListener('cv-admin',function(ev){
+    if(!ev.detail||!ev.detail.isAdmin) return;
+    document.querySelectorAll('[data-community]').forEach(function(el){
+      load(el, el.dataset.week||''); });
   });
 
   var form=document.getElementById('sugform');
