@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Songs — Chitravaaram</title><meta property="og:title" content="Songs — Chitravaaram"><meta property="og:description" content="Every one of the 49 Telugu film songs collected here, week by week, plus ready-made playlists."><meta name="description" content="Every one of the 49 Telugu film songs collected here, week by week, plus ready-made playlists."><meta property="og:site_name" content="Chitravaaram"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><style>
+<title>Songs — Chitravaaram</title><meta property="og:title" content="Songs — Chitravaaram"><meta property="og:description" content="Every one of the 43 Telugu film songs collected here, week by week, plus ready-made playlists."><meta name="description" content="Every one of the 43 Telugu film songs collected here, week by week, plus ready-made playlists."><meta property="og:site_name" content="Chitravaaram"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><style>
 *{box-sizing:border-box}
 :root{
 --bg:#08090b; --bg2:#0d0f13; --surface:#12151b; --surface2:#171b22;
@@ -154,6 +154,101 @@ footer.site a:hover{color:var(--amber)}
 .svc{gap:2px}.svc a{height:19px}.svc svg{width:11px;height:11px}
 .playall{flex:1 1 100%;justify-content:center}}
 
+.authbox{display:flex;align-items:center;gap:8px;margin-left:12px;flex-shrink:0}
+.authbtn{background:var(--surface);border:1px solid var(--line2);color:var(--ink);
+padding:6px 13px;border-radius:999px;font-size:13px;font-family:inherit;cursor:pointer;
+display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.authbtn:hover{border-color:var(--amber);color:var(--amber2)}
+.authbtn svg{width:14px;height:14px}
+/* Initials, drawn locally. An <img> of the Google profile picture would make
+   every page load hit googleusercontent.com — an outbound request to a third
+   party that a reader has no reason to expect from a film site. */
+.avatar{width:26px;height:26px;border-radius:50%;background:#2b2110;
+border:1px solid #4a3a1c;color:var(--amber2);font-size:11px;font-weight:700;
+display:flex;align-items:center;justify-content:center;letter-spacing:.3px;
+flex-shrink:0;text-transform:uppercase}
+.who{font-size:12.5px;color:var(--ink2);max-width:150px;overflow:hidden;
+text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:860px){.who{display:none}.authbox{margin-left:auto}}
+
+.authmodal{position:fixed;inset:0;background:rgba(5,6,8,.9);z-index:1200;
+display:flex;align-items:center;justify-content:center;padding:20px}
+.authmodal[hidden]{display:none}
+.authcard{background:var(--surface);border:1px solid var(--line2);border-radius:16px;
+padding:28px;width:100%;max-width:400px}
+.authcard h2{font-size:20px;margin-bottom:8px}
+.authcard p{color:var(--ink2);font-size:14px;margin:0 0 20px}
+.gbtn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
+background:#fff;color:#1f1f1f;border:0;border-radius:10px;padding:12px;font-size:15px;
+font-weight:600;font-family:inherit;cursor:pointer}
+.gbtn:hover{background:#f1f1f1}
+.gbtn svg{width:18px;height:18px}
+.orline{display:flex;align-items:center;gap:12px;color:var(--ink3);font-size:12px;
+margin:18px 0}
+.orline::before,.orline::after{content:'';flex:1;height:1px;background:var(--line)}
+.authcard input{width:100%;background:var(--bg2);border:1px solid var(--line);
+color:var(--ink);padding:11px 13px;border-radius:10px;font-size:14px;font-family:inherit}
+.authcard input:focus{outline:none;border-color:var(--amber)}
+.authcard .mlbtn{width:100%;margin-top:9px}
+.authcard .msg{font-size:13px;margin-top:12px;display:none}
+.authcard .msg.ok{color:#9fe1cb;display:block}
+.authcard .msg.bad{color:#f09595;display:block}
+.authfine{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:16px 0 0}
+.authfine a{color:var(--ink2);text-decoration:underline;text-underline-offset:2px}
+.authfine a:hover{color:var(--amber2)}
+.authcard .close{background:none;border:0;color:var(--ink3);font-size:13px;
+cursor:pointer;margin-top:16px;width:100%;font-family:inherit}
+.authcard .close:hover{color:var(--ink2)}
+
+.locked{border:1px dashed var(--line2);background:var(--bg2);border-radius:var(--radius);
+padding:28px 24px;text-align:center;margin:18px 0}
+.locked h3{font-size:17px;margin-bottom:8px}
+.locked p{color:var(--ink2);font-size:14px;margin:0 auto 16px;max-width:52ch}
+.locked .lk{font-size:26px;line-height:1;margin-bottom:12px;opacity:.5}
+.loading{color:var(--ink3);font-size:13.5px;font-style:italic;padding:10px 0}
+
+.adminchip{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.1px;
+padding:2px 7px;border-radius:4px;color:#f3cf97;background:#2b2110;border:1px solid #4a3a1c}
+body:not(.is-admin) .adminonly{display:none!important}
+.mod{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:7px}
+.mod button{background:#171b22;border:1px solid var(--line2);color:var(--ink2);
+padding:4px 10px;border-radius:7px;font-size:11.5px;font-family:inherit;cursor:pointer}
+.mod button:hover:not(:disabled){border-color:var(--amber);color:var(--amber2)}
+.mod button.danger:hover:not(:disabled){border-color:#b3453a;color:#f09595}
+.mod button:disabled{opacity:.45;cursor:default}
+.mod .who{font-size:11px;color:var(--ink3);margin-left:auto}
+.src.admin{color:#9fe1cb;background:#0f2a22;border:1px solid #1d4a3c}
+.src.killed{color:#f09595;background:#2a1414;border:1px solid #4a1d1d}
+
+.fixbtn{position:absolute;top:6px;right:6px;z-index:3;width:24px;height:24px;
+border-radius:6px;background:rgba(18,21,27,.92);border:1px solid var(--line2);
+color:var(--ink3);font-size:11px;line-height:1;cursor:pointer;padding:0;
+opacity:0;transition:.12s}
+.card:hover .fixbtn,.fixbtn:focus{opacity:1}
+.fixbtn:hover{border-color:var(--amber);color:var(--amber2)}
+tr .fixbtn{position:static;opacity:.6;width:22px;height:22px}
+.card.patched{border-left:2px solid var(--amber)}
+
+.fixwrap{position:fixed;inset:0;background:rgba(5,6,8,.9);z-index:1300;
+display:flex;align-items:center;justify-content:center;padding:20px}
+.fixwrap[hidden]{display:none}
+.fixcard{background:var(--surface);border:1px solid var(--line2);border-radius:16px;
+padding:24px;width:100%;max-width:470px;max-height:86vh;overflow:auto}
+.fixcard h2{font-size:18px;margin-bottom:4px}
+.fixcard .iid{font-size:11px;color:var(--ink3);font-family:ui-monospace,SFMono-Regular,
+Menlo,monospace;margin-bottom:16px;word-break:break-all}
+.fixcard label{display:block;font-size:12px;color:var(--ink3);margin-bottom:11px}
+.fixcard input{width:100%;margin-top:5px;background:var(--bg2);border:1px solid var(--line);
+color:var(--ink);padding:9px 12px;border-radius:9px;font-size:14px;font-family:inherit}
+.fixcard input:focus{outline:none;border-color:var(--amber)}
+.fixrow{display:flex;gap:9px;margin-top:6px;flex-wrap:wrap}
+.fixrow .btn{flex:1 1 auto;justify-content:center}
+.fixnote{font-size:12.5px;color:var(--ink2);background:var(--bg2);border-radius:9px;
+padding:11px 13px;margin:4px 0 15px;line-height:1.5}
+.fixmsg{font-size:13px;margin-top:11px;display:none}
+.fixmsg.ok{color:#9fe1cb;display:block}
+.fixmsg.bad{color:#f09595;display:block}
+
 .plrow{display:flex;align-items:center;gap:14px;background:var(--surface);
 border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:10px}
 .plrow:hover{border-color:var(--amber)}
@@ -177,16 +272,16 @@ cursor:pointer;padding:0;margin-left:4px;display:none}
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
-<nav class="main"><a href="index.html">Home</a><a href="this-week.html" class="soon" title="Not populated yet">This Week</a><a href="weekly.html">All Weeks</a><a href="playlists.html" class="on">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
+<nav class="main"><a href="index.html">Home</a><a href="this-week.html" class="soon" title="Not populated yet">This Week</a><a href="weekly.html">All Weeks</a><a href="playlists.html" class="on">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav><div class="authbox" id="authbox"></div></div></header>
 <div class="wrap"><div class="phead">
 <div class="eyebrow">Songs</div>
 <h1>Every song</h1>
-<p class="lede">All 49 songs collected across 10 weeks, newest first.
+<p class="lede">All 43 songs collected across 8 weeks, newest first.
 Play any of them here, or take a whole month as a YouTube playlist.</p>
 </div>
 
 <h2 style="margin-bottom:14px">Playlists</h2>
-<div class="plrow big"><div><div class="pt">Everything</div><div class="pm">49 songs across 10 weeks</div></div><div class="sp"><a class="playall" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=yWNPxS0sXnE,Ap_1sFv6qvA,HC9fxIcH_tI,rnyTjyyCWks,vKNmpKQ3-iQ,BUR9c28uD-Y,7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8,fPm9P7IWDWU,lvyH0ATKsrY,2C5Fs8r4H3k,bdFi7Bpq6Xw,hIHUeuw2yj8,uZt5Z7P3NoY,nPkUgRGvtgw,UbTmpwb3xOc,3KZVttNhp-o,OnkGfsmGIPc,PscE1RmMGgE,NYGikEQHKV0,ty8_VJwMZJk,UTN6Wr629do,oazIYjvKvrk,ie9WbsdCJkM,WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE,mdYZiR3w1xM,OEmxdp689Eo,XzupjqG2zRg,cgpR8-plwyQ,WOnzzBsy1bc,YvpRsob_C_g,gh3FyLT7WVg,e0pOPns9vDI,PjBCLeYaf4Q,vnxCNGuBchw,FJAwxOFnyMw,w_AaXtKU4jo,Dwzsmshb4GI,3XcdYCMCsuk,Xo6ojNDS1qM,RU3CM0xk0Y0,uJH06jzlcCA,tDjYEdCD8mo,03l6ZqS9MLE">&#9654; Play all</a></div></div><div class="plrow"><div><div class="pt">2026</div><div class="pm">49 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=yWNPxS0sXnE,Ap_1sFv6qvA,HC9fxIcH_tI,rnyTjyyCWks,vKNmpKQ3-iQ,BUR9c28uD-Y,7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8,fPm9P7IWDWU,lvyH0ATKsrY,2C5Fs8r4H3k,bdFi7Bpq6Xw,hIHUeuw2yj8,uZt5Z7P3NoY,nPkUgRGvtgw,UbTmpwb3xOc,3KZVttNhp-o,OnkGfsmGIPc,PscE1RmMGgE,NYGikEQHKV0,ty8_VJwMZJk,UTN6Wr629do,oazIYjvKvrk,ie9WbsdCJkM,WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE,mdYZiR3w1xM,OEmxdp689Eo,XzupjqG2zRg,cgpR8-plwyQ,WOnzzBsy1bc,YvpRsob_C_g,gh3FyLT7WVg,e0pOPns9vDI,PjBCLeYaf4Q,vnxCNGuBchw,FJAwxOFnyMw,w_AaXtKU4jo,Dwzsmshb4GI,3XcdYCMCsuk,Xo6ojNDS1qM,RU3CM0xk0Y0,uJH06jzlcCA,tDjYEdCD8mo,03l6ZqS9MLE">&#9654; Play 49</a></div></div><div class="plrow"><div><div class="pt">September 2026</div><div class="pm">11 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=yWNPxS0sXnE,Ap_1sFv6qvA,HC9fxIcH_tI,rnyTjyyCWks,vKNmpKQ3-iQ,BUR9c28uD-Y,7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8">&#9654; Play 11</a></div></div><div class="plrow"><div><div class="pt">August 2026</div><div class="pm">24 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=fPm9P7IWDWU,lvyH0ATKsrY,2C5Fs8r4H3k,bdFi7Bpq6Xw,hIHUeuw2yj8,uZt5Z7P3NoY,nPkUgRGvtgw,UbTmpwb3xOc,3KZVttNhp-o,OnkGfsmGIPc,PscE1RmMGgE,NYGikEQHKV0,ty8_VJwMZJk,UTN6Wr629do,oazIYjvKvrk,ie9WbsdCJkM,WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE,mdYZiR3w1xM,OEmxdp689Eo,XzupjqG2zRg,cgpR8-plwyQ,WOnzzBsy1bc">&#9654; Play 24</a></div></div><div class="plrow"><div><div class="pt">July 2026</div><div class="pm">14 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=YvpRsob_C_g,gh3FyLT7WVg,e0pOPns9vDI,PjBCLeYaf4Q,vnxCNGuBchw,FJAwxOFnyMw,w_AaXtKU4jo,Dwzsmshb4GI,3XcdYCMCsuk,Xo6ojNDS1qM,RU3CM0xk0Y0,uJH06jzlcCA,tDjYEdCD8mo,03l6ZqS9MLE">&#9654; Play 14</a></div></div>
+<div class="plrow big"><div><div class="pt">Everything</div><div class="pm">43 songs across 8 weeks</div></div><div class="sp"><a class="playall" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8,fPm9P7IWDWU,lvyH0ATKsrY,2C5Fs8r4H3k,bdFi7Bpq6Xw,hIHUeuw2yj8,uZt5Z7P3NoY,nPkUgRGvtgw,UbTmpwb3xOc,3KZVttNhp-o,OnkGfsmGIPc,PscE1RmMGgE,NYGikEQHKV0,ty8_VJwMZJk,UTN6Wr629do,oazIYjvKvrk,ie9WbsdCJkM,WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE,mdYZiR3w1xM,OEmxdp689Eo,XzupjqG2zRg,cgpR8-plwyQ,WOnzzBsy1bc,YvpRsob_C_g,gh3FyLT7WVg,e0pOPns9vDI,PjBCLeYaf4Q,vnxCNGuBchw,FJAwxOFnyMw,w_AaXtKU4jo,Dwzsmshb4GI,3XcdYCMCsuk,Xo6ojNDS1qM,RU3CM0xk0Y0,uJH06jzlcCA,tDjYEdCD8mo,03l6ZqS9MLE">&#9654; Play all</a></div></div><div class="plrow"><div><div class="pt">2026</div><div class="pm">43 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8,fPm9P7IWDWU,lvyH0ATKsrY,2C5Fs8r4H3k,bdFi7Bpq6Xw,hIHUeuw2yj8,uZt5Z7P3NoY,nPkUgRGvtgw,UbTmpwb3xOc,3KZVttNhp-o,OnkGfsmGIPc,PscE1RmMGgE,NYGikEQHKV0,ty8_VJwMZJk,UTN6Wr629do,oazIYjvKvrk,ie9WbsdCJkM,WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE,mdYZiR3w1xM,OEmxdp689Eo,XzupjqG2zRg,cgpR8-plwyQ,WOnzzBsy1bc,YvpRsob_C_g,gh3FyLT7WVg,e0pOPns9vDI,PjBCLeYaf4Q,vnxCNGuBchw,FJAwxOFnyMw,w_AaXtKU4jo,Dwzsmshb4GI,3XcdYCMCsuk,Xo6ojNDS1qM,RU3CM0xk0Y0,uJH06jzlcCA,tDjYEdCD8mo,03l6ZqS9MLE">&#9654; Play 43</a></div></div><div class="plrow"><div><div class="pt">September 2026</div><div class="pm">5 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8">&#9654; Play 5</a></div></div><div class="plrow"><div><div class="pt">August 2026</div><div class="pm">24 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=fPm9P7IWDWU,lvyH0ATKsrY,2C5Fs8r4H3k,bdFi7Bpq6Xw,hIHUeuw2yj8,uZt5Z7P3NoY,nPkUgRGvtgw,UbTmpwb3xOc,3KZVttNhp-o,OnkGfsmGIPc,PscE1RmMGgE,NYGikEQHKV0,ty8_VJwMZJk,UTN6Wr629do,oazIYjvKvrk,ie9WbsdCJkM,WT-wrwlN144,E5ZeUJjEFUc,JwrtlzO9RHE,mdYZiR3w1xM,OEmxdp689Eo,XzupjqG2zRg,cgpR8-plwyQ,WOnzzBsy1bc">&#9654; Play 24</a></div></div><div class="plrow"><div><div class="pt">July 2026</div><div class="pm">14 songs</div></div><div class="sp"><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=YvpRsob_C_g,gh3FyLT7WVg,e0pOPns9vDI,PjBCLeYaf4Q,vnxCNGuBchw,FJAwxOFnyMw,w_AaXtKU4jo,Dwzsmshb4GI,3XcdYCMCsuk,Xo6ojNDS1qM,RU3CM0xk0Y0,uJH06jzlcCA,tDjYEdCD8mo,03l6ZqS9MLE">&#9654; Play 14</a></div></div>
 <p class="hint" style="color:var(--ink3);font-size:12.5px;margin:10px 0 34px">
 YouTube caps an ad-hoc playlist at 50 videos, so longer sets play the first 50.</p>
 
@@ -194,9 +289,10 @@ YouTube caps an ad-hoc playlist at 50 videos, so longer sets play the first 50.<
 <div class="tools"><input id="q" type="search"
  placeholder="Filter by song, film or music label…" autocomplete="off"></div>
 <div id="fnone" class="empty" style="display:none">Nothing matches that.</div>
-<div class="wkblock"><h2>Week of 20 September 2026 — Sunday Cinema Kaburlu<span class="count">3</span><a href="2026-09-20-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="jai jai ram ramayana t-series" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=yWNPxS0sXnE" target="_blank" rel="noopener" data-vid="yWNPxS0sXnE" data-title="Jai Jai Ram"><img src="https://i.ytimg.com/vi/yWNPxS0sXnE/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=yWNPxS0sXnE" target="_blank" rel="noopener" data-vid="yWNPxS0sXnE" data-title="Jai Jai Ram"><div class="t">Jai Jai Ram</div><div class="m">Ramayana</div><div class="meta">T-Series</div></a></div><div class="card" data-search="kaka dhoom dhamaka crazy kalyanam think music telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=Ap_1sFv6qvA" target="_blank" rel="noopener" data-vid="Ap_1sFv6qvA" data-title="Kaka Dhoom Dhamaka"><img src="https://i.ytimg.com/vi/Ap_1sFv6qvA/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=Ap_1sFv6qvA" target="_blank" rel="noopener" data-vid="Ap_1sFv6qvA" data-title="Kaka Dhoom Dhamaka"><div class="t">Kaka Dhoom Dhamaka</div><div class="m">Crazy Kalyanam</div><div class="meta">Think Music Telugu</div></a></div><div class="card" data-search="vevela oohale chupina baa baa black sheep saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=HC9fxIcH_tI" target="_blank" rel="noopener" data-vid="HC9fxIcH_tI" data-title="Vevela Oohale Chupina"><img src="https://i.ytimg.com/vi/HC9fxIcH_tI/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=HC9fxIcH_tI" target="_blank" rel="noopener" data-vid="HC9fxIcH_tI" data-title="Vevela Oohale Chupina"><div class="t">Vevela Oohale Chupina</div><div class="m">Baa Baa Black Sheep</div><div class="meta">Saregama Telugu</div></a></div></div></div><div class="wkblock"><h2>Week of 13 September 2026 — Sunday Cinema Kaburlu<span class="count">3</span><a href="2026-09-13-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="srilatha idupu kayitham saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=rnyTjyyCWks" target="_blank" rel="noopener" data-vid="rnyTjyyCWks" data-title="Srilatha"><img src="https://i.ytimg.com/vi/rnyTjyyCWks/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=rnyTjyyCWks" target="_blank" rel="noopener" data-vid="rnyTjyyCWks" data-title="Srilatha"><div class="t">Srilatha</div><div class="m">Idupu Kayitham</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="soggadila mana doctor babe mango telugu cinema" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=vKNmpKQ3-iQ" target="_blank" rel="noopener" data-vid="vKNmpKQ3-iQ" data-title="Soggadila"><img src="https://i.ytimg.com/vi/vKNmpKQ3-iQ/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=vKNmpKQ3-iQ" target="_blank" rel="noopener" data-vid="vKNmpKQ3-iQ" data-title="Soggadila"><div class="t">Soggadila</div><div class="m">Mana Doctor Babe</div><div class="meta">Mango Telugu Cinema</div></a></div><div class="card" data-search="dam dam chakkora t-series telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=BUR9c28uD-Y" target="_blank" rel="noopener" data-vid="BUR9c28uD-Y" data-title="Dam Dam"><img src="https://i.ytimg.com/vi/BUR9c28uD-Y/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=BUR9c28uD-Y" target="_blank" rel="noopener" data-vid="BUR9c28uD-Y" data-title="Dam Dam"><div class="t">Dam Dam</div><div class="m">Chakkora</div><div class="meta">T-Series Telugu</div></a></div></div></div><div class="wkblock"><h2>Week of 6 September 2026 — Sunday Cinema Kaburlu<span class="count">5</span><a href="2026-09-06-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="chusaaley kaagitham padavalu t-series telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener" data-vid="7C3vtRH_vzc" data-title="Chusaaley"><img src="https://i.ytimg.com/vi/7C3vtRH_vzc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener" data-vid="7C3vtRH_vzc" data-title="Chusaaley"><div class="t">Chusaaley</div><div class="m">Kaagitham Padavalu</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="sarigamale gunde anchullo maya lady sony music south" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener" data-vid="AOiMxQu12Es" data-title="Sarigamale Gunde Anchullo"><img src="https://i.ytimg.com/vi/AOiMxQu12Es/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener" data-vid="AOiMxQu12Es" data-title="Sarigamale Gunde Anchullo"><div class="t">Sarigamale Gunde Anchullo</div><div class="m">Maya Lady</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="the rage of varahi mahendragiri varahi junglee music telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener" data-vid="GMCOUzzmJPE" data-title="The Rage Of Varahi"><img src="https://i.ytimg.com/vi/GMCOUzzmJPE/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener" data-vid="GMCOUzzmJPE" data-title="The Rage Of Varahi"><div class="t">The Rage Of Varahi</div><div class="m">Mahendragiri Varahi</div><div class="meta">Junglee Music Telugu</div></a></div><div class="card" data-search="nee parichayam tortoise lahari music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener" data-vid="XceJdWL9a9E" data-title="Nee Parichayam"><img src="https://i.ytimg.com/vi/XceJdWL9a9E/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener" data-vid="XceJdWL9a9E" data-title="Nee Parichayam"><div class="t">Nee Parichayam</div><div class="m">Tortoise</div><div class="meta">Lahari Music</div></a></div><div class="card" data-search="allakallolamga gaja saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener" data-vid="F_xHwofiUH8" data-title="Allakallolamga"><img src="https://i.ytimg.com/vi/F_xHwofiUH8/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener" data-vid="F_xHwofiUH8" data-title="Allakallolamga"><div class="t">Allakallolamga</div><div class="m">Gaja</div><div class="meta">Saregama Telugu</div></a></div></div></div><div class="wkblock"><h2>Week of 30 August 2026 — Sunday Cinema Kaburlu<span class="count">3</span><a href="2026-08-30-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="loser i&#x27;m game zee music south" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=fPm9P7IWDWU" target="_blank" rel="noopener" data-vid="fPm9P7IWDWU" data-title="Loser"><img src="https://i.ytimg.com/vi/fPm9P7IWDWU/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=fPm9P7IWDWU" target="_blank" rel="noopener" data-vid="fPm9P7IWDWU" data-title="Loser"><div class="t">Loser</div><div class="m">I&#x27;m Game</div><div class="meta">Zee Music South</div></a></div><div class="card" data-search="school song summer holidays think music telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=lvyH0ATKsrY" target="_blank" rel="noopener" data-vid="lvyH0ATKsrY" data-title="School Song"><img src="https://i.ytimg.com/vi/lvyH0ATKsrY/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=lvyH0ATKsrY" target="_blank" rel="noopener" data-vid="lvyH0ATKsrY" data-title="School Song"><div class="t">School Song</div><div class="m">Summer Holidays</div><div class="meta">Think Music Telugu</div></a></div><div class="card" data-search="what a logic sir ji mahendragiri varahi junglee music telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=2C5Fs8r4H3k" target="_blank" rel="noopener" data-vid="2C5Fs8r4H3k" data-title="What A Logic Sir Ji"><img src="https://i.ytimg.com/vi/2C5Fs8r4H3k/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=2C5Fs8r4H3k" target="_blank" rel="noopener" data-vid="2C5Fs8r4H3k" data-title="What A Logic Sir Ji"><div class="t">What A Logic Sir Ji</div><div class="m">Mahendragiri Varahi</div><div class="meta">Junglee Music Telugu</div></a></div></div></div><div class="wkblock"><h2>Week of 23 August 2026 — Sunday Cinema Kaburlu<span class="count">3</span><a href="2026-08-23-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="chinni chinni itllu arjuna t-series telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=bdFi7Bpq6Xw" target="_blank" rel="noopener" data-vid="bdFi7Bpq6Xw" data-title="Chinni Chinni"><img src="https://i.ytimg.com/vi/bdFi7Bpq6Xw/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=bdFi7Bpq6Xw" target="_blank" rel="noopener" data-vid="bdFi7Bpq6Xw" data-title="Chinni Chinni"><div class="t">Chinni Chinni</div><div class="m">Itllu Arjuna</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="ala bolelo jailer 2 sun tv" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=hIHUeuw2yj8" target="_blank" rel="noopener" data-vid="hIHUeuw2yj8" data-title="Ala Bolelo"><img src="https://i.ytimg.com/vi/hIHUeuw2yj8/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=hIHUeuw2yj8" target="_blank" rel="noopener" data-vid="hIHUeuw2yj8" data-title="Ala Bolelo"><div class="t">Ala Bolelo</div><div class="m">Jailer 2</div><div class="meta">Sun TV</div></a></div><div class="card" data-search="manasa vacha epic first semester aditya music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=uZt5Z7P3NoY" target="_blank" rel="noopener" data-vid="uZt5Z7P3NoY" data-title="Manasa Vacha"><img src="https://i.ytimg.com/vi/uZt5Z7P3NoY/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=uZt5Z7P3NoY" target="_blank" rel="noopener" data-vid="uZt5Z7P3NoY" data-title="Manasa Vacha"><div class="t">Manasa Vacha</div><div class="m">EPIC First Semester</div><div class="meta">Aditya Music</div></a></div></div></div><div class="wkblock"><h2>Week of 16 August 2026 — Sunday Cinema Kaburlu<span class="count">10</span><a href="2026-08-16-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="cakeu walku don&#x27;t trouble the trouble lahari music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=nPkUgRGvtgw" target="_blank" rel="noopener" data-vid="nPkUgRGvtgw" data-title="Cakeu Walku"><img src="https://i.ytimg.com/vi/nPkUgRGvtgw/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=nPkUgRGvtgw" target="_blank" rel="noopener" data-vid="nPkUgRGvtgw" data-title="Cakeu Walku"><div class="t">Cakeu Walku</div><div class="m">Don&#x27;t Trouble the Trouble</div><div class="meta">Lahari Music</div></a></div><div class="card" data-search="olammo vagalaadi sigma saregama telugu and lyca productions" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=UbTmpwb3xOc" target="_blank" rel="noopener" data-vid="UbTmpwb3xOc" data-title="Olammo Vagalaadi"><img src="https://i.ytimg.com/vi/UbTmpwb3xOc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=UbTmpwb3xOc" target="_blank" rel="noopener" data-vid="UbTmpwb3xOc" data-title="Olammo Vagalaadi"><div class="t">Olammo Vagalaadi</div><div class="m">Sigma</div><div class="meta">Saregama Telugu and Lyca Productions</div></a></div><div class="card" data-search="evare nuvve i&#x27;m game zee music south" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=3KZVttNhp-o" target="_blank" rel="noopener" data-vid="3KZVttNhp-o" data-title="Evare Nuvve"><img src="https://i.ytimg.com/vi/3KZVttNhp-o/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=3KZVttNhp-o" target="_blank" rel="noopener" data-vid="3KZVttNhp-o" data-title="Evare Nuvve"><div class="t">Evare Nuvve</div><div class="m">I&#x27;m Game</div><div class="meta">Zee Music South</div></a></div><div class="card" data-search="title track romanchakam t-series telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=OnkGfsmGIPc" target="_blank" rel="noopener" data-vid="OnkGfsmGIPc" data-title="Title Track"><img src="https://i.ytimg.com/vi/OnkGfsmGIPc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=OnkGfsmGIPc" target="_blank" rel="noopener" data-vid="OnkGfsmGIPc" data-title="Title Track"><div class="t">Title Track</div><div class="m">Romanchakam</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="pilla pilla missing meghana aditya music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=PscE1RmMGgE" target="_blank" rel="noopener" data-vid="PscE1RmMGgE" data-title="Pilla Pilla"><img src="https://i.ytimg.com/vi/PscE1RmMGgE/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=PscE1RmMGgE" target="_blank" rel="noopener" data-vid="PscE1RmMGgE" data-title="Pilla Pilla"><div class="t">Pilla Pilla</div><div class="m">Missing Meghana</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="masthugundira yavvaram nenu ready saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=NYGikEQHKV0" target="_blank" rel="noopener" data-vid="NYGikEQHKV0" data-title="Masthugundira Yavvaram"><img src="https://i.ytimg.com/vi/NYGikEQHKV0/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=NYGikEQHKV0" target="_blank" rel="noopener" data-vid="NYGikEQHKV0" data-title="Masthugundira Yavvaram"><div class="t">Masthugundira Yavvaram</div><div class="m">Nenu Ready</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="fanaa high aditya music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=ty8_VJwMZJk" target="_blank" rel="noopener" data-vid="ty8_VJwMZJk" data-title="Fanaa"><img src="https://i.ytimg.com/vi/ty8_VJwMZJk/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=ty8_VJwMZJk" target="_blank" rel="noopener" data-vid="ty8_VJwMZJk" data-title="Fanaa"><div class="t">Fanaa</div><div class="m">HIGH</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="aaja meri jaani baa baa black sheep saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=UTN6Wr629do" target="_blank" rel="noopener" data-vid="UTN6Wr629do" data-title="Aaja Meri Jaani"><img src="https://i.ytimg.com/vi/UTN6Wr629do/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=UTN6Wr629do" target="_blank" rel="noopener" data-vid="UTN6Wr629do" data-title="Aaja Meri Jaani"><div class="t">Aaja Meri Jaani</div><div class="m">Baa Baa Black Sheep</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="title song maya lady sony music south" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=oazIYjvKvrk" target="_blank" rel="noopener" data-vid="oazIYjvKvrk" data-title="Title Song"><img src="https://i.ytimg.com/vi/oazIYjvKvrk/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=oazIYjvKvrk" target="_blank" rel="noopener" data-vid="oazIYjvKvrk" data-title="Title Song"><div class="t">Title Song</div><div class="m">Maya Lady</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="bajare banjo ameerlog awwal audio" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=ie9WbsdCJkM" target="_blank" rel="noopener" data-vid="ie9WbsdCJkM" data-title="Bajare Banjo"><img src="https://i.ytimg.com/vi/ie9WbsdCJkM/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=ie9WbsdCJkM" target="_blank" rel="noopener" data-vid="ie9WbsdCJkM" data-title="Bajare Banjo"><div class="t">Bajare Banjo</div><div class="m">Ameerlog</div><div class="meta">Awwal Audio</div></a></div></div></div><div class="wkblock"><h2>Week of 9 August 2026 — Sunday Cinema Kaburlu<span class="count">3</span><a href="2026-08-09-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="yaalalo yaalalo irumudi t-series telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener" data-vid="WT-wrwlN144" data-title="Yaalalo Yaalalo"><img src="https://i.ytimg.com/vi/WT-wrwlN144/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener" data-vid="WT-wrwlN144" data-title="Yaalalo Yaalalo"><div class="t">Yaalalo Yaalalo</div><div class="m">Irumudi</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="okka chinni navve sahaa sumaira studios" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener" data-vid="E5ZeUJjEFUc" data-title="Okka Chinni Navve"><img src="https://i.ytimg.com/vi/E5ZeUJjEFUc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener" data-vid="E5ZeUJjEFUc" data-title="Okka Chinni Navve"><div class="t">Okka Chinni Navve</div><div class="m">Sahaa</div><div class="meta">Sumaira Studios</div></a></div><div class="card" data-search="seethakokala happy journey zee music south" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener" data-vid="JwrtlzO9RHE" data-title="Seethakokala"><img src="https://i.ytimg.com/vi/JwrtlzO9RHE/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener" data-vid="JwrtlzO9RHE" data-title="Seethakokala"><div class="t">Seethakokala</div><div class="m">Happy Journey</div><div class="meta">Zee Music South</div></a></div></div></div><div class="wkblock"><h2>Week of 2 August 2026 — Sunday Cinema Kaburlu<span class="count">5</span><a href="2026-08-02-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="chitti chitti cheema aakasamlo oka tara t-series telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=mdYZiR3w1xM" target="_blank" rel="noopener" data-vid="mdYZiR3w1xM" data-title="Chitti Chitti Cheema"><img src="https://i.ytimg.com/vi/mdYZiR3w1xM/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=mdYZiR3w1xM" target="_blank" rel="noopener" data-vid="mdYZiR3w1xM" data-title="Chitti Chitti Cheema"><div class="t">Chitti Chitti Cheema</div><div class="m">Aakasamlo Oka Tara</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="sitharala navvu bhagavanthudu madhura audio" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=OEmxdp689Eo" target="_blank" rel="noopener" data-vid="OEmxdp689Eo" data-title="Sitharala Navvu"><img src="https://i.ytimg.com/vi/OEmxdp689Eo/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=OEmxdp689Eo" target="_blank" rel="noopener" data-vid="OEmxdp689Eo" data-title="Sitharala Navvu"><div class="t">Sitharala Navvu</div><div class="m">Bhagavanthudu</div><div class="meta">Madhura Audio</div></a></div><div class="card" data-search="bomma bomma sri saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=XzupjqG2zRg" target="_blank" rel="noopener" data-vid="XzupjqG2zRg" data-title="Bomma Bomma"><img src="https://i.ytimg.com/vi/XzupjqG2zRg/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=XzupjqG2zRg" target="_blank" rel="noopener" data-vid="XzupjqG2zRg" data-title="Bomma Bomma"><div class="t">Bomma Bomma</div><div class="m">Sri</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="merupule merupule nenu ready saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=cgpR8-plwyQ" target="_blank" rel="noopener" data-vid="cgpR8-plwyQ" data-title="Merupule Merupule"><img src="https://i.ytimg.com/vi/cgpR8-plwyQ/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=cgpR8-plwyQ" target="_blank" rel="noopener" data-vid="cgpR8-plwyQ" data-title="Merupule Merupule"><div class="t">Merupule Merupule</div><div class="m">Nenu Ready</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="disco light the red bag lahari music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=WOnzzBsy1bc" target="_blank" rel="noopener" data-vid="WOnzzBsy1bc" data-title="Disco Light"><img src="https://i.ytimg.com/vi/WOnzzBsy1bc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=WOnzzBsy1bc" target="_blank" rel="noopener" data-vid="WOnzzBsy1bc" data-title="Disco Light"><div class="t">Disco Light</div><div class="m">The Red Bag</div><div class="meta">Lahari Music</div></a></div></div></div><div class="wkblock"><h2>Week of 31 July 2026<span class="count">3</span><a href="2026-07-31-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="en kaadhale anakapalli aditya music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=YvpRsob_C_g" target="_blank" rel="noopener" data-vid="YvpRsob_C_g" data-title="En Kaadhale"><img src="https://i.ytimg.com/vi/YvpRsob_C_g/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=YvpRsob_C_g" target="_blank" rel="noopener" data-vid="YvpRsob_C_g" data-title="En Kaadhale"><div class="t">En Kaadhale</div><div class="m">Anakapalli</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="kurchi madathapetti guntur kaaram aditya music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=gh3FyLT7WVg" target="_blank" rel="noopener" data-vid="gh3FyLT7WVg" data-title="Kurchi Madathapetti"><img src="https://i.ytimg.com/vi/gh3FyLT7WVg/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=gh3FyLT7WVg" target="_blank" rel="noopener" data-vid="gh3FyLT7WVg" data-title="Kurchi Madathapetti"><div class="t">Kurchi Madathapetti</div><div class="m">Guntur Kaaram</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="zzzz nonexistent song" data-kind="song"><div class="left"><a class="thumb" href="https://open.spotify.com/search/Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener"><img alt=""></a></div><a class="body" href="https://open.spotify.com/search/Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener"><div class="t">Zzzz Nonexistent Song</div><div class="m"></div><div class="meta"></div></a></div></div></div><div class="wkblock"><h2>Week of 26 July 2026 — Sunday Cinema Kaburlu<span class="count">12</span><a href="2026-07-26-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="he is my dosthi cult aditya music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=e0pOPns9vDI" target="_blank" rel="noopener" data-vid="e0pOPns9vDI" data-title="He Is My Dosthi"><img src="https://i.ytimg.com/vi/e0pOPns9vDI/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=e0pOPns9vDI" target="_blank" rel="noopener" data-vid="e0pOPns9vDI" data-title="He Is My Dosthi"><div class="t">He Is My Dosthi</div><div class="m">CULT</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="naa kanti meedha kunuke ramba oorvasi menaka aditya music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=PjBCLeYaf4Q" target="_blank" rel="noopener" data-vid="PjBCLeYaf4Q" data-title="Naa Kanti Meedha Kunuke"><img src="https://i.ytimg.com/vi/PjBCLeYaf4Q/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=PjBCLeYaf4Q" target="_blank" rel="noopener" data-vid="PjBCLeYaf4Q" data-title="Naa Kanti Meedha Kunuke"><div class="t">Naa Kanti Meedha Kunuke</div><div class="m">Ramba Oorvasi Menaka</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="mandaadi mandaadi mandaadi rs infotainment and 3 more" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=vnxCNGuBchw" target="_blank" rel="noopener" data-vid="vnxCNGuBchw" data-title="Mandaadi Mandaadi"><img src="https://i.ytimg.com/vi/vnxCNGuBchw/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=vnxCNGuBchw" target="_blank" rel="noopener" data-vid="vnxCNGuBchw" data-title="Mandaadi Mandaadi"><div class="t">Mandaadi Mandaadi</div><div class="m">Mandaadi</div><div class="meta">RS Infotainment and 3 more</div></a></div><div class="card" data-search="radha ramana romanchakam t-series telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=FJAwxOFnyMw" target="_blank" rel="noopener" data-vid="FJAwxOFnyMw" data-title="Radha Ramana"><img src="https://i.ytimg.com/vi/FJAwxOFnyMw/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=FJAwxOFnyMw" target="_blank" rel="noopener" data-vid="FJAwxOFnyMw" data-title="Radha Ramana"><div class="t">Radha Ramana</div><div class="m">Romanchakam</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="manasaagadhe toxic zee music south" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=w_AaXtKU4jo" target="_blank" rel="noopener" data-vid="w_AaXtKU4jo" data-title="Manasaagadhe"><img src="https://i.ytimg.com/vi/w_AaXtKU4jo/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=w_AaXtKU4jo" target="_blank" rel="noopener" data-vid="w_AaXtKU4jo" data-title="Manasaagadhe"><div class="t">Manasaagadhe</div><div class="m">Toxic</div><div class="meta">Zee Music South</div></a></div><div class="card" data-search="raave cheliya srinivasa mangapuram t-series telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=Dwzsmshb4GI" target="_blank" rel="noopener" data-vid="Dwzsmshb4GI" data-title="Raave Cheliya"><img src="https://i.ytimg.com/vi/Dwzsmshb4GI/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=Dwzsmshb4GI" target="_blank" rel="noopener" data-vid="Dwzsmshb4GI" data-title="Raave Cheliya"><div class="t">Raave Cheliya</div><div class="m">Srinivasa Mangapuram</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="rasaagummadi korean kanakaraju t-series telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=3XcdYCMCsuk" target="_blank" rel="noopener" data-vid="3XcdYCMCsuk" data-title="Rasaagummadi"><img src="https://i.ytimg.com/vi/3XcdYCMCsuk/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=3XcdYCMCsuk" target="_blank" rel="noopener" data-vid="3XcdYCMCsuk" data-title="Rasaagummadi"><div class="t">Rasaagummadi</div><div class="m">Korean Kanakaraju</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="intha istamaa comrade kalyan saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=Xo6ojNDS1qM" target="_blank" rel="noopener" data-vid="Xo6ojNDS1qM" data-title="Intha Istamaa"><img src="https://i.ytimg.com/vi/Xo6ojNDS1qM/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=Xo6ojNDS1qM" target="_blank" rel="noopener" data-vid="Xo6ojNDS1qM" data-title="Intha Istamaa"><div class="t">Intha Istamaa</div><div class="m">Comrade Kalyan</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="konchem konchem nenu ready saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=RU3CM0xk0Y0" target="_blank" rel="noopener" data-vid="RU3CM0xk0Y0" data-title="Konchem Konchem"><img src="https://i.ytimg.com/vi/RU3CM0xk0Y0/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=RU3CM0xk0Y0" target="_blank" rel="noopener" data-vid="RU3CM0xk0Y0" data-title="Konchem Konchem"><div class="t">Konchem Konchem</div><div class="m">Nenu Ready</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="kotha soku pallaburusu zee music south" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=uJH06jzlcCA" target="_blank" rel="noopener" data-vid="uJH06jzlcCA" data-title="Kotha Soku"><img src="https://i.ytimg.com/vi/uJH06jzlcCA/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=uJH06jzlcCA" target="_blank" rel="noopener" data-vid="uJH06jzlcCA" data-title="Kotha Soku"><div class="t">Kotha Soku</div><div class="m">Pallaburusu</div><div class="meta">Zee Music South</div></a></div><div class="card" data-search="beautiful girl premaku namaskaram saregama telugu" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=tDjYEdCD8mo" target="_blank" rel="noopener" data-vid="tDjYEdCD8mo" data-title="Beautiful Girl"><img src="https://i.ytimg.com/vi/tDjYEdCD8mo/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=tDjYEdCD8mo" target="_blank" rel="noopener" data-vid="tDjYEdCD8mo" data-title="Beautiful Girl"><div class="t">Beautiful Girl</div><div class="m">Premaku Namaskaram</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="the wedding song vishwanath and sons aditya music" data-kind="song"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=03l6ZqS9MLE" target="_blank" rel="noopener" data-vid="03l6ZqS9MLE" data-title="The Wedding Song"><img src="https://i.ytimg.com/vi/03l6ZqS9MLE/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=03l6ZqS9MLE" target="_blank" rel="noopener" data-vid="03l6ZqS9MLE" data-title="The Wedding Song"><div class="t">The Wedding Song</div><div class="m">Vishwanath and Sons</div><div class="meta">Aditya Music</div></a></div></div></div>
+<div class="gatedzone" data-gated="song" data-label="songs"></div>
+<div class="wkblock"><h2>Week of 6 September 2026 — Sunday Cinema Kaburlu<span class="count">5</span><a href="2026-09-06-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="chusaaley kaagitham padavalu t-series telugu" data-kind="song" data-item="2026-09-06:song:chusaaley"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener" data-vid="7C3vtRH_vzc" data-title="Chusaaley"><img src="https://i.ytimg.com/vi/7C3vtRH_vzc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener" data-vid="7C3vtRH_vzc" data-title="Chusaaley"><div class="t">Chusaaley</div><div class="m">Kaagitham Padavalu</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="sarigamale gunde anchullo maya lady sony music south" data-kind="song" data-item="2026-09-06:song:sarigamale-gunde-anchullo"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener" data-vid="AOiMxQu12Es" data-title="Sarigamale Gunde Anchullo"><img src="https://i.ytimg.com/vi/AOiMxQu12Es/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener" data-vid="AOiMxQu12Es" data-title="Sarigamale Gunde Anchullo"><div class="t">Sarigamale Gunde Anchullo</div><div class="m">Maya Lady</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="the rage of varahi mahendragiri varahi junglee music telugu" data-kind="song" data-item="2026-09-06:song:the-rage-of-varahi"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener" data-vid="GMCOUzzmJPE" data-title="The Rage Of Varahi"><img src="https://i.ytimg.com/vi/GMCOUzzmJPE/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener" data-vid="GMCOUzzmJPE" data-title="The Rage Of Varahi"><div class="t">The Rage Of Varahi</div><div class="m">Mahendragiri Varahi</div><div class="meta">Junglee Music Telugu</div></a></div><div class="card" data-search="nee parichayam tortoise lahari music" data-kind="song" data-item="2026-09-06:song:nee-parichayam"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener" data-vid="XceJdWL9a9E" data-title="Nee Parichayam"><img src="https://i.ytimg.com/vi/XceJdWL9a9E/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener" data-vid="XceJdWL9a9E" data-title="Nee Parichayam"><div class="t">Nee Parichayam</div><div class="m">Tortoise</div><div class="meta">Lahari Music</div></a></div><div class="card" data-search="allakallolamga gaja saregama telugu" data-kind="song" data-item="2026-09-06:song:allakallolamga"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener" data-vid="F_xHwofiUH8" data-title="Allakallolamga"><img src="https://i.ytimg.com/vi/F_xHwofiUH8/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener" data-vid="F_xHwofiUH8" data-title="Allakallolamga"><div class="t">Allakallolamga</div><div class="m">Gaja</div><div class="meta">Saregama Telugu</div></a></div></div></div><div class="wkblock"><h2>Week of 30 August 2026 — Sunday Cinema Kaburlu<span class="count">3</span><a href="2026-08-30-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="loser i&#x27;m game zee music south" data-kind="song" data-item="2026-08-30:song:loser"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=fPm9P7IWDWU" target="_blank" rel="noopener" data-vid="fPm9P7IWDWU" data-title="Loser"><img src="https://i.ytimg.com/vi/fPm9P7IWDWU/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=fPm9P7IWDWU" target="_blank" rel="noopener" data-vid="fPm9P7IWDWU" data-title="Loser"><div class="t">Loser</div><div class="m">I&#x27;m Game</div><div class="meta">Zee Music South</div></a></div><div class="card" data-search="school song summer holidays think music telugu" data-kind="song" data-item="2026-08-30:song:school-song"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=lvyH0ATKsrY" target="_blank" rel="noopener" data-vid="lvyH0ATKsrY" data-title="School Song"><img src="https://i.ytimg.com/vi/lvyH0ATKsrY/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=lvyH0ATKsrY" target="_blank" rel="noopener" data-vid="lvyH0ATKsrY" data-title="School Song"><div class="t">School Song</div><div class="m">Summer Holidays</div><div class="meta">Think Music Telugu</div></a></div><div class="card" data-search="what a logic sir ji mahendragiri varahi junglee music telugu" data-kind="song" data-item="2026-08-30:song:what-a-logic-sir-ji"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=2C5Fs8r4H3k" target="_blank" rel="noopener" data-vid="2C5Fs8r4H3k" data-title="What A Logic Sir Ji"><img src="https://i.ytimg.com/vi/2C5Fs8r4H3k/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=2C5Fs8r4H3k" target="_blank" rel="noopener" data-vid="2C5Fs8r4H3k" data-title="What A Logic Sir Ji"><div class="t">What A Logic Sir Ji</div><div class="m">Mahendragiri Varahi</div><div class="meta">Junglee Music Telugu</div></a></div></div></div><div class="wkblock"><h2>Week of 23 August 2026 — Sunday Cinema Kaburlu<span class="count">3</span><a href="2026-08-23-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="chinni chinni itllu arjuna t-series telugu" data-kind="song" data-item="2026-08-23:song:chinni-chinni"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=bdFi7Bpq6Xw" target="_blank" rel="noopener" data-vid="bdFi7Bpq6Xw" data-title="Chinni Chinni"><img src="https://i.ytimg.com/vi/bdFi7Bpq6Xw/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=bdFi7Bpq6Xw" target="_blank" rel="noopener" data-vid="bdFi7Bpq6Xw" data-title="Chinni Chinni"><div class="t">Chinni Chinni</div><div class="m">Itllu Arjuna</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="ala bolelo jailer 2 sun tv" data-kind="song" data-item="2026-08-23:song:ala-bolelo"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=hIHUeuw2yj8" target="_blank" rel="noopener" data-vid="hIHUeuw2yj8" data-title="Ala Bolelo"><img src="https://i.ytimg.com/vi/hIHUeuw2yj8/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=hIHUeuw2yj8" target="_blank" rel="noopener" data-vid="hIHUeuw2yj8" data-title="Ala Bolelo"><div class="t">Ala Bolelo</div><div class="m">Jailer 2</div><div class="meta">Sun TV</div></a></div><div class="card" data-search="manasa vacha epic first semester aditya music" data-kind="song" data-item="2026-08-23:song:manasa-vacha"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=uZt5Z7P3NoY" target="_blank" rel="noopener" data-vid="uZt5Z7P3NoY" data-title="Manasa Vacha"><img src="https://i.ytimg.com/vi/uZt5Z7P3NoY/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=uZt5Z7P3NoY" target="_blank" rel="noopener" data-vid="uZt5Z7P3NoY" data-title="Manasa Vacha"><div class="t">Manasa Vacha</div><div class="m">EPIC First Semester</div><div class="meta">Aditya Music</div></a></div></div></div><div class="wkblock"><h2>Week of 16 August 2026 — Sunday Cinema Kaburlu<span class="count">10</span><a href="2026-08-16-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="cakeu walku don&#x27;t trouble the trouble lahari music" data-kind="song" data-item="2026-08-16:song:cakeu-walku"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=nPkUgRGvtgw" target="_blank" rel="noopener" data-vid="nPkUgRGvtgw" data-title="Cakeu Walku"><img src="https://i.ytimg.com/vi/nPkUgRGvtgw/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=nPkUgRGvtgw" target="_blank" rel="noopener" data-vid="nPkUgRGvtgw" data-title="Cakeu Walku"><div class="t">Cakeu Walku</div><div class="m">Don&#x27;t Trouble the Trouble</div><div class="meta">Lahari Music</div></a></div><div class="card" data-search="olammo vagalaadi sigma saregama telugu and lyca productions" data-kind="song" data-item="2026-08-16:song:olammo-vagalaadi"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=UbTmpwb3xOc" target="_blank" rel="noopener" data-vid="UbTmpwb3xOc" data-title="Olammo Vagalaadi"><img src="https://i.ytimg.com/vi/UbTmpwb3xOc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=UbTmpwb3xOc" target="_blank" rel="noopener" data-vid="UbTmpwb3xOc" data-title="Olammo Vagalaadi"><div class="t">Olammo Vagalaadi</div><div class="m">Sigma</div><div class="meta">Saregama Telugu and Lyca Productions</div></a></div><div class="card" data-search="evare nuvve i&#x27;m game zee music south" data-kind="song" data-item="2026-08-16:song:evare-nuvve"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=3KZVttNhp-o" target="_blank" rel="noopener" data-vid="3KZVttNhp-o" data-title="Evare Nuvve"><img src="https://i.ytimg.com/vi/3KZVttNhp-o/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=3KZVttNhp-o" target="_blank" rel="noopener" data-vid="3KZVttNhp-o" data-title="Evare Nuvve"><div class="t">Evare Nuvve</div><div class="m">I&#x27;m Game</div><div class="meta">Zee Music South</div></a></div><div class="card" data-search="title track romanchakam t-series telugu" data-kind="song" data-item="2026-08-16:song:title-track"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=OnkGfsmGIPc" target="_blank" rel="noopener" data-vid="OnkGfsmGIPc" data-title="Title Track"><img src="https://i.ytimg.com/vi/OnkGfsmGIPc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=OnkGfsmGIPc" target="_blank" rel="noopener" data-vid="OnkGfsmGIPc" data-title="Title Track"><div class="t">Title Track</div><div class="m">Romanchakam</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="pilla pilla missing meghana aditya music" data-kind="song" data-item="2026-08-16:song:pilla-pilla"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=PscE1RmMGgE" target="_blank" rel="noopener" data-vid="PscE1RmMGgE" data-title="Pilla Pilla"><img src="https://i.ytimg.com/vi/PscE1RmMGgE/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=PscE1RmMGgE" target="_blank" rel="noopener" data-vid="PscE1RmMGgE" data-title="Pilla Pilla"><div class="t">Pilla Pilla</div><div class="m">Missing Meghana</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="masthugundira yavvaram nenu ready saregama telugu" data-kind="song" data-item="2026-08-16:song:masthugundira-yavvaram"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=NYGikEQHKV0" target="_blank" rel="noopener" data-vid="NYGikEQHKV0" data-title="Masthugundira Yavvaram"><img src="https://i.ytimg.com/vi/NYGikEQHKV0/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=NYGikEQHKV0" target="_blank" rel="noopener" data-vid="NYGikEQHKV0" data-title="Masthugundira Yavvaram"><div class="t">Masthugundira Yavvaram</div><div class="m">Nenu Ready</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="fanaa high aditya music" data-kind="song" data-item="2026-08-16:song:fanaa"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=ty8_VJwMZJk" target="_blank" rel="noopener" data-vid="ty8_VJwMZJk" data-title="Fanaa"><img src="https://i.ytimg.com/vi/ty8_VJwMZJk/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=ty8_VJwMZJk" target="_blank" rel="noopener" data-vid="ty8_VJwMZJk" data-title="Fanaa"><div class="t">Fanaa</div><div class="m">HIGH</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="aaja meri jaani baa baa black sheep saregama telugu" data-kind="song" data-item="2026-08-16:song:aaja-meri-jaani"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=UTN6Wr629do" target="_blank" rel="noopener" data-vid="UTN6Wr629do" data-title="Aaja Meri Jaani"><img src="https://i.ytimg.com/vi/UTN6Wr629do/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=UTN6Wr629do" target="_blank" rel="noopener" data-vid="UTN6Wr629do" data-title="Aaja Meri Jaani"><div class="t">Aaja Meri Jaani</div><div class="m">Baa Baa Black Sheep</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="title song maya lady sony music south" data-kind="song" data-item="2026-08-16:song:title-song"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=oazIYjvKvrk" target="_blank" rel="noopener" data-vid="oazIYjvKvrk" data-title="Title Song"><img src="https://i.ytimg.com/vi/oazIYjvKvrk/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=oazIYjvKvrk" target="_blank" rel="noopener" data-vid="oazIYjvKvrk" data-title="Title Song"><div class="t">Title Song</div><div class="m">Maya Lady</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="bajare banjo ameerlog awwal audio" data-kind="song" data-item="2026-08-16:song:bajare-banjo"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=ie9WbsdCJkM" target="_blank" rel="noopener" data-vid="ie9WbsdCJkM" data-title="Bajare Banjo"><img src="https://i.ytimg.com/vi/ie9WbsdCJkM/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=ie9WbsdCJkM" target="_blank" rel="noopener" data-vid="ie9WbsdCJkM" data-title="Bajare Banjo"><div class="t">Bajare Banjo</div><div class="m">Ameerlog</div><div class="meta">Awwal Audio</div></a></div></div></div><div class="wkblock"><h2>Week of 9 August 2026 — Sunday Cinema Kaburlu<span class="count">3</span><a href="2026-08-09-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="yaalalo yaalalo irumudi t-series telugu" data-kind="song" data-item="2026-08-09:song:yaalalo-yaalalo"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener" data-vid="WT-wrwlN144" data-title="Yaalalo Yaalalo"><img src="https://i.ytimg.com/vi/WT-wrwlN144/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=WT-wrwlN144" target="_blank" rel="noopener" data-vid="WT-wrwlN144" data-title="Yaalalo Yaalalo"><div class="t">Yaalalo Yaalalo</div><div class="m">Irumudi</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="okka chinni navve sahaa sumaira studios" data-kind="song" data-item="2026-08-09:song:okka-chinni-navve"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener" data-vid="E5ZeUJjEFUc" data-title="Okka Chinni Navve"><img src="https://i.ytimg.com/vi/E5ZeUJjEFUc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=E5ZeUJjEFUc" target="_blank" rel="noopener" data-vid="E5ZeUJjEFUc" data-title="Okka Chinni Navve"><div class="t">Okka Chinni Navve</div><div class="m">Sahaa</div><div class="meta">Sumaira Studios</div></a></div><div class="card" data-search="seethakokala happy journey zee music south" data-kind="song" data-item="2026-08-09:song:seethakokala"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener" data-vid="JwrtlzO9RHE" data-title="Seethakokala"><img src="https://i.ytimg.com/vi/JwrtlzO9RHE/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=JwrtlzO9RHE" target="_blank" rel="noopener" data-vid="JwrtlzO9RHE" data-title="Seethakokala"><div class="t">Seethakokala</div><div class="m">Happy Journey</div><div class="meta">Zee Music South</div></a></div></div></div><div class="wkblock"><h2>Week of 2 August 2026 — Sunday Cinema Kaburlu<span class="count">5</span><a href="2026-08-02-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="chitti chitti cheema aakasamlo oka tara t-series telugu" data-kind="song" data-item="2026-08-02:song:chitti-chitti-cheema"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=mdYZiR3w1xM" target="_blank" rel="noopener" data-vid="mdYZiR3w1xM" data-title="Chitti Chitti Cheema"><img src="https://i.ytimg.com/vi/mdYZiR3w1xM/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=mdYZiR3w1xM" target="_blank" rel="noopener" data-vid="mdYZiR3w1xM" data-title="Chitti Chitti Cheema"><div class="t">Chitti Chitti Cheema</div><div class="m">Aakasamlo Oka Tara</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="sitharala navvu bhagavanthudu madhura audio" data-kind="song" data-item="2026-08-02:song:sitharala-navvu"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=OEmxdp689Eo" target="_blank" rel="noopener" data-vid="OEmxdp689Eo" data-title="Sitharala Navvu"><img src="https://i.ytimg.com/vi/OEmxdp689Eo/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=OEmxdp689Eo" target="_blank" rel="noopener" data-vid="OEmxdp689Eo" data-title="Sitharala Navvu"><div class="t">Sitharala Navvu</div><div class="m">Bhagavanthudu</div><div class="meta">Madhura Audio</div></a></div><div class="card" data-search="bomma bomma sri saregama telugu" data-kind="song" data-item="2026-08-02:song:bomma-bomma"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=XzupjqG2zRg" target="_blank" rel="noopener" data-vid="XzupjqG2zRg" data-title="Bomma Bomma"><img src="https://i.ytimg.com/vi/XzupjqG2zRg/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=XzupjqG2zRg" target="_blank" rel="noopener" data-vid="XzupjqG2zRg" data-title="Bomma Bomma"><div class="t">Bomma Bomma</div><div class="m">Sri</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="merupule merupule nenu ready saregama telugu" data-kind="song" data-item="2026-08-02:song:merupule-merupule"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=cgpR8-plwyQ" target="_blank" rel="noopener" data-vid="cgpR8-plwyQ" data-title="Merupule Merupule"><img src="https://i.ytimg.com/vi/cgpR8-plwyQ/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=cgpR8-plwyQ" target="_blank" rel="noopener" data-vid="cgpR8-plwyQ" data-title="Merupule Merupule"><div class="t">Merupule Merupule</div><div class="m">Nenu Ready</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="disco light the red bag lahari music" data-kind="song" data-item="2026-08-02:song:disco-light"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=WOnzzBsy1bc" target="_blank" rel="noopener" data-vid="WOnzzBsy1bc" data-title="Disco Light"><img src="https://i.ytimg.com/vi/WOnzzBsy1bc/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=WOnzzBsy1bc" target="_blank" rel="noopener" data-vid="WOnzzBsy1bc" data-title="Disco Light"><div class="t">Disco Light</div><div class="m">The Red Bag</div><div class="meta">Lahari Music</div></a></div></div></div><div class="wkblock"><h2>Week of 31 July 2026<span class="count">3</span><a href="2026-07-31-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="en kaadhale anakapalli aditya music" data-kind="song" data-item="2026-07-31:song:en-kaadhale"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=YvpRsob_C_g" target="_blank" rel="noopener" data-vid="YvpRsob_C_g" data-title="En Kaadhale"><img src="https://i.ytimg.com/vi/YvpRsob_C_g/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=YvpRsob_C_g" target="_blank" rel="noopener" data-vid="YvpRsob_C_g" data-title="En Kaadhale"><div class="t">En Kaadhale</div><div class="m">Anakapalli</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="kurchi madathapetti guntur kaaram aditya music" data-kind="song" data-item="2026-07-31:song:kurchi-madathapetti"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=gh3FyLT7WVg" target="_blank" rel="noopener" data-vid="gh3FyLT7WVg" data-title="Kurchi Madathapetti"><img src="https://i.ytimg.com/vi/gh3FyLT7WVg/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=gh3FyLT7WVg" target="_blank" rel="noopener" data-vid="gh3FyLT7WVg" data-title="Kurchi Madathapetti"><div class="t">Kurchi Madathapetti</div><div class="m">Guntur Kaaram</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="zzzz nonexistent song" data-kind="song" data-item="2026-07-31:song:zzzz-nonexistent-song"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://open.spotify.com/search/Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener"><img alt=""></a></div><a class="body" href="https://open.spotify.com/search/Zzzz%20Nonexistent%20Song" target="_blank" rel="noopener"><div class="t">Zzzz Nonexistent Song</div><div class="m"></div><div class="meta"></div></a></div></div></div><div class="wkblock"><h2>Week of 26 July 2026 — Sunday Cinema Kaburlu<span class="count">12</span><a href="2026-07-26-movie-updates.html">Full edition &#8594;</a></h2><div class="grid"><div class="card" data-search="he is my dosthi cult aditya music" data-kind="song" data-item="2026-07-26:song:he-is-my-dosthi"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=e0pOPns9vDI" target="_blank" rel="noopener" data-vid="e0pOPns9vDI" data-title="He Is My Dosthi"><img src="https://i.ytimg.com/vi/e0pOPns9vDI/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=e0pOPns9vDI" target="_blank" rel="noopener" data-vid="e0pOPns9vDI" data-title="He Is My Dosthi"><div class="t">He Is My Dosthi</div><div class="m">CULT</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="naa kanti meedha kunuke ramba oorvasi menaka aditya music" data-kind="song" data-item="2026-07-26:song:naa-kanti-meedha-kunuke"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=PjBCLeYaf4Q" target="_blank" rel="noopener" data-vid="PjBCLeYaf4Q" data-title="Naa Kanti Meedha Kunuke"><img src="https://i.ytimg.com/vi/PjBCLeYaf4Q/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=PjBCLeYaf4Q" target="_blank" rel="noopener" data-vid="PjBCLeYaf4Q" data-title="Naa Kanti Meedha Kunuke"><div class="t">Naa Kanti Meedha Kunuke</div><div class="m">Ramba Oorvasi Menaka</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="mandaadi mandaadi mandaadi rs infotainment and 3 more" data-kind="song" data-item="2026-07-26:song:mandaadi-mandaadi"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=vnxCNGuBchw" target="_blank" rel="noopener" data-vid="vnxCNGuBchw" data-title="Mandaadi Mandaadi"><img src="https://i.ytimg.com/vi/vnxCNGuBchw/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=vnxCNGuBchw" target="_blank" rel="noopener" data-vid="vnxCNGuBchw" data-title="Mandaadi Mandaadi"><div class="t">Mandaadi Mandaadi</div><div class="m">Mandaadi</div><div class="meta">RS Infotainment and 3 more</div></a></div><div class="card" data-search="radha ramana romanchakam t-series telugu" data-kind="song" data-item="2026-07-26:song:radha-ramana"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=FJAwxOFnyMw" target="_blank" rel="noopener" data-vid="FJAwxOFnyMw" data-title="Radha Ramana"><img src="https://i.ytimg.com/vi/FJAwxOFnyMw/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=FJAwxOFnyMw" target="_blank" rel="noopener" data-vid="FJAwxOFnyMw" data-title="Radha Ramana"><div class="t">Radha Ramana</div><div class="m">Romanchakam</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="manasaagadhe toxic zee music south" data-kind="song" data-item="2026-07-26:song:manasaagadhe"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=w_AaXtKU4jo" target="_blank" rel="noopener" data-vid="w_AaXtKU4jo" data-title="Manasaagadhe"><img src="https://i.ytimg.com/vi/w_AaXtKU4jo/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=w_AaXtKU4jo" target="_blank" rel="noopener" data-vid="w_AaXtKU4jo" data-title="Manasaagadhe"><div class="t">Manasaagadhe</div><div class="m">Toxic</div><div class="meta">Zee Music South</div></a></div><div class="card" data-search="raave cheliya srinivasa mangapuram t-series telugu" data-kind="song" data-item="2026-07-26:song:raave-cheliya"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=Dwzsmshb4GI" target="_blank" rel="noopener" data-vid="Dwzsmshb4GI" data-title="Raave Cheliya"><img src="https://i.ytimg.com/vi/Dwzsmshb4GI/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=Dwzsmshb4GI" target="_blank" rel="noopener" data-vid="Dwzsmshb4GI" data-title="Raave Cheliya"><div class="t">Raave Cheliya</div><div class="m">Srinivasa Mangapuram</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="rasaagummadi korean kanakaraju t-series telugu" data-kind="song" data-item="2026-07-26:song:rasaagummadi"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=3XcdYCMCsuk" target="_blank" rel="noopener" data-vid="3XcdYCMCsuk" data-title="Rasaagummadi"><img src="https://i.ytimg.com/vi/3XcdYCMCsuk/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=3XcdYCMCsuk" target="_blank" rel="noopener" data-vid="3XcdYCMCsuk" data-title="Rasaagummadi"><div class="t">Rasaagummadi</div><div class="m">Korean Kanakaraju</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="intha istamaa comrade kalyan saregama telugu" data-kind="song" data-item="2026-07-26:song:intha-istamaa"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=Xo6ojNDS1qM" target="_blank" rel="noopener" data-vid="Xo6ojNDS1qM" data-title="Intha Istamaa"><img src="https://i.ytimg.com/vi/Xo6ojNDS1qM/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=Xo6ojNDS1qM" target="_blank" rel="noopener" data-vid="Xo6ojNDS1qM" data-title="Intha Istamaa"><div class="t">Intha Istamaa</div><div class="m">Comrade Kalyan</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="konchem konchem nenu ready saregama telugu" data-kind="song" data-item="2026-07-26:song:konchem-konchem"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=RU3CM0xk0Y0" target="_blank" rel="noopener" data-vid="RU3CM0xk0Y0" data-title="Konchem Konchem"><img src="https://i.ytimg.com/vi/RU3CM0xk0Y0/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=RU3CM0xk0Y0" target="_blank" rel="noopener" data-vid="RU3CM0xk0Y0" data-title="Konchem Konchem"><div class="t">Konchem Konchem</div><div class="m">Nenu Ready</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="kotha soku pallaburusu zee music south" data-kind="song" data-item="2026-07-26:song:kotha-soku"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=uJH06jzlcCA" target="_blank" rel="noopener" data-vid="uJH06jzlcCA" data-title="Kotha Soku"><img src="https://i.ytimg.com/vi/uJH06jzlcCA/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=uJH06jzlcCA" target="_blank" rel="noopener" data-vid="uJH06jzlcCA" data-title="Kotha Soku"><div class="t">Kotha Soku</div><div class="m">Pallaburusu</div><div class="meta">Zee Music South</div></a></div><div class="card" data-search="beautiful girl premaku namaskaram saregama telugu" data-kind="song" data-item="2026-07-26:song:beautiful-girl"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=tDjYEdCD8mo" target="_blank" rel="noopener" data-vid="tDjYEdCD8mo" data-title="Beautiful Girl"><img src="https://i.ytimg.com/vi/tDjYEdCD8mo/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=tDjYEdCD8mo" target="_blank" rel="noopener" data-vid="tDjYEdCD8mo" data-title="Beautiful Girl"><div class="t">Beautiful Girl</div><div class="m">Premaku Namaskaram</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="the wedding song vishwanath and sons aditya music" data-kind="song" data-item="2026-07-26:song:the-wedding-song"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=03l6ZqS9MLE" target="_blank" rel="noopener" data-vid="03l6ZqS9MLE" data-title="The Wedding Song"><img src="https://i.ytimg.com/vi/03l6ZqS9MLE/mqdefault.jpg" alt="" loading="lazy"><span class=pl><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=03l6ZqS9MLE" target="_blank" rel="noopener" data-vid="03l6ZqS9MLE" data-title="The Wedding Song"><div class="t">The Wedding Song</div><div class="m">Vishwanath and Sons</div><div class="meta">Aditya Music</div></a></div></div></div>
 </div><footer class="site"><div class="wrap">
-<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a></div>
+<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="privacy.html">Privacy</a></div>
 <div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
 weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
 </div></footer>
@@ -204,6 +300,409 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
 <div class="lbt" id="lbt"></div><a id="lbo" href="#" target="_blank" rel="noopener">Open on YouTube &#8599;</a>
 <button class="lbx" aria-label="Close">&times;</button></div>
 <div class="lbf" id="lbf"></div></div></div>
+<div class="authmodal" id="authmodal" hidden><div class="authcard">
+<h2>Sign in</h2>
+<p>The last two weeks are for members. Everything older stays free for everyone.</p>
+<button class="gbtn" id="gsignin"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.2 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.6 5.9c4.4-4.1 6.7-10.1 6.7-17.3z"/><path fill="#FBBC05" d="M10.4 28.7c-.5-1.4-.8-2.9-.8-4.7s.3-3.3.8-4.7l-7.8-6.1C.9 16.3 0 20 0 24s.9 7.7 2.6 10.8l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.5-2 15.4-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.8 2.3-6.3 0-11.7-3.7-13.6-9.1l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/></svg> Continue with Google</button>
+<div class="orline">or</div>
+<input id="mlemail" type="email" placeholder="you@example.com" autocomplete="email">
+<button class="authbtn mlbtn" id="mlsend">Email me a sign-in link</button>
+<div class="msg" id="authmsg"></div>
+<p class="authfine">Signing in stores your email address, and nothing else. No
+analytics, no newsletter, and you can delete it in one click.
+<a href="privacy.html">What's stored &#8594;</a></p>
+<button class="close" id="authclose">Not now</button>
+</div></div>
+<div class="fixwrap" id="fixwrap" hidden><div class="fixcard">
+<h2>Correct this entry</h2>
+<div class="iid" id="fixid"></div>
+<div class="fixnote" id="fixscope"></div>
+<label>Title<input id="fix_t" autocomplete="off"></label>
+<label id="fixlab_m">Film / subtitle<input id="fix_m" autocomplete="off"></label>
+<label>Link<input id="fix_u" autocomplete="off" placeholder="https://…"></label>
+<label>Note<input id="fix_n" autocomplete="off" placeholder="optional"></label>
+<div class="fixrow">
+<button class="btn primary" id="fixsave">Save correction</button>
+<button class="btn" id="fixclear">Remove correction</button>
+</div>
+<div class="fixmsg" id="fixmsg"></div>
+<button class="btn" id="fixcancel" style="width:100%;justify-content:center;margin-top:9px">Cancel</button>
+</div></div><script>window.CFG={"url":"https://rfxrkcrijzfmfuwexbgj.supabase.co","key":"sb_publishable_a2Uomg2zakwmqc5-oUR4pA__3DQei2V","threshold":3};</script><script>
+(function(){
+  var CFG=window.CFG||{};
+  if(!CFG.url||!CFG.key) return;
+  var BASE=CFG.url.replace(/\/$/,'');
+  var TOKEN_KEY='cv-session';
+
+  function headers(extra){
+    var h=Object.assign({'apikey':CFG.key,'Content-Type':'application/json'},extra||{});
+    var s=session();
+    // A signed-in user's own JWT goes on Authorization; that is what RLS reads.
+    if(s&&s.access_token) h['Authorization']='Bearer '+s.access_token;
+    else if(/^eyJ/.test(CFG.key)) h['Authorization']='Bearer '+CFG.key;
+    return h;
+  }
+  function session(){
+    try{ var raw=localStorage.getItem(TOKEN_KEY); if(!raw) return null;
+         var s=JSON.parse(raw);
+         if(s.expires_at && s.expires_at*1000 < Date.now()+30000){ return refresh(s); }
+         return s; }catch(e){ return null; }
+  }
+  function store(s){ try{ s?localStorage.setItem(TOKEN_KEY,JSON.stringify(s))
+                           :localStorage.removeItem(TOKEN_KEY);}catch(e){} }
+  function refresh(s){
+    // Fire and forget; the current call proceeds anonymously if it has expired.
+    fetch(BASE+'/auth/v1/token?grant_type=refresh_token',
+      {method:'POST',headers:{'apikey':CFG.key,'Content-Type':'application/json'},
+       body:JSON.stringify({refresh_token:s.refresh_token})})
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(n){ if(n&&n.access_token){ store(n); render(); } else { store(null); render(); } })
+      .catch(function(){});
+    return null;
+  }
+  window.CVAUTH={
+    session:session, headers:headers, base:BASE,
+    signedIn:function(){ return !!session(); },
+    // Set once the admins lookup comes back. Treat this as "what to show", never
+    // as "what is allowed" — every admin action is also checked by RLS in
+    // Postgres, so flipping this in devtools reveals buttons that then fail.
+    isAdmin:false,
+    user:function(){ return user(); }
+  };
+
+  // ---- capture the token Supabase returns in the URL fragment after OAuth ----
+  if(location.hash && location.hash.indexOf('access_token=')>-1){
+    var p={}; location.hash.slice(1).split('&').forEach(function(kv){
+      var i=kv.indexOf('='); p[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1));
+    });
+    if(p.access_token){
+      p.expires_at = Math.floor(Date.now()/1000) + (parseInt(p.expires_in||'3600',10));
+      store(p);
+      history.replaceState(null,'',location.pathname+location.search);
+    }
+  }
+
+  function user(){
+    var s=session(); if(!s||!s.access_token) return null;
+    try{
+      var b=JSON.parse(atob(s.access_token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));
+      // Google also puts an avatar_url in the token. It is deliberately not read:
+      // rendering it would make every page load fetch an image from Google.
+      return {id:b.sub||'', email:b.email||'',
+              name:(b.user_metadata||{}).full_name||b.email||''};
+    }catch(e){ return {id:'',email:'',name:'Signed in'}; }
+  }
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function initials(u){
+    var n=(u.name||u.email||'').trim();
+    if(n.indexOf('@')>-1 && n===(u.email||'')) return n.slice(0,2);
+    var p=n.split(/\s+/).filter(Boolean);
+    return p.length>1 ? (p[0][0]+p[p.length-1][0]) : n.slice(0,2);
+  }
+
+  function render(){
+    var box=document.getElementById('authbox'); if(!box) return;
+    var u=user();
+    if(u){
+      box.innerHTML='<span class="avatar" aria-hidden="true">'+esc(initials(u))+'</span>'+
+        '<span class="who">'+esc(u.name)+'</span>'+
+        '<button class="authbtn" id="signout">Sign out</button>';
+      document.getElementById('signout').onclick=function(){ store(null); location.reload(); };
+    } else {
+      box.innerHTML='<button class="authbtn" id="signin">Sign in</button>';
+      document.getElementById('signin').onclick=openModal;
+    }
+    document.body.classList.toggle('is-member', !!u);
+  }
+
+  function openModal(){ var m=document.getElementById('authmodal'); if(m) m.hidden=false; }
+  function closeModal(){ var m=document.getElementById('authmodal'); if(m) m.hidden=true; }
+
+  document.addEventListener('click',function(ev){
+    if(ev.target.closest('#authclose')||ev.target.id==='authmodal') return closeModal();
+    if(ev.target.closest('.needlogin')) return openModal();
+  });
+
+  function wireModal(){
+    var g=document.getElementById('gsignin'), ml=document.getElementById('mlsend'),
+        msg=document.getElementById('authmsg');
+    if(g) g.onclick=function(){
+      location.href = BASE+'/auth/v1/authorize?provider=google&redirect_to='+
+                      encodeURIComponent(location.href.split('#')[0]);
+    };
+    if(ml) ml.onclick=function(){
+      var em=(document.getElementById('mlemail').value||'').trim();
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){
+        msg.className='msg bad'; msg.textContent='That email doesn\'t look right.'; return; }
+      msg.className='msg'; msg.textContent='Sending…'; msg.style.display='block';
+      fetch(BASE+'/auth/v1/otp',{method:'POST',
+        headers:{'apikey':CFG.key,'Content-Type':'application/json'},
+        body:JSON.stringify({email:em,create_user:true,
+          options:{email_redirect_to:location.href.split('#')[0]}})})
+        .then(function(r){
+          if(r.ok){ msg.className='msg ok'; msg.textContent='Check your inbox for the link.'; }
+          else { msg.className='msg bad'; msg.textContent='Couldn\'t send that ('+r.status+').'; }
+        })
+        .catch(function(){ msg.className='msg bad'; msg.textContent='Network problem — try again.'; });
+    };
+  }
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render();wireModal();});
+  else { render(); wireModal(); }
+})();
+</script><script>
+(function(){
+  var A=window.CVAUTH; if(!A) return;
+  var hosts=[].slice.call(document.querySelectorAll('[data-gated]'));
+  if(!hosts.length) return;
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function card(it){
+    var p=Object.assign({}, it.payload||{}, (window.CVOVERRIDES||{})[it.id]||{});
+    var v=p.v||'', th=v?'https://i.ytimg.com/vi/'+v+'/mqdefault.jpg':(p.poster||'');
+    var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
+    var dv=v?' data-vid="'+esc(v)+'" data-title="'+esc(p.t)+'"':'';
+    var sub=it.kind==='ott'?(p.p||''):(p.m||p.k||'');
+    var meta=[p.c,p.n,p.d].filter(Boolean).join(' · ');
+    var inner='<div class="t">'+esc(p.t)+'</div><div class="m">'+esc(sub)+
+              '</div><div class="meta">'+esc(meta)+'</div>';
+    var cls='card'+(it.kind==='ott'?' ottsug':'');
+    var at=' data-item="'+esc(it.id)+'" data-kind="'+esc(it.kind)+'"';
+    var fix='<button class="fixbtn adminonly" type="button" '+
+            'title="Correct this entry" aria-label="Correct this entry">&#9998;</button>';
+    if(!p.u) return '<div class="'+cls+' nolink"'+at+'>'+fix+
+                    '<div class="left"><div class="thumb">'+
+                    img+'</div></div><div class="body">'+inner+'</div></div>';
+    return '<div class="'+cls+'"'+at+'>'+fix+'<div class="left">'+
+      '<a class="thumb" href="'+esc(p.u)+'" target="_blank" rel="noopener"'+dv+'>'+img+
+      (v?'<span class="pl"><i></i></span>':'')+'</a></div>'+
+      '<a class="body" href="'+esc(p.u)+'" target="_blank" rel="noopener"'+dv+'>'+
+      inner+'</a></div>';
+  }
+
+  function lockedHtml(){
+    return '<div class="locked"><div class="lk">&#9788;</div>'+
+      '<h3>The last two weeks are for members</h3>'+
+      '<p>Sign in free with Google or an email link to see this week and last week. '+
+      'Everything older than a fortnight stays open to everyone, always.</p>'+
+      '<button class="authbtn needlogin">Sign in to unlock</button></div>';
+  }
+
+  function fill(host, rows){
+    var want=host.dataset.gated;                 // '', 'song', 'trailer' or 'ott'
+    var week=host.dataset.week||'';
+    var list=rows.filter(function(r){
+      return (!want||r.kind===want) && (!week||r.week===week);
+    });
+    if(!list.length){ host.innerHTML=''; return; }
+    var byWeek={};
+    list.forEach(function(r){ (byWeek[r.week]=byWeek[r.week]||[]).push(r); });
+    var html='';
+    Object.keys(byWeek).sort().reverse().forEach(function(w){
+      html+='<div class="wkblock"><h2>Week of '+esc(w)+
+            '<span class="count">'+byWeek[w].length+'</span>'+
+            '<span class="src verified">Members</span></h2>'+
+            '<div class="grid">'+byWeek[w].map(card).join('')+'</div></div>';
+    });
+    host.innerHTML=html;
+  }
+
+  function load(){
+    if(!A.signedIn()){ hosts.forEach(function(h){ h.innerHTML=lockedHtml(); }); return; }
+    hosts.forEach(function(h){ h.innerHTML='<div class="loading">Loading the latest…</div>'; });
+    // Corrections are readable by everyone, so a member sees a fixed entry too,
+    // not just the admin who fixed it.
+    Promise.all([
+      fetch(A.base+'/rest/v1/items?select=id,week,kind,payload&order=week.desc',
+            {headers:A.headers()})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch(A.base+'/rest/v1/overrides?select=item_id,patch',{headers:A.headers()})
+        .then(function(r){ return r.ok?r.json():[]; }).catch(function(){ return []; }),
+    ])
+      .then(function(res){
+        window.CVOVERRIDES=window.CVOVERRIDES||{};
+        (res[1]||[]).forEach(function(o){ window.CVOVERRIDES[o.item_id]=o.patch||{}; });
+        var rows=res[0];
+        hosts.forEach(function(h){ fill(h,rows||[]); });
+      })
+      .catch(function(e){
+        hosts.forEach(function(h){
+          h.innerHTML='<div class="locked"><p>Couldn\'t load the latest content ('+
+            esc(e.message)+'). Everything older is unaffected.</p></div>'; });
+      });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',load);
+  else load();
+})();
+</script><script>
+(function(){
+  var A=window.CVAUTH; if(!A) return;
+  // Shared with the gated-content renderer, which applies the same patches.
+  var OV=window.CVOVERRIDES=window.CVOVERRIDES||{};
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  // ---- who am I -------------------------------------------------------------
+  // Asks the database, which only ever returns this user's own admin row. The
+  // answer decides what is drawn; it does not decide what is permitted.
+  function detect(){
+    var u=A.user();
+    if(!u||!u.id){ done(false); return; }
+    fetch(A.base+'/rest/v1/admins?select=id&id=eq.'+encodeURIComponent(u.id),
+          {headers:A.headers()})
+      .then(function(r){ return r.ok?r.json():[]; })
+      .then(function(rows){ done(!!(rows&&rows.length)); })
+      .catch(function(){ done(false); });
+  }
+  function done(is){
+    A.isAdmin=is;
+    document.body.classList.toggle('is-admin', is);
+    if(is){
+      var box=document.getElementById('authbox');
+      if(box && !box.querySelector('.adminchip')){
+        var c=document.createElement('span');
+        c.className='adminchip'; c.textContent='Admin';
+        box.insertBefore(c, box.firstChild);
+      }
+      loadOverrides();
+    }
+    document.dispatchEvent(new CustomEvent('cv-admin',{detail:{isAdmin:is}}));
+  }
+
+  function loadOverrides(){
+    fetch(A.base+'/rest/v1/overrides?select=item_id,patch',{headers:A.headers()})
+      .then(function(r){ return r.ok?r.json():[]; })
+      .then(function(rows){
+        (rows||[]).forEach(function(r){ OV[r.item_id]=r.patch||{}; });
+        markPatched();
+      }).catch(function(){});
+  }
+  function markPatched(){
+    document.querySelectorAll('[data-item]').forEach(function(el){
+      if(OV[el.dataset.item]) el.classList.add('patched');
+    });
+  }
+
+  // ---- the correction editor -------------------------------------------------
+  var cur=null;
+  function openFix(el){
+    cur=el.dataset.item;
+    var patch=OV[cur]||{};
+    var t=el.querySelector('.t,strong'), m=el.querySelector('.m,.dim');
+    document.getElementById('fixid').textContent=cur;
+    document.getElementById('fix_t').value=patch.t!=null?patch.t:(t?t.textContent.trim():'');
+    document.getElementById('fix_m').value=patch.m!=null?patch.m:
+      (patch.p!=null?patch.p:(m?m.textContent.trim():''));
+    var a=el.querySelector('a[href^="http"]');
+    document.getElementById('fix_u').value=patch.u!=null?patch.u:(a?a.href:'');
+    document.getElementById('fix_n').value=patch.n!=null?patch.n:'';
+    var held=!!el.closest('[data-gated]');
+    document.getElementById('fixscope').innerHTML = held
+      ? 'This week is inside the members-only window, so it renders from the '+
+        'database. The fix shows up on reload.'
+      : 'This week is already published as a static page. The fix is stored now '+
+        'and applied the next time the site is built and published.';
+    document.getElementById('fixmsg').style.display='none';
+    document.getElementById('fixwrap').hidden=false;
+  }
+  function closeFix(){ document.getElementById('fixwrap').hidden=true; cur=null; }
+
+  function saveFix(){
+    if(!cur) return;
+    var msg=document.getElementById('fixmsg');
+    var patch={};
+    [['t','fix_t'],['m','fix_m'],['u','fix_u'],['n','fix_n']].forEach(function(p){
+      var v=(document.getElementById(p[1]).value||'').trim();
+      if(v) patch[p[0]]=v;
+    });
+    // An OTT row's subtitle is its platform, not a film name.
+    var el=document.querySelector('[data-item="'+cur.replace(/"/g,'')+'"]');
+    if(el && el.dataset.kind==='ott' && patch.m){ patch.p=patch.m; delete patch.m; }
+    if(!Object.keys(patch).length){ msg.className='fixmsg bad';
+      msg.textContent='Nothing to save — fill at least one field.'; return; }
+    msg.className='fixmsg'; msg.textContent='Saving…'; msg.style.display='block';
+    fetch(A.base+'/rest/v1/overrides?on_conflict=item_id',{method:'POST',
+      headers:Object.assign({'Prefer':'resolution=merge-duplicates,return=minimal'},
+                            A.headers()),
+      body:JSON.stringify({item_id:cur,patch:patch,updated_at:new Date().toISOString(),
+                           updated_by:(A.user()||{}).id||null})})
+      .then(function(r){
+        if(!r.ok) throw new Error(r.status===401||r.status===403
+          ? 'the database refused this — that account is not an admin' : 'HTTP '+r.status);
+        OV[cur]=patch; markPatched();
+        msg.className='fixmsg ok'; msg.textContent='Saved.';
+      })
+      .catch(function(e){ msg.className='fixmsg bad'; msg.textContent='Failed: '+e.message; });
+  }
+
+  function clearFix(){
+    if(!cur) return;
+    var msg=document.getElementById('fixmsg');
+    fetch(A.base+'/rest/v1/overrides?item_id=eq.'+encodeURIComponent(cur),
+      {method:'DELETE',headers:Object.assign({'Prefer':'return=minimal'},A.headers())})
+      .then(function(r){
+        if(!r.ok) throw new Error('HTTP '+r.status);
+        delete OV[cur];
+        var el=document.querySelector('[data-item="'+cur.replace(/"/g,'')+'"]');
+        if(el) el.classList.remove('patched');
+        msg.className='fixmsg ok'; msg.textContent='Correction removed.';
+      })
+      .catch(function(e){ msg.className='fixmsg bad'; msg.textContent='Failed: '+e.message; });
+  }
+
+  // ---- suggestion moderation --------------------------------------------------
+  function moderate(id, status){
+    return fetch(A.base+'/rest/v1/suggestions?id=eq.'+encodeURIComponent(id),
+      {method:'PATCH',
+       headers:Object.assign({'Prefer':'return=minimal'},A.headers()),
+       body:JSON.stringify({status:status})});
+  }
+  function destroy(id){
+    return fetch(A.base+'/rest/v1/suggestions?id=eq.'+encodeURIComponent(id),
+      {method:'DELETE',headers:Object.assign({'Prefer':'return=minimal'},A.headers())});
+  }
+
+  document.addEventListener('click',function(ev){
+    var f=ev.target.closest('.fixbtn');
+    if(f){ ev.preventDefault(); openFix(f.closest('[data-item]')); return; }
+    if(ev.target.closest('#fixcancel')||ev.target.id==='fixwrap'){ closeFix(); return; }
+    if(ev.target.closest('#fixsave')){ saveFix(); return; }
+    if(ev.target.closest('#fixclear')){ clearFix(); return; }
+
+    var m=ev.target.closest('.mod button');
+    if(!m||m.disabled) return;
+    var box=m.closest('.mod'), id=box.dataset.id, act=m.dataset.act;
+    if(act==='delete' && !confirm('Delete this suggestion permanently?')) return;
+    box.querySelectorAll('button').forEach(function(b){ b.disabled=true; });
+    var p = act==='delete' ? destroy(id)
+          : moderate(id, act==='clear' ? null : act);
+    p.then(function(r){
+      if(!r.ok) throw new Error(r.status===401||r.status===403
+        ? 'not permitted' : 'HTTP '+r.status);
+      document.querySelectorAll('[data-community]').forEach(function(el){
+        if(window.CVCOMMUNITY) window.CVCOMMUNITY.reload(el);
+      });
+    }).catch(function(e){
+      var w=box.querySelector('.who'); if(w) w.textContent='failed: '+e.message;
+      box.querySelectorAll('button').forEach(function(b){ b.disabled=false; });
+    });
+  });
+
+  document.addEventListener('keydown',function(ev){
+    if(ev.key==='Escape') closeFix();
+  });
+
+  function start(){ if(A.signedIn()) detect(); else done(false); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start);
+  else start();
+})();
+</script>
 <script>
 (function(){
   var lb=document.getElementById('lb'); if(!lb) return;
