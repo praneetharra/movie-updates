@@ -154,6 +154,101 @@ footer.site a:hover{color:var(--amber)}
 .svc{gap:2px}.svc a{height:19px}.svc svg{width:11px;height:11px}
 .playall{flex:1 1 100%;justify-content:center}}
 
+.authbox{display:flex;align-items:center;gap:8px;margin-left:12px;flex-shrink:0}
+.authbtn{background:var(--surface);border:1px solid var(--line2);color:var(--ink);
+padding:6px 13px;border-radius:999px;font-size:13px;font-family:inherit;cursor:pointer;
+display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.authbtn:hover{border-color:var(--amber);color:var(--amber2)}
+.authbtn svg{width:14px;height:14px}
+/* Initials, drawn locally. An <img> of the Google profile picture would make
+   every page load hit googleusercontent.com — an outbound request to a third
+   party that a reader has no reason to expect from a film site. */
+.avatar{width:26px;height:26px;border-radius:50%;background:#2b2110;
+border:1px solid #4a3a1c;color:var(--amber2);font-size:11px;font-weight:700;
+display:flex;align-items:center;justify-content:center;letter-spacing:.3px;
+flex-shrink:0;text-transform:uppercase}
+.who{font-size:12.5px;color:var(--ink2);max-width:150px;overflow:hidden;
+text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:860px){.who{display:none}.authbox{margin-left:auto}}
+
+.authmodal{position:fixed;inset:0;background:rgba(5,6,8,.9);z-index:1200;
+display:flex;align-items:center;justify-content:center;padding:20px}
+.authmodal[hidden]{display:none}
+.authcard{background:var(--surface);border:1px solid var(--line2);border-radius:16px;
+padding:28px;width:100%;max-width:400px}
+.authcard h2{font-size:20px;margin-bottom:8px}
+.authcard p{color:var(--ink2);font-size:14px;margin:0 0 20px}
+.gbtn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
+background:#fff;color:#1f1f1f;border:0;border-radius:10px;padding:12px;font-size:15px;
+font-weight:600;font-family:inherit;cursor:pointer}
+.gbtn:hover{background:#f1f1f1}
+.gbtn svg{width:18px;height:18px}
+.orline{display:flex;align-items:center;gap:12px;color:var(--ink3);font-size:12px;
+margin:18px 0}
+.orline::before,.orline::after{content:'';flex:1;height:1px;background:var(--line)}
+.authcard input{width:100%;background:var(--bg2);border:1px solid var(--line);
+color:var(--ink);padding:11px 13px;border-radius:10px;font-size:14px;font-family:inherit}
+.authcard input:focus{outline:none;border-color:var(--amber)}
+.authcard .mlbtn{width:100%;margin-top:9px}
+.authcard .msg{font-size:13px;margin-top:12px;display:none}
+.authcard .msg.ok{color:#9fe1cb;display:block}
+.authcard .msg.bad{color:#f09595;display:block}
+.authfine{font-size:11.5px;color:var(--ink3);line-height:1.5;margin:16px 0 0}
+.authfine a{color:var(--ink2);text-decoration:underline;text-underline-offset:2px}
+.authfine a:hover{color:var(--amber2)}
+.authcard .close{background:none;border:0;color:var(--ink3);font-size:13px;
+cursor:pointer;margin-top:16px;width:100%;font-family:inherit}
+.authcard .close:hover{color:var(--ink2)}
+
+.locked{border:1px dashed var(--line2);background:var(--bg2);border-radius:var(--radius);
+padding:28px 24px;text-align:center;margin:18px 0}
+.locked h3{font-size:17px;margin-bottom:8px}
+.locked p{color:var(--ink2);font-size:14px;margin:0 auto 16px;max-width:52ch}
+.locked .lk{font-size:26px;line-height:1;margin-bottom:12px;opacity:.5}
+.loading{color:var(--ink3);font-size:13.5px;font-style:italic;padding:10px 0}
+
+.adminchip{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.1px;
+padding:2px 7px;border-radius:4px;color:#f3cf97;background:#2b2110;border:1px solid #4a3a1c}
+body:not(.is-admin) .adminonly{display:none!important}
+.mod{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:7px}
+.mod button{background:#171b22;border:1px solid var(--line2);color:var(--ink2);
+padding:4px 10px;border-radius:7px;font-size:11.5px;font-family:inherit;cursor:pointer}
+.mod button:hover:not(:disabled){border-color:var(--amber);color:var(--amber2)}
+.mod button.danger:hover:not(:disabled){border-color:#b3453a;color:#f09595}
+.mod button:disabled{opacity:.45;cursor:default}
+.mod .who{font-size:11px;color:var(--ink3);margin-left:auto}
+.src.admin{color:#9fe1cb;background:#0f2a22;border:1px solid #1d4a3c}
+.src.killed{color:#f09595;background:#2a1414;border:1px solid #4a1d1d}
+
+.fixbtn{position:absolute;top:6px;right:6px;z-index:3;width:24px;height:24px;
+border-radius:6px;background:rgba(18,21,27,.92);border:1px solid var(--line2);
+color:var(--ink3);font-size:11px;line-height:1;cursor:pointer;padding:0;
+opacity:0;transition:.12s}
+.card:hover .fixbtn,.fixbtn:focus{opacity:1}
+.fixbtn:hover{border-color:var(--amber);color:var(--amber2)}
+tr .fixbtn{position:static;opacity:.6;width:22px;height:22px}
+.card.patched{border-left:2px solid var(--amber)}
+
+.fixwrap{position:fixed;inset:0;background:rgba(5,6,8,.9);z-index:1300;
+display:flex;align-items:center;justify-content:center;padding:20px}
+.fixwrap[hidden]{display:none}
+.fixcard{background:var(--surface);border:1px solid var(--line2);border-radius:16px;
+padding:24px;width:100%;max-width:470px;max-height:86vh;overflow:auto}
+.fixcard h2{font-size:18px;margin-bottom:4px}
+.fixcard .iid{font-size:11px;color:var(--ink3);font-family:ui-monospace,SFMono-Regular,
+Menlo,monospace;margin-bottom:16px;word-break:break-all}
+.fixcard label{display:block;font-size:12px;color:var(--ink3);margin-bottom:11px}
+.fixcard input{width:100%;margin-top:5px;background:var(--bg2);border:1px solid var(--line);
+color:var(--ink);padding:9px 12px;border-radius:9px;font-size:14px;font-family:inherit}
+.fixcard input:focus{outline:none;border-color:var(--amber)}
+.fixrow{display:flex;gap:9px;margin-top:6px;flex-wrap:wrap}
+.fixrow .btn{flex:1 1 auto;justify-content:center}
+.fixnote{font-size:12.5px;color:var(--ink2);background:var(--bg2);border-radius:9px;
+padding:11px 13px;margin:4px 0 15px;line-height:1.5}
+.fixmsg{font-size:13px;margin-top:11px;display:none}
+.fixmsg.ok{color:#9fe1cb;display:block}
+.fixmsg.bad{color:#f09595;display:block}
+
 .jump{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 20px}
 .jump a{background:var(--surface);border:1px solid var(--line);color:var(--ink2);
 padding:7px 14px;border-radius:999px;text-decoration:none;font-size:13px;font-weight:500}
@@ -205,7 +300,7 @@ display:block}
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
-<nav class="main"><a href="index.html">Home</a><a href="this-week.html" class="soon" title="Not populated yet">This Week</a><a href="weekly.html" class="on">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav></div></header>
+<nav class="main"><a href="index.html">Home</a><a href="this-week.html" class="soon" title="Not populated yet">This Week</a><a href="weekly.html" class="on">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav><div class="authbox" id="authbox"></div></div></header>
 <script type="application/json" id="wk">{"date": "2026-09-06", "label": "Week of 6 September 2026 — Sunday Cinema Kaburlu", "songs": [{"t": "Chusaaley", "m": "Kaagitham Padavalu", "u": "https://www.youtube.com/watch?v=7C3vtRH_vzc", "v": "7C3vtRH_vzc", "c": "T-Series Telugu", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Sarigamale Gunde Anchullo", "m": "Maya Lady", "u": "https://www.youtube.com/watch?v=AOiMxQu12Es", "v": "AOiMxQu12Es", "c": "Sony Music South", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "The Rage Of Varahi", "m": "Mahendragiri Varahi", "u": "https://www.youtube.com/watch?v=GMCOUzzmJPE", "v": "GMCOUzzmJPE", "c": "Junglee Music Telugu", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Nee Parichayam", "m": "Tortoise", "u": "https://www.youtube.com/watch?v=XceJdWL9a9E", "v": "XceJdWL9a9E", "c": "Lahari Music", "n": "", "si": "", "co": "", "cf": "high"}, {"t": "Allakallolamga", "m": "Gaja", "u": "https://www.youtube.com/watch?v=F_xHwofiUH8", "v": "F_xHwofiUH8", "c": "Saregama Telugu", "n": "", "si": "", "co": "", "cf": "high"}], "trailers": [{"t": "Mahendragiri Varahi", "k": "Trailer", "u": "https://www.youtube.com/watch?v=tcKLMeA2Hwc", "v": "tcKLMeA2Hwc", "c": "Junglee Music Telugu", "n": "Thriller set around Varanasi and Varahi Ammavaru — Siddhu in an extended cameo, in theatres 11 Sept", "cf": "high"}, {"t": "EPIC", "k": "Trailer", "u": "https://www.youtube.com/watch?v=uuPuy3HbJ08", "v": "uuPuy3HbJ08", "c": "Aditya Music", "n": "Love entertainer — the music is the standout", "cf": "high"}, {"t": "Sardar 2", "k": "Trailer", "u": "https://www.youtube.com/watch?v=lnLsKCQzf3Q", "v": "lnLsKCQzf3Q", "c": "Sony Music South", "n": "Serious spy action thriller, action dose dialled well up — in theatres 10 Sept", "cf": "high"}, {"t": "Maremma", "k": "Trailer", "u": "https://www.youtube.com/watch?v=cq6FkXNvsmk", "v": "cq6FkXNvsmk", "c": "T-Series Telugu", "n": "Intense village drama — in theatres 10 Sept", "cf": "high"}, {"t": "Delulu", "k": "Teaser", "u": "https://www.youtube.com/watch?v=lZZ6t5GN76Q", "v": "lZZ6t5GN76Q", "c": "YouWe Media", "n": "Crazy fun", "cf": "high"}, {"t": "Thellakaagitham", "k": "Teaser", "u": "https://www.youtube.com/watch?v=ZgSE001steA", "v": "ZgSE001steA", "c": "Saregama Telugu", "n": "Youthful emotional drama", "cf": "high"}, {"t": "Chakkora", "k": "Teaser", "u": "https://www.youtube.com/watch?v=KwrSiBA8nhE", "v": "KwrSiBA8nhE", "c": "T-Series Telugu", "n": "Chakkora official Teaser | Sravan, Malaika | Dr. Hema Rao Chintada", "cf": "high"}, {"t": "KurmaAvatar", "k": "Teaser", "u": "https://www.youtube.com/watch?v=B81LUN2lC5w", "v": "B81LUN2lC5w", "c": "Panchavaktra Pictures", "n": "Telugu cut — Shivarajkumar", "cf": "high"}], "ott": [{"t": "The Court", "p": "JioHotstar", "d": "4 Sept", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/q3A6C5pwmX0VGrmI7D5HgXVH3VE.jpg", "n": "Hotstar Specials series", "g": [], "o": "The Court is an American legal drama television series that aired from March 26 until April 9, 2002.", "u": "https://www.hotstar.com/in/search?q=The%20Court"}, {"t": "Korean Kanakaraju", "p": "Netflix", "d": "Week of 6 Sept", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/vUEb8v8W5ANRXhydogbmjXfRfni.jpg", "n": "Varun Tej", "g": ["Comedy", "Horror", "Action"], "o": "Possessed by a Korean spirit, Kanakaraju must navigate his new supernatural identity to protect his family and solve the spirit's murder.", "u": "https://www.netflix.com/search?q=Korean%20Kanakaraju"}, {"t": "Pallaburusu", "p": "Prime Video", "d": "Week of 6 Sept", "l": "Telugu", "poster": "https://image.tmdb.org/t/p/w185/sZsHYS3ckPoSUBnEB5J3CiE3oBV.jpg", "n": "", "g": ["Comedy", "Drama"], "o": "A 70 year old widower asks his son to buy him a toothbrush for his toothache.", "u": "https://www.primevideo.com/search?phrase=Pallaburusu"}, {"t": "DC", "p": "Sun NXT", "d": "Week of 6 Sept", "l": "Telugu, Tamil", "poster": "https://image.tmdb.org/t/p/w185/8k71CD24GIAmEFgHYRhqFvwbXH8.jpg", "n": "Lokesh Kanagaraj, Vamika", "g": ["Romance", "Action", "Drama"], "o": "Rebel Devadas joins forces with Chandra in a dangerous world where passion and peril collide.", "u": "https://www.sunnxt.com/search?query=DC"}, {"t": "G.D.N", "p": "Netflix", "d": "Week of 6 Sept", "l": "Tamil", "poster": "https://image.tmdb.org/t/p/w185/aAbvbKbNU6YyYDZ5ntSQcOygliw.jpg", "n": "R. Madhavan as G.D. Naidu", "g": ["Drama"], "o": "G.D. Naidu overcomes challenges and defies a repressive colonial regime to become one of India's greatest innovators.", "u": "https://www.netflix.com/search?q=G.D.N"}, {"t": "Dhamaal 4", "p": "Netflix", "d": "Week of 6 Sept", "l": "Hindi", "poster": "https://image.tmdb.org/t/p/w185/pkY8xl3GijJ38KA3vTiPhZPRDvE.jpg", "n": "Ajay Devgn", "g": ["Comedy"], "o": "The Dhamaal boys are back for another treasure hunt, facing hilarious challenges in their quest for the Treasure of Life.", "u": "https://www.netflix.com/search?q=Dhamaal%204"}, {"t": "Unmadham", "p": "SonyLIV", "d": "Week of 6 Sept", "l": "Malayalam", "poster": "https://image.tmdb.org/t/p/w185/6AIMHBUY6PCHVYASWZ0GcTA9Kph.jpg", "n": "Crime thriller", "g": ["Thriller"], "o": "A police constable reopens a long-forgotten case and experiences an unsettling world.", "u": "https://www.sonyliv.com/search?searchTerm=Unmadham"}]}</script>
 <div class="wrap"><div class="phead">
 <div class="eyebrow">Weekly edition</div>
@@ -215,9 +310,9 @@ releases, each linked to its official upload.</p>
 </div>
 <nav class="jump"><a href="#songs">Songs (5)</a><a href="#trailers">Trailers (8)</a><a href="#ott">OTT (7)</a><a class="allweeks" href="weekly.html">All weeks &#8594;</a></nav>
 <div class="tools"><input id="q" type="search" placeholder="Filter this week — song, movie, platform…" autocomplete="off"><a class="playall" target="_blank" rel="noopener" href="https://www.youtube.com/watch_videos?video_ids=7C3vtRH_vzc,AOiMxQu12Es,GMCOUzzmJPE,XceJdWL9a9E,F_xHwofiUH8">&#9654; Play all 5 songs</a></div>
-<section data-section><h2 id="songs">New songs <span class="count">5</span></h2><div class="grid"><div class="card" data-search="chusaaley kaagitham padavalu t-series telugu"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener" data-vid="7C3vtRH_vzc" data-title="Chusaaley"><img src="https://i.ytimg.com/vi/7C3vtRH_vzc/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Chusaaley%20Kaagitham%20Padavalu" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Chusaaley%20Kaagitham%20Padavalu" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Chusaaley%20Kaagitham%20Padavalu" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener" data-vid="7C3vtRH_vzc" data-title="Chusaaley"><div class="t">Chusaaley</div><div class="m">Kaagitham Padavalu</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="sarigamale gunde anchullo maya lady sony music south"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener" data-vid="AOiMxQu12Es" data-title="Sarigamale Gunde Anchullo"><img src="https://i.ytimg.com/vi/AOiMxQu12Es/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Sarigamale%20Gunde%20Anchullo%20Maya%20Lady" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Sarigamale%20Gunde%20Anchullo%20Maya%20Lady" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Sarigamale%20Gunde%20Anchullo%20Maya%20Lady" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener" data-vid="AOiMxQu12Es" data-title="Sarigamale Gunde Anchullo"><div class="t">Sarigamale Gunde Anchullo</div><div class="m">Maya Lady</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="the rage of varahi mahendragiri varahi junglee music telugu"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener" data-vid="GMCOUzzmJPE" data-title="The Rage Of Varahi"><img src="https://i.ytimg.com/vi/GMCOUzzmJPE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/The%20Rage%20Of%20Varahi%20Mahendragiri%20Varahi" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=The%20Rage%20Of%20Varahi%20Mahendragiri%20Varahi" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/The%20Rage%20Of%20Varahi%20Mahendragiri%20Varahi" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener" data-vid="GMCOUzzmJPE" data-title="The Rage Of Varahi"><div class="t">The Rage Of Varahi</div><div class="m">Mahendragiri Varahi</div><div class="meta">Junglee Music Telugu</div></a></div><div class="card" data-search="nee parichayam tortoise lahari music"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener" data-vid="XceJdWL9a9E" data-title="Nee Parichayam"><img src="https://i.ytimg.com/vi/XceJdWL9a9E/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Nee%20Parichayam%20Tortoise" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Nee%20Parichayam%20Tortoise" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Nee%20Parichayam%20Tortoise" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener" data-vid="XceJdWL9a9E" data-title="Nee Parichayam"><div class="t">Nee Parichayam</div><div class="m">Tortoise</div><div class="meta">Lahari Music</div></a></div><div class="card" data-search="allakallolamga gaja saregama telugu"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener" data-vid="F_xHwofiUH8" data-title="Allakallolamga"><img src="https://i.ytimg.com/vi/F_xHwofiUH8/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Allakallolamga%20Gaja" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Allakallolamga%20Gaja" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Allakallolamga%20Gaja" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener" data-vid="F_xHwofiUH8" data-title="Allakallolamga"><div class="t">Allakallolamga</div><div class="m">Gaja</div><div class="meta">Saregama Telugu</div></a></div></div><div class="noresults">No matches in this section.</div></section>
-<section data-section><h2 id="trailers">Trailers &amp; teasers <span class="count">8</span></h2><div class="grid"><div class="card" data-search="mahendragiri varahi — trailer thriller set around varanasi and varahi ammavaru — siddhu in an extended cameo, in theatres 11 sept junglee music telugu thriller set around varanasi and varahi ammavaru — siddhu in an extended cameo, in theatres 11 sept"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=tcKLMeA2Hwc" target="_blank" rel="noopener" data-vid="tcKLMeA2Hwc" data-title="Mahendragiri Varahi — Trailer"><img src="https://i.ytimg.com/vi/tcKLMeA2Hwc/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=tcKLMeA2Hwc" target="_blank" rel="noopener" data-vid="tcKLMeA2Hwc" data-title="Mahendragiri Varahi — Trailer"><div class="t">Mahendragiri Varahi — Trailer</div><div class="m">Thriller set around Varanasi and Varahi Ammavaru — Siddhu in an extended cameo, in theatres 11 Sept</div><div class="meta">Junglee Music Telugu</div></a></div><div class="card" data-search="epic — trailer love entertainer — the music is the standout aditya music love entertainer — the music is the standout"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=uuPuy3HbJ08" target="_blank" rel="noopener" data-vid="uuPuy3HbJ08" data-title="EPIC — Trailer"><img src="https://i.ytimg.com/vi/uuPuy3HbJ08/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=uuPuy3HbJ08" target="_blank" rel="noopener" data-vid="uuPuy3HbJ08" data-title="EPIC — Trailer"><div class="t">EPIC — Trailer</div><div class="m">Love entertainer — the music is the standout</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="sardar 2 — trailer serious spy action thriller, action dose dialled well up — in theatres 10 sept sony music south serious spy action thriller, action dose dialled well up — in theatres 10 sept"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=lnLsKCQzf3Q" target="_blank" rel="noopener" data-vid="lnLsKCQzf3Q" data-title="Sardar 2 — Trailer"><img src="https://i.ytimg.com/vi/lnLsKCQzf3Q/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=lnLsKCQzf3Q" target="_blank" rel="noopener" data-vid="lnLsKCQzf3Q" data-title="Sardar 2 — Trailer"><div class="t">Sardar 2 — Trailer</div><div class="m">Serious spy action thriller, action dose dialled well up — in theatres 10 Sept</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="maremma — trailer intense village drama — in theatres 10 sept t-series telugu intense village drama — in theatres 10 sept"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=cq6FkXNvsmk" target="_blank" rel="noopener" data-vid="cq6FkXNvsmk" data-title="Maremma — Trailer"><img src="https://i.ytimg.com/vi/cq6FkXNvsmk/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=cq6FkXNvsmk" target="_blank" rel="noopener" data-vid="cq6FkXNvsmk" data-title="Maremma — Trailer"><div class="t">Maremma — Trailer</div><div class="m">Intense village drama — in theatres 10 Sept</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="delulu — teaser crazy fun youwe media crazy fun"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=lZZ6t5GN76Q" target="_blank" rel="noopener" data-vid="lZZ6t5GN76Q" data-title="Delulu — Teaser"><img src="https://i.ytimg.com/vi/lZZ6t5GN76Q/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=lZZ6t5GN76Q" target="_blank" rel="noopener" data-vid="lZZ6t5GN76Q" data-title="Delulu — Teaser"><div class="t">Delulu — Teaser</div><div class="m">Crazy fun</div><div class="meta">YouWe Media</div></a></div><div class="card" data-search="thellakaagitham — teaser youthful emotional drama saregama telugu youthful emotional drama"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=ZgSE001steA" target="_blank" rel="noopener" data-vid="ZgSE001steA" data-title="Thellakaagitham — Teaser"><img src="https://i.ytimg.com/vi/ZgSE001steA/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=ZgSE001steA" target="_blank" rel="noopener" data-vid="ZgSE001steA" data-title="Thellakaagitham — Teaser"><div class="t">Thellakaagitham — Teaser</div><div class="m">Youthful emotional drama</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="chakkora — teaser chakkora official teaser | sravan, malaika | dr. hema rao chintada t-series telugu chakkora official teaser | sravan, malaika | dr. hema rao chintada"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=KwrSiBA8nhE" target="_blank" rel="noopener" data-vid="KwrSiBA8nhE" data-title="Chakkora — Teaser"><img src="https://i.ytimg.com/vi/KwrSiBA8nhE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=KwrSiBA8nhE" target="_blank" rel="noopener" data-vid="KwrSiBA8nhE" data-title="Chakkora — Teaser"><div class="t">Chakkora — Teaser</div><div class="m">Chakkora official Teaser | Sravan, Malaika | Dr. Hema Rao Chintada</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="kurmaavatar — teaser telugu cut — shivarajkumar panchavaktra pictures telugu cut — shivarajkumar"><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=B81LUN2lC5w" target="_blank" rel="noopener" data-vid="B81LUN2lC5w" data-title="KurmaAvatar — Teaser"><img src="https://i.ytimg.com/vi/B81LUN2lC5w/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=B81LUN2lC5w" target="_blank" rel="noopener" data-vid="B81LUN2lC5w" data-title="KurmaAvatar — Teaser"><div class="t">KurmaAvatar — Teaser</div><div class="m">Telugu cut — Shivarajkumar</div><div class="meta">Panchavaktra Pictures</div></a></div></div><div class="noresults">No matches in this section.</div></section>
-<section data-section><h2 id="ott">OTT releases <span class="count">7</span></h2><div class="chips"><button class="chip" data-plat="JioHotstar">JioHotstar</button><button class="chip" data-plat="Netflix">Netflix</button><button class="chip" data-plat="Prime Video">Prime Video</button><button class="chip" data-plat="Sun NXT">Sun NXT</button><button class="chip" data-plat="SonyLIV">SonyLIV</button></div><table><thead><tr><th class="poster"></th><th>Movie</th><th>Platform</th><th>Streaming from</th><th>Language</th></tr></thead><tbody><tr data-search="the court jiohotstar tamil hotstar specials series" data-platform="JioHotstar"><td class="poster"><a class="ottlink" href="https://www.hotstar.com/in/search?q=The%20Court" target="_blank" rel="noopener" title="Find The Court on JioHotstar"><img src="https://image.tmdb.org/t/p/w185/q3A6C5pwmX0VGrmI7D5HgXVH3VE.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=The%20Court" target="_blank" rel="noopener" title="Find The Court on JioHotstar"><strong>The Court</strong></a><br><span class="note">Hotstar Specials series</span></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=The%20Court" target="_blank" rel="noopener" title="Find The Court on JioHotstar"><span class="badge" style="background:#0f79af">JioHotstar</span></a></td><td class="dim">4 Sept</td><td class="dim">Tamil</td></tr><tr data-search="korean kanakaraju netflix telugu varun tej" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Korean%20Kanakaraju" target="_blank" rel="noopener" title="Find Korean Kanakaraju on Netflix"><img src="https://image.tmdb.org/t/p/w185/vUEb8v8W5ANRXhydogbmjXfRfni.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Korean%20Kanakaraju" target="_blank" rel="noopener" title="Find Korean Kanakaraju on Netflix"><strong>Korean Kanakaraju</strong></a><br><span class="note">Varun Tej</span></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Korean%20Kanakaraju" target="_blank" rel="noopener" title="Find Korean Kanakaraju on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Telugu</td></tr><tr data-search="pallaburusu prime video telugu" data-platform="Prime Video"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Pallaburusu" target="_blank" rel="noopener" title="Find Pallaburusu on Prime Video"><img src="https://image.tmdb.org/t/p/w185/sZsHYS3ckPoSUBnEB5J3CiE3oBV.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Pallaburusu" target="_blank" rel="noopener" title="Find Pallaburusu on Prime Video"><strong>Pallaburusu</strong></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Pallaburusu" target="_blank" rel="noopener" title="Find Pallaburusu on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Telugu</td></tr><tr data-search="dc sun nxt telugu, tamil lokesh kanagaraj, vamika" data-platform="Sun NXT"><td class="poster"><a class="ottlink" href="https://www.sunnxt.com/search?query=DC" target="_blank" rel="noopener" title="Find DC on Sun NXT"><img src="https://image.tmdb.org/t/p/w185/8k71CD24GIAmEFgHYRhqFvwbXH8.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.sunnxt.com/search?query=DC" target="_blank" rel="noopener" title="Find DC on Sun NXT"><strong>DC</strong></a><br><span class="note">Lokesh Kanagaraj, Vamika</span></td><td><a class="ottlink" href="https://www.sunnxt.com/search?query=DC" target="_blank" rel="noopener" title="Find DC on Sun NXT"><span class="badge" style="background:#e4002b">Sun NXT</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Telugu, Tamil</td></tr><tr data-search="g.d.n netflix tamil r. madhavan as g.d. naidu" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=G.D.N" target="_blank" rel="noopener" title="Find G.D.N on Netflix"><img src="https://image.tmdb.org/t/p/w185/aAbvbKbNU6YyYDZ5ntSQcOygliw.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=G.D.N" target="_blank" rel="noopener" title="Find G.D.N on Netflix"><strong>G.D.N</strong></a><br><span class="note">R. Madhavan as G.D. Naidu</span></td><td><a class="ottlink" href="https://www.netflix.com/search?q=G.D.N" target="_blank" rel="noopener" title="Find G.D.N on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Tamil</td></tr><tr data-search="dhamaal 4 netflix hindi ajay devgn" data-platform="Netflix"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Dhamaal%204" target="_blank" rel="noopener" title="Find Dhamaal 4 on Netflix"><img src="https://image.tmdb.org/t/p/w185/pkY8xl3GijJ38KA3vTiPhZPRDvE.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Dhamaal%204" target="_blank" rel="noopener" title="Find Dhamaal 4 on Netflix"><strong>Dhamaal 4</strong></a><br><span class="note">Ajay Devgn</span></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Dhamaal%204" target="_blank" rel="noopener" title="Find Dhamaal 4 on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Hindi</td></tr><tr data-search="unmadham sonyliv malayalam crime thriller" data-platform="SonyLIV"><td class="poster"><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=Unmadham" target="_blank" rel="noopener" title="Find Unmadham on SonyLIV"><img src="https://image.tmdb.org/t/p/w185/6AIMHBUY6PCHVYASWZ0GcTA9Kph.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=Unmadham" target="_blank" rel="noopener" title="Find Unmadham on SonyLIV"><strong>Unmadham</strong></a><br><span class="note">Crime thriller</span></td><td><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=Unmadham" target="_blank" rel="noopener" title="Find Unmadham on SonyLIV"><span class="badge" style="background:#0c1f3f">SonyLIV</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Malayalam</td></tr></tbody></table><div class="noresults">No matches in this section.</div></section>
+<section data-section><h2 id="songs">New songs <span class="count">5</span></h2><div class="grid"><div class="card" data-search="chusaaley kaagitham padavalu t-series telugu" data-item="2026-09-06:song:chusaaley"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener" data-vid="7C3vtRH_vzc" data-title="Chusaaley"><img src="https://i.ytimg.com/vi/7C3vtRH_vzc/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Chusaaley%20Kaagitham%20Padavalu" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Chusaaley%20Kaagitham%20Padavalu" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Chusaaley%20Kaagitham%20Padavalu" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=7C3vtRH_vzc" target="_blank" rel="noopener" data-vid="7C3vtRH_vzc" data-title="Chusaaley"><div class="t">Chusaaley</div><div class="m">Kaagitham Padavalu</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="sarigamale gunde anchullo maya lady sony music south" data-item="2026-09-06:song:sarigamale-gunde-anchullo"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener" data-vid="AOiMxQu12Es" data-title="Sarigamale Gunde Anchullo"><img src="https://i.ytimg.com/vi/AOiMxQu12Es/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Sarigamale%20Gunde%20Anchullo%20Maya%20Lady" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Sarigamale%20Gunde%20Anchullo%20Maya%20Lady" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Sarigamale%20Gunde%20Anchullo%20Maya%20Lady" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=AOiMxQu12Es" target="_blank" rel="noopener" data-vid="AOiMxQu12Es" data-title="Sarigamale Gunde Anchullo"><div class="t">Sarigamale Gunde Anchullo</div><div class="m">Maya Lady</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="the rage of varahi mahendragiri varahi junglee music telugu" data-item="2026-09-06:song:the-rage-of-varahi"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener" data-vid="GMCOUzzmJPE" data-title="The Rage Of Varahi"><img src="https://i.ytimg.com/vi/GMCOUzzmJPE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/The%20Rage%20Of%20Varahi%20Mahendragiri%20Varahi" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=The%20Rage%20Of%20Varahi%20Mahendragiri%20Varahi" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/The%20Rage%20Of%20Varahi%20Mahendragiri%20Varahi" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=GMCOUzzmJPE" target="_blank" rel="noopener" data-vid="GMCOUzzmJPE" data-title="The Rage Of Varahi"><div class="t">The Rage Of Varahi</div><div class="m">Mahendragiri Varahi</div><div class="meta">Junglee Music Telugu</div></a></div><div class="card" data-search="nee parichayam tortoise lahari music" data-item="2026-09-06:song:nee-parichayam"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener" data-vid="XceJdWL9a9E" data-title="Nee Parichayam"><img src="https://i.ytimg.com/vi/XceJdWL9a9E/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Nee%20Parichayam%20Tortoise" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Nee%20Parichayam%20Tortoise" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Nee%20Parichayam%20Tortoise" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=XceJdWL9a9E" target="_blank" rel="noopener" data-vid="XceJdWL9a9E" data-title="Nee Parichayam"><div class="t">Nee Parichayam</div><div class="m">Tortoise</div><div class="meta">Lahari Music</div></a></div><div class="card" data-search="allakallolamga gaja saregama telugu" data-item="2026-09-06:song:allakallolamga"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener" data-vid="F_xHwofiUH8" data-title="Allakallolamga"><img src="https://i.ytimg.com/vi/F_xHwofiUH8/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a><div class="svc"><a href="https://open.spotify.com/search/Allakallolamga%20Gaja" target="_blank" rel="noopener nofollow" title="Find on Spotify" aria-label="Find on Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1DB954"/><path fill="#0b0f14" d="M17.6 10.9c-3.1-1.8-8.2-2-11.2-1.1a.9.9 0 1 1-.5-1.7c3.4-1 9-.8 12.6 1.3a.9.9 0 0 1-.9 1.5zm-.2 2.7a.7.7 0 0 1-1 .2c-2.6-1.6-6.5-2.1-9.5-1.1a.7.7 0 1 1-.4-1.4c3.5-1 7.8-.5 10.8 1.3a.7.7 0 0 1 .1 1zm-1.2 2.6a.6.6 0 0 1-.8.2c-2.3-1.4-5.1-1.7-8.4-.9a.6.6 0 0 1-.3-1.1c3.6-.8 6.7-.5 9.3 1.1a.6.6 0 0 1 .2.7z"/></svg></a><a href="https://music.apple.com/in/search?term=Allakallolamga%20Gaja" target="_blank" rel="noopener nofollow" title="Find on Apple Music" aria-label="Find on Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#FA243C"/><path fill="#fff" d="M16.3 5.6a.45.45 0 0 1 .57.44v8.2a2.35 2.35 0 1 1-1.2-2.05V8.63l-5.2 1.12v5.79a2.35 2.35 0 1 1-1.2-2.05V8.2c0-.28.2-.52.47-.58z"/></svg></a><a href="https://www.jiosaavn.com/search/song/Allakallolamga%20Gaja" target="_blank" rel="noopener nofollow" title="Find on JioSaavn" aria-label="Find on JioSaavn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2BC5B4"/><g fill="#fff"><rect x="5" y="10" width="2.1" height="4" rx="1.05"/><rect x="8.9" y="7" width="2.1" height="10" rx="1.05"/><rect x="12.8" y="4.8" width="2.1" height="14.4" rx="1.05"/><rect x="16.7" y="9" width="2.1" height="6" rx="1.05"/></g></svg></a><a href="https://music.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener nofollow" title="Find on YouTube Music" aria-label="Find on YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF0033"/><path fill="#fff" d="M9.9 8.1 16 12l-6.1 3.9z"/></svg></a></div></div><a class="body" href="https://www.youtube.com/watch?v=F_xHwofiUH8" target="_blank" rel="noopener" data-vid="F_xHwofiUH8" data-title="Allakallolamga"><div class="t">Allakallolamga</div><div class="m">Gaja</div><div class="meta">Saregama Telugu</div></a></div></div><div class="noresults">No matches in this section.</div></section>
+<section data-section><h2 id="trailers">Trailers &amp; teasers <span class="count">8</span></h2><div class="grid"><div class="card" data-search="mahendragiri varahi — trailer thriller set around varanasi and varahi ammavaru — siddhu in an extended cameo, in theatres 11 sept junglee music telugu thriller set around varanasi and varahi ammavaru — siddhu in an extended cameo, in theatres 11 sept" data-item="2026-09-06:trailer:mahendragiri-varahi"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=tcKLMeA2Hwc" target="_blank" rel="noopener" data-vid="tcKLMeA2Hwc" data-title="Mahendragiri Varahi — Trailer"><img src="https://i.ytimg.com/vi/tcKLMeA2Hwc/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=tcKLMeA2Hwc" target="_blank" rel="noopener" data-vid="tcKLMeA2Hwc" data-title="Mahendragiri Varahi — Trailer"><div class="t">Mahendragiri Varahi — Trailer</div><div class="m">Thriller set around Varanasi and Varahi Ammavaru — Siddhu in an extended cameo, in theatres 11 Sept</div><div class="meta">Junglee Music Telugu</div></a></div><div class="card" data-search="epic — trailer love entertainer — the music is the standout aditya music love entertainer — the music is the standout" data-item="2026-09-06:trailer:epic"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=uuPuy3HbJ08" target="_blank" rel="noopener" data-vid="uuPuy3HbJ08" data-title="EPIC — Trailer"><img src="https://i.ytimg.com/vi/uuPuy3HbJ08/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=uuPuy3HbJ08" target="_blank" rel="noopener" data-vid="uuPuy3HbJ08" data-title="EPIC — Trailer"><div class="t">EPIC — Trailer</div><div class="m">Love entertainer — the music is the standout</div><div class="meta">Aditya Music</div></a></div><div class="card" data-search="sardar 2 — trailer serious spy action thriller, action dose dialled well up — in theatres 10 sept sony music south serious spy action thriller, action dose dialled well up — in theatres 10 sept" data-item="2026-09-06:trailer:sardar-2"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=lnLsKCQzf3Q" target="_blank" rel="noopener" data-vid="lnLsKCQzf3Q" data-title="Sardar 2 — Trailer"><img src="https://i.ytimg.com/vi/lnLsKCQzf3Q/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=lnLsKCQzf3Q" target="_blank" rel="noopener" data-vid="lnLsKCQzf3Q" data-title="Sardar 2 — Trailer"><div class="t">Sardar 2 — Trailer</div><div class="m">Serious spy action thriller, action dose dialled well up — in theatres 10 Sept</div><div class="meta">Sony Music South</div></a></div><div class="card" data-search="maremma — trailer intense village drama — in theatres 10 sept t-series telugu intense village drama — in theatres 10 sept" data-item="2026-09-06:trailer:maremma"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=cq6FkXNvsmk" target="_blank" rel="noopener" data-vid="cq6FkXNvsmk" data-title="Maremma — Trailer"><img src="https://i.ytimg.com/vi/cq6FkXNvsmk/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=cq6FkXNvsmk" target="_blank" rel="noopener" data-vid="cq6FkXNvsmk" data-title="Maremma — Trailer"><div class="t">Maremma — Trailer</div><div class="m">Intense village drama — in theatres 10 Sept</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="delulu — teaser crazy fun youwe media crazy fun" data-item="2026-09-06:trailer:delulu"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=lZZ6t5GN76Q" target="_blank" rel="noopener" data-vid="lZZ6t5GN76Q" data-title="Delulu — Teaser"><img src="https://i.ytimg.com/vi/lZZ6t5GN76Q/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=lZZ6t5GN76Q" target="_blank" rel="noopener" data-vid="lZZ6t5GN76Q" data-title="Delulu — Teaser"><div class="t">Delulu — Teaser</div><div class="m">Crazy fun</div><div class="meta">YouWe Media</div></a></div><div class="card" data-search="thellakaagitham — teaser youthful emotional drama saregama telugu youthful emotional drama" data-item="2026-09-06:trailer:thellakaagitham"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=ZgSE001steA" target="_blank" rel="noopener" data-vid="ZgSE001steA" data-title="Thellakaagitham — Teaser"><img src="https://i.ytimg.com/vi/ZgSE001steA/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=ZgSE001steA" target="_blank" rel="noopener" data-vid="ZgSE001steA" data-title="Thellakaagitham — Teaser"><div class="t">Thellakaagitham — Teaser</div><div class="m">Youthful emotional drama</div><div class="meta">Saregama Telugu</div></a></div><div class="card" data-search="chakkora — teaser chakkora official teaser | sravan, malaika | dr. hema rao chintada t-series telugu chakkora official teaser | sravan, malaika | dr. hema rao chintada" data-item="2026-09-06:trailer:chakkora"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=KwrSiBA8nhE" target="_blank" rel="noopener" data-vid="KwrSiBA8nhE" data-title="Chakkora — Teaser"><img src="https://i.ytimg.com/vi/KwrSiBA8nhE/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=KwrSiBA8nhE" target="_blank" rel="noopener" data-vid="KwrSiBA8nhE" data-title="Chakkora — Teaser"><div class="t">Chakkora — Teaser</div><div class="m">Chakkora official Teaser | Sravan, Malaika | Dr. Hema Rao Chintada</div><div class="meta">T-Series Telugu</div></a></div><div class="card" data-search="kurmaavatar — teaser telugu cut — shivarajkumar panchavaktra pictures telugu cut — shivarajkumar" data-item="2026-09-06:trailer:kurmaavatar"><button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button><div class="left"><a class="thumb" href="https://www.youtube.com/watch?v=B81LUN2lC5w" target="_blank" rel="noopener" data-vid="B81LUN2lC5w" data-title="KurmaAvatar — Teaser"><img src="https://i.ytimg.com/vi/B81LUN2lC5w/mqdefault.jpg" alt="" loading="lazy"><span class="pl"><i></i></span></a></div><a class="body" href="https://www.youtube.com/watch?v=B81LUN2lC5w" target="_blank" rel="noopener" data-vid="B81LUN2lC5w" data-title="KurmaAvatar — Teaser"><div class="t">KurmaAvatar — Teaser</div><div class="m">Telugu cut — Shivarajkumar</div><div class="meta">Panchavaktra Pictures</div></a></div></div><div class="noresults">No matches in this section.</div></section>
+<section data-section><h2 id="ott">OTT releases <span class="count">7</span></h2><div class="chips"><button class="chip" data-plat="JioHotstar">JioHotstar</button><button class="chip" data-plat="Netflix">Netflix</button><button class="chip" data-plat="Prime Video">Prime Video</button><button class="chip" data-plat="Sun NXT">Sun NXT</button><button class="chip" data-plat="SonyLIV">SonyLIV</button></div><table><thead><tr><th class="poster"></th><th>Movie</th><th>Platform</th><th>Streaming from</th><th>Language</th></tr></thead><tbody><tr data-search="the court jiohotstar tamil hotstar specials series" data-platform="JioHotstar" data-item="2026-09-06:ott:the-court" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.hotstar.com/in/search?q=The%20Court" target="_blank" rel="noopener" title="Find The Court on JioHotstar"><img src="https://image.tmdb.org/t/p/w185/q3A6C5pwmX0VGrmI7D5HgXVH3VE.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=The%20Court" target="_blank" rel="noopener" title="Find The Court on JioHotstar"><strong>The Court</strong></a><br><span class="note">Hotstar Specials series</span></td><td><a class="ottlink" href="https://www.hotstar.com/in/search?q=The%20Court" target="_blank" rel="noopener" title="Find The Court on JioHotstar"><span class="badge" style="background:#0f79af">JioHotstar</span></a></td><td class="dim">4 Sept</td><td class="dim">Tamil<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="korean kanakaraju netflix telugu varun tej" data-platform="Netflix" data-item="2026-09-06:ott:korean-kanakaraju" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Korean%20Kanakaraju" target="_blank" rel="noopener" title="Find Korean Kanakaraju on Netflix"><img src="https://image.tmdb.org/t/p/w185/vUEb8v8W5ANRXhydogbmjXfRfni.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Korean%20Kanakaraju" target="_blank" rel="noopener" title="Find Korean Kanakaraju on Netflix"><strong>Korean Kanakaraju</strong></a><br><span class="note">Varun Tej</span></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Korean%20Kanakaraju" target="_blank" rel="noopener" title="Find Korean Kanakaraju on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Telugu<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="pallaburusu prime video telugu" data-platform="Prime Video" data-item="2026-09-06:ott:pallaburusu" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.primevideo.com/search?phrase=Pallaburusu" target="_blank" rel="noopener" title="Find Pallaburusu on Prime Video"><img src="https://image.tmdb.org/t/p/w185/sZsHYS3ckPoSUBnEB5J3CiE3oBV.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Pallaburusu" target="_blank" rel="noopener" title="Find Pallaburusu on Prime Video"><strong>Pallaburusu</strong></a></td><td><a class="ottlink" href="https://www.primevideo.com/search?phrase=Pallaburusu" target="_blank" rel="noopener" title="Find Pallaburusu on Prime Video"><span class="badge" style="background:#00a8e1">Prime Video</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Telugu<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="dc sun nxt telugu, tamil lokesh kanagaraj, vamika" data-platform="Sun NXT" data-item="2026-09-06:ott:dc" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.sunnxt.com/search?query=DC" target="_blank" rel="noopener" title="Find DC on Sun NXT"><img src="https://image.tmdb.org/t/p/w185/8k71CD24GIAmEFgHYRhqFvwbXH8.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.sunnxt.com/search?query=DC" target="_blank" rel="noopener" title="Find DC on Sun NXT"><strong>DC</strong></a><br><span class="note">Lokesh Kanagaraj, Vamika</span></td><td><a class="ottlink" href="https://www.sunnxt.com/search?query=DC" target="_blank" rel="noopener" title="Find DC on Sun NXT"><span class="badge" style="background:#e4002b">Sun NXT</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Telugu, Tamil<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="g.d.n netflix tamil r. madhavan as g.d. naidu" data-platform="Netflix" data-item="2026-09-06:ott:g-d-n" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=G.D.N" target="_blank" rel="noopener" title="Find G.D.N on Netflix"><img src="https://image.tmdb.org/t/p/w185/aAbvbKbNU6YyYDZ5ntSQcOygliw.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=G.D.N" target="_blank" rel="noopener" title="Find G.D.N on Netflix"><strong>G.D.N</strong></a><br><span class="note">R. Madhavan as G.D. Naidu</span></td><td><a class="ottlink" href="https://www.netflix.com/search?q=G.D.N" target="_blank" rel="noopener" title="Find G.D.N on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Tamil<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="dhamaal 4 netflix hindi ajay devgn" data-platform="Netflix" data-item="2026-09-06:ott:dhamaal-4" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.netflix.com/search?q=Dhamaal%204" target="_blank" rel="noopener" title="Find Dhamaal 4 on Netflix"><img src="https://image.tmdb.org/t/p/w185/pkY8xl3GijJ38KA3vTiPhZPRDvE.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Dhamaal%204" target="_blank" rel="noopener" title="Find Dhamaal 4 on Netflix"><strong>Dhamaal 4</strong></a><br><span class="note">Ajay Devgn</span></td><td><a class="ottlink" href="https://www.netflix.com/search?q=Dhamaal%204" target="_blank" rel="noopener" title="Find Dhamaal 4 on Netflix"><span class="badge" style="background:#e50914">Netflix</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Hindi<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr><tr data-search="unmadham sonyliv malayalam crime thriller" data-platform="SonyLIV" data-item="2026-09-06:ott:unmadham" data-kind="ott"><td class="poster"><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=Unmadham" target="_blank" rel="noopener" title="Find Unmadham on SonyLIV"><img src="https://image.tmdb.org/t/p/w185/6AIMHBUY6PCHVYASWZ0GcTA9Kph.jpg" alt="" loading="lazy" width="46" height="69"></a></td><td><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=Unmadham" target="_blank" rel="noopener" title="Find Unmadham on SonyLIV"><strong>Unmadham</strong></a><br><span class="note">Crime thriller</span></td><td><a class="ottlink" href="https://www.sonyliv.com/search?searchTerm=Unmadham" target="_blank" rel="noopener" title="Find Unmadham on SonyLIV"><span class="badge" style="background:#0c1f3f">SonyLIV</span></a></td><td class="dim">Week of 6 Sept</td><td class="dim">Malayalam<button class="fixbtn adminonly" type="button" title="Correct this entry" aria-label="Correct this entry">&#9998;</button></td></tr></tbody></table><div class="noresults">No matches in this section.</div></section>
 <section class="sec" style="padding-top:34px;border-top:1px solid var(--line);margin-top:38px">
 <div class="eyebrow">From the community</div>
 <h2 style="margin-top:6px">Suggested for this week</h2>
@@ -230,7 +325,7 @@ readers and need checking — 3 net votes either way settles it.
 Generated 23 Sep 2026. Links auto-matched from YouTube search — items marked
 <span class="flag">verify</span> had a weak match and are worth a click-check.</p>
 </div><footer class="site"><div class="wrap">
-<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a></div>
+<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="privacy.html">Privacy</a></div>
 <div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
 weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
 </div></footer>
@@ -238,6 +333,409 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
 <div class="lbt" id="lbt"></div><a id="lbo" href="#" target="_blank" rel="noopener">Open on YouTube &#8599;</a>
 <button class="lbx" aria-label="Close">&times;</button></div>
 <div class="lbf" id="lbf"></div></div></div>
+<div class="authmodal" id="authmodal" hidden><div class="authcard">
+<h2>Sign in</h2>
+<p>The last two weeks are for members. Everything older stays free for everyone.</p>
+<button class="gbtn" id="gsignin"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.2 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.6c0-1.6-.1-3.2-.4-4.6H24v9.1h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.6 5.9c4.4-4.1 6.7-10.1 6.7-17.3z"/><path fill="#FBBC05" d="M10.4 28.7c-.5-1.4-.8-2.9-.8-4.7s.3-3.3.8-4.7l-7.8-6.1C.9 16.3 0 20 0 24s.9 7.7 2.6 10.8l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.5-2 15.4-5.6l-7.6-5.9c-2.1 1.4-4.8 2.3-7.8 2.3-6.3 0-11.7-3.7-13.6-9.1l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/></svg> Continue with Google</button>
+<div class="orline">or</div>
+<input id="mlemail" type="email" placeholder="you@example.com" autocomplete="email">
+<button class="authbtn mlbtn" id="mlsend">Email me a sign-in link</button>
+<div class="msg" id="authmsg"></div>
+<p class="authfine">Signing in stores your email address, and nothing else. No
+analytics, no newsletter, and you can delete it in one click.
+<a href="privacy.html">What's stored &#8594;</a></p>
+<button class="close" id="authclose">Not now</button>
+</div></div>
+<div class="fixwrap" id="fixwrap" hidden><div class="fixcard">
+<h2>Correct this entry</h2>
+<div class="iid" id="fixid"></div>
+<div class="fixnote" id="fixscope"></div>
+<label>Title<input id="fix_t" autocomplete="off"></label>
+<label id="fixlab_m">Film / subtitle<input id="fix_m" autocomplete="off"></label>
+<label>Link<input id="fix_u" autocomplete="off" placeholder="https://…"></label>
+<label>Note<input id="fix_n" autocomplete="off" placeholder="optional"></label>
+<div class="fixrow">
+<button class="btn primary" id="fixsave">Save correction</button>
+<button class="btn" id="fixclear">Remove correction</button>
+</div>
+<div class="fixmsg" id="fixmsg"></div>
+<button class="btn" id="fixcancel" style="width:100%;justify-content:center;margin-top:9px">Cancel</button>
+</div></div><script>window.CFG={"url":"https://rfxrkcrijzfmfuwexbgj.supabase.co","key":"sb_publishable_a2Uomg2zakwmqc5-oUR4pA__3DQei2V","threshold":3};</script><script>
+(function(){
+  var CFG=window.CFG||{};
+  if(!CFG.url||!CFG.key) return;
+  var BASE=CFG.url.replace(/\/$/,'');
+  var TOKEN_KEY='cv-session';
+
+  function headers(extra){
+    var h=Object.assign({'apikey':CFG.key,'Content-Type':'application/json'},extra||{});
+    var s=session();
+    // A signed-in user's own JWT goes on Authorization; that is what RLS reads.
+    if(s&&s.access_token) h['Authorization']='Bearer '+s.access_token;
+    else if(/^eyJ/.test(CFG.key)) h['Authorization']='Bearer '+CFG.key;
+    return h;
+  }
+  function session(){
+    try{ var raw=localStorage.getItem(TOKEN_KEY); if(!raw) return null;
+         var s=JSON.parse(raw);
+         if(s.expires_at && s.expires_at*1000 < Date.now()+30000){ return refresh(s); }
+         return s; }catch(e){ return null; }
+  }
+  function store(s){ try{ s?localStorage.setItem(TOKEN_KEY,JSON.stringify(s))
+                           :localStorage.removeItem(TOKEN_KEY);}catch(e){} }
+  function refresh(s){
+    // Fire and forget; the current call proceeds anonymously if it has expired.
+    fetch(BASE+'/auth/v1/token?grant_type=refresh_token',
+      {method:'POST',headers:{'apikey':CFG.key,'Content-Type':'application/json'},
+       body:JSON.stringify({refresh_token:s.refresh_token})})
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(n){ if(n&&n.access_token){ store(n); render(); } else { store(null); render(); } })
+      .catch(function(){});
+    return null;
+  }
+  window.CVAUTH={
+    session:session, headers:headers, base:BASE,
+    signedIn:function(){ return !!session(); },
+    // Set once the admins lookup comes back. Treat this as "what to show", never
+    // as "what is allowed" — every admin action is also checked by RLS in
+    // Postgres, so flipping this in devtools reveals buttons that then fail.
+    isAdmin:false,
+    user:function(){ return user(); }
+  };
+
+  // ---- capture the token Supabase returns in the URL fragment after OAuth ----
+  if(location.hash && location.hash.indexOf('access_token=')>-1){
+    var p={}; location.hash.slice(1).split('&').forEach(function(kv){
+      var i=kv.indexOf('='); p[decodeURIComponent(kv.slice(0,i))]=decodeURIComponent(kv.slice(i+1));
+    });
+    if(p.access_token){
+      p.expires_at = Math.floor(Date.now()/1000) + (parseInt(p.expires_in||'3600',10));
+      store(p);
+      history.replaceState(null,'',location.pathname+location.search);
+    }
+  }
+
+  function user(){
+    var s=session(); if(!s||!s.access_token) return null;
+    try{
+      var b=JSON.parse(atob(s.access_token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));
+      // Google also puts an avatar_url in the token. It is deliberately not read:
+      // rendering it would make every page load fetch an image from Google.
+      return {id:b.sub||'', email:b.email||'',
+              name:(b.user_metadata||{}).full_name||b.email||''};
+    }catch(e){ return {id:'',email:'',name:'Signed in'}; }
+  }
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function initials(u){
+    var n=(u.name||u.email||'').trim();
+    if(n.indexOf('@')>-1 && n===(u.email||'')) return n.slice(0,2);
+    var p=n.split(/\s+/).filter(Boolean);
+    return p.length>1 ? (p[0][0]+p[p.length-1][0]) : n.slice(0,2);
+  }
+
+  function render(){
+    var box=document.getElementById('authbox'); if(!box) return;
+    var u=user();
+    if(u){
+      box.innerHTML='<span class="avatar" aria-hidden="true">'+esc(initials(u))+'</span>'+
+        '<span class="who">'+esc(u.name)+'</span>'+
+        '<button class="authbtn" id="signout">Sign out</button>';
+      document.getElementById('signout').onclick=function(){ store(null); location.reload(); };
+    } else {
+      box.innerHTML='<button class="authbtn" id="signin">Sign in</button>';
+      document.getElementById('signin').onclick=openModal;
+    }
+    document.body.classList.toggle('is-member', !!u);
+  }
+
+  function openModal(){ var m=document.getElementById('authmodal'); if(m) m.hidden=false; }
+  function closeModal(){ var m=document.getElementById('authmodal'); if(m) m.hidden=true; }
+
+  document.addEventListener('click',function(ev){
+    if(ev.target.closest('#authclose')||ev.target.id==='authmodal') return closeModal();
+    if(ev.target.closest('.needlogin')) return openModal();
+  });
+
+  function wireModal(){
+    var g=document.getElementById('gsignin'), ml=document.getElementById('mlsend'),
+        msg=document.getElementById('authmsg');
+    if(g) g.onclick=function(){
+      location.href = BASE+'/auth/v1/authorize?provider=google&redirect_to='+
+                      encodeURIComponent(location.href.split('#')[0]);
+    };
+    if(ml) ml.onclick=function(){
+      var em=(document.getElementById('mlemail').value||'').trim();
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){
+        msg.className='msg bad'; msg.textContent='That email doesn\'t look right.'; return; }
+      msg.className='msg'; msg.textContent='Sending…'; msg.style.display='block';
+      fetch(BASE+'/auth/v1/otp',{method:'POST',
+        headers:{'apikey':CFG.key,'Content-Type':'application/json'},
+        body:JSON.stringify({email:em,create_user:true,
+          options:{email_redirect_to:location.href.split('#')[0]}})})
+        .then(function(r){
+          if(r.ok){ msg.className='msg ok'; msg.textContent='Check your inbox for the link.'; }
+          else { msg.className='msg bad'; msg.textContent='Couldn\'t send that ('+r.status+').'; }
+        })
+        .catch(function(){ msg.className='msg bad'; msg.textContent='Network problem — try again.'; });
+    };
+  }
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render();wireModal();});
+  else { render(); wireModal(); }
+})();
+</script><script>
+(function(){
+  var A=window.CVAUTH; if(!A) return;
+  var hosts=[].slice.call(document.querySelectorAll('[data-gated]'));
+  if(!hosts.length) return;
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function card(it){
+    var p=Object.assign({}, it.payload||{}, (window.CVOVERRIDES||{})[it.id]||{});
+    var v=p.v||'', th=v?'https://i.ytimg.com/vi/'+v+'/mqdefault.jpg':(p.poster||'');
+    var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
+    var dv=v?' data-vid="'+esc(v)+'" data-title="'+esc(p.t)+'"':'';
+    var sub=it.kind==='ott'?(p.p||''):(p.m||p.k||'');
+    var meta=[p.c,p.n,p.d].filter(Boolean).join(' · ');
+    var inner='<div class="t">'+esc(p.t)+'</div><div class="m">'+esc(sub)+
+              '</div><div class="meta">'+esc(meta)+'</div>';
+    var cls='card'+(it.kind==='ott'?' ottsug':'');
+    var at=' data-item="'+esc(it.id)+'" data-kind="'+esc(it.kind)+'"';
+    var fix='<button class="fixbtn adminonly" type="button" '+
+            'title="Correct this entry" aria-label="Correct this entry">&#9998;</button>';
+    if(!p.u) return '<div class="'+cls+' nolink"'+at+'>'+fix+
+                    '<div class="left"><div class="thumb">'+
+                    img+'</div></div><div class="body">'+inner+'</div></div>';
+    return '<div class="'+cls+'"'+at+'>'+fix+'<div class="left">'+
+      '<a class="thumb" href="'+esc(p.u)+'" target="_blank" rel="noopener"'+dv+'>'+img+
+      (v?'<span class="pl"><i></i></span>':'')+'</a></div>'+
+      '<a class="body" href="'+esc(p.u)+'" target="_blank" rel="noopener"'+dv+'>'+
+      inner+'</a></div>';
+  }
+
+  function lockedHtml(){
+    return '<div class="locked"><div class="lk">&#9788;</div>'+
+      '<h3>The last two weeks are for members</h3>'+
+      '<p>Sign in free with Google or an email link to see this week and last week. '+
+      'Everything older than a fortnight stays open to everyone, always.</p>'+
+      '<button class="authbtn needlogin">Sign in to unlock</button></div>';
+  }
+
+  function fill(host, rows){
+    var want=host.dataset.gated;                 // '', 'song', 'trailer' or 'ott'
+    var week=host.dataset.week||'';
+    var list=rows.filter(function(r){
+      return (!want||r.kind===want) && (!week||r.week===week);
+    });
+    if(!list.length){ host.innerHTML=''; return; }
+    var byWeek={};
+    list.forEach(function(r){ (byWeek[r.week]=byWeek[r.week]||[]).push(r); });
+    var html='';
+    Object.keys(byWeek).sort().reverse().forEach(function(w){
+      html+='<div class="wkblock"><h2>Week of '+esc(w)+
+            '<span class="count">'+byWeek[w].length+'</span>'+
+            '<span class="src verified">Members</span></h2>'+
+            '<div class="grid">'+byWeek[w].map(card).join('')+'</div></div>';
+    });
+    host.innerHTML=html;
+  }
+
+  function load(){
+    if(!A.signedIn()){ hosts.forEach(function(h){ h.innerHTML=lockedHtml(); }); return; }
+    hosts.forEach(function(h){ h.innerHTML='<div class="loading">Loading the latest…</div>'; });
+    // Corrections are readable by everyone, so a member sees a fixed entry too,
+    // not just the admin who fixed it.
+    Promise.all([
+      fetch(A.base+'/rest/v1/items?select=id,week,kind,payload&order=week.desc',
+            {headers:A.headers()})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch(A.base+'/rest/v1/overrides?select=item_id,patch',{headers:A.headers()})
+        .then(function(r){ return r.ok?r.json():[]; }).catch(function(){ return []; }),
+    ])
+      .then(function(res){
+        window.CVOVERRIDES=window.CVOVERRIDES||{};
+        (res[1]||[]).forEach(function(o){ window.CVOVERRIDES[o.item_id]=o.patch||{}; });
+        var rows=res[0];
+        hosts.forEach(function(h){ fill(h,rows||[]); });
+      })
+      .catch(function(e){
+        hosts.forEach(function(h){
+          h.innerHTML='<div class="locked"><p>Couldn\'t load the latest content ('+
+            esc(e.message)+'). Everything older is unaffected.</p></div>'; });
+      });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',load);
+  else load();
+})();
+</script><script>
+(function(){
+  var A=window.CVAUTH; if(!A) return;
+  // Shared with the gated-content renderer, which applies the same patches.
+  var OV=window.CVOVERRIDES=window.CVOVERRIDES||{};
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  // ---- who am I -------------------------------------------------------------
+  // Asks the database, which only ever returns this user's own admin row. The
+  // answer decides what is drawn; it does not decide what is permitted.
+  function detect(){
+    var u=A.user();
+    if(!u||!u.id){ done(false); return; }
+    fetch(A.base+'/rest/v1/admins?select=id&id=eq.'+encodeURIComponent(u.id),
+          {headers:A.headers()})
+      .then(function(r){ return r.ok?r.json():[]; })
+      .then(function(rows){ done(!!(rows&&rows.length)); })
+      .catch(function(){ done(false); });
+  }
+  function done(is){
+    A.isAdmin=is;
+    document.body.classList.toggle('is-admin', is);
+    if(is){
+      var box=document.getElementById('authbox');
+      if(box && !box.querySelector('.adminchip')){
+        var c=document.createElement('span');
+        c.className='adminchip'; c.textContent='Admin';
+        box.insertBefore(c, box.firstChild);
+      }
+      loadOverrides();
+    }
+    document.dispatchEvent(new CustomEvent('cv-admin',{detail:{isAdmin:is}}));
+  }
+
+  function loadOverrides(){
+    fetch(A.base+'/rest/v1/overrides?select=item_id,patch',{headers:A.headers()})
+      .then(function(r){ return r.ok?r.json():[]; })
+      .then(function(rows){
+        (rows||[]).forEach(function(r){ OV[r.item_id]=r.patch||{}; });
+        markPatched();
+      }).catch(function(){});
+  }
+  function markPatched(){
+    document.querySelectorAll('[data-item]').forEach(function(el){
+      if(OV[el.dataset.item]) el.classList.add('patched');
+    });
+  }
+
+  // ---- the correction editor -------------------------------------------------
+  var cur=null;
+  function openFix(el){
+    cur=el.dataset.item;
+    var patch=OV[cur]||{};
+    var t=el.querySelector('.t,strong'), m=el.querySelector('.m,.dim');
+    document.getElementById('fixid').textContent=cur;
+    document.getElementById('fix_t').value=patch.t!=null?patch.t:(t?t.textContent.trim():'');
+    document.getElementById('fix_m').value=patch.m!=null?patch.m:
+      (patch.p!=null?patch.p:(m?m.textContent.trim():''));
+    var a=el.querySelector('a[href^="http"]');
+    document.getElementById('fix_u').value=patch.u!=null?patch.u:(a?a.href:'');
+    document.getElementById('fix_n').value=patch.n!=null?patch.n:'';
+    var held=!!el.closest('[data-gated]');
+    document.getElementById('fixscope').innerHTML = held
+      ? 'This week is inside the members-only window, so it renders from the '+
+        'database. The fix shows up on reload.'
+      : 'This week is already published as a static page. The fix is stored now '+
+        'and applied the next time the site is built and published.';
+    document.getElementById('fixmsg').style.display='none';
+    document.getElementById('fixwrap').hidden=false;
+  }
+  function closeFix(){ document.getElementById('fixwrap').hidden=true; cur=null; }
+
+  function saveFix(){
+    if(!cur) return;
+    var msg=document.getElementById('fixmsg');
+    var patch={};
+    [['t','fix_t'],['m','fix_m'],['u','fix_u'],['n','fix_n']].forEach(function(p){
+      var v=(document.getElementById(p[1]).value||'').trim();
+      if(v) patch[p[0]]=v;
+    });
+    // An OTT row's subtitle is its platform, not a film name.
+    var el=document.querySelector('[data-item="'+cur.replace(/"/g,'')+'"]');
+    if(el && el.dataset.kind==='ott' && patch.m){ patch.p=patch.m; delete patch.m; }
+    if(!Object.keys(patch).length){ msg.className='fixmsg bad';
+      msg.textContent='Nothing to save — fill at least one field.'; return; }
+    msg.className='fixmsg'; msg.textContent='Saving…'; msg.style.display='block';
+    fetch(A.base+'/rest/v1/overrides?on_conflict=item_id',{method:'POST',
+      headers:Object.assign({'Prefer':'resolution=merge-duplicates,return=minimal'},
+                            A.headers()),
+      body:JSON.stringify({item_id:cur,patch:patch,updated_at:new Date().toISOString(),
+                           updated_by:(A.user()||{}).id||null})})
+      .then(function(r){
+        if(!r.ok) throw new Error(r.status===401||r.status===403
+          ? 'the database refused this — that account is not an admin' : 'HTTP '+r.status);
+        OV[cur]=patch; markPatched();
+        msg.className='fixmsg ok'; msg.textContent='Saved.';
+      })
+      .catch(function(e){ msg.className='fixmsg bad'; msg.textContent='Failed: '+e.message; });
+  }
+
+  function clearFix(){
+    if(!cur) return;
+    var msg=document.getElementById('fixmsg');
+    fetch(A.base+'/rest/v1/overrides?item_id=eq.'+encodeURIComponent(cur),
+      {method:'DELETE',headers:Object.assign({'Prefer':'return=minimal'},A.headers())})
+      .then(function(r){
+        if(!r.ok) throw new Error('HTTP '+r.status);
+        delete OV[cur];
+        var el=document.querySelector('[data-item="'+cur.replace(/"/g,'')+'"]');
+        if(el) el.classList.remove('patched');
+        msg.className='fixmsg ok'; msg.textContent='Correction removed.';
+      })
+      .catch(function(e){ msg.className='fixmsg bad'; msg.textContent='Failed: '+e.message; });
+  }
+
+  // ---- suggestion moderation --------------------------------------------------
+  function moderate(id, status){
+    return fetch(A.base+'/rest/v1/suggestions?id=eq.'+encodeURIComponent(id),
+      {method:'PATCH',
+       headers:Object.assign({'Prefer':'return=minimal'},A.headers()),
+       body:JSON.stringify({status:status})});
+  }
+  function destroy(id){
+    return fetch(A.base+'/rest/v1/suggestions?id=eq.'+encodeURIComponent(id),
+      {method:'DELETE',headers:Object.assign({'Prefer':'return=minimal'},A.headers())});
+  }
+
+  document.addEventListener('click',function(ev){
+    var f=ev.target.closest('.fixbtn');
+    if(f){ ev.preventDefault(); openFix(f.closest('[data-item]')); return; }
+    if(ev.target.closest('#fixcancel')||ev.target.id==='fixwrap'){ closeFix(); return; }
+    if(ev.target.closest('#fixsave')){ saveFix(); return; }
+    if(ev.target.closest('#fixclear')){ clearFix(); return; }
+
+    var m=ev.target.closest('.mod button');
+    if(!m||m.disabled) return;
+    var box=m.closest('.mod'), id=box.dataset.id, act=m.dataset.act;
+    if(act==='delete' && !confirm('Delete this suggestion permanently?')) return;
+    box.querySelectorAll('button').forEach(function(b){ b.disabled=true; });
+    var p = act==='delete' ? destroy(id)
+          : moderate(id, act==='clear' ? null : act);
+    p.then(function(r){
+      if(!r.ok) throw new Error(r.status===401||r.status===403
+        ? 'not permitted' : 'HTTP '+r.status);
+      document.querySelectorAll('[data-community]').forEach(function(el){
+        if(window.CVCOMMUNITY) window.CVCOMMUNITY.reload(el);
+      });
+    }).catch(function(e){
+      var w=box.querySelector('.who'); if(w) w.textContent='failed: '+e.message;
+      box.querySelectorAll('button').forEach(function(b){ b.disabled=false; });
+    });
+  });
+
+  document.addEventListener('keydown',function(ev){
+    if(ev.key==='Escape') closeFix();
+  });
+
+  function start(){ if(A.signedIn()) detect(); else done(false); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start);
+  else start();
+})();
+</script>
 <script>
 (function(){
   var lb=document.getElementById('lb'); if(!lb) return;
@@ -258,7 +756,7 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
   });
   document.addEventListener('keydown',function(ev){if(ev.key==='Escape')close();});
 })();
-</script><script>window.CFG={url:"https://rfxrkcrijzfmfuwexbgj.supabase.co",key:"sb_publishable_a2Uomg2zakwmqc5-oUR4pA__3DQei2V",threshold:3};</script><script>
+</script><script>
 (function(){
   var box=document.getElementById('q'), plat=null;
   var cards=[].slice.call(document.querySelectorAll('.card[data-search]'));
@@ -332,18 +830,42 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
          ask:'Is this the official upload, not a re-post?'};
   }
 
+  // An admin decision outranks the vote count in both directions.
+  function settled(s){
+    if(s.status==='verified') return 'admin';
+    if(s.status==='removed')  return 'killed';
+    if(score(s)>=T)  return 'community';
+    if(score(s)<=-T) return 'killed';
+    return '';
+  }
+
+  function modbox(s){
+    // Drawn for admins only (CSS hides .adminonly otherwise). The database
+    // rejects these calls from anyone else regardless of what is drawn.
+    var st=s.status||'';
+    return '<div class="mod adminonly" data-id="'+esc(s.id)+'">'+
+      '<button data-act="verified"'+(st==='verified'?' disabled':'')+'>Verify</button>'+
+      '<button data-act="removed"'+(st==='removed'?' disabled':'')+'>Reject</button>'+
+      (st?'<button data-act="clear">Undo</button>':'')+
+      '<button class="danger" data-act="delete">Delete</button>'+
+      '<span class="who">'+(st?'admin: '+esc(st):'by votes')+'</span></div>';
+  }
+
   function card(s){
-    var sc=score(s), verified=sc>=T, voted=mine(s);
+    var state=settled(s);
+    var sc=score(s), verified=state==='community'||state==='admin', voted=mine(s);
     var v=(s.url||'').match(/[?&]v=([A-Za-z0-9_-]{11})/);
     var th=v?'https://i.ytimg.com/vi/'+v[1]+'/mqdefault.jpg':(s.poster||'');
     var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
     var dv=v?' data-vid="'+esc(v[1])+'" data-title="'+esc(s.title)+'"':'';
-    var badge=verified?'<span class="src verified">Community verified</span>'
-                      :'<span class="src pending">Needs checking</span>';
+    var badge = state==='admin'   ? '<span class="src admin">Confirmed by editor</span>'
+              : state==='killed'  ? '<span class="src killed">Rejected</span>'
+              : state==='community'? '<span class="src verified">Community verified</span>'
+              :                      '<span class="src pending">Needs checking</span>';
     var sub=s.kind==='ott'?(s.platform||''):(s.movie||'');
     var L=labels(s.kind);
     var controls='';
-    if(!verified){
+    if(!state){          // unsettled: neither the votes nor an admin has decided
       controls='<div class="vote" data-id="'+esc(s.id)+'" title="'+esc(L.ask)+'">'+
         '<button data-v="1"'+(voted?' disabled':'')+'>&#9650; '+esc(L.up)+'</button>'+
         '<button data-v="-1"'+(voted?' disabled':'')+'>&#9660; '+esc(L.down)+'</button>'+
@@ -357,11 +879,16 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
       '<div class="m">'+esc(sub)+'</div>'+
       (s.note?'<div class="meta">'+esc(s.note)+'</div>':'')+'</div>';
     var cls='card'+(s.kind==='ott'?' ottsug':'');
-    return '<div class="'+cls+'" data-sug="'+esc(s.id)+'">'+head+body+'</div>'+controls;
+    return '<div class="'+cls+'" data-sug="'+esc(s.id)+'">'+head+body+'</div>'+
+           controls+modbox(s);
   }
 
   function render(list,el){
-    var keep=list.filter(function(s){return score(s)> -T;});
+    // A rejected item still renders for admins, so the decision can be undone.
+    var admin=document.body.classList.contains('is-admin');
+    var keep=list.filter(function(s){
+      return admin || settled(s)!=='killed';
+    });
     if(!keep.length){ el.innerHTML='<div class="cempty">No community suggestions yet.</div>';
                       return; }
     var groups={song:[],trailer:[],ott:[]};
@@ -410,8 +937,19 @@ weekly and matched to their official uploads. Posters and film metadata from TMD
       });
   });
 
+  // admin.js reloads through this after a moderation action.
+  window.CVCOMMUNITY={reload:function(el){ return load(el, el.dataset.week||''); }};
+
   document.querySelectorAll('[data-community]').forEach(function(el){
     load(el, el.dataset.week||'');
+  });
+
+  // Admin status arrives after a round trip, so redraw once it does — that is
+  // what reveals the moderation controls and the rejected items.
+  document.addEventListener('cv-admin',function(ev){
+    if(!ev.detail||!ev.detail.isAdmin) return;
+    document.querySelectorAll('[data-community]').forEach(function(el){
+      load(el, el.dataset.week||''); });
   });
 
   var form=document.getElementById('sugform');
