@@ -1,0 +1,35 @@
+# Supabase pauses a free project after ~7 days with no activity, which would
+# silently break sign-in and the members-only weeks. One cheap read every three
+# days is enough to keep it awake.
+#
+# Needs two repository secrets (Settings -> Secrets and variables -> Actions):
+#   SUPABASE_URL       https://<ref>.supabase.co
+#   SUPABASE_ANON_KEY  the publishable / anon key — the same public one the site
+#                      already ships. Nothing secret is stored here.
+name: Keep Supabase awake
+
+on:
+  schedule:
+    - cron: "17 4 */3 * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read one row
+        env:
+          URL: ${{ secrets.SUPABASE_URL }}
+          KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$URL" ] || [ -z "$KEY" ]; then
+            echo "SUPABASE_URL / SUPABASE_ANON_KEY not set — skipping."; exit 0
+          fi
+          code=$(curl -s -o /tmp/out -w '%{http_code}' \
+            -H "apikey: $KEY" \
+            "${URL%/}/rest/v1/items?select=id&limit=1")
+          echo "HTTP $code"; cat /tmp/out; echo
+          # 200 is a healthy read. 401/404 means the project is up but the table
+          # or key needs attention — still counts as activity, so don't fail the
+          # job on it; only a connection failure is worth an alert.
+          case "$code" in 000) exit 1 ;; *) exit 0 ;; esac
