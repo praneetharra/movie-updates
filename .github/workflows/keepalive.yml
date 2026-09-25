@@ -1,35 +1,65 @@
-# Supabase pauses a free project after ~7 days with no activity, which would
-# silently break sign-in and the members-only weeks. One cheap read every three
-# days is enough to keep it awake.
+# Keeps the Supabase project awake.
 #
-# Needs two repository secrets (Settings -> Secrets and variables -> Actions):
-#   SUPABASE_URL       https://<ref>.supabase.co
-#   SUPABASE_ANON_KEY  the publishable / anon key — the same public one the site
-#                      already ships. Nothing secret is stored here.
+# A free Supabase project pauses after about a week with no activity. If that
+# happens, sign-in stops working and the members-only weeks become unreachable
+# for everyone — silently, because nothing on the site would say so. One cheap
+# read every three days is enough to prevent it.
+#
+# The two values below are deliberately written in plain sight rather than
+# stored as repository secrets. Neither is secret: the URL identifies the
+# project, and the publishable key is already embedded in every published page
+# on the site. Putting them here removes a whole setup step and, more
+# importantly, removes a silent failure — a missing secret would make this job
+# succeed while doing nothing at all.
+#
+# The key that IS secret (sb_secret_…) lives only in _scripts/.deploy_env on a
+# local machine and must never appear in this file or anywhere else in the repo.
 name: Keep Supabase awake
-
+            
 on:
   schedule:
+    # 04:17 UTC every third day. Off the hour, because scheduled jobs on the
+    # hour queue behind everyone else's and can be delayed or dropped.
     - cron: "17 4 */3 * *"
-  workflow_dispatch:
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+ 
+permissions:
+  contents: read            # this job only reads; give it nothing else
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Read one row
+      - name: Read one row from the items table
         env:
-          URL: ${{ secrets.SUPABASE_URL }}
-          KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          URL: "https://rfxrkcrijzfmfuwexbgj.supabase.co"
+          KEY: "sb_publishable_a2Uomg2zakwmqc5-oUR4pA__3DQei2V"
         run: |
-          if [ -z "$URL" ] || [ -z "$KEY" ]; then
-            echo "SUPABASE_URL / SUPABASE_ANON_KEY not set — skipping."; exit 0
-          fi
-          code=$(curl -s -o /tmp/out -w '%{http_code}' \
+          set -u
+          code=$(curl -sS --max-time 30 -o /tmp/out -w '%{http_code}' \
             -H "apikey: $KEY" \
             "${URL%/}/rest/v1/items?select=id&limit=1")
-          echo "HTTP $code"; cat /tmp/out; echo
-          # 200 is a healthy read. 401/404 means the project is up but the table
-          # or key needs attention — still counts as activity, so don't fail the
-          # job on it; only a connection failure is worth an alert.
-          case "$code" in 000) exit 1 ;; *) exit 0 ;; esac
+          echo "HTTP $code"
+          head -c 400 /tmp/out; echo
+    
+          case "$code" in
+            200)
+              echo "Project is awake."
+              ;;
+            000)
+              echo "::error::Could not reach Supabase at all — the project may be paused."
+              exit 1
+              ;;
+            401|403)
+              # Still counts as activity, so the project stays awake, but the
+              # key or the RLS policy needs looking at.
+              echo "::warning::Reached Supabase but the read was rejected ($code). Check the publishable key and the items select policy."
+              ;;
+            404)
+              echo "::error::The items table is missing. Run the SQL in _scripts/AUTH-SETUP.md."
+              exit 1
+              ;;
+            *)
+              echo "::warning::Unexpected status $code."
+              ;;
+          esac
