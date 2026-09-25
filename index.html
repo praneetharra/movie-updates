@@ -34,8 +34,22 @@ nav.main a:hover{color:var(--ink);background:var(--surface)}
 nav.main a.on{color:var(--bg);background:var(--amber);font-weight:600}
 nav.main a.soon::after{content:'';position:absolute;top:6px;right:5px;width:4px;height:4px;
 border-radius:50%;background:var(--ember)}
+
+/* ---- search in the top bar ---- */
+.gsearch{position:relative;flex:0 1 200px;min-width:0}
+.gsearch input{width:100%;background:var(--surface);border:1px solid var(--line);
+color:var(--ink);padding:7px 11px 7px 30px;border-radius:999px;font-size:13px;
+font-family:inherit}
+.gsearch input:focus{outline:none;border-color:var(--amber);background:var(--surface2)}
+.gsearch input::placeholder{color:var(--ink3)}
+.gsearch svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);
+width:13px;height:13px;stroke:var(--ink3);fill:none;stroke-width:2;pointer-events:none}
+.gsearch input:focus+svg{stroke:var(--amber)}
+
+@media(max-width:980px){.gsearch{flex-basis:150px}}
 @media(max-width:860px){.topbar .wrap{height:auto;padding-top:10px;padding-bottom:10px;
-flex-wrap:wrap}nav.main{margin-left:0;width:100%}}
+flex-wrap:wrap}nav.main{margin-left:0;order:3;width:100%}
+.gsearch{order:2;flex:1 1 auto;margin-left:auto}}
 
 /* ---- headings ---- */
 h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.4px}
@@ -291,8 +305,11 @@ color:var(--amber);font-weight:700}
 .scard h3{margin:8px 0 6px;font-size:17px}
 .scard p{margin:0;font-size:13.5px;color:var(--ink2);line-height:1.5}
 .scard.off{opacity:.55}.scard.off:hover{transform:none;border-color:var(--line2)}
-.scard .soon{font-size:10.5px;color:var(--ember);font-weight:700;text-transform:uppercase;
-letter-spacing:1.2px}
+.roadmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:12px}
+.rcard{border:1px dashed var(--line2);border-radius:var(--radius);padding:16px 18px;
+background:var(--bg2)}
+.rcard h3{margin:0 0 6px;font-size:15px;color:var(--ink2)}
+.rcard p{margin:0;font-size:13px;color:var(--ink3);line-height:1.55}
 .sec{padding:46px 0 0}
 .sec .hd{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
 .sec .hd a{margin-left:auto;font-size:13px;color:var(--amber);text-decoration:none}
@@ -304,7 +321,7 @@ line-height:1.65;max-width:70ch;margin:0 auto}
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
-<nav class="main"><a href="index.html" class="on">Home</a><a href="this-week.html" class="soon" title="Not populated yet">This Week</a><a href="weekly.html">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="reviews.html" class="soon" title="Not populated yet">Reviews</a><a href="news.html" class="soon" title="Not populated yet">News</a><a href="languages.html" class="soon" title="Not populated yet">Languages</a></nav><div class="authbox" id="authbox"></div></div></header>
+<nav class="main"><a href="index.html" class="on">Home</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="community.html">Community</a></nav><form class="gsearch" action="archive.html" method="get" role="search"><input type="search" name="q" id="gq" autocomplete="off" placeholder="Search every week…" aria-label="Search songs, trailers and releases" value=""><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></form><div class="authbox" id="authbox"></div></div></header>
 <section class="hero"><div class="beam"></div>
 <div class="letterbox t"></div><div class="letterbox b"></div>
 <div class="wrap">
@@ -312,8 +329,8 @@ line-height:1.65;max-width:70ch;margin:0 auto}
 <h1>From <em>Mala Pilla</em> to <em>Kalki</em>,<br>and everything dropping this week.</h1>
 <p class="lede">A standing tribute to the films that built an industry — and a
 running record of every new song, trailer and streaming release, updated weekly.</p>
-<div class="cta"><a class="btn primary" href="weekly.html">Latest edition &#8594;</a>
-<a class="btn" href="archive.html">Search the archive</a></div>
+<div class="cta"><a class="btn primary" href="playlists.html">Browse the songs &#8594;</a>
+<a class="btn" href="calendar.html">What&#8217;s streaming</a></div>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -335,10 +352,18 @@ running record of every new song, trailer and streaming release, updated weekly.
 <section class="sec"><div class="wrap">
 <div class="hd"><span class="eyebrow" style="margin:0">Sections</span>
 <h2>Everything in the app</h2></div>
-<div class="sections"><a class="scard" href="weekly.html"><div class="k">Weekly</div><h3>All Weeks</h3><p>Every edition since July — 9 weeks of songs, trailers and streaming drops.</p></a><a class="scard off" href="this-week.html"><div class="k"><span class=soon>Coming</span></div><h3>This Week</h3><p>What&#x27;s landing in the days ahead, rather than a record of the week just gone.</p></a><a class="scard" href="playlists.html"><div class="k">Listen</div><h3>Songs</h3><p>All 48 songs, week by week, plus ready-made playlists by month.</p></a><a class="scard" href="trailers.html"><div class="k">Watch</div><h3>Trailers</h3><p>All 54 trailers, teasers and glimpses, filterable by type.</p></a><a class="scard" href="calendar.html"><div class="k">Stream</div><h3>OTT Releases</h3><p>All 61 streaming releases, filterable by platform and genre.</p></a><a class="scard" href="archive.html"><div class="k">Browse</div><h3>Archive</h3><p>All 163 items in one place. Ask for what you want in plain English.</p></a><a class="scard" href="community.html"><div class="k">Join in</div><h3>Community</h3><p>Suggest a song, trailer or release we missed — and help check what others send in.</p></a><a class="scard off" href="reviews.html"><div class="k"><span class=soon>Coming</span></div><h3>Reviews</h3><p>Verdicts on the week&#x27;s releases. Not captured yet.</p></a><a class="scard off" href="news.html"><div class="k"><span class=soon>Coming</span></div><h3>News</h3><p>Shoots, casting, release dates and box office. Not captured yet.</p></a><a class="scard off" href="languages.html"><div class="k"><span class=soon>Coming</span></div><h3>Languages</h3><p>Tamil, Malayalam, Hindi and Kannada as first-class sections.</p></a></div>
+<div class="sections"><a class="scard" href="playlists.html"><div class="k">Listen</div><h3>Songs</h3><p>All 48 songs, by year, month and week, plus playlists.</p></a><a class="scard" href="trailers.html"><div class="k">Watch</div><h3>Trailers</h3><p>All 54 trailers, teasers and glimpses, filterable by type.</p></a><a class="scard" href="calendar.html"><div class="k">Stream</div><h3>OTT Releases</h3><p>All 61 streaming releases, filterable by platform and genre.</p></a><a class="scard" href="archive.html"><div class="k">Search</div><h3>Every week at once</h3><p>All 163 items in one place. Ask in plain English.</p></a><a class="scard" href="community.html"><div class="k">Join in</div><h3>Community</h3><p>Suggest something we missed - and help check what others send in.</p></a></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<div class="hd"><span class="eyebrow" style="margin:0">Roadmap</span>
+<h2>Not built yet</h2></div>
+<p class="lede" style="margin-bottom:16px">Four things this could become. None of
+them exist today, so they are listed here rather than as empty tabs.</p>
+<div class="roadmap"><div class="rcard"><h3>This Week</h3><p>What&#x27;s landing in the days ahead, rather than a record of the week just gone. The source videos do close with a &#x27;next week&#x27; rundown, which the pipeline currently discards.</p></div><div class="rcard"><h3>Reviews</h3><p>A verdict per release, in one honest paragraph. The videos give verdicts each week; capturing them is a change to the extraction step, not a new source.</p></div><div class="rcard"><h3>News</h3><p>Shoots, casting, release-date moves and box office, grouped by film. Roughly half of each source video is news and all of it is currently thrown away.</p></div><div class="rcard"><h3>Languages</h3><p>Tamil, Malayalam, Hindi and Kannada as first-class sections. Label feeds and TMDB already cover them; coverage needs proving over a couple of weeks first.</p></div></div>
 </div></section>
 <footer class="site"><div class="wrap">
-<div class="fnav"><a href="index.html">Home</a><a href="weekly.html">All Weeks</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="archive.html">Archive</a><a href="community.html">Community</a><a href="privacy.html">Privacy</a></div>
+<div class="fnav"><a href="index.html">Home</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="community.html">Community</a><a href="archive.html">Search</a><a href="privacy.html">Privacy</a></div>
 <div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
 weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
 </div></footer>
