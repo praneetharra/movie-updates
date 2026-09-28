@@ -336,7 +336,7 @@ readers and need checking — 3 net votes either way settles it.
 <div data-community data-week="2026-08-23"></div>
 </section>
 <p class="hint" style="color:var(--ink3);font-size:12.5px;margin-top:26px">
-Generated 25 Sep 2026. Links auto-matched from YouTube search — items marked
+Generated 28 Sep 2026. Links auto-matched from YouTube search — items marked
 <span class="flag">verify</span> had a weak match and are worth a click-check.</p>
 </div><footer class="site"><div class="wrap">
 <div class="fnav"><a href="index.html">Home</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="community.html">Community</a><a href="archive.html">Search</a><a href="privacy.html">Privacy</a></div>
@@ -505,65 +505,142 @@ analytics, no newsletter, and you can delete it in one click.
   var A=window.CVAUTH; if(!A) return;
   var hosts=[].slice.call(document.querySelectorAll('[data-gated]'));
   if(!hosts.length) return;
+  var tree=document.querySelector('.tree');
+  var MONTHS=['','January','February','March','April','May','June','July',
+              'August','September','October','November','December'];
+  var PCOLOR={'netflix':'#e50914','prime video':'#00a8e1','amazon prime':'#00a8e1',
+    'prime':'#00a8e1','aha':'#ff4d00','jiohotstar':'#0f79af','hotstar':'#0f79af',
+    'zee5':'#8230c6','sonyliv':'#0c1f3f','sun nxt':'#e4002b','etv win':'#f26522'};
 
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function pcolor(p){
+    var k=(p||'').toLowerCase();
+    for(var n in PCOLOR){ if(k.indexOf(n)>-1) return PCOLOR[n]; }
+    return '#5b6470';
+  }
+  function patched(it){
+    return Object.assign({}, it.payload||{}, (window.CVOVERRIDES||{})[it.id]||{});
+  }
+  var FIX='<button class="fixbtn adminonly" type="button" title="Correct this entry" '+
+          'aria-label="Correct this entry">&#9998;</button>';
 
+  // ---- one item, in the same shape the static page uses -----------------
   function card(it){
-    var p=Object.assign({}, it.payload||{}, (window.CVOVERRIDES||{})[it.id]||{});
+    var p=patched(it);
     var v=p.v||'', th=v?'https://i.ytimg.com/vi/'+v+'/mqdefault.jpg':(p.poster||'');
     var img=th?'<img src="'+esc(th)+'" alt="" loading="lazy">':'<img alt="">';
     var dv=v?' data-vid="'+esc(v)+'" data-title="'+esc(p.t)+'"':'';
     var sub=it.kind==='ott'?(p.p||''):(p.m||p.k||'');
-    var meta=[p.c,p.n,p.d].filter(Boolean).join(' · ');
+    var meta=[p.si,p.co,p.c,p.n].filter(Boolean).join(' \u00b7 ');
+    var hay=[p.t,sub,p.c,p.n].filter(Boolean).join(' ').toLowerCase();
+    var at=' data-search="'+esc(hay)+'" data-kind="'+esc(it.kind==='trailer'?(p.k||'Trailer'):it.kind)+
+           '" data-item="'+esc(it.id)+'"';
     var inner='<div class="t">'+esc(p.t)+'</div><div class="m">'+esc(sub)+
               '</div><div class="meta">'+esc(meta)+'</div>';
-    var cls='card'+(it.kind==='ott'?' ottsug':'');
-    var at=' data-item="'+esc(it.id)+'" data-kind="'+esc(it.kind)+'"';
-    var fix='<button class="fixbtn adminonly" type="button" '+
-            'title="Correct this entry" aria-label="Correct this entry">&#9998;</button>';
-    if(!p.u) return '<div class="'+cls+' nolink"'+at+'>'+fix+
-                    '<div class="left"><div class="thumb">'+
-                    img+'</div></div><div class="body">'+inner+'</div></div>';
-    return '<div class="'+cls+'"'+at+'>'+fix+'<div class="left">'+
+    if(!p.u) return '<div class="card nolink"'+at+'>'+FIX+
+      '<div class="left"><div class="thumb">'+img+'</div></div>'+
+      '<div class="body">'+inner+'</div></div>';
+    return '<div class="card"'+at+'>'+FIX+'<div class="left">'+
       '<a class="thumb" href="'+esc(p.u)+'" target="_blank" rel="noopener"'+dv+'>'+img+
       (v?'<span class="pl"><i></i></span>':'')+'</a></div>'+
       '<a class="body" href="'+esc(p.u)+'" target="_blank" rel="noopener"'+dv+'>'+
       inner+'</a></div>';
   }
 
-  function lockedHtml(){
-    return '<div class="locked"><div class="lk">&#9788;</div>'+
-      '<h3>The last two weeks are for members</h3>'+
-      '<p>Sign in free with Google or an email link to see this week and last week. '+
-      'Everything older than a fortnight stays open to everyone, always.</p>'+
-      '<button class="authbtn needlogin">Sign in to unlock</button></div>';
+  function ottRow(it){
+    var p=patched(it);
+    var gl=p.g||[];
+    var poster=p.poster?'<img src="'+esc(p.poster)+'" alt="" loading="lazy" width="46" height="69">'
+                       :'<span class="noposter"></span>';
+    var a=p.u?'<a class="ottlink" href="'+esc(p.u)+'" target="_blank" rel="noopener">':'';
+    var az=p.u?'</a>':'';
+    var hay=[p.t,p.p,p.l,p.n,gl.join(' ')].filter(Boolean).join(' ').toLowerCase();
+    return '<tr data-platform="'+esc(p.p)+'" data-genres="'+esc(gl.join('|'))+'" '+
+      'data-search="'+esc(hay)+'" data-item="'+esc(it.id)+'" data-kind="ott">'+
+      '<td class="poster">'+a+poster+az+'</td>'+
+      '<td>'+a+'<strong>'+esc(p.t)+'</strong>'+az+
+        (p.n?'<div class="note">'+esc(p.n)+'</div>':'')+
+        (p.o?'<div class="oneline">'+esc(p.o)+'</div>':'')+
+        gl.map(function(g){return '<span class="gtag">'+esc(g)+'</span>';}).join('')+'</td>'+
+      '<td>'+a+'<span class="badge" style="background:'+pcolor(p.p)+'">'+esc(p.p)+
+        '</span>'+az+'</td>'+
+      '<td class="dim">'+esc(p.d||'')+'</td>'+
+      '<td class="dim">'+esc(p.l||'')+FIX+'</td></tr>';
   }
 
-  function fill(host, rows){
-    var want=host.dataset.gated;                 // '', 'song', 'trailer' or 'ott'
-    var week=host.dataset.week||'';
-    var list=rows.filter(function(r){
-      return (!want||r.kind===want) && (!week||r.week===week);
+  function weekBody(kind, list){
+    if(kind==='ott'){
+      return '<table><thead><tr><th class="poster"></th><th>Title</th>'+
+             '<th>Platform</th><th>From</th><th>Language</th></tr></thead><tbody>'+
+             list.map(ottRow).join('')+'</tbody></table>';
+    }
+    return '<div class="grid">'+list.map(card).join('')+'</div>';
+  }
+
+  // ---- insert one week into the right branch, creating branches as needed --
+  function el(html){ var d=document.createElement('div'); d.innerHTML=html; return d.firstChild; }
+
+  function insertSorted(parent, node, sel, keyAttr, key){
+    var sibs=[].slice.call(parent.querySelectorAll(':scope > '+sel));
+    for(var i=0;i<sibs.length;i++){
+      if(key > sibs[i].getAttribute(keyAttr)){ parent.insertBefore(node, sibs[i]); return; }
+    }
+    parent.appendChild(node);
+  }
+
+  function branch(week, kind, list, label){
+    var y=week.slice(0,4), ym=week.slice(0,7), m=parseInt(week.slice(5,7),10);
+
+    var yEl=tree.querySelector('details.yr[data-year="'+y+'"]');
+    if(!yEl){
+      yEl=el('<details class="yr" data-year="'+esc(y)+'" open><summary>'+esc(y)+
+             '<span class="n" data-total="0">0</span></summary></details>');
+      insertSorted(tree, yEl, 'details.yr', 'data-year', y);
+    }
+    var mEl=yEl.querySelector('details.mo[data-month="'+ym+'"]');
+    if(!mEl){
+      mEl=el('<details class="mo" data-month="'+esc(ym)+'" open><summary>'+
+             esc(MONTHS[m]||'Undated')+'<span class="n" data-total="0">0</span></summary></details>');
+      insertSorted(yEl, mEl, 'details.mo', 'data-month', ym);
+    }
+    if(mEl.querySelector('details.wk[data-week="'+week+'"]')) return 0;
+
+    var wEl=el('<details class="wk" data-week="'+esc(week)+'" data-members="1" open>'+
+      '<summary>'+esc(label||('Week of '+week))+
+      '<span class="src verified" style="margin-left:8px">Members</span>'+
+      '<span class="n" data-total="'+list.length+'">'+list.length+'</span></summary>'+
+      '<div class="wkbody">'+weekBody(kind, list)+'</div></details>');
+    insertSorted(mEl, wEl, 'details.wk', 'data-week', week);
+    return list.length;
+  }
+
+  function recount(){
+    ['details.mo','details.yr'].forEach(function(sel){
+      [].slice.call(tree.querySelectorAll(sel)).forEach(function(d){
+        var n=d.querySelector(':scope > summary .n');
+        if(!n) return;
+        var total=d.querySelectorAll('[data-search]').length;
+        n.dataset.total=total;
+        // Year counts read "54 trailers"; keep the noun.
+        var noun=(n.textContent.match(/[a-z]+$/i)||[''])[0];
+        n.textContent = noun ? total+' '+noun : String(total);
+      });
     });
-    if(!list.length){ host.innerHTML=''; return; }
-    var byWeek={};
-    list.forEach(function(r){ (byWeek[r.week]=byWeek[r.week]||[]).push(r); });
-    var html='';
-    Object.keys(byWeek).sort().reverse().forEach(function(w){
-      html+='<div class="wkblock"><h2>Week of '+esc(w)+
-            '<span class="count">'+byWeek[w].length+'</span>'+
-            '<span class="src verified">Members</span></h2>'+
-            '<div class="grid">'+byWeek[w].map(card).join('')+'</div></div>';
-    });
-    host.innerHTML=html;
+  }
+
+  function lockedHtml(){
+    return '<div class="locked"><div class="lk">&#9788;</div>'+
+      '<h3>The newest week is for members</h3>'+
+      '<p>Sign in free with Google or an email link to see the most recent '+
+      'fortnight. Everything older stays open to everyone, always.</p>'+
+      '<button class="authbtn needlogin">Sign in to unlock</button></div>';
   }
 
   function load(){
     if(!A.signedIn()){ hosts.forEach(function(h){ h.innerHTML=lockedHtml(); }); return; }
-    hosts.forEach(function(h){ h.innerHTML='<div class="loading">Loading the latest…</div>'; });
-    // Corrections are readable by everyone, so a member sees a fixed entry too,
-    // not just the admin who fixed it.
+    hosts.forEach(function(h){ h.innerHTML='<div class="loading">Loading the latest\u2026</div>'; });
+
     Promise.all([
       fetch(A.base+'/rest/v1/items?select=id,week,kind,payload&order=week.desc',
             {headers:A.headers()})
@@ -574,13 +651,34 @@ analytics, no newsletter, and you can delete it in one click.
       .then(function(res){
         window.CVOVERRIDES=window.CVOVERRIDES||{};
         (res[1]||[]).forEach(function(o){ window.CVOVERRIDES[o.item_id]=o.patch||{}; });
-        var rows=res[0];
-        hosts.forEach(function(h){ fill(h,rows||[]); });
+
+        hosts.forEach(function(h){ h.innerHTML=''; });
+        if(!tree) return;
+
+        // Weeks already on the page. Anything here is NOT re-rendered.
+        var have={};
+        [].slice.call(tree.querySelectorAll('details.wk[data-week]'))
+          .forEach(function(d){ have[d.getAttribute('data-week')]=true; });
+
+        var want=hosts[0].dataset.gated||'';
+        var byWeek={};
+        (res[0]||[]).forEach(function(r){
+          if(want && r.kind!==want) return;
+          if(have[r.week]) return;
+          (byWeek[r.week]=byWeek[r.week]||[]).push(r);
+        });
+
+        var added=0;
+        Object.keys(byWeek).sort().forEach(function(wk){
+          added += branch(wk, want, byWeek[wk], null);
+        });
+        if(added) recount();
+        document.dispatchEvent(new CustomEvent('cv-tree-changed'));
       })
       .catch(function(e){
         hosts.forEach(function(h){
           h.innerHTML='<div class="locked"><p>Couldn\'t load the latest content ('+
-            esc(e.message)+'). Everything older is unaffected.</p></div>'; });
+            esc(e.message)+'). Everything already on this page is unaffected.</p></div>'; });
       });
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',load);
