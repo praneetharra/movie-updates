@@ -671,7 +671,7 @@ analytics, no newsletter, and you can delete it in one click.
     hosts.forEach(function(h){ h.innerHTML='<div class="loading">Loading the latest\u2026</div>'; });
 
     Promise.all([
-      fetch(A.base+'/rest/v1/items?select=id,week,kind,lang,payload&order=week.desc',
+      fetch(A.base+'/rest/v1/items?select=id,week,kind,payload&order=week.desc',
             {headers:A.headers()})
         .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }),
       fetch(A.base+'/rest/v1/overrides?select=item_id,patch',{headers:A.headers()})
@@ -697,7 +697,11 @@ analytics, no newsletter, and you can delete it in one click.
         var byWeek={};
         (res[0]||[]).forEach(function(r){
           if(want && r.kind!==want) return;
-          if((r.lang||'te')!==lang) return;
+          // Language comes from the id prefix ("te:2026-10-11:song:…"), not
+          // from a column — a page cached before the migration must not break
+          // by asking for a column that does not exist yet.
+          var rl=String(r.id||'').split(':')[0];
+          if((/^[a-z]{2}$/.test(rl) ? rl : 'te') !== lang) return;
           if(have[r.week]) return;
           (byWeek[r.week]=byWeek[r.week]||[]).push(r);
         });
