@@ -437,7 +437,7 @@ analytics, no newsletter, and you can delete it in one click.
 </div>
 <div class="fixmsg" id="fixmsg"></div>
 <button class="btn" id="fixcancel" style="width:100%;justify-content:center;margin-top:9px">Cancel</button>
-</div></div><script>window.CFG={"url":"https://rfxrkcrijzfmfuwexbgj.supabase.co","key":"sb_publishable_a2Uomg2zakwmqc5-oUR4pA__3DQei2V","threshold":3};</script><script>
+</div></div><script>window.CFG={"url":"https://rfxrkcrijzfmfuwexbgj.supabase.co","key":"sb_publishable_a2Uomg2zakwmqc5-oUR4pA__3DQei2V","threshold":3,"lang":"te"};</script><script>
 (function(){
   var CFG=window.CFG||{};
   if(!CFG.url||!CFG.key) return;
@@ -705,7 +705,7 @@ analytics, no newsletter, and you can delete it in one click.
     hosts.forEach(function(h){ h.innerHTML='<div class="loading">Loading the latest\u2026</div>'; });
 
     Promise.all([
-      fetch(A.base+'/rest/v1/items?select=id,week,kind,payload&order=week.desc',
+      fetch(A.base+'/rest/v1/items?select=id,week,kind,lang,payload&order=week.desc',
             {headers:A.headers()})
         .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }),
       fetch(A.base+'/rest/v1/overrides?select=item_id,patch',{headers:A.headers()})
@@ -724,9 +724,14 @@ analytics, no newsletter, and you can delete it in one click.
           .forEach(function(d){ have[d.getAttribute('data-week')]=true; });
 
         var want=hosts[0].dataset.gated||'';
+        // The API returns every language a member may read. This page shows
+        // one language, so anything else is filtered out here — otherwise a
+        // Telugu reader would find Tamil weeks injected into their tree.
+        var lang=hosts[0].dataset.lang||'te';
         var byWeek={};
         (res[0]||[]).forEach(function(r){
           if(want && r.kind!==want) return;
+          if((r.lang||'te')!==lang) return;
           if(have[r.week]) return;
           (byWeek[r.week]=byWeek[r.week]||[]).push(r);
         });
