@@ -168,6 +168,30 @@ footer.site a:hover{color:var(--amber)}
 .svc{gap:2px}.svc a{height:19px}.svc svg{width:11px;height:11px}
 .playall{flex:1 1 100%;justify-content:center}}
 
+.langsw{position:relative;flex-shrink:0}
+.langsw>summary{list-style:none;cursor:pointer;padding:6px 10px;border-radius:8px;
+border:1px solid var(--line);background:var(--surface);color:var(--ink2);
+font-size:13px;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.langsw>summary::-webkit-details-marker{display:none}
+.langsw>summary::after{content:'';width:5px;height:5px;border-right:1.5px solid currentColor;
+border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.langsw>summary:hover{color:var(--ink);border-color:var(--line2)}
+.langsw[open]>summary{border-color:var(--amber);color:var(--ink)}
+.langsw .menu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;
+min-width:188px;background:var(--surface);border:1px solid var(--line2);
+border-radius:var(--radius);padding:6px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.langsw .menu a,.langsw .menu span{display:flex;justify-content:space-between;
+gap:12px;align-items:baseline;padding:7px 10px;border-radius:7px;
+text-decoration:none;font-size:13.5px;color:var(--ink2)}
+.langsw .menu a:hover{background:var(--surface2);color:var(--ink)}
+.langsw .menu a.on{color:var(--amber);font-weight:600}
+.langsw .menu span{color:var(--ink3);cursor:default}
+.langsw .menu span em{font-style:normal;font-size:10px;letter-spacing:1.1px;
+text-transform:uppercase;color:var(--ember)}
+.langsw .menu hr{border:0;border-top:1px solid var(--line);margin:6px 4px}
+.langsw .menu .all{font-size:12.5px;color:var(--ink3)}
+@media(max-width:860px){.langsw{order:1}}
+
 .authbox{display:flex;align-items:center;gap:8px;margin-left:12px;flex-shrink:0}
 .authbtn{background:var(--surface);border:1px solid var(--line2);color:var(--ink);
 padding:6px 13px;border-radius:999px;font-size:13px;font-family:inherit;cursor:pointer;
@@ -295,7 +319,7 @@ border-radius:10px;font-size:14px;font-family:inherit;cursor:pointer}
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><b>Chitravaaram</b><span>Cinema</span></a>
-<nav class="main"><a href="index.html">Home</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="community.html">Community</a></nav><form class="gsearch" action="archive.html" method="get" role="search"><input type="search" name="q" id="gq" autocomplete="off" placeholder="Search every week…" aria-label="Search songs, trailers and releases" value=""><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></form><div class="authbox" id="authbox"></div></div></header>
+<details class="langsw"><summary aria-label="Change language"><span lang="te">తెలుగు</span></summary><div class="menu"><a href="index.html" class="on" lang="te">తెలుగు<em style="font-style:normal;color:var(--ink3);font-size:11px">Telugu</em></a><span lang="hi">हिन्दी<em>Soon</em></span><span lang="ta">தமிழ்<em>Soon</em></span><span lang="kn">ಕನ್ನಡ<em>Soon</em></span><span lang="ml">മലയാളം<em>Soon</em></span><hr><a class="all" href="../?pick=1">All languages &#8594;</a></div></details><nav class="main"><a href="index.html">Home</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="community.html">Community</a></nav><form class="gsearch" action="archive.html" method="get" role="search"><input type="search" name="q" id="gq" autocomplete="off" placeholder="Search every week…" aria-label="Search songs, trailers and releases" value=""><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></form><div class="authbox" id="authbox"></div></div></header>
 <div class="wrap"><div class="phead">
 <div class="eyebrow">Privacy</div>
 <h1>What this site knows about you</h1>
@@ -402,7 +426,7 @@ erasing immediately. For anything else, email
 what the site actually does, and is updated whenever that changes.</p>
 
 </div></div><footer class="site"><div class="wrap">
-<div class="fnav"><a href="index.html">Home</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="community.html">Community</a><a href="archive.html">Search</a><a href="privacy.html">Privacy</a><a href="../" class="uplink">Times of Cinema — all languages</a></div>
+<div class="fnav"><a href="index.html">Home</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="community.html">Community</a><a href="archive.html">Search</a><a href="privacy.html">Privacy</a><a href="../?pick=1">Times of Cinema — all languages</a></div>
 <div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
 weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
 </div></footer>
