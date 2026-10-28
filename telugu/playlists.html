@@ -22,13 +22,20 @@ a{color:inherit}
 /* ---- top bar ---- */
 .topbar{position:sticky;top:0;z-index:50;background:rgba(8,9,11,.82);
 backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.topbar .wrap{display:flex;align-items:center;gap:22px;height:58px}
+.topbar .wrap{display:flex;align-items:center;gap:14px;height:58px}
 .brand{display:flex;align-items:baseline;gap:9px;text-decoration:none;flex-shrink:0}
 .brand b{font-size:18px;font-weight:600;letter-spacing:-.3px}
 .brand span{font-size:10.5px;color:var(--amber);text-transform:uppercase;
 letter-spacing:1.6px;font-weight:600}
-nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
-nav.main a{position:relative;padding:7px 11px;border-radius:8px;text-decoration:none;
+/* The tabs must not wrap. They used to be allowed to, back when the bar held
+   only a brand, the nav and a search box; a language switcher and a signed-in
+   name later, the row ran out of width and "Community" dropped onto a second
+   line inside a bar with a fixed 58px height — so it half-vanished, and only
+   for signed-in readers, which is the worst kind of layout bug to notice.
+   Below 860px the bar deliberately becomes multi-row and the nav gets a line
+   of its own; that is handled in the media query further down. */
+nav.main{display:flex;gap:2px;flex-wrap:nowrap;margin-left:auto;min-width:0}
+nav.main a{position:relative;padding:7px 10px;border-radius:8px;text-decoration:none;
 font-size:13.5px;color:var(--ink2);white-space:nowrap}
 nav.main a:hover{color:var(--ink);background:var(--surface)}
 nav.main a.on{color:var(--bg);background:var(--amber);font-weight:600}
@@ -46,9 +53,16 @@ font-family:inherit}
 width:13px;height:13px;stroke:var(--ink3);fill:none;stroke-width:2;pointer-events:none}
 .gsearch input:focus+svg{stroke:var(--amber)}
 
-@media(max-width:980px){.gsearch{flex-basis:150px}}
+/* Between 860px and full width the search box is the thing that gives way,
+   then the signed-in name, then the switcher's label — in that order, because
+   each is less load-bearing than the tabs it would otherwise displace. */
+@media(max-width:1180px){.gsearch{flex-basis:160px}}
+@media(max-width:1080px){.gsearch{flex-basis:132px}.who{display:none}}
+@media(max-width:980px){.gsearch{flex-basis:112px}
+.langsw>summary{padding:6px 7px}nav.main a{padding:7px 8px;font-size:13px}}
 @media(max-width:860px){.topbar .wrap{height:auto;padding-top:10px;padding-bottom:10px;
-flex-wrap:wrap}nav.main{margin-left:0;order:3;width:100%}
+flex-wrap:wrap}nav.main{margin-left:0;order:3;width:100%;flex-wrap:wrap}
+nav.main a{font-size:13.5px;padding:7px 10px}
 .gsearch{order:2;flex:1 1 auto;margin-left:auto}}
 
 /* ---- headings ---- */
@@ -164,6 +178,8 @@ color:var(--ink3);font-size:12.5px}
 footer.site a{color:var(--ink2);text-decoration:none}
 footer.site a:hover{color:var(--amber)}
 .fnav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.fcontact{margin-top:10px}
+.fcontact a{color:var(--amber)}
 @media(max-width:560px){.left{width:92px}.left img{height:52px}
 .svc{gap:2px}.svc a{height:19px}.svc svg{width:11px;height:11px}
 .playall{flex:1 1 100%;justify-content:center}}
@@ -395,6 +411,8 @@ YouTube playlist.</p>
 <div class="fnav"><a href="index.html">Home</a><a href="playlists.html">Songs</a><a href="trailers.html">Trailers</a><a href="calendar.html">OTT Releases</a><a href="community.html">Community</a><a href="archive.html">Search</a><a href="privacy.html">Privacy</a><a href="../?pick=1">Times of Cinema — all languages</a></div>
 <div>Chitravaaram — A week in Indian cinema. Songs, trailers and streaming links are collected
 weekly and matched to their official uploads. Posters and film metadata from TMDB.</div>
+<div class="fcontact">Spotted a wrong link, or want something taken down?
+<a href="mailto:director@timesofcinema.com">director@timesofcinema.com</a></div>
 </div></footer>
 <div class="lb" id="lb" hidden><div class="lbin"><div class="lbbar">
 <div class="lbt" id="lbt"></div><a id="lbo" href="#" target="_blank" rel="noopener">Open on YouTube &#8599;</a>
